@@ -1,0 +1,8 @@
+.popup .title{font: bold 24px Times New Roman; background-color: #ccc; margin-bottom: 20px;}
+.popup .line{clear:both; margin:10px 0; line-height:18px;}
+.popup label{width:20%; text-align:right; font: bold 14px Times New Roman; display: inline-block; margin-right:10px;}
+.popup span{width:55%; text-align:left; display: inline-block;}
+.popup .prj{font: bold 16px Times New Roman;}
+.popup .exp{margin:10px;}
+.popup .respond{font: italic 15px Times New Roman; text-decoration: underline; display:block; margin:10px 0;}
+.popup .time-span{font: bold 16px Times New Roman;}

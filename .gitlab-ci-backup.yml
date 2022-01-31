@@ -1,0 +1,6 @@
+deploy:
+  script:
+    - "npm i"
+    - "NODE_ENV='staging' pm2 restart 0"
+  only:
+    - staging

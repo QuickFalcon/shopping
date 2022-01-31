@@ -1,0 +1,162 @@
+<div style="overflow:scroll;margin-top:14vh;">
+<div class="left" style="width:15%;float:left;padding-left:5%;">
+		<div class="colorpanel" style="background-color:grey;width:100%;">
+			
+			   <div id=black style="height:30px;width:30px;background-color:black;float:left;margin:1px;" ng-click="setColor('black')"></div> 
+			<div id=blue style="height:30px;width:30px;background-color:blue;float:left;margin:1px;" ng-click="setColor('blue')"></div>
+		<div id=cyan style="height:30px;width:30px;background-color:cyan;float:left;margin:1px;" ng-click="setColor('cyan')"></div>
+		 <div id=green style="height:30px;width:30px;background-color:green;float:left;margin:1px;" ng-click="setColor('green')"></div> 
+		 <div id=teal style="height:30px;width:30px;background-color:teal;float:left;margin:1px;" ng-click="setColor('teal')"></div> 
+		 <div id=turquoise style="height:30px;width:30px;background-color:turquoise;float:left;margin:1px;" ng-click="setColor('turquoise')"></div> 
+		 <div id=indigo style="height:30px;width:30px;background-color:indigo;float:left;margin:1px;" ng-click="setColor('indigo')"></div> 
+		 <div id=gray title="gray" style="height:30px;width:30px;background-color:gray;float:left;margin:1px;" ng-click="setColor('gray')"></div>  
+		 <div id=purple title="purple" style="height:30px;width:30px;background-color:purple;float:left;margin:1px;" ng-click="setColor('purple')"></div>  
+		<div id=brown title="brown" style="height:30px;width:30px;background-color:brown;float:left;margin:1px;" ng-click="setColor('brown')"></div>
+		<div id=tan title="tan" style="height:30px;width:30px;background-color:tan;float:left;margin:1px;" ng-click="setColor('tan')"></div>
+		<div id=violet title="violet" style="height:30px;width:30px;background-color:violet;float:left;margin:1px;" ng-click="setColor('violet')"></div>
+		  <div id=beige style="height:30px;width:30px;background-color:beige;float:left;margin:1px;" ng-click="setColor('beige')"></div>    
+		 <div id=fuchsia style="height:30px;width:30px;background-color:fuchsia;float:left;margin:1px;" ng-click="setColor('fuchsia')"></div> 
+		 <div id=gold style="height:30px;width:30px;background-color:gold;float:left;margin:1px;" ng-click="setColor('gold')"></div>  
+		 <div id=magenta style="height:30px;width:30px;background-color:magenta;float:left;margin:1px;" ng-click="setColor('magenta')"></div>  
+
+		 
+		 <div id=orange title="violet" style="height:30px;width:30px;background-color:orange;float:left;margin:1px;" ng-click="setColor('orange')"></div>
+		  <div id=pink style="height:30px;width:30px;background-color:pink;float:left;margin:1px;" ng-click="setColor('pink')"></div>    
+		 <div id=red style="height:30px;width:30px;background-color:red;float:left;margin:1px;" ng-click="setColor('red')"></div> 
+		 <div id=white style="height:30px;width:30px;background-color:white;float:left;margin:1px;" ng-click="setColor('white')"></div>  
+		 <div id=yellow style="height:30px;width:30px;background-color:yellow;float:left;margin:1px;" ng-click="setColor('yellow')"></div>  
+		 
+		</div>
+
+<label>
+    <input type="radio" ng-model="product.gender" value="1" >
+    Male
+  </label>
+  <label>
+    <input type="radio" ng-model="product.gender" ng-value="2">
+    Female
+  </label>
+  <label>
+    <input type="radio" ng-model="product.gender" value="0">
+    Unisex
+  </label><br/>
+		
+</div>    
+<div class=middle style="width:60%;float:left;">
+
+	
+
+<div class='container-fluid' >
+
+
+	<div class=middle style="float:left;margin-top:0vh;">
+    
+	
+          <!--{{CatId}}-->
+
+      	 <h3><input type=text ng-model="product.keyword" style="width:100%;">  </h3>
+			<p>
+			<strong> SS category </strong>
+            <select ng-model="product.SS_category">
+             <option value="">ALL</option> 
+              <option value="women">WOMEN</option> 
+              <option value="men">MEN</option> 
+             <option value="shoes">SHOES</option> 
+             <option value="accessories">ACCESSORIES</option> 
+                <option value="beauty">BEAUTY</option> 
+             <option value="kids">KIDS</option> 
+	         <option value="home">HOME</option> 
+	        <option value="gifts">GIFTS</option> 
+		     <option value="others">OTHERS</option> 
+
+            </select>  
+			manually add to new category <input type="text" ng-model="product.SS_category"> <br>
+			</p>
+			<p>
+            <strong> Designer </strong>
+  
+			<select ng-model="product.designer"> 
+ 						<option value="">All</option>
+  						 <option value="designer1">designer 1</option>
+  						<option value="designer2">designer 2</option>
+ 						  <option value="designer3">designer 3</option>
+  						 <option value="designer4">designer 4</option>
+  						 <option value="designer5">designer 5 </option>
+	             </select> 
+          
+         </p> 
+         <p> 
+		 <strong> Merchant </strong><input type=text ng-model="product.merchant" > <br>
+         </p> 
+    	  <p> <strong>currency </strong><input type=text ng-model="product.currency" >
+	     <strong>Price </strong><input type=text ng-model="product.price" >
+         <strong>price_sale </strong><input type=text ng-model="product.price_sale" >
+    	 
+		 <strong>percentOff </strong><input type=text ng-model="product.percentOff" >
+		 </p>
+		 
+
+		 <strong>Product url</strong><input type=url ng-model="product.url" style="width:100%;"><br>
+		  <a ng-href="{{ product.url}}" title="Visit Product url"> Check product url</a>   	  <br>
+	  
+     
+     <strong>Prosperent Category </strong> {{product.category}} <br>
+
+
+	 <br>
+	  
+	  <a ng-href="{{product.image_url}}" title="Visit Product Site">    <img src="{{product.image_url}}" alt="{{product.keyword }}" title="{{product.keyword }}"></a>  
+      <br><strong>Affiliate url</strong><input type="url" ng-model="product.affiliate_url" style="width:100%;"><br>
+      <a ng-href="{{ product.affiliate_url }}" target="_blank"> Click affiliate url</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+	 <strong>   CatalogId   </strong>{{product.catalogId }} <br>
+	<strong> Availability  2tap</strong> {{product.availability}} &nbsp;&nbsp;&nbsp;
+	   		Prosperent availability  {{ product.prosper_availability }}
+
+         <strong>	Brand  </strong>{{product.brand }}  &nbsp;&nbsp;&nbsp;
+	     		
+    <br>        
+<div style="width:100%;">
+	<strong>Color</strong> 
+	  <div style="height:16px;width:16px;background-color:{{ product.color }};margin:1px;"></div>
+		 
+
+
+
+</div>
+
+		 &nbsp; &nbsp;&nbsp; Size <input type=text ng-model="product.size" > 
+		
+
+		<p>
+		
+<strong> Keywords  </strong><input type=text ng-model="product.keywords" style="width:100%;">   </p>	<p>	
+   
+	 	<a ng-href="https://checkout.twotap.com?public_token={{twotap_public_token}}&unique_token={{ uniqueID }}&products={{product.url}} &affiliate_links={{ product.affiliate_url}}&confirm_url=http://45.55.138.4:80/confirm&userId={{ userId}}&test_mode=fake_confirm"
+		target="_blank">
+		
+	 	
+		Test Checkout
+		 </a> |  <a ng-href="#/apicat/{{CatId}}"> Look up API</a>
+	  </p>
+	 <p> <strong> <u>Description </u> </strong> <br>
+		 <textarea name="description" ng-model="product.description" rows=5 cols=90 > </textarea> 
+		  
+	
+    </p>
+
+	 <p>
+	      <input type=submit value="Update" ng-click="updateproduct()">
+        
+	       <input type=button ng-click="del_product()" value="delete">
+	 </p> 	
+	
+		 
+	</div>  
+		 
+
+</div>
+ </div>	
+	
+        <div class=right style="width:5%;float:left;">   </div>
+    </div>

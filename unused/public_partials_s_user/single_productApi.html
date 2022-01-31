@@ -1,0 +1,2782 @@
+
+<div class="mid_content single_product_page" id="Qview">
+    <div class="container_inner clearfix">
+        <ul class="breadcrumbs">
+            <li ng-repeat="path in pathTorch"><a ng-href="{{path.poth}}" ng-bind="path.label"></a></li>
+            <li ng-class="twotapapidataready==0 ?'':'falseClass'"><a ng-href="#!/SOC/{{product.catalogId }}/{{ product.keyword | slugify}}" ng-bind-html="product.keyword"></a></li>
+            <li ng-class="twotapapidataready==1&&cartProductStatus.sites[skey].add_to_cart[md5prokey].hasOwnProperty('title')?'':'falseClass'"><a ng-bind-html="cartProductStatus.sites[skey].add_to_cart[md5prokey].title" ng-href="#!/SOC/{{product.catalogId }}/{{ product.keyword | slugify}}"></a></li>
+            <li ng-class="(twotapapidataready==1&&cartProductStatus.sites[skey].add_to_cart[md5prokey].hasOwnProperty('title'))||twotapapidataready==0 ?'falseClass':''"><a ng-href="#!/SOC/{{product.catalogId }}/{{ product.keyword | slugify}}" ng-bind-html="product.keyword"></a></li>
+            </ul>
+
+        <div class="section_top" zoom-it>
+
+            <div class="product_show">
+                <div class="carousel s_product_stage adoptSlider clearfix" id="carouselStage" adopt-slider>
+
+                </div>
+
+                <div class="hide" id="adoptSliderData">
+                    <div class="close_btn">X</div>
+                    <div class="fullScrnPopup">
+                        <div class="img_wrap"></div>
+                    </div>
+                    <ul class="slides">
+                        <li>
+                            <div class="img_wrap">
+                                <img ng-src="{{product.image_url}}" class="panzoom" alt="{{cartProductStatus.sites[skey].info.name}}'s">
+                            </div>
+                        </li>
+                        <li ng-repeat="img_item in alt_images track by $index">
+                            <div class="img_wrap">
+                                <img ng-src="{{img_item}}" class="panzoom" alt="{{cartProductStatus.sites[skey].info.name}}'s">
+                            </div>
+                        </li>
+
+                        <!--  <li>
+                             <div class="img_wrap">
+                                 <video width="100%" height="100%" controls>
+                                     <source src="video/Angry-Gran-Run.mp4" type="video/mp4">
+                                     <source src="video/mov_bbb.ogg" type="video/ogg">
+                                 </video>
+                             </div>
+                         </li> -->
+
+                        <li>
+                            <div class="review_leaf">
+                                <div class="review_head">
+                                    <div class="portarait"><a href="#!/account"><img ng-src="{{userinfo.img_location}}" alt="{{userinfo.firstname}}"></a>
+                                    </div>
+                                    <div class="user_info">
+                                        <div><a href="#!/account" ng-bind="userinfo.username"></a></div>
+                                        <div class="rateis r1"></div>
+                                    </div>
+                                </div>
+                                <div class="review_details">
+                                    I like this product. iT is excellent choice!
+                                    <div class="caption">HAPPYSHOPPING! #SOCIALLYSHOPPABLE</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="s_product_controller_wrap">
+                    <ul class="s_pro_control" ng-click="vm.zoomBtnActive()">
+                        <li><a><i class="icon icn_zoom_plus" ng-class="{disable:vm.zoomRange == 5}"></i></a></li>
+                        <li><a><i class="icon icn_zoom_minus_gray" ng-class="{disable:vm.zoomRange == .4}"></i></a></li>
+                        <li><a><i class="icon icn_zoom_reset_gray disable" ng-class="{disable:vm.zoomRange == 1}"></i></a></li>
+                        <li class="mb_hide"><a><i class="icon icn_cntrl_full"></i></a></li>
+                        <li><a><i class="icon icn_cntrl_media disable"></i></a></li>
+                        <input type="hidden" class="zoom-range" step="0.05" min="0.4" max="0.9">
+                    </ul>
+                    <div class="product-info">
+                        <div class="zoomed_s_icons_wrap dsktp_hide">
+                            <ul class="zoomed_s_icons">
+                                <li>
+                                    <i class="icon grey_heart"></i>
+                                </li>
+                                <li>
+                                    <i class="icon grey_arrow"></i>
+                                </li>
+                                <li>
+                                    <i class="icon grey_bag"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="shared_icons">
+                            <li ng-click="openSocialPopup(product, 'like', $event)" ng-class="{active: product===socialPopupProduct && socialPopupTab==='like'}">
+                                <i class="icon grey_heart" ng-class="{activated: product.userSocial.likes}"></i>
+                                <span ng-bind="product.social.likes || '0'"></span>
+                            </li>
+                            <li ng-click="openSocialPopup(product, 'mail', $event)" ng-class="{active: product===socialPopupProduct && socialPopupTab==='mail'}">
+                                <i class="icon grey_arrow" ng-class="{activated: product.userSocial.mails}"></i>
+                                <span ng-bind="product.social.mails || '0'"></span>
+                            </li>
+                            <li ng-click="openSocialPopup(product, 'collective', $event)" ng-class="{active: product===socialPopupProduct && socialPopupTab==='collective'}">
+                                <i class="icon grey_bag" ng-class="{activated: product.userSocial.collectives}"></i>
+                                <span ng-bind="product.social.collectives || '0'"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="carousel s_product_stage_nav" id="StageNavCarousel" thumb-sliderdetails></div>
+
+                <div id="spThumbSlider" class="hide">
+                    <ul class="stage_nav">
+
+                        <li>
+
+                            <div class="thumbnail-img" style="background-image:url('{{product.image_url}}');"></div>
+
+                        </li>
+
+                        <li ng-repeat="img_item in alt_images track by $index">
+
+                            <div class="thumbnail-img" style="background-image:url('{{img_item}}');"></div>
+
+                        </li>
+
+
+                        <!--  <li>
+                             <div class="thumbnail-img" style="background-image:url(images/img-107.jpg);">
+                                 <div class="video_icon"></div>
+                             </div>
+                         </li> -->
+
+
+                        <li id="review_thumb">
+                            <div class="review_thumb_inner">
+                                <div href="#" class="btn white_btn">See Review</div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="product_details quickView">
+
+                <div class="s_product_right_d fl" ng-class="{ss_loading:!twotapapidataready}">
+                    <div class="product_title">
+                        <h2 ng-bind-html="product.keyword" ng-class="twotapapidataready==0 ?'':'falseClass'"></h2>
+                        <h2 ng-bind-html="cartProductStatus.sites[skey].add_to_cart[md5prokey].title" ng-class="twotapapidataready==1&&cartProductStatus.sites[skey].add_to_cart[md5prokey].hasOwnProperty('title')?'':'falseClass'"></h2>
+                        <h2 ng-class="(twotapapidataready==1&&cartProductStatus.sites[skey].add_to_cart[md5prokey].hasOwnProperty('title'))||twotapapidataready==0 ?'falseClass':''" ng-bind-html="product.keyword"></h2>
+
+
+                    </div>
+                    <div class="product_sb_ttl" ng-bind="product.brand"></div>
+                    <div class="product_sku">SS Item# {{product.catalogId}}</div>
+                    <div class="product_sku" ng-show="product.upc!=''">Universal Product Code# {{product.upc}}</div>
+                    <div class="product_sku" ng-show="product.isbn!=''">ISBN# {{product.isbn}}</div>
+                    <div ng-class="twotapapidataready==1 && cartProductStatus.sites[skey].hasOwnProperty('add_to_cart')? 's_product_price' : 'falseClass'">
+                        <!--  <span>WAS ${{ product.price }}</span>  -->
+                        <span ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].original_price!=NaN? 's_product_price' : 'falseClass'">WAS {{cartProductStatus.sites[skey].add_to_cart[md5prokey].original_price }}</span>
+						<span ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].original_price!=NaN? 't_red' : ''">NOW  ${{current_price }} </span>
+                        <i ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].original_price!=NaN? 'icn_all sale_alert' : ''"></i>
+                    </div>
+
+                    <div ng-class="twotapapidataready==1 && cartProductStatus.sites[skey].hasOwnProperty('failed_to_add_to_cart')? 's_product_price' : 'falseClass'">
+                        <span ng-class="cartProductStatus.sites[skey].failed_to_add_to_cart[md5prokey].original_price!=NaN? 's_product_price' : 'falseClass'">WAS {{cartProductStatus.sites[skey].failed_to_add_to_cart[md5prokey].original_price }}</span><span ng-class="cartProductStatus.sites[skey].failed_to_add_to_cart[md5prokey].original_price!=NaN? 't_red' : ''">NOW  ${{current_price }} </span>
+                        <!-- <i class="icn_all sale_alert"></i> -->
+                    </div>
+                    <div ng-class="twotapapidataready==1 && (extra_info!=''&& extra_info!=null)? '' : 'falseClass'" ng-bind-html="extra_info">
+
+                     </div> 
+                    <div ng-class="twotapapidataready==0 && product.price_sale !=null && product.price_sale !=''? 's_product_price':'falseClass'">
+                        <span>WAS ${{product.price}}</span> <span class="t_red">NOW ${{product.price_sale}}</span><i class="icn_all sale_alert"></i>
+                    </div>
+
+                    <div ng-class="twotapapidataready==0 && (product.price_sale ==null || product.price_sale =='')? 's_product_price':'falseClass'">
+                        <span>NOW ${{product.price}}</span>
+                    </div>
+                    <div class="hideInexpand">
+                        <div class="s_product_review_rating">
+                            <div class="rateis r2o5"></div>
+                            <div class="s_product_review">
+                                <span><a href="#">SS Ratings &amp; Reviews</a> </span>
+                            </div>
+                        </div>
+                        <!--<div class="product_icns product-info">
+                            <ul class="shared_icons" >
+                                <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: product==socialPopupProduct && socialPopupTab==='like'}">
+                                    <i class="icon grey_heart" ng-class="{activated: product.userSocial.likes}"></i>
+                                    <span ng-bind="product.social.likes || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(product, 'mail', $event)" ng-class="{active: product==socialPopupProduct && socialPopupTab==='mail'}">
+                                    <i class="icon grey_arrow" ng-class="{activated: product.userSocial.mails}"></i>
+                                    <span ng-bind="product.social.mails || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(product, 'collective', $event)" ng-class="{active: product===socialPopupProduct && socialPopupTab==='collective'}">
+                                    <i class="icon grey_bag" ng-class="{activated: product.userSocial.collectives}"></i>
+                                    <span ng-bind="product.social.collectives || '0'"></span>
+                                </li>
+                            </ul>
+
+                        </div>-->
+
+
+                        <div class="s_product_clr_sz_bx">
+                            <div class="s_product_color_size clearfix">
+                                <div ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].required_fields.hasOwnProperty('color')? 's_product_color' : 'falseClass'">
+                                    <div class="s_product_color_t">COLOR: {{colorText}} </div>
+                                    <ul class="s_product_color_bx">
+                                        <li class="s_p_clr"
+                                            ng-repeat="itemByColor in colorjson track by $index">
+                                            <input type="radio" name="selectColor" id="{{itemByColor.text}}"
+                                                   value="{{itemByColor.value}}" ng-model="required_field_values.color" ng-click="set_color(colorjson,itemByColor)">
+                                            <label for="{{itemByColor.text}}" >
+                                                <span style='background-color:{{itemByColor.value}};background-image:url("{{itemByColor.value}}")'></span></label>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].required_fields.hasOwnProperty('size')? 's_product_size' : 'falseClass'">
+                                    <div class="s_product_size_t" ng-bind="'SIZE: '+required_field_values.size"></div>
+                                    <ul class="s_product_size_bx">
+
+                                        <li class="s_p_size"
+                                            ng-repeat="itemBySize in sizejson track by $index">
+                                            <input name="ssa" type="radio" id="sizez{{$index}}" value="{{itemBySize.value}}" ng-model="required_field_values.size" ng-click="set_size(sizejson,itemBySize)">
+                                            <label for="sizez{{$index}}"><span title="{{itemBySize.text}}" ng-bind="itemBySize.text"></span></label>
+                                        </li>
+
+                                    </ul>
+                                    <div class="s_product_sz_guide"><a data-target="#size-guide-popup" role="button"
+                                                                       data-toggle="modal">Size Guide</a></div>
+                                </div>
+                                 <div ng-class="cartProductStatus.sites[skey].add_to_cart[md5prokey].required_fields.hasOwnProperty('option')? '' : 'falseClass'">
+                                    <div class="s_product_color_t">OPTION: {{colorText}} </div>
+                                    <ul class="s_product_color_bx">
+                                        <li class="s_p_clr"
+                                            ng-repeat="itemByOption in optionjson track by $index">
+                                            <input type="radio" name="selectOption" id="{{itemByOption.text}}"
+                                                   value="{{itemByOption.value}}" ng-model="required_field_values.option" ng-click="set_option(optionjson,itemByOption)">
+                                            <label for="{{itemByOption.text}}" >
+                                                <span ng-bind="itemByOption.text"></span></label>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="s_product_qty_bag clearfix">
+                                <div class="s_product_qty">
+                                    <span class="qty_lebel">QUANTITY:</span>
+                                    <div class="quantity-dropdown">
+                                        <form>
+                                            <div class="defaultSt">
+                                                <select ng-model="required_field_values['quantity']" convert-to-number>
+
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--
+                                 -->
+                                <div class="s_product_a_t_b" >
+                                    <!--  <div class="black_btn btn" data-toggle="modal" data-target="#addToBag"> ADD TO BAG
+                                     </div> -->
+
+                                    <div ng-class="{true:'black_btn btn',false:'ng-hide',undefined:'ng-hide'}[avail]" ng-click="addToCartSingle(product,cartProductStatus)"> ADD TO BAG
+                                    </div>
+                                    <div ng-class="{true:'ng-hide',false:'black_btn btn',undefined:'ng-hide'}[avail]"> Unavailable
+                                    </div>
+
+
+                                </div>
+                                <div class="s_product_wishlist">
+
+
+
+
+                                    <span ng-click="addtoWishlistSadi(product,cartProductStatus,product.catalogId,product.merchant)" style="cursor:pointer;">+ ADD TO SAVE</span>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="s_product_tab" ss-tab="sstab">
+            <ul class="tab_head">
+                <li ng-click="ss.changeTab(1)" ng-class="{active : ss.activeTab == 1}">SS COLLECTIVE</li>
+                <li ng-click="ss.changeTab(2)" ng-class="{active : ss.activeTab == 2}">DETAILS</li>
+                <li class="mb_hide" ng-click="ss.changeTab(3)" ng-class="{active : ss.activeTab == 3}">DESIGNER</li>
+                <li class="mb_hide" ng-click="ss.changeTab(4)" ng-class="{active : ss.activeTab == 4}">BONUS OFFERS</li>
+                <li class="mb_hide" ng-click="ss.changeTab(5)" ng-class="{active : ss.activeTab == 5}">SHIPPING INFO</li>
+                <li ng-click="ss.changeTab(6)" ng-class="{active : ss.activeTab == 6}">
+                    <ul class="shared_icons">
+                        <li><i class="icon grey_heart"></i></li>
+                        <li><i class="icon grey_arrow"></i></li>
+                        <li><i class="icon grey_bag"></i></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="tab_content_wrap">
+                <div class="tab_content" ng-show="ss.activeTab == 1" ng-class="{active : ss.activeTab == 1}">
+
+                    <h3 class="collective_logo">collective</h3>
+
+                    <div class="productGrid_wrap defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                        <div class="products-grid">
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/1.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/2.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/3.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/4.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/5.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/1.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/2.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/3.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/4.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/5.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/1.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/2.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/3.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/4.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products-grid__item">
+                                <div class="product-item">
+                                    <div class="product-item__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </div>
+                                    <div class="product-image">
+                                        <div class="product-item__image">
+                                            <img src="upload/5.jpg" alt="">
+                                        </div>
+                                        <div class="rateit">
+                                            <div class="rateis r1"><a href="#Qview" class="btn white_btn">See Review</a>
+                                            </div>
+                                        </div>
+                                        <a href="#Qview" class="quick-product goTarget">+</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content" ng-show="ss.activeTab == 2" ng-class="{active : ss.activeTab == 2}">
+                    <p ng-bind="product.description"></p>
+
+                    <div class="dsktp_hide">
+                        <!-- Add bonus offer, designer's info and shipping info details here for mobile -->
+                        <p>Shipping Countries Support</p>
+                        <ul>
+                            <li ng-repeat="scountry in cartProductStatus.sites[skey].shipping_countries_support track by $index"
+                                ng-bind="scountry"></li>
+                        </ul>
+                        <p>Shipping Method</p>
+
+                        <ul>
+                            <li ng-repeat="(ship_method,ship_details) in cartProductStatus.sites[skey].shipping_options track by $index">
+                                {{ship_method}} : {{ship_details}}
+                            </li>
+
+                        </ul>
+                        <p>Return Policy</p>
+
+                        <p ng-bind-html="cartProductStatus.sites[skey].returns"></p>
+                    </div>
+
+                </div>
+                <div class="tab_content mb_hide" ng-show="ss.activeTab == 3" ng-class="{active : ss.activeTab == 3}">
+                    <p ng-bind="product.brand"></p>
+                </div>
+                <div class="tab_content mb_hide" ng-show="ss.activeTab === 4" ng-class="{active : ss.activeTab === 4}">
+                    <p ng-class="bonus> 0? '' : 'falseClass'">
+
+                        - ${{bonus}}
+                    </p>
+                </div>
+                <div class="tab_content mb_hide" ng-show="ss.activeTab === 5" ng-class="{active : ss.activeTab === 5}">
+
+
+                    <p>Shipping Countries Support</p>
+                    <ul>
+                        <li ng-repeat="scountry in cartProductStatus.sites[skey].shipping_countries_support track by $index"
+                            ng-bind="scountry"></li>
+
+                    </ul>
+                    <p>Shipping Method :</p>
+
+                    <ul>
+                        <li ng-repeat="(ship_method,ship_details) in cartProductStatus.sites[skey].shipping_options track by $index">
+                            {{ship_method}} : {{ship_details}}
+                        </li>
+
+                    </ul>
+                    <p>Return Policy</p>
+
+                    <p ng-bind-html="cartProductStatus.sites[skey].returns"></p>
+
+                    <p>Billing Countries Support</p>
+
+                    <ul>
+                        <li ng-repeat="bcountry in cartProductStatus.sites[skey].billing_countries_support track by $index"
+                            ng-bind="bcountry"></li>
+
+                    </ul>
+
+                </div>
+                <div class="tab_content" ng-show="ss.activeTab == 6" ng-class="{active : ss.activeTab == 6}">
+                    <div class="s_product_social_box">
+                        <div class="s_product_social_hdr">
+                            <a class=""> <i class="icon grey_heart"></i> <span>123</span>
+                            </a>
+                        </div>
+                        <div class="s_product_social_con defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                            <p>John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, </p>
+                        </div>
+                    </div>
+                    <div class="s_product_social_box">
+                        <div class="s_product_social_hdr">
+                            <a class=""> <i class="icon grey_arrow"></i> <span>123</span>
+                            </a>
+                        </div>
+                        <div class="s_product_social_con defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                            <p>John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, </p>
+                        </div>
+                    </div>
+                    <div class="s_product_social_box">
+                        <div class="s_product_social_hdr">
+                            <a class=""> <i class="icon grey_bag"></i> <span>123</span>
+                            </a>
+                        </div>
+                        <div class="s_product_social_con defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                            <p>John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu,John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna, Aliqua Erat, John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section_bottom">
+            <div class="recent_summary clearfix" ng-hide="recentItemsx.length==0">
+                <h2>RECENTLY VIEWED ITEMS</h2>
+
+
+                <div class="nav_carousel">
+                    <div class="carousel mini_thumb_slider" minithumb-slider>
+                        <ul class="stage_nav">
+
+                            <li ng-repeat="arrObj in recentItemsx track by $index">
+                                <div ng-repeat="arrItem in arrObj.timestamp">
+
+
+                                    <div ng-repeat="(wsitekey,item) in arrItem.sites track by $index">
+
+
+                                        <div ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                            <div class="product-image mini">
+                                                <div class="p_image_innner">
+                                                    <img ng-src="{{proMd5.image}}"
+                                                         title="{{proMd5.title}}  by {{item.info.name}}">
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                                       ng-click="set_current_product_common(proMd5,item,prokey,wsitekey)">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="caption"><a ng-click="menuShopApi('',item.info.name)"> {{ proMd5.title | limitTo: 20 }}{{proMd5.title.length > 20 ? '...' : ''}}</a>
+                                            </div>
+                                        </div>
+                                        <div ng-repeat="(prokey,proMd5) in item.failed_to_add_to_cart track by $index">
+                                            <div class="product-image mini">
+
+                                                <div class="p_image_innner">
+
+                                                    <img ng-src="{{proMd5.image}}"
+                                                         title="{{proMd5.title}}  by {{item.info.name}}">
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                                       ng-click="set_current_product_common(proMd5,item,prokey,wsitekey)">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="caption"><a ng-click="menuShopApi('',item.info.name)">{{ proMd5.title | limitTo: 20 }}{{proMd5.title.length > 20 ? '...' : ''}}</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="recent_summary clearfix" ng-hide="similiaritems.length==0">
+                <h2><a href="#saved" class="goTarget">RECOMMENDED / SIMILAR ITEMS </a></h2>
+                <div class="nav_carousel">
+                    <div class="carousel mini_thumb_slider" minithumb-slider>
+                        <ul class="stage_nav">
+                     
+                            <li ng-repeat="item in similiaritems track by $index">
+                                <div class="product-image mini">
+                                    <div class="p_image_innner">
+                                        <img ng-src="{{item.image_url}}" alt="{{item.keyword}}">
+                                        <div class="rateit">
+                                            <div class="rateis">
+                                            </div>
+                                        </div>
+                                        <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                           ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,item)">+</a>
+                                    </div>
+                                </div>
+                                <div class="caption"><a ng-href="#!/SOC/{{item.catalogId }}/{{ item.keyword | slugify}}">  {{ item.keyword | limitTo: 20 }}{{item.keyword.length > 20 ? '...' : ''}}</a></div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="related_cat" ng-show="productpage_popularsearch.length>0">
+            <ul>
+                <li>Popular:</li>
+
+                <li ng-repeat="searchterm in productpage_popularsearch|limitTo:7 track by $index"><a ng-click="searchpopulartag(searchterm,$event)">{{searchterm}}</a></li>
+
+
+
+            </ul>
+        </div>
+
+
+
+
+        <div class="happy_shopping">
+            <a ng-click="menuCategorySearchApi('dashboard')" role="button" alt="Socially Shoppable">HAPPY SHOPPING<i class="icon"></i></a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Start Size Guide Modal -->
+<div class="modal fade" id="size-guide-popup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="popup-title">Size Guide</h3>
+                <button type="button" class="close" id="closeSizeGd"><span aria-hidden="true">X</span></button>
+            </div>
+            <div class="modal-body">
+                <div ng-class='{"bra":"ng-hide","shoe":"","boots":"","pant":"ng-hide","trousers":"ng-hide","coat":"ng-hide","jacket":"ng-hide","blazer":"ng-hide"}[sizeCategory]'>
+                    <h2>Size Guide</h2>
+                    <div class="left">
+
+                        <a id="toppage"></a>
+
+                        <p>Use the shoe size converter charts below to convert your shoe size across any of the various shoe sizing systems used worldwide. Our shoe size conversion charts will help you convert across most sizes worldwide.</p>
+
+                        <div class="info_box">
+
+                            <strong>PRO TIP</strong>: If you are unsure if a particular brand's pair of shoes will fit you properly,
+
+                            check how customers review it in different popular website</a>, after buying it. Reviewers usually complain if the shoes are smaller or bigger than their usual size.
+
+
+                        </div>
+
+
+
+                        <h2>Shoe Size Chart</h2>
+
+                        <div id="topmenulins">
+                            <a href="#women" class="topmenulink">Women's Size Conversions</a> |
+                            <a href="#men" class="topmenulink">Men's Size Conversions</a> |
+                            <a href="#youth" class="topmenulink">Youth's Size Conversions</a> |
+                            <a href="#kids" class="topmenulink">Kids' Size Conversions</a> |
+                            <a href="#infant" class="topmenulink">Infant's Size Conversions</a>
+                        </div>
+
+
+                        <div id="chart-table">
+
+
+                            <a id="women"></a>
+                            <h3> Shoe Size Chart - Women's Sizes</h3>
+                            <table class="global">
+                                <tbody>
+                                <tr>
+                                    <th>US Sizes</th>
+                                    <th>Euro Sizes</th>
+                                    <th>UK Sizes</th>
+                                    <th>Inches</th>
+                                    <th>CM</th>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4</td>
+                                    <td>35</td>
+                                    <td>2</td>
+                                    <td>8.1875"</td>
+                                    <td>20.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4.5</td>
+                                    <td>35</td>
+                                    <td>2.5</td>
+                                    <td>8.375"</td>
+                                    <td>21.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5</td>
+                                    <td>35-36</td>
+                                    <td>3</td>
+                                    <td>8.5"</td>
+                                    <td>21.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5.5</td>
+                                    <td>36</td>
+                                    <td>3.5</td>
+                                    <td>8.75"</td>
+                                    <td>22.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6</td>
+                                    <td>36-37</td>
+                                    <td>4</td>
+                                    <td>8.875"</td>
+                                    <td>22.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6.5</td>
+                                    <td>37</td>
+                                    <td>4.5</td>
+                                    <td>9.0625"</td>
+                                    <td>23</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7</td>
+                                    <td>37-38</td>
+                                    <td>5</td>
+                                    <td>9.25"</td>
+                                    <td>23.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7.5</td>
+                                    <td>38</td>
+                                    <td>5.5</td>
+                                    <td>9.375"</td>
+                                    <td>23.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8</td>
+                                    <td>38-39</td>
+                                    <td>6</td>
+                                    <td>9.5"</td>
+                                    <td>24.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8.5</td>
+                                    <td>39</td>
+                                    <td>6.5</td>
+                                    <td>9.6875"</td>
+                                    <td>24.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9</td>
+                                    <td>39-40</td>
+                                    <td>7</td>
+                                    <td>9.875"</td>
+                                    <td>25.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9.5</td>
+                                    <td>40</td>
+                                    <td>7.5</td>
+                                    <td>10"</td>
+                                    <td>25.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10</td>
+                                    <td>40-41</td>
+                                    <td>8</td>
+                                    <td>10.1875"</td>
+                                    <td>25.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10.5</td>
+                                    <td>41</td>
+                                    <td>8.5</td>
+                                    <td>10.3125"</td>
+                                    <td>26.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11</td>
+                                    <td>41-42</td>
+                                    <td>9</td>
+                                    <td>10.5"</td>
+                                    <td>26.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11.5</td>
+                                    <td>42</td>
+                                    <td>9.5</td>
+                                    <td>10.6875"</td>
+                                    <td>27.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">12</td>
+                                    <td>42-43</td>
+                                    <td>10</td>
+                                    <td>10.875"</td>
+                                    <td>27.6</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+                            <a href="#toppage">TOP</a>
+
+
+
+
+
+
+                            <a id="men"></a>
+                            <h3> Shoe Size Chart - Men's Sizes</h3>
+                            <table class="global">
+                                <tbody>
+                                <tr>
+                                    <th class="sizes">US Sizes</th>
+                                    <th>Euro Sizes</th>
+                                    <th>UK Sizes</th>
+                                    <th>Inches</th>
+                                    <th>CM</th>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6</td>
+                                    <td>39</td>
+                                    <td>5.5</td>
+                                    <td>9.25"</td>
+                                    <td>23.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6.5</td>
+                                    <td>39</td>
+                                    <td>6</td>
+                                    <td>9.5"</td>
+                                    <td>24.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7</td>
+                                    <td>40</td>
+                                    <td>6.5</td>
+                                    <td>9.625"</td>
+                                    <td>24.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7.5</td>
+                                    <td>40-41</td>
+                                    <td>7</td>
+                                    <td>9.75"</td>
+                                    <td>24.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8</td>
+                                    <td>41</td>
+                                    <td>7.5</td>
+                                    <td>9.9375"</td>
+                                    <td>25.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8.5</td>
+                                    <td>41-42</td>
+                                    <td>8</td>
+                                    <td>10.125"</td>
+                                    <td>25.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9</td>
+                                    <td>42</td>
+                                    <td>8.5</td>
+                                    <td>10.25"</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9.5</td>
+                                    <td>42-43</td>
+                                    <td>9</td>
+                                    <td>10.4375"</td>
+                                    <td>26.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10</td>
+                                    <td>43</td>
+                                    <td>9.5</td>
+                                    <td>10.5625"</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10.5</td>
+                                    <td>43-44</td>
+                                    <td>10</td>
+                                    <td>10.75"</td>
+                                    <td>27.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11</td>
+                                    <td>44</td>
+                                    <td>10.5</td>
+                                    <td>10.9375"</td>
+                                    <td>27.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11.5</td>
+                                    <td>44-45</td>
+                                    <td>11</td>
+                                    <td>11.125"</td>
+                                    <td>28.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">12</td>
+                                    <td>45</td>
+                                    <td>11.5</td>
+                                    <td>11.25"</td>
+                                    <td>28.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">13</td>
+                                    <td>46</td>
+                                    <td>12.5</td>
+                                    <td>11.5625"</td>
+                                    <td>29.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">14</td>
+                                    <td>47</td>
+                                    <td>13.5</td>
+                                    <td>11.875"</td>
+                                    <td>30.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">15</td>
+                                    <td>48</td>
+                                    <td>14.5</td>
+                                    <td>12.1875"</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">16</td>
+                                    <td>49</td>
+                                    <td>15.5</td>
+                                    <td>12.5"</td>
+                                    <td>31.8</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <a href="#toppage">TOP</a>
+                            <a id="youth"></a>
+                            <h3>Youth Size Conversions <span>(6 – 10 years)</span></h3>
+                            <table class="global">
+                                <tbody>
+                                <tr>
+                                    <th class="sizes">US Sizes</th>
+                                    <th>Euro Sizes</th>
+                                    <th>UK Sizes</th>
+                                    <th>Inches</th>
+                                    <th>CM</th>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">12.5</td>
+                                    <td>30</td>
+                                    <td>11.5</td>
+                                    <td>7.25"</td>
+                                    <td>18.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">13</td>
+                                    <td>31</td>
+                                    <td>12</td>
+                                    <td>7.5"</td>
+                                    <td>19.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">13.5</td>
+                                    <td>31</td>
+                                    <td>12.5</td>
+                                    <td>7.625"</td>
+                                    <td>19.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">1</td>
+                                    <td>32</td>
+                                    <td>13</td>
+                                    <td>7.75"</td>
+                                    <td>19.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">1.5</td>
+                                    <td>33</td>
+                                    <td>14</td>
+                                    <td>8"</td>
+                                    <td>20.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">2</td>
+                                    <td>33</td>
+                                    <td>1</td>
+                                    <td>8.125"</td>
+                                    <td>20.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">2.5</td>
+                                    <td>34</td>
+                                    <td>1.5</td>
+                                    <td>8.25"</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">3</td>
+                                    <td>34</td>
+                                    <td>2</td>
+                                    <td>8.5"</td>
+                                    <td>21.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">3.5</td>
+                                    <td>35</td>
+                                    <td>2.5</td>
+                                    <td>8.625"</td>
+                                    <td>21.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4</td>
+                                    <td>36</td>
+                                    <td>3</td>
+                                    <td>8.75"</td>
+                                    <td>22.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4.5</td>
+                                    <td>36</td>
+                                    <td>3.5</td>
+                                    <td>9"</td>
+                                    <td>22.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5</td>
+                                    <td>37</td>
+                                    <td>4</td>
+                                    <td>9.125"</td>
+                                    <td>23.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5.5</td>
+                                    <td>37</td>
+                                    <td>4.5</td>
+                                    <td>9.25"</td>
+                                    <td>23.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6</td>
+                                    <td>38</td>
+                                    <td>5</td>
+                                    <td>9.5"</td>
+                                    <td>24.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6.5</td>
+                                    <td>38</td>
+                                    <td>5.5</td>
+                                    <td>9.625"</td>
+                                    <td>24.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7</td>
+                                    <td>39</td>
+                                    <td>6</td>
+                                    <td>9.75"</td>
+                                    <td>24.8</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+                            <a href="#toppage">TOP</a>
+
+
+                            <a id="kids"></a>
+                            <h3>Kids' Size Conversions <span>(1 – 5 years)</span></h3>
+                            <table class="global">
+                                <tbody>
+                                <tr>
+                                    <th class="sizes">US Sizes</th>
+                                    <th>Euro Sizes</th>
+                                    <th>UK Sizes</th>
+                                    <th>Inches</th>
+                                    <th>CM</th>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5.5</td>
+                                    <td>21</td>
+                                    <td>4.5</td>
+                                    <td>5"</td>
+                                    <td>12.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6</td>
+                                    <td>22</td>
+                                    <td>5</td>
+                                    <td>5.125"</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">6.5</td>
+                                    <td>22</td>
+                                    <td>5.5</td>
+                                    <td>5.25"</td>
+                                    <td>13.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7</td>
+                                    <td>23</td>
+                                    <td>6</td>
+                                    <td>5.5"</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">7.5</td>
+                                    <td>23</td>
+                                    <td>6.5</td>
+                                    <td>5.625"</td>
+                                    <td>14.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8</td>
+                                    <td>24</td>
+                                    <td>7</td>
+                                    <td>5.75"</td>
+                                    <td>14.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">8.5</td>
+                                    <td>25</td>
+                                    <td>7.5</td>
+                                    <td>6"</td>
+                                    <td>15.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9</td>
+                                    <td>25</td>
+                                    <td>8</td>
+                                    <td>6.125"</td>
+                                    <td>15.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">9.5</td>
+                                    <td>26</td>
+                                    <td>8.5</td>
+                                    <td>6.25"</td>
+                                    <td>15.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10</td>
+                                    <td>27</td>
+                                    <td>9</td>
+                                    <td>6.5"</td>
+                                    <td>16.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">10.5</td>
+                                    <td>27</td>
+                                    <td>9.5</td>
+                                    <td>6.625"</td>
+                                    <td>16.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11</td>
+                                    <td>28</td>
+                                    <td>10</td>
+                                    <td>6.75"</td>
+                                    <td>17.1</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">11.5</td>
+                                    <td>29</td>
+                                    <td>10.5</td>
+                                    <td>7"</td>
+                                    <td>17.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">12</td>
+                                    <td>30</td>
+                                    <td>11</td>
+                                    <td>7.125"</td>
+                                    <td>18.1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <a href="#toppage">TOP</a>
+
+
+
+
+                            <a id="infant"></a>
+                            <h3> Infant Size Conversions <span>(0 – 12 months)</span></h3>
+                            <table class="global">
+                                <tbody>
+                                <tr>
+                                    <th class="sizes">US Sizes</th>
+                                    <th>Euro Sizes</th>
+                                    <th>UK Sizes</th>
+                                    <th>Inches</th>
+                                    <th>CM</th>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">0.5</td>
+                                    <td>16</td>
+                                    <td>0</td>
+                                    <td>3.25"</td>
+                                    <td>8.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">1</td>
+                                    <td>16</td>
+                                    <td>0.5</td>
+                                    <td>3.5"</td>
+                                    <td>8.9</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">1.5</td>
+                                    <td>17</td>
+                                    <td>1</td>
+                                    <td>3.625"</td>
+                                    <td>9.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">2</td>
+                                    <td>17</td>
+                                    <td>1</td>
+                                    <td>3.75"</td>
+                                    <td>9.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">2.5</td>
+                                    <td>18</td>
+                                    <td>1.5</td>
+                                    <td>4"</td>
+                                    <td>10.2</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">3</td>
+                                    <td>18</td>
+                                    <td>2</td>
+                                    <td>4.125"</td>
+                                    <td>10.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">3.5</td>
+                                    <td>19</td>
+                                    <td>2.5</td>
+                                    <td>4.25"</td>
+                                    <td>10.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4</td>
+                                    <td>19</td>
+                                    <td>3</td>
+                                    <td>4.5"</td>
+                                    <td>11.4</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">4.5</td>
+                                    <td>20</td>
+                                    <td>3.5</td>
+                                    <td>4.625"</td>
+                                    <td>11.7</td>
+                                </tr>
+                                <tr>
+                                    <td class="sizes">5</td>
+                                    <td>20</td>
+                                    <td>4</td>
+                                    <td>4.75"</td>
+                                    <td>12.1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+                            <a href="#toppage">TOP</a>
+                        </div>
+
+
+                        <p>Find <a href="http://www.skibootsizingcharts.com">international ski boot sizing charts</a> and reviews for the best ski boots for 2017 for <a href="http://www.skibootsizingcharts.com/best-mens-ski-boots-2016-2017.php">men</a> and <a href="http://www.skibootsizingcharts.com/best-womens-ski-boots-2016-2017.php">women</a> at <a href="http://www.skibootsizingcharts.com">SkiBootSizingCharts.com</a></p>
+
+                        <p>
+                            Also check our guides on <a href="http://www.skibootsizingcharts.com/ski-size-chart.php">how to find the right ski size</a> and <a href="http://www.skibootsizingcharts.com/ski-pole-size-chart.php">how to choose the right size ski poles</a>.
+                        </p>
+
+
+
+
+                        <p>
+                            Typically this measurement only considers length and not width. Sizing does vary slightly per manufacturer because each vendor uses their own set of lasts when creating the shoes, so these shoe size comparison charts are only estimates.
+                        </p>
+
+                        <div class="info_box">
+                            <h3>Shoe Size Selection Tips</h3>
+                            <ul>
+
+
+                                <li>Always try to find online reviews of the pair you want to buy, from real people who have actually purchased the product. Best places to look for real reviews are <a rel="nofollow" href="http://www.shoesizingcharts.com/link/amazon-shoes-3" onclick="_gaq.push(['_trackEvent', 'amazon', 'Click', 'textlink-3']);">amazon.com</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=shoesize-textlink3-20&amp;l=ur2&amp;o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"><img width="0" height="0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_gaq.push(['_trackEvent', 'amazon', 'Impression', 'textlink-3']);"> and <a target="_blank" href="https://www.youtube.com">YouTube</a>.</li>
+
+
+
+                                <li>Measure your feet in the evening hours because feet expand throughout the day.</li>
+
+                                <li>If you're buying shoes for a first time walker, then be sure to purchase a pair with flexible soles and a small amount of extra growing space. When shoes are too big, blisters are likely to form while a tight fitting shoe will chafe your little one's feet and cause redness.</li>
+
+                                <li>If you're buying shoes for your child, take into account that footwear for children usually lasts for about four to five months. Therefore, create a household budget that includes enough funds to pay for several pairs of shoes.</li>
+
+                                <li>To find the most comfortable footwear for you, consider buying shoes for both the width and the length of your feet. Some people need to purchase shoes that are narrow because they are never comfortable on wide one, or the opposite. You may even need to buy shoes that are especially slim or extra wide.</li>
+
+                                <li>If you start with a known fact, there is a better chance of heading in the right direction.</li>
+
+                                <li>Remember that laced shoes give a little more leeway than slip-on shows. Some adjustments can be made by the thickness of the socks you wear. Those not wearing socks, are probably buying sandals, which do not always fit perfectly.
+                                    Furthermore, keep in mind the shoes that are slightly large can be adjusted through the thickness of the socks, or for ladies wearing flats or pumps, there is a liner that can be purchased to help the shoe fit better.</li>
+
+                                <li>If a lot of walking is going to be involved, go beyond the size that is a little greater. Your foot is going to swell during the day, and the larger shoe will be more comfortable. You do not want it too large. The constant rubbing will cause blisters. Also, the shoes cannot be too large, because they would be very loose in the morning hours.</li>
+
+                                <li>When buying footwear online, take into consideration the type of activities you'll be performing in the shoes. Hiking shoes should be durable and waterproof. They should also cover your ankles to provide protection from snake and bug bites as well as rocks and plants. If you are buying regular workout shoes, then make sure that they come with a cushioning insert to protect your feet and legs from the activity. Dress shoes should feature a thick sole and quality construction.</li>
+                            </ul>
+
+                        </div>
+
+
+
+
+                        <h3>Shopping Online And The Risks Involved When Choosing The Size</h3>
+
+
+                        <p>
+                            Shopping from a catalog or an online store has always carried a minor concern of uncertainty, which can offset by the increased selection and usually lower price.
+                        </p>
+
+                        <p>
+                            With all the charts from all the countries and manufacturers making the shoes at your disposal, your task becomes easier. You need a starting point, like men's loafers size 9, or women's heels, size 5, double A.
+                        </p>
+                        <p>
+                            Then you find the pair you want to buy. With your size information in your hand and the wealth of information from this site, and with a little luck, you should be able to find some way to make the comparison between what is being sold and what you need. This will ultimately allow you to make the right choice.
+                        </p>
+                        <p>
+                            Finally, many people, of both sexes, like to exaggerate about the size shoes they wear. Large men will wear big shoes. Allegedly, women will often claim to wear a shoe smaller than their shoe size, or that is what Hollywood would have us believe. The key is to be truthful.
+                        </p>
+
+                        <p>
+                            Be honest with yourself and always remember, shoes, which are a little loose are usually more comfortable than those that feel a little tight. So when picking a size from among the charts study the variances among the countries and the shoe manufacturers and make your best choice.
+                        </p>
+                    </div>
+                </div>
+                <div ng-class='{"baby":"ng-hide","bra":"ng-hide","shoe":"ng-hide","boots":"ng-hide","pant":"","trousers":"","jeans":"","coat":"ng-hide","jacket":"ng-hide","blazer":"ng-hide","child":"ng-hide","toddler":"ng-hide","kid":"ng-hide"}[sizeCategory]'>
+                    <p>Jeans sizes have two different measurements; one for the waist, and one for the length, generally in inches.
+
+
+
+                    <h3>Men's sizes - pants</h3>
+
+                    <b>Use this table</b> to convert between American and European sizes for men's pants/trousers.</p>
+
+                    <table class="uniq table-bordered table-condensed size_table tbbl hidden-phone horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th>US</th>
+                            <th>30</th>
+                            <th>32</th>
+                            <th>34</th>
+                            <th>36</th>
+                            <th>38</th>
+                            <th>40</th>
+                            <th>42</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>European</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                            <td>54</td>
+                            <td>56</td>
+                            <td>58</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div ng-class='{"baby":"ng-hide","bra":"ng-hide","shoe":"ng-hide","boots":"ng-hide","pant":"ng-hide","trousers":"ng-hide","coat":"","jacket":"","blazer":"","dress":"","child":"ng-hide","toddler":"ng-hide","kid":"ng-hide"}[sizeCategory]'>
+                    <h3>Women’s size guide for US sizes - dresses, jackets, coats</h3>
+                    <table class="table-bordered table-condensed size_table tbbl hidden-phone" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th>US Size</th>
+                            <th>2</th>
+                            <th>4</th>
+                            <th>6</th>
+                            <th>8</th>
+                            <th>10</th>
+                            <th>12</th>
+                            <th>14</th>
+                            <th>16</th>
+                            <th>18</th>
+                            <th>20</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd">
+                            <td>Bust <br>(inches)</td>
+                            <td>32.5</td>
+                            <td>33.5</td>
+                            <td>34.5</td>
+                            <td>35.5</td>
+                            <td>36.5</td>
+                            <td>38</td>
+                            <td>39.5</td>
+                            <td>41</td>
+                            <td>43</td>
+                            <td>45</td>
+                        </tr>
+                        <tr class="even">
+                            <td>Waist <br>(inches)</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29.5</td>
+                            <td>31</td>
+                            <td>32.5</td>
+                            <td>34.5</td>
+                            <td>36.5</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Hip <br>(inches)</td>
+                            <td>34.5</td>
+                            <td>35.5</td>
+                            <td>36.5</td>
+                            <td>37.5</td>
+                            <td>38.5</td>
+                            <td>40</td>
+                            <td>41.5</td>
+                            <td>43</td>
+                            <td>45</td>
+                            <td>47</td>
+                        </tr>
+                        <tr class="even">
+                            <td>Bust <br>(cm)</td>
+                            <td>82.5</td>
+                            <td>85</td>
+                            <td>87.5</td>
+                            <td>90</td>
+                            <td>92.5</td>
+                            <td>96.5</td>
+                            <td>100.5</td>
+                            <td>104</td>
+                            <td>109</td>
+                            <td>114</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Waist <br>(cm)</td>
+                            <td>61</td>
+                            <td>63.5</td>
+                            <td>66</td>
+                            <td>68.5</td>
+                            <td>71</td>
+                            <td>75</td>
+                            <td>79</td>
+                            <td>82.5</td>
+                            <td>87.5</td>
+                            <td>93</td>
+                        </tr>
+                        <tr class="even">
+                            <td>Hip <br>(cm)</td>
+                            <td>87.5</td>
+                            <td>90</td>
+                            <td>93</td>
+                            <td>95</td>
+                            <td>98</td>
+                            <td>101.5</td>
+                            <td>105.5</td>
+                            <td>109</td>
+                            <td>114</td>
+                            <td>119</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p> Please find below international conversion charts for women's sizes, for dresses, jackets, coats, blouses and sweaters.</p>
+                    <p>With these you can convert between American, Italian, English/British, French, German, Japanese and Russian size systems. As you notice, several European countries have their own size system; unfortunately there is no thing as a "European size".</p>
+                    <h3>Women International size conversion chart: Dresses, jackets, coats and blouses </h3>
+                    <p>This table is for converting between American, Italian, British, French, German, Russian and Japanese women's sizes, for dresses, jacket, coats and blouses. Simply find your size in the chart to see the corresponding size for the other international size systems.</p>
+                    <p>The British sizes are also used in Australia and New Zealand. <br>The French sizes are also used in Belgium, Spain and Portugal. <br>The German sizes are also used in
+                        Austria, Netherlands, Switzerland, Sweden, Denmark and Norway.</p>
+                    <table class="table-bordered table-condensed size_table" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th><small>S-M-L</small></th>
+                            <th><small>USA</small></th>
+                            <th><small>UK/AU/NZ</small></th>
+                            <th><small>Italy</small></th>
+                            <th><small>France</small></th>
+                            <th><small>Germany</small></th>
+                            <th><small>Japan</small></th>
+                            <th><small>Russia</small></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd">
+                            <td>S</td>
+                            <td>2</td>
+                            <td>6</td>
+                            <td>38</td>
+                            <td>34</td>
+                            <td>32</td>
+                            <td>7</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="even">
+                            <td>S</td>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>40</td>
+                            <td>36</td>
+                            <td>34</td>
+                            <td>9</td>
+                            <td>42</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>M</td>
+                            <td>6</td>
+                            <td>10</td>
+                            <td>42</td>
+                            <td>38</td>
+                            <td>36</td>
+                            <td>11</td>
+                            <td>44</td>
+                        </tr>
+                        <tr class="even">
+                            <td>M</td>
+                            <td>8</td>
+                            <td>12</td>
+                            <td>44</td>
+                            <td>40</td>
+                            <td>38</td>
+                            <td>13</td>
+                            <td>46</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>L</td>
+                            <td>10</td>
+                            <td>14</td>
+                            <td>46</td>
+                            <td>42</td>
+                            <td>40</td>
+                            <td>15</td>
+                            <td>48</td>
+                        </tr>
+                        <tr class="even">
+                            <td>L</td>
+                            <td>12</td>
+                            <td>16</td>
+                            <td>48</td>
+                            <td>44</td>
+                            <td>42</td>
+                            <td>17</td>
+                            <td>50</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>XL / 1X</td>
+                            <td>14</td>
+                            <td>18</td>
+                            <td>50</td>
+                            <td>46</td>
+                            <td>44</td>
+                            <td>19</td>
+                            <td>52</td>
+                        </tr>
+                        <tr class="even">
+                            <td>1X / 2X</td>
+                            <td>16</td>
+                            <td>20</td>
+                            <td>52</td>
+                            <td>48</td>
+                            <td>46</td>
+                            <td>21</td>
+                            <td>54</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>2X</td>
+                            <td>18</td>
+                            <td>22</td>
+                            <td>54</td>
+                            <td>50</td>
+                            <td>48</td>
+                            <td>23</td>
+                            <td>56</td>
+                        </tr>
+                        <tr class="even">
+                            <td>3X</td>
+                            <td>20</td>
+                            <td>24</td>
+                            <td>56</td>
+                            <td>52</td>
+                            <td>50</td>
+                            <td>25</td>
+                            <td>24</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>3X</td>
+                            <td>22</td>
+                            <td>26</td>
+                            <td>58</td>
+                            <td>54</td>
+                            <td>52</td>
+                            <td>27</td>
+                            <td>26</td>
+                        </tr>
+                        <tr class="even">
+                            <td>4X</td>
+                            <td>24</td>
+                            <td>28</td>
+                            <td>60</td>
+                            <td>56</td>
+                            <td>54</td>
+                            <td>29</td>
+                            <td>28</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h2>Men suit jackets, blazers and coats Size Chart</h2>
+                    Men's US sizes for suit jackets, coats and blazers are based on the chest width and your height. When you measure your chest, you should stick a finger between the measuring tape and your body. The result simply equals your jacket size.
+
+                    Depending on your height, you then have to choose between short (S), regular (R) or long (L).
+                    <h3>US letter sizes - XS to XXXL</h3>
+                    <p><b>Use this size table</b> to find out men's clothing sizes in US Letter sizes (Small/Medium/Large). When you've taken your measuremnts, find the size in the table below that corresponds best with your results.</p>
+                    <table class="table-bordered table-condensed size_table tbbl hidden-phone horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th colspan="8">Men's size standards - US letter sizes</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>US Sizes</td>
+                            <td>XS</td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>L</td>
+                            <td>XL</td>
+                            <td>XXL</td>
+                            <td>XXXL</td>
+                        </tr>
+                        <tr>
+                            <td>Neck (inches)</td>
+                            <td>13-13 1/2</td>
+                            <td>14-14 1/2</td>
+                            <td>15-15 1/2</td>
+                            <td>16-16 1/2</td>
+                            <td>17-17 1/2</td>
+                            <td>18-18 1/2</td>
+                            <td>19-19 1/2</td>
+                        </tr>
+                        <tr>
+                            <td>Chest (inches)</td>
+                            <td>33-34</td>
+                            <td>35-37</td>
+                            <td>38-40</td>
+                            <td>42-44</td>
+                            <td>46-48</td>
+                            <td>50-52</td>
+                            <td>54-56</td>
+                        </tr>
+                        <tr>
+                            <td>Sleeve (inches)</td>
+                            <td>31 1/2-32</td>
+                            <td>32 1/2-33</td>
+                            <td>33 1/2-34</td>
+                            <td>34 1/2-35</td>
+                            <td>35 1/2-36</td>
+                            <td>36-36 1/2</td>
+                            <td>36 1/2-37</td>
+                        </tr>
+                        <tr>
+                            <td>Waist (inches)</td>
+                            <td>27-28</td>
+                            <td>29-31</td>
+                            <td>32-34</td>
+                            <td>36-38</td>
+                            <td>40-42</td>
+                            <td>44-46</td>
+                            <td>50-52</td>
+                        </tr>
+                        <tr>
+                            <td>Neck (cm)</td>
+                            <td>33-34</td>
+                            <td>36-37</td>
+                            <td>38-39</td>
+                            <td>40-42</td>
+                            <td>43-45</td>
+                            <td>46-47</td>
+                            <td>48-49</td>
+                        </tr>
+                        <tr>
+                            <td>Chest (cm)</td>
+                            <td>84-86</td>
+                            <td>89-94</td>
+                            <td>96-102</td>
+                            <td>107-112</td>
+                            <td>116-122</td>
+                            <td>127-132</td>
+                            <td>137-140</td>
+                        </tr>
+                        <tr>
+                            <td>Sleeve (cm)</td>
+                            <td>80-81</td>
+                            <td>82-84</td>
+                            <td>85-86</td>
+                            <td>87-89</td>
+                            <td>90-91</td>
+                            <td>91-93</td>
+                            <td>93-94</td>
+                        </tr>
+                        <tr>
+                            <td>Waist (cm)</td>
+                            <td>68-71</td>
+                            <td>73-79</td>
+                            <td>81-86</td>
+                            <td>91-97</td>
+                            <td>101-107</td>
+                            <td>111-117</td>
+                            <td>127-132</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+                    <table class="uniq table-bordered table-condensed size_table tbbl hidden-phone horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th>US</th>
+                            <th>30</th>
+                            <th>32</th>
+                            <th>34</th>
+                            <th>36</th>
+                            <th>38</th>
+                            <th>40</th>
+                            <th>42</th>
+                            <th>44</th>
+                            <th>46</th>
+                            <th>48</th>
+                            <th>50</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>UK</td>
+                            <td>30</td>
+                            <td>32</td>
+                            <td>34</td>
+                            <td>36</td>
+                            <td>38</td>
+                            <td>40</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>AUSTRALIA</td>
+                            <td>30</td>
+                            <td>32</td>
+                            <td>34</td>
+                            <td>36</td>
+                            <td>38</td>
+                            <td>40</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Europe</td>
+                            <td>40</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                            <td>54</td>
+                            <td>56</td>
+                            <td>58</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Russia</td>
+                            <td>40</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                            <td>54</td>
+                            <td>56</td>
+                            <td>58</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>32</td>
+                            <td>34</td>
+                            <td>36</td>
+                            <td>38</td>
+                            <td>40</td>
+                            <td>42</td>
+                            <td>44</td>
+                            <td>46</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>52</td>
+                        </tr>
+                        <tr>
+                            <td>Korea</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>95</td>
+                            <td>100</td>
+                            <td>105</td>
+                            <td>110</td>
+                            <td>115</td>
+                            <td>120</td>
+                            <td>125</td>
+                            <td>130</td>
+                        </tr>
+                        <tr>
+                            <td>S-M-L</td>
+                            <td>XXS</td>
+                            <td>XS</td>
+                            <td>S</td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>M</td>
+                            <td>L</td>
+                            <td>L</td>
+                            <td>XL</td>
+                            <td>XXL</td>
+                            <td>XXXL</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Men's sizes - dress shirt sizes</h3>
+                    <p><b>Use this table</b> to convert between American, English, European and Japanese sizes for men's dress shirts.</p>
+                    <p><b>American dress shirt</b> sizes has two size numbers. The first is your neck size, and the other is your sleeve length, both in inches. European dress shirts however only have one size number, for the neck size, and standard sleeve length. This chart converts between American and European neck sizes.</p>
+                    <table class="table-bordered table-condensed size_table tbbl horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th class="narrow-heading" colspan="1">System</th>
+                            <th class="wide-heading" colspan="9">Dress shirt sizes, neck size</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>US</td>
+                            <td>14</td>
+                            <td>14.5</td>
+                            <td>15</td>
+                            <td>15.5</td>
+                            <td>16</td>
+                            <td>16.5</td>
+                            <td>17</td>
+                            <td>17.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>England</td>
+                            <td>14</td>
+                            <td>14.5</td>
+                            <td>15</td>
+                            <td>15.5</td>
+                            <td>16</td>
+                            <td>16.5</td>
+                            <td>17</td>
+                            <td>17.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Europe</td>
+                            <td>36</td>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>87</td>
+                            <td>91</td>
+                            <td>97</td>
+                            <td>102</td>
+                            <td>112</td>
+                            <td>117</td>
+                            <td>122</td>
+                            <td>127</td>
+                            <td>132</td>
+                        </tr>
+                        <tr>
+                            <td>S-XL</td>
+                            <td>XS</td>
+                            <td>S</td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>L</td>
+                            <td>L</td>
+                            <td>XL</td>
+                            <td>XL</td>
+                            <td>XXL</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <div ng-class='{"baby":"","bra":"ng-hide","shoe":"ng-hide","boots":"ng-hide","shirt":"ng-hide","pant":"ng-hide","trousers":"ng-hide","jeans":"ng-hide","coat":"ng-hide","jacket":"ng-hide","blazer":"ng-hide",}[sizeCategory]'>
+                    <h2>
+                        Children's sizes, US sizes			</h2>
+                    <p class="intro"><b>With the charts below</b>, you'll find out your child's clothing size, in US sizes. The size is based on either the child's weight and length in pounds and inches, or on specific measurements (chest, waist and hip).&nbsp;</p>
+                    <p><b>US baby sizes</b> are based on the age, but since babies may vary a lot in size, it's better to base the size on the baby's weight and height. Use the chart below to find the correct size for your baby.</p>
+                    <p><b>For toddlers and small kids</b>, use the first size chart which is for both girls and boys. For older children, use the respective chart for girls and boys.</p>
+                    <div class="content_area">
+
+                        <h3>Size guide, baby clothes</h3>
+
+                        <p>Use this chart to find US sizes for babies, based on measurements in inches and weight in pounds.</p>
+                        <table class="table-bordered table-condensed size_table tbbl horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                            <thead>
+                            <tr>
+                                <th>US Size</th>
+                                <th>Weight, pounds</th>
+                                <th>Height, inches</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Newborn</td>
+                                <td>4-8</td>
+                                <td>17-19"</td>
+                            </tr>
+                            <tr>
+                                <td>3 months</td>
+                                <td>9-11</td>
+                                <td>19-23"</td>
+                            </tr>
+                            <tr>
+                                <td>6 months</td>
+                                <td>12-15</td>
+                                <td>24-26"</td>
+                            </tr>
+                            <tr>
+                                <td>9 months</td>
+                                <td>16-18</td>
+                                <td>27-28"</td>
+                            </tr>
+                            <tr>
+                                <td>12 months</td>
+                                <td>19-20</td>
+                                <td>29-30"</td>
+                            </tr>
+                            <tr>
+                                <td>18 months</td>
+                                <td>21-23</td>
+                                <td>31-32"</td>
+                            </tr>
+                            <tr>
+                                <td>24 months</td>
+                                <td>24-28</td>
+                                <td>33-35"</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h3>Size guide, toddlers and kids (girls and boys)</h3>
+                        <p>Use this chart to find US sizes for younger children, both boys and girls, based on measurements in inches and weight in pounds. The T stands for Toddler.</p>
+                        <table class="table-bordered table-condensed size_table tbbl horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                            <thead>
+                            <tr>
+                                <th>US Size</th>
+                                <th>Height, inches</th>
+                                <th>Weight, lbs</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2t</td>
+                                <td>33-35</td>
+                                <td>24-28</td>
+                            </tr>
+                            <tr>
+                                <td>3t</td>
+                                <td>36-38.5</td>
+                                <td>28.5-32</td>
+                            </tr>
+                            <tr>
+                                <td>4t</td>
+                                <td>39-41</td>
+                                <td>33-36</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>42-44</td>
+                                <td>37-41</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>45-47</td>
+                                <td>42-46</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>48-49</td>
+                                <td>47-53</td>
+                            </tr>
+                            <tr>
+                                <td>6x (girls) / 7 (boys)</td>
+                                <td>50-51</td>
+                                <td>54-58</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h3>Size chart, girls; 7-14 years</h3>
+                        <p>Use this chart to find girls' US sizes, based on measurements in inches.</p>
+                        <table class="table-bordered table-condensed size_table tbbl" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                            <thead>
+                            <tr>
+                                <th><small>US Size</small></th>
+                                <th><small>S-XL</small></th>
+                                <th><small>Height, inches</small></th>
+                                <th><small>Bust, inches</small></th>
+                                <th><small>Waist, inches</small></th>
+                                <th><small>Hips, inches</small></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>7</td>
+                                <td>S</td>
+                                <td>51-52</td>
+                                <td>26.5</td>
+                                <td>23</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>S</td>
+                                <td>53-54</td>
+                                <td>27.5</td>
+                                <td>23.5</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>M</td>
+                                <td>55-57</td>
+                                <td>29</td>
+                                <td>24.5</td>
+                                <td>30.5</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>L</td>
+                                <td>58-59</td>
+                                <td>30.5</td>
+                                <td>25.5</td>
+                                <td>32.5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>L</td>
+                                <td>60-62</td>
+                                <td>32</td>
+                                <td>26.5</td>
+                                <td>34.5</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>XL</td>
+                                <td>63-64</td>
+                                <td>33.5</td>
+                                <td>27.5</td>
+                                <td>36.5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h3>Size chart, boys; 8-16 years</h3>
+                        <p>Use this chart to find boys' US sizes, based on measurements in inches.</p>
+                        <table class="table-bordered table-condensed size_table tbbl" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                            <thead>
+                            <tr>
+                                <th><small>US Size</small></th>
+                                <th><small>S-XL</small></th>
+                                <th><small>Height, inches</small></th>
+                                <th><small>Chest, inches</small></th>
+                                <th><small>Waist, inches</small></th>
+                                <th><small>Hips, inches</small></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>8</td>
+                                <td>S</td>
+                                <td>50-53</td>
+                                <td>27</td>
+                                <td>23.5</td>
+                                <td>27.5</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>M</td>
+                                <td>54-57</td>
+                                <td>28.5</td>
+                                <td>25</td>
+                                <td>29.5</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>M</td>
+                                <td>58-60</td>
+                                <td>30</td>
+                                <td>26</td>
+                                <td>31.5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>L</td>
+                                <td>61-63</td>
+                                <td>32</td>
+                                <td>27</td>
+                                <td>33.5</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>L</td>
+                                <td>64-65</td>
+                                <td>33.5</td>
+                                <td>28</td>
+                                <td>35.5</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>XL</td>
+                                <td>65-66</td>
+                                <td>35</td>
+                                <td>29</td>
+                                <td>37.5</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>XL</td>
+                                <td>67-68</td>
+                                <td>37</td>
+                                <td>30</td>
+                                <td>39.5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                    <h2>
+                        Children's international clothing sizes			</h2>
+                    <div class="content_area">
+                        <h3>Size chart, children's clothing</h3>
+                        <p>Use this chart to convert between US, UK, European and Australian kids' sizes.</p>
+                        <p>The American, British and Australian sizes are based on the age of the child, while in Europe the size is based on the child's height in centimeters. Some US sizes include a "T", which stands for toddler.</p>
+
+                        <hr>
+                        <table class="table-bordered table-condensed size_table tbbl horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                            <thead>
+                            <tr>
+                                <th>US</th>
+                                <th>UK</th>
+                                <th>Europe</th>
+                                <th>Australia</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>12-18 m</td>
+                                <td>12 m&nbsp;</td>
+                                <td>80 cm</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>18-24 m</td>
+                                <td>18 m</td>
+                                <td>80-86 cm</td>
+                                <td>18 m</td>
+                            </tr>
+                            <tr>
+                                <td>23/24 m</td>
+                                <td>24 m</td>
+                                <td>86-92 cm</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>2T</td>
+                                <td>2-3</td>
+                                <td>92-98 cm</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4T</td>
+                                <td>3-4</td>
+                                <td>98-104 cm</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>4-5</td>
+                                <td>104-110 cm</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>5-6</td>
+                                <td>110-116 cm</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>6X-7</td>
+                                <td>6-7</td>
+                                <td>116-122 cm</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>7 to 8</td>
+                                <td>7-8</td>
+                                <td>122-128 cm</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9 to 10</td>
+                                <td>8-9</td>
+                                <td>128-134 cm</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>9-10</td>
+                                <td>134-140 cm</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>10-11</td>
+                                <td>140-146 cm</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>11-12</td>
+                                <td>146-152 cm</td>
+                                <td>12</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div ng-class='{"bra":"" ,"shoe":"ng-hide","boots":"ng-hide","pant":"ng-hide","trousers":"ng-hide","coat":"ng-hide","jacket":"ng-hide","blazer":"ng-hide","child":"ng-hide","toddler":"ng-hide","kid":"ng-hide","baby":"ng-hide"}[sizeCategory]'>
+                    <p class="intro"><b>Below you will find</b> a bra size converter, to convert to international sizes. The first chart converts the band size, and the second converts the cup size. You will also find a bra sizing guide, to find your correct US size.</p>
+
+                    a bra size converter, to convert to international sizes. The first chart converts the band size, and the second converts the cup size. You will also find a bra sizing guide, to find your correct US size.
+                    <h3>Convert cup size</h3>
+                    <p><b>Use this table</b> to convert your cup size into international sizes.</p>
+                    <table class="table-bordered table-condensed size_table tbbl" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th><small>USA </small></th>
+                            <th><small>UK</small></th>
+                            <th><small>Europe</small></th>
+                            <th><small>France</small></th>
+                            <th><small>Japan</small></th>
+                            <th><small>Australia</small></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">AA</td>
+                            <td style="height: 15px;">A</td>
+                            <td style="height: 15px;">A</td>
+                            <td style="height: 15px;">A</td>
+                            <td style="height: 15px;">A</td>
+                            <td style="height: 15px;">AA</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">A</td>
+                            <td style="height: 15px;">B</td>
+                            <td style="height: 15px;">B</td>
+                            <td style="height: 15px;">B</td>
+                            <td style="height: 15px;">B</td>
+                            <td style="height: 15px;">A</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">B</td>
+                            <td style="height: 15px;">C</td>
+                            <td style="height: 15px;">C</td>
+                            <td style="height: 15px;">C</td>
+                            <td style="height: 15px;">C</td>
+                            <td style="height: 15px;">B</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">C</td>
+                            <td style="height: 15px;">D</td>
+                            <td style="height: 15px;">D</td>
+                            <td style="height: 15px;">D</td>
+                            <td style="height: 15px;">D</td>
+                            <td style="height: 15px;">C</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">D</td>
+                            <td style="height: 15px;">DD</td>
+                            <td style="height: 15px;">E</td>
+                            <td style="height: 15px;">E</td>
+                            <td style="height: 15px;">E</td>
+                            <td style="height: 15px;">D</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">DD</td>
+                            <td style="height: 15px;">E</td>
+                            <td style="height: 15px;">F</td>
+                            <td style="height: 15px;">F</td>
+                            <td style="height: 15px;">F</td>
+                            <td style="height: 15px;">DD</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">DDD/E</td>
+                            <td style="height: 15px;">F</td>
+                            <td style="height: 15px;">G</td>
+                            <td style="height: 15px;">G</td>
+                            <td style="height: 15px;">G</td>
+                            <td style="height: 15px;">E</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">F</td>
+                            <td style="height: 15px;">G</td>
+                            <td style="height: 15px;">H</td>
+                            <td style="height: 15px;">H</td>
+                            <td style="height: 15px;">H</td>
+                            <td style="height: 15px;">F</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">G</td>
+                            <td style="height: 15px;">H</td>
+                            <td style="height: 15px;">I</td>
+                            <td style="height: 15px;">I</td>
+                            <td style="height: 15px;">I</td>
+                            <td style="height: 15px;">G</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">H</td>
+                            <td style="height: 15px;">I</td>
+                            <td style="height: 15px;">J</td>
+                            <td style="height: 15px;">J</td>
+                            <td style="height: 15px;">J</td>
+                            <td style="height: 15px;">H</td>
+                        </tr>
+                        <tr style="height: 15px;">
+                            <td style="height: 15px;">I</td>
+                            <td style="height: 15px;">J</td>
+                            <td style="height: 15px;">K</td>
+                            <td style="height: 15px;">K</td>
+                            <td style="height: 15px;">K</td>
+                            <td style="height: 15px;">I</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <br>
+                    <h3>CONVERT BAND SIZE</h3>
+                    <p><b>Use this table</b> to convert your bra band size into international sizes.</p>
+                    <p><b>Japaneese bra sizes</b> are the same as European sizes, but the cup size are often written first, e.g. C75 instead of 75C.</p>
+                    <table class="table-bordered table-condensed size_table tbbl" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th><small>USA</small></th>
+                            <th><small>UK</small></th>
+                            <th><small>EUROPE</small></th>
+                            <th><small>SPAIN</small></th>
+                            <th><small>JAPAN</small></th>
+                            <th><small>AUSTRALIA</small></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="height: 15px;">28</td>
+                            <td style="height: 15px;">28</td>
+                            <td style="height: 15px;">60</td>
+                            <td style="height: 15px;">75</td>
+                            <td style="height: 15px;">60</td>
+                            <td style="height: 15px;">6</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">30</td>
+                            <td style="height: 15px;">30</td>
+                            <td style="height: 15px;">65</td>
+                            <td style="height: 15px;">80</td>
+                            <td style="height: 15px;">65</td>
+                            <td style="height: 15px;">8</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">32</td>
+                            <td style="height: 15px;">32</td>
+                            <td style="height: 15px;">70</td>
+                            <td style="height: 15px;">85</td>
+                            <td style="height: 15px;">70</td>
+                            <td style="height: 15px;">10</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">34</td>
+                            <td style="height: 15px;">34</td>
+                            <td style="height: 15px;">75</td>
+                            <td style="height: 15px;">90</td>
+                            <td style="height: 15px;">75</td>
+                            <td style="height: 15px;">12</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">36</td>
+                            <td style="height: 15px;">36</td>
+                            <td style="height: 15px;">80</td>
+                            <td style="height: 15px;">95</td>
+                            <td style="height: 15px;">80</td>
+                            <td style="height: 15px;">14</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">38</td>
+                            <td style="height: 15px;">38</td>
+                            <td style="height: 15px;">85</td>
+                            <td style="height: 15px;">100</td>
+                            <td style="height: 15px;">85</td>
+                            <td style="height: 15px;">16</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">40</td>
+                            <td style="height: 15px;">40</td>
+                            <td style="height: 15px;">90</td>
+                            <td style="height: 15px;">105</td>
+                            <td style="height: 15px;">90</td>
+                            <td style="height: 15px;">18</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">42</td>
+                            <td style="height: 15px;">42</td>
+                            <td style="height: 15px;">95</td>
+                            <td style="height: 15px;">110</td>
+                            <td style="height: 15px;">95</td>
+                            <td style="height: 15px;">20</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">44</td>
+                            <td style="height: 15px;">44</td>
+                            <td style="height: 15px;">100</td>
+                            <td style="height: 15px;">115</td>
+                            <td style="height: 15px;">100</td>
+                            <td style="height: 15px;">22</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">46</td>
+                            <td style="height: 15px;">46</td>
+                            <td style="height: 15px;">105</td>
+                            <td style="height: 15px;">120</td>
+                            <td style="height: 15px;">105</td>
+                            <td style="height: 15px;">24</td>
+                        </tr>
+                        <tr>
+                            <td style="height: 15px;">48</td>
+                            <td style="height: 15px;">48</td>
+                            <td style="height: 15px;">110</td>
+                            <td style="height: 15px;">125</td>
+                            <td style="height: 15px;">110</td>
+                            <td style="height: 15px;">26</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3>FIND THE RIGHT BRA SIZE</h3>
+                    <p><b>To find your</b> band size, measure around your body, just underneath your breasts. The measuring tape should be horizontal, and quite snug. The measurement in inches is your band size. If it's an odd number, e.g. 31, your correct size could be both 30 and 32.</p>
+                    <p><b>To find your cup size,</b> measure around the fullest part of your breasts. Take this bust measurement and subtract the band measurement, e.g. if you measure 31 underneath your breasts, and 34 around, the result is 34-31 = 3. Use the result to find your cup size here:</p>
+                    <p><b>Cup size = Bust size - Band size:</b></p>
+                    <p>0 = AA<br> &lt;1 = A<br> 1 = B<br> 2 = C<br> 3 = D<br> 4 = DD<br> 5 = DDD/E<br> 6 = F<br> 7 = G<br> 8 = H</p>
+
+
+                </div>
+
+                <div ng-class='{"child":"ng-hide","toddler":"ng-hide","kid":"ng-hide","baby":"ng-hide","bra":"ng-hide","shoe":"ng-hide","boots":"ng-hide","pant":"ng-hide","trousers":"ng-hide","coat":"ng-hide","jacket":"ng-hide","blazer":"ng-hide","shirt":""}[sizeCategory]'>
+
+                    <h3>Men's sizes - dress shirt sizes</h3>
+                    <p><b>Use this table</b> to convert between American, English, European and Japanese sizes for men's dress shirts.</p>
+                    <p><b>American dress shirt</b> sizes has two size numbers. The first is your neck size, and the other is your sleeve length, both in inches. European dress shirts however only have one size number, for the neck size, and standard sleeve length. This chart converts between American and European neck sizes.</p>
+                    <table class="table-bordered table-condensed size_table tbbl horizontalheading" style="text-align: center; float: left;" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffddfe">
+                        <thead>
+                        <tr>
+                            <th class="narrow-heading" colspan="1">System</th>
+                            <th class="wide-heading" colspan="9">Dress shirt sizes, neck size</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>US</td>
+                            <td>14</td>
+                            <td>14.5</td>
+                            <td>15</td>
+                            <td>15.5</td>
+                            <td>16</td>
+                            <td>16.5</td>
+                            <td>17</td>
+                            <td>17.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>England</td>
+                            <td>14</td>
+                            <td>14.5</td>
+                            <td>15</td>
+                            <td>15.5</td>
+                            <td>16</td>
+                            <td>16.5</td>
+                            <td>17</td>
+                            <td>17.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Europe</td>
+                            <td>36</td>
+                            <td>37</td>
+                            <td>38</td>
+                            <td>39</td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>87</td>
+                            <td>91</td>
+                            <td>97</td>
+                            <td>102</td>
+                            <td>112</td>
+                            <td>117</td>
+                            <td>122</td>
+                            <td>127</td>
+                            <td>132</td>
+                        </tr>
+                        <tr>
+                            <td>S-XL</td>
+                            <td>XS</td>
+                            <td>S</td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>L</td>
+                            <td>L</td>
+                            <td>XL</td>
+                            <td>XL</td>
+                            <td>XXL</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Please observe that these size charts are only to be seen as a guide to helping you find your right size. Sizes may differ notably between different manufacturers and brands.</p>
+
+
+            </div>
+
+            <div class="clrscr"></div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- End Size Guide Modal -->
+
+
+
+<script src="s_js/collective_js/imagesloaded.pkgd.min.js"></script>
+<script src="s_js/collective_js/masonry.pkgd.min.js"></script>
+<script src="s_js/collective_js/main.js"></script>
+<script type="text/javascript" src="s_js/panzoom.js"></script>
+
+
+
+

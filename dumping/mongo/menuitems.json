@@ -1,0 +1,47 @@
+{ 
+    "_id" : ObjectId("58b95ef8e4a21c4c0e79d46a"), 
+    "userLocalMerchant" : [
+        "Express"
+    ], 
+    "userGiftsMerchant" : [
+        "Gypsy Warrior", 
+        "PetSmart"
+    ], 
+    "userHomeMerchant" : [
+        "Bellacor", 
+        "Kohl's", 
+        "Mikasa"
+    ], 
+    "userKidsMerchant" : [
+        "Chicco", 
+        "Kohl's", 
+        "giggle"
+    ], 
+    "userBeautyMerchant" : [
+        "FOREVER21"
+    ], 
+    "userAccessoriesMerchant" : [
+        "Best Buy"
+    ], 
+    "userShoesMerchant" : [
+        "Aldo", 
+        "DNA Footwear"
+    ], 
+    "userWomenMerchant" : [
+        "Backcountry", 
+        "Kohl's"
+    ], 
+    "usermenMerchantId" : [
+
+    ], 
+    "usermenMerchant" : [
+        "Express", 
+        "Kohl's"
+    ], 
+    "userDashboardMerchant" : [
+        "Aldo", 
+        "Express", 
+        "Kohl's"
+    ], 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,37 @@
+.top-header .top-header-left{
+	width: 25% !important;
+}
+.top-header .top-header-logo{
+	width: 45% !important;
+}
+.top-header .top-header-right{
+	width: 25%;
+}
+.container{
+	max-width: 767px;
+}
+.main-nav .main-nav-inner{
+	max-width: 767px;
+}
+.right-container{
+	display: none !important;
+}
+.dashboard-2.full-width span.left.carousel-control{
+	right: 2px !important;
+  }
+  .dashboard-2.full-width span.right.carousel-control {
+	right: 2px !important;
+  }
+ .top-header .top-header-right .select-box{
+	margin: 0 !important;
+ }
+ 
+ .top-header .top-header-right .shopping-bag{
+	margin: 0 !important;
+ }
+ .top-header .top-header-logo{
+	width: 42% !important;
+ }
+ .top-header .top-header-right{
+	width: 33% !important;
+ }

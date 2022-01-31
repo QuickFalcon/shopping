@@ -1,0 +1,55 @@
+<aside class="right_sidebar" ng-if="$ctrl.isLoggedIn">
+  <div class="users_info">
+    <div class="user_portrait">
+      <a href="#!/account"><img ng-src="{{$ctrl.userInfo.img_location}}" alt="{{$ctrl.userInfo.firstname}}"></a>
+    </div>
+    <div class="user_name"><a href="#!/account" ng-bind="$ctrl.userInfo.displayName"></a></div>
+    <a href="#!/mywall" class="btn grey_grad">
+       <span>{{$ctrl.userInfo.myPostsTotal}}</span> Posts
+    </a>
+  </div>
+  <div class="users_item scrollToPos defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+    <div class="product-info" ng-repeat="activityItem in $ctrl.userInfo.userHistory track by $index">
+      <div class="product-image">
+        <div class="p_image_innner">
+
+          <img ng-src="{{activityItem.image_url}}" alt="{{activityItem.keyword}}">
+
+          <div class="rateit">
+            <div class="rateis r{{activityItem.rateAvg}}">
+            </div>
+          </div>
+          <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',activityItem)" >+</a> <!-- darwin -->
+        </div>
+      </div>
+      <ul class="shared_icons">
+		<li ng-click="openSocialPopup(activityItem, 'like', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='like'}"> <!-- darwin -->
+		<i class="icon grey_heart" ng-class="{activated: (activityItem.likeUser|| $ctrl.userInfo.likedItems.indexOf(activityItem.catalogId) > -1)}"></i>
+		<span ng-bind="activityItem.likeCount || '0'"></span>
+        </li>
+          <li ng-click="openSocialPopup(activityItem, 'mail', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='mail'}"> <!-- darwin -->
+			<i class="icon grey_arrow" ng-class="{activated: (activityItem.mailUser || $ctrl.mailedItems.indexOf(activityItem.catalogId) > -1)}"></i>
+			<span ng-bind="activityItem.shareCount || '0'"></span>
+		  </li>
+            <li ng-click="openSocialPopup(activityItem, 'collective', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='collective'}"> <!-- darwin -->
+			<i class="icon grey_bag" ng-class="{activated: (activityItem.rateUser || $ctrl.reviewedItems.indexOf(activityItem.catalogId) > -1 )}"></i>
+			<span ng-bind="activityItem.ratedByUser || '0'"></span>
+			 </li>
+      </ul>
+
+
+
+
+
+	  <ul class="product-details">
+        <li><a ng-href="#!/SOC/{{activityItem.catalogId}}/{{activityItem.keyword|slugify}}">{{activityItem.keyword}}</a></li>
+        <li><a>{{activityItem.brand}}</a></li>
+        <li><a ng-href="#!/storechosen/{{activityItem.merchant}}">{{activityItem.merchant}}</a></li>
+        <li class="price">  <span ng-class="{lineThrough: activityItem.price_sale>-1&&activityItem.price_sale!=null}" ng-bind="'$' + activityItem.price"></span> <span ng-show="activityItem.price_sale>-1 && activityItem.price_sale!=null" ng-bind="'$'+ activityItem.price_sale" class="sale-price"></span></li>
+
+
+
+	 </ul>
+    </div>
+  </div>
+</aside>

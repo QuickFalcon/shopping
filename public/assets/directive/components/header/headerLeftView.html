@@ -1,0 +1,24 @@
+<div class="header_left">
+    <div class="mb_search dsktp_hide" ng-click="addClassToggle($event,'searchOpen')"></div>
+    <div class="header_social">
+        <a href="https://www.facebook.com/socially.shoppable" target="_blank" class="fb"><i></i><span>like us on facebook</span></a>
+        <a href="https://twitter.com/socshop" target="_blank" class="twitter"><i></i><span>follow us on twitter</span></a>
+        <a href="http://instagram.com/sociallyshoppable" target="_blank" class="instagram"><i></i><span>follow us on instagram</span></a>
+    </div>
+    <div class="header_social mini">
+        <a href="https://twitter.com/socshop" target="_blank" class="twitter"><i></i></a>
+        <a href="https://www.facebook.com/socially.shoppable" target="_blank" class="fb"><i></i></a>
+        <a href="http://instagram.com/sociallyshoppable" target="_blank" class="instagram"><i></i></a>
+    </div>
+    <!--Blogspot Carousel -->
+    <div class="blogspot_slider" blog-slider>
+        <ul class="blogSlides">
+            <li ng-repeat="binfo in bloginfo track by $index">
+                <a class="feature_img" ng-href="{{binfo.permalink}}" target="_blank" style="background-image: url({{ binfo.image_url ? binfo.image_url : ''}})">
+                    <!--<img ng-src="{{binfo.image_url}}"/>-->
+                </a>
+                <div class="blog_title" ng-bind="binfo.post_title"></div>
+            </li>
+        </ul>
+    </div>
+</div>

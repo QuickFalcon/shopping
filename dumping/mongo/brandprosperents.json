@@ -1,0 +1,5000 @@
+{ 
+    "_id" : ObjectId("587e182070fe16164576151d"), 
+    "brand" : "﻿A PEA IN THE POD", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761520"), 
+    "brand" : "ABS BY ALLEN SCHWARTZ", 
+    "numProducts" : NumberInt(50)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761522"), 
+    "brand" : "ADAM BY ADAM LIPPES", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761524"), 
+    "brand" : "ADIDAS BY STELLA MCCARTNEY", 
+    "numProducts" : NumberInt(199)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761525"), 
+    "brand" : "ADRIANNA PAPELL", 
+    "numProducts" : NumberInt(94)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761526"), 
+    "brand" : "ADRIENNE VITTADINI", 
+    "numProducts" : NumberInt(124)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761529"), 
+    "brand" : "AG ADRIANO GOLDSCHMIED", 
+    "numProducts" : NumberInt(136)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152b"), 
+    "brand" : "AGENT PROVOCATEUR", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761534"), 
+    "brand" : "ALBERTA FERRETTI", 
+    "numProducts" : NumberInt(125)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761539"), 
+    "brand" : "ALEXANDER MCQUEEN", 
+    "numProducts" : NumberInt(1155)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153a"), 
+    "brand" : "ALEXANDER WANG", 
+    "numProducts" : NumberInt(798)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153b"), 
+    "brand" : "ALEXANDRE BIRMAN", 
+    "numProducts" : NumberInt(55)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761540"), 
+    "brand" : "ALICE + OLIVIA", 
+    "numProducts" : NumberInt(273)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761544"), 
+    "brand" : "ALVIERO MARTINI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761546"), 
+    "brand" : "AMANDA UPRICHARD", 
+    "numProducts" : NumberInt(60)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761547"), 
+    "brand" : "AMERICAN EAGLE OUTFITTERS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154a"), 
+    "brand" : "ANASTASIA BEVERLY HILLS", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154b"), 
+    "brand" : "ANCIENT GREEK SANDALS", 
+    "numProducts" : NumberInt(74)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154e"), 
+    "brand" : "ANN DEMEULEMEESTER", 
+    "numProducts" : NumberInt(230)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761554"), 
+    "brand" : "ANTONIO BERARDI", 
+    "numProducts" : NumberInt(55)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761555"), 
+    "brand" : "ANTONIO MARRAS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761556"), 
+    "brand" : "ANYA HINDMARCH", 
+    "numProducts" : NumberInt(157)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155e"), 
+    "brand" : "ARMANI COLLEZIONI", 
+    "numProducts" : NumberInt(418)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761567"), 
+    "brand" : "ATM ANTHONY THOMAS MELILLO", 
+    "numProducts" : NumberInt(226)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761568"), 
+    "brand" : "ATOS LOMBARDINI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761569"), 
+    "brand" : "AU JOUR LE JOUR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156a"), 
+    "brand" : "AURELIE BIDERMANN", 
+    "numProducts" : NumberInt(56)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761570"), 
+    "brand" : "BADGLEY MISCHKA", 
+    "numProducts" : NumberInt(279)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761576"), 
+    "brand" : "BANANA REPUBLIC", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761577"), 
+    "brand" : "BAND OF OUTSIDERS", 
+    "numProducts" : NumberInt(12)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157b"), 
+    "brand" : "BARNEYS NEW YORK", 
+    "numProducts" : NumberInt(1692)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761583"), 
+    "brand" : "BENEFIT COSMETICS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761584"), 
+    "brand" : "BETSEY JOHNSON", 
+    "numProducts" : NumberInt(178)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158e"), 
+    "brand" : "BLOOMINGDALE'S", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761598"), 
+    "brand" : "BOTTEGA VENETA", 
+    "numProducts" : NumberInt(429)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159c"), 
+    "brand" : "BRIGITTE BAILEY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159e"), 
+    "brand" : "BROOKS BROTHERS", 
+    "numProducts" : NumberInt(21)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159f"), 
+    "brand" : "BRUNELLO CUCINELLI", 
+    "numProducts" : NumberInt(650)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a7"), 
+    "brand" : "BY MALENE BIRGER", 
+    "numProducts" : NumberInt(60)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ab"), 
+    "brand" : "C&C CALIFORNIA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ae"), 
+    "brand" : "CALVIN KLEIN COLLECTION", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615af"), 
+    "brand" : "CALVIN KLEIN JEANS", 
+    "numProducts" : NumberInt(271)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b0"), 
+    "brand" : "CALVIN KLEIN UNDERWEAR", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b4"), 
+    "brand" : "CARLOS BY CARLOS SANTANA", 
+    "numProducts" : NumberInt(210)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b5"), 
+    "brand" : "CARMEN MARC VALVO", 
+    "numProducts" : NumberInt(130)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b7"), 
+    "brand" : "CAROLINA HERRERA", 
+    "numProducts" : NumberInt(178)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c4"), 
+    "brand" : "CHARLES BY CHARLES DAVID", 
+    "numProducts" : NumberInt(265)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c5"), 
+    "brand" : "CHARLOTTE OLYMPIA", 
+    "numProducts" : NumberInt(198)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c6"), 
+    "brand" : "CHARLOTTE RUSSE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c7"), 
+    "brand" : "CHARLOTTE TILBURY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c8"), 
+    "brand" : "CHARMING CHARLIE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615cc"), 
+    "brand" : "CHIARA FERRAGNI", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ce"), 
+    "brand" : "CHINESE LAUNDRY", 
+    "numProducts" : NumberInt(144)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d1"), 
+    "brand" : "CHRISTIAN DIOR", 
+    "numProducts" : NumberInt(197)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d2"), 
+    "brand" : "CHRISTIAN LOUBOUTIN", 
+    "numProducts" : NumberInt(490)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d3"), 
+    "brand" : "CHRISTIN MICHAELS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d4"), 
+    "brand" : "CHRISTOPHER KANE", 
+    "numProducts" : NumberInt(232)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d6"), 
+    "brand" : "CITIZENS OF HUMANITY", 
+    "numProducts" : NumberInt(154)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615da"), 
+    "brand" : "CLASS ROBERTO CAVALLI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e1"), 
+    "brand" : "CLÉ DE PEAU BEAUTÉ", 
+    "numProducts" : NumberInt(154)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e2"), 
+    "brand" : "CNC COSTUME NATIONAL", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e7"), 
+    "brand" : "COMME DES GARCONS", 
+    "numProducts" : NumberInt(30)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ed"), 
+    "brand" : "CREATURES OF COMFORT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f0"), 
+    "brand" : "CROFT & BARROW", 
+    "numProducts" : NumberInt(5541)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f2"), 
+    "brand" : "CURRENT/ELLIOTT", 
+    "numProducts" : NumberInt(316)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f3"), 
+    "brand" : "CUSHNIE ET OCHS", 
+    "numProducts" : NumberInt(61)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f5"), 
+    "brand" : "CYNTHIA ROWLEY", 
+    "numProducts" : NumberInt(64)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f6"), 
+    "brand" : "CÉDRIC CHARLIER", 
+    "numProducts" : NumberInt(9)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f9"), 
+    "brand" : "DANIELE ALESSANDRINI", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761601"), 
+    "brand" : "DEBORAH LIPPMANN", 
+    "numProducts" : NumberInt(59)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761603"), 
+    "brand" : "DEREK LAM 10 CROSBY", 
+    "numProducts" : NumberInt(159)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761606"), 
+    "brand" : "DIANE VON FURSTENBERG", 
+    "numProducts" : NumberInt(751)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160d"), 
+    "brand" : "DOLCE & GABBANA", 
+    "numProducts" : NumberInt(1599)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160f"), 
+    "brand" : "DONALD J PLINER", 
+    "numProducts" : NumberInt(113)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761613"), 
+    "brand" : "DOONEY & BOURKE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761614"), 
+    "brand" : "DOROTHY PERKINS", 
+    "numProducts" : NumberInt(5595)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761618"), 
+    "brand" : "DRIES VAN NOTEN", 
+    "numProducts" : NumberInt(276)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761621"), 
+    "brand" : "EASY STREET SHOES", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162e"), 
+    "brand" : "ELISABETTA FRANCHI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761630"), 
+    "brand" : "ELIZABETH AND JAMES", 
+    "numProducts" : NumberInt(405)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761631"), 
+    "brand" : "ELIZABETH ARDEN", 
+    "numProducts" : NumberInt(133)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761637"), 
+    "brand" : "EMPORIO ARMANI", 
+    "numProducts" : NumberInt(444)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163d"), 
+    "brand" : "ERMANNO SCERVINO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761641"), 
+    "brand" : "ETOILE ISABEL MARANT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761644"), 
+    "brand" : "EUROPEAN CULTURE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761647"), 
+    "brand" : "FABIANA FILIPPI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761649"), 
+    "brand" : "FAITH CONNEXION", 
+    "numProducts" : NumberInt(97)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164d"), 
+    "brand" : "FASHION TO FIGURE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164e"), 
+    "brand" : "FAUSTO PUGLISI", 
+    "numProducts" : NumberInt(6)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761653"), 
+    "brand" : "FINDERS KEEPERS", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761654"), 
+    "brand" : "FIRST PEOPLE FIRST", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761658"), 
+    "brand" : "FOLEY + CORINNA", 
+    "numProducts" : NumberInt(87)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761659"), 
+    "brand" : "FOR LOVE & LEMONS", 
+    "numProducts" : NumberInt(26)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165f"), 
+    "brand" : "FRANKIE MORELLO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761661"), 
+    "brand" : "FREIDA ROTHMAN", 
+    "numProducts" : NumberInt(336)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761662"), 
+    "brand" : "FRENCH CONNECTION", 
+    "numProducts" : NumberInt(1278)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166e"), 
+    "brand" : "GIAMBATTISTA VALLI", 
+    "numProducts" : NumberInt(111)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761670"), 
+    "brand" : "GIANLUCA CAPANNOLO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761671"), 
+    "brand" : "GIANVITO ROSSI", 
+    "numProducts" : NumberInt(378)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761672"), 
+    "brand" : "GIORGIO ARMANI", 
+    "numProducts" : NumberInt(565)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761673"), 
+    "brand" : "GIUSEPPE ZANOTTI", 
+    "numProducts" : NumberInt(414)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761674"), 
+    "brand" : "GIUSEPPE ZANOTTI DESIGN", 
+    "numProducts" : NumberInt(130)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761679"), 
+    "brand" : "GOLDEN GOOSE DELUXE BRAND", 
+    "numProducts" : NumberInt(80)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761682"), 
+    "brand" : "HAIDER ACKERMANN", 
+    "numProducts" : NumberInt(72)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168c"), 
+    "brand" : "HEIDI KLUM INTIMATES", 
+    "numProducts" : NumberInt(136)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168f"), 
+    "brand" : "HENRY COTTON'S", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761696"), 
+    "brand" : "HOUSE OF HARLOW", 
+    "numProducts" : NumberInt(54)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169d"), 
+    "brand" : "I'M ISOLA MARRAS", 
+    "numProducts" : NumberInt(25)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a0"), 
+    "brand" : "INC INTERNATIONAL CONCEPTS", 
+    "numProducts" : NumberInt(217)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a2"), 
+    "brand" : "INSIGNIA COLLECTION", 
+    "numProducts" : NumberInt(458)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b8"), 
+    "brand" : "JEAN PAUL GAULTIER", 
+    "numProducts" : NumberInt(86)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ba"), 
+    "brand" : "JEFFREY CAMPBELL", 
+    "numProducts" : NumberInt(176)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616bc"), 
+    "brand" : "JENNIFER MEYER", 
+    "numProducts" : NumberInt(140)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616bd"), 
+    "brand" : "JESSICA HOWARD", 
+    "numProducts" : NumberInt(72)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616be"), 
+    "brand" : "JESSICA SIMPSON", 
+    "numProducts" : NumberInt(727)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c1"), 
+    "brand" : "JIL SANDER NAVY", 
+    "numProducts" : NumberInt(78)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c4"), 
+    "brand" : "JLO BY JENNIFER LOPEZ", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ce"), 
+    "brand" : "JOHNSTON & MURPHY", 
+    "numProducts" : NumberInt(272)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d0"), 
+    "brand" : "JONATHAN SIMKHAI", 
+    "numProducts" : NumberInt(91)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d2"), 
+    "brand" : "JOSHUA SANDERS", 
+    "numProducts" : NumberInt(111)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d4"), 
+    "brand" : "JOURNEE COLLECTION", 
+    "numProducts" : NumberInt(1254)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616db"), 
+    "brand" : "JULES SMITH DESIGNS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616dc"), 
+    "brand" : "JUNK FOOD CLOTHING", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e2"), 
+    "brand" : "KARL LAGERFELD", 
+    "numProducts" : NumberInt(200)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e8"), 
+    "brand" : "KENDALL + KYLIE", 
+    "numProducts" : NumberInt(125)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616eb"), 
+    "brand" : "KENNETH COLE NEW YORK", 
+    "numProducts" : NumberInt(121)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ec"), 
+    "brand" : "KENNETH COLE REACTION", 
+    "numProducts" : NumberInt(525)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ed"), 
+    "brand" : "KENNETH JAY LANE", 
+    "numProducts" : NumberInt(316)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f5"), 
+    "brand" : "KUT FROM THE KLOTH", 
+    "numProducts" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f7"), 
+    "brand" : "L'AGENT BY AGENT PROVOCATEUR", 
+    "numProducts" : NumberInt(208)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761702"), 
+    "brand" : "LAFAYETTE 148 NEW YORK", 
+    "numProducts" : NumberInt(1236)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761709"), 
+    "brand" : "LAUNDRY BY SHELLI SEGAL", 
+    "numProducts" : NumberInt(218)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170c"), 
+    "brand" : "LAUREN RALPH LAUREN", 
+    "numProducts" : NumberInt(186)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761715"), 
+    "brand" : "LIEBESKIND BERLIN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761717"), 
+    "brand" : "LILLY PULITZER", 
+    "numProducts" : NumberInt(169)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761718"), 
+    "brand" : "LIPSTICK QUEEN", 
+    "numProducts" : NumberInt(193)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761719"), 
+    "brand" : "LISA MARIE FERNANDEZ", 
+    "numProducts" : NumberInt(50)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171b"), 
+    "brand" : "LITTLE MISTRESS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761721"), 
+    "brand" : "LOEFFLER RANDALL", 
+    "numProducts" : NumberInt(195)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172d"), 
+    "brand" : "LOVERS + FRIENDS", 
+    "numProducts" : NumberInt(19)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761734"), 
+    "brand" : "M.GRIFONI DENIM", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173d"), 
+    "brand" : "MAISON MARGIELA", 
+    "numProducts" : NumberInt(1422)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761748"), 
+    "brand" : "MANOLO BLAHNIK", 
+    "numProducts" : NumberInt(281)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761749"), 
+    "brand" : "MANSUR GAVRIEL", 
+    "numProducts" : NumberInt(93)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174b"), 
+    "brand" : "MARC BY MARC JACOBS", 
+    "numProducts" : NumberInt(276)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761750"), 
+    "brand" : "MARKS AND SPENCER", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761755"), 
+    "brand" : "MARY KATRANTZOU", 
+    "numProducts" : NumberInt(153)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761759"), 
+    "brand" : "MATTHEW WILLIAMSON", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761760"), 
+    "brand" : "MCQ BY ALEXANDER MCQUEEN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761762"), 
+    "brand" : "MELISSA JOY MANNING", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761763"), 
+    "brand" : "MELISSA MCCARTHY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761764"), 
+    "brand" : "MELISSA ODABASH", 
+    "numProducts" : NumberInt(155)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761769"), 
+    "brand" : "MICHAEL ANTONIO", 
+    "numProducts" : NumberInt(91)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176b"), 
+    "brand" : "MICHAEL MICHAEL KORS", 
+    "numProducts" : NumberInt(422)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761775"), 
+    "brand" : "MISS SELFRIDGE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177a"), 
+    "brand" : "MM6 MAISON MARGIELA", 
+    "numProducts" : NumberInt(28)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177e"), 
+    "brand" : "MONIQUE LHUILLIER", 
+    "numProducts" : NumberInt(53)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761784"), 
+    "brand" : "MOSCHINO CHEAP & CHIC", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178e"), 
+    "brand" : "N.V. PERRICONE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761790"), 
+    "brand" : "NANCY GONZALEZ", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761791"), 
+    "brand" : "NANETTE LEPORE", 
+    "numProducts" : NumberInt(191)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761793"), 
+    "brand" : "NARCISO RODRIGUEZ", 
+    "numProducts" : NumberInt(118)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761796"), 
+    "brand" : "NATASHA ACCESSORIES", 
+    "numProducts" : NumberInt(62)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a0"), 
+    "brand" : "NEW YORK & CO.", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a1"), 
+    "brand" : "NEW YORK INDUSTRIE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a4"), 
+    "brand" : "NICHOLAS KIRKWOOD", 
+    "numProducts" : NumberInt(115)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617bd"), 
+    "brand" : "OLIVER PEOPLES", 
+    "numProducts" : NumberInt(180)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617bf"), 
+    "brand" : "ONE KINGS LANE VINTAGE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c4"), 
+    "brand" : "OPENING CEREMONY", 
+    "numProducts" : NumberInt(288)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c9"), 
+    "brand" : "OSCAR DE LA RENTA", 
+    "numProducts" : NumberInt(429)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617cd"), 
+    "brand" : "PALOMA BARCELÓ", 
+    "numProducts" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617da"), 
+    "brand" : "PETER THOMAS ROTH", 
+    "numProducts" : NumberInt(80)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617dd"), 
+    "brand" : "PHILIPPE MODEL", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617df"), 
+    "brand" : "PHILOSOPHY DI ALBERTA FERRETTI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e0"), 
+    "brand" : "PHYSICIANS FORMULA", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e2"), 
+    "brand" : "PIAZZA SEMPIONE", 
+    "numProducts" : NumberInt(163)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e4"), 
+    "brand" : "PIERRE BALMAIN", 
+    "numProducts" : NumberInt(242)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617eb"), 
+    "brand" : "PLEIN SUD JEANS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ec"), 
+    "brand" : "POLO RALPH LAUREN", 
+    "numProducts" : NumberInt(1050)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f1"), 
+    "brand" : "PROENZA SCHOULER", 
+    "numProducts" : NumberInt(614)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761801"), 
+    "brand" : "RAQUEL ALLEGRA", 
+    "numProducts" : NumberInt(64)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761804"), 
+    "brand" : "REBECCA MINKOFF", 
+    "numProducts" : NumberInt(3709)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761805"), 
+    "brand" : "REBECCA TAYLOR", 
+    "numProducts" : NumberInt(339)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761815"), 
+    "brand" : "RICK OWENS LILIES", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181a"), 
+    "brand" : "ROBERT CLERGERIE", 
+    "numProducts" : NumberInt(100)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181b"), 
+    "brand" : "ROBERT LEE MORRIS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181c"), 
+    "brand" : "ROBERT RODRIGUEZ", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181d"), 
+    "brand" : "ROBERTO CAVALLI", 
+    "numProducts" : NumberInt(974)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181f"), 
+    "brand" : "ROBERTO COLLINA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761820"), 
+    "brand" : "ROBERTO DEL CARLO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761831"), 
+    "brand" : "SAKS FIFTH AVENUE", 
+    "numProducts" : NumberInt(2067)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761834"), 
+    "brand" : "SALVATORE FERRAGAMO", 
+    "numProducts" : NumberInt(976)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761836"), 
+    "brand" : "SAN DIEGO HAT COMPANY", 
+    "numProducts" : NumberInt(218)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184f"), 
+    "brand" : "SHOW ME YOUR MUMU", 
+    "numProducts" : NumberInt(20)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185e"), 
+    "brand" : "SOMA INTIMATES", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761860"), 
+    "brand" : "SOPHIA WEBSTER", 
+    "numProducts" : NumberInt(79)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761863"), 
+    "brand" : "SPACE STYLE CONCEPT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761867"), 
+    "brand" : "SPIRITUAL GANGSTER", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186d"), 
+    "brand" : "STELLA MCCARTNEY", 
+    "numProducts" : NumberInt(1187)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186e"), 
+    "brand" : "STEPHANIE KANTIS", 
+    "numProducts" : NumberInt(109)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186f"), 
+    "brand" : "STEPHEN WEBSTER", 
+    "numProducts" : NumberInt(70)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761872"), 
+    "brand" : "STUART WEITZMAN", 
+    "numProducts" : NumberInt(532)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761873"), 
+    "brand" : "STUHRLING ORIGINAL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187f"), 
+    "brand" : "TABITHA SIMMONS", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761889"), 
+    "brand" : "TEMPERLEY LONDON", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188f"), 
+    "brand" : "THE JETSET DIARIES", 
+    "numProducts" : NumberInt(43)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761892"), 
+    "brand" : "THE NORTH FACE", 
+    "numProducts" : NumberInt(9444)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761896"), 
+    "brand" : "THEYSKENS' THEORY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761897"), 
+    "brand" : "THIERRY MUGLER", 
+    "numProducts" : NumberInt(120)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a5"), 
+    "brand" : "TOMMY HILFIGER", 
+    "numProducts" : NumberInt(1071)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618aa"), 
+    "brand" : "TORN BY RONNY KOBO", 
+    "numProducts" : NumberInt(33)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ba"), 
+    "brand" : "U.S. POLO ASSN.", 
+    "numProducts" : NumberInt(1058)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c3"), 
+    "brand" : "UNIQUE VINTAGE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c6"), 
+    "brand" : "VALENTINO GARAVANI", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c7"), 
+    "brand" : "VAN CLEEF & ARPELS", 
+    "numProducts" : NumberInt(32)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ca"), 
+    "brand" : "VANESSA MOONEY", 
+    "numProducts" : NumberInt(32)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ce"), 
+    "brand" : "VDP COLLECTION", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d0"), 
+    "brand" : "VELVET BY GRAHAM & SPENCER", 
+    "numProducts" : NumberInt(18)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d4"), 
+    "brand" : "VERONICA BEARD", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618da"), 
+    "brand" : "VICTORIA BECKHAM", 
+    "numProducts" : NumberInt(130)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618db"), 
+    "brand" : "VICTORIA'S SECRET", 
+    "numProducts" : NumberInt(106)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e0"), 
+    "brand" : "VIOLETA BY MANGO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e4"), 
+    "brand" : "VIVIENNE WESTWOOD", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ea"), 
+    "brand" : "WALKING CRADLES", 
+    "numProducts" : NumberInt(122)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ec"), 
+    "brand" : "WHIMSICAL WATCHES", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ee"), 
+    "brand" : "WHITE HOUSE BLACK MARKET", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ef"), 
+    "brand" : "WILDFOX COUTURE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f6"), 
+    "brand" : "YOHJI YAMAMOTO", 
+    "numProducts" : NumberInt(12)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f7"), 
+    "brand" : "YOUNG FABULOUS & BROKE", 
+    "numProducts" : NumberInt(42)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f8"), 
+    "brand" : "YUMMIE BY HEATHER THOMSON", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618fa"), 
+    "brand" : "ZADIG & VOLTAIRE", 
+    "numProducts" : NumberInt(125)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618fc"), 
+    "brand" : "ZERO MARIA CORNEJO", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761902"), 
+    "brand" : "24/7 COMFORT APPAREL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761903"), 
+    "brand" : "3.1 PHILLIP LIM", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761904"), 
+    "brand" : "7 FOR ALL MANKIND", 
+    "numProducts" : NumberInt(473)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576151e"), 
+    "brand" : "A.L.C.", 
+    "numProducts" : NumberInt(660)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576151f"), 
+    "brand" : "A.P.C.", 
+    "numProducts" : NumberInt(197)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761521"), 
+    "brand" : "ACNE STUDIOS", 
+    "numProducts" : NumberInt(930)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761523"), 
+    "brand" : "ADIDAS", 
+    "numProducts" : NumberInt(3883)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761527"), 
+    "brand" : "AERIE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761528"), 
+    "brand" : "AEROSOLES", 
+    "numProducts" : NumberInt(634)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152a"), 
+    "brand" : "AG JEANS", 
+    "numProducts" : NumberInt(13)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152c"), 
+    "brand" : "AGLINI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152d"), 
+    "brand" : "AGNONA", 
+    "numProducts" : NumberInt(162)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152e"), 
+    "brand" : "AHAVA", 
+    "numProducts" : NumberInt(290)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576152f"), 
+    "brand" : "AIDAN MATTOX", 
+    "numProducts" : NumberInt(234)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761530"), 
+    "brand" : "AKRIBOS XXIV", 
+    "numProducts" : NumberInt(145)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761531"), 
+    "brand" : "AKRIS", 
+    "numProducts" : NumberInt(260)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761532"), 
+    "brand" : "AKRIS PUNTO", 
+    "numProducts" : NumberInt(384)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761533"), 
+    "brand" : "ALAIA", 
+    "numProducts" : NumberInt(12)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761535"), 
+    "brand" : "ALBERTO BIANI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761536"), 
+    "brand" : "ALDO", 
+    "numProducts" : NumberInt(3152)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761537"), 
+    "brand" : "ALEX AND ANI", 
+    "numProducts" : NumberInt(1281)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761538"), 
+    "brand" : "ALEX EVENINGS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153c"), 
+    "brand" : "ALEXIS", 
+    "numProducts" : NumberInt(77)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153d"), 
+    "brand" : "ALEXIS BITTAR", 
+    "numProducts" : NumberInt(1405)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153e"), 
+    "brand" : "ALFANI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576153f"), 
+    "brand" : "ALFRED DUNNER", 
+    "numProducts" : NumberInt(396)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761541"), 
+    "brand" : "ALLSAINTS", 
+    "numProducts" : NumberInt(9)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761542"), 
+    "brand" : "ALTERNATIVE", 
+    "numProducts" : NumberInt(19)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761543"), 
+    "brand" : "ALTUZARRA", 
+    "numProducts" : NumberInt(185)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761545"), 
+    "brand" : "ALYSI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761548"), 
+    "brand" : "AMERICAN RAG", 
+    "numProducts" : NumberInt(92)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761549"), 
+    "brand" : "AMUSE SOCIETY", 
+    "numProducts" : NumberInt(316)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154c"), 
+    "brand" : "ANDREW MARC", 
+    "numProducts" : NumberInt(131)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154d"), 
+    "brand" : "ANIYE BY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576154f"), 
+    "brand" : "ANN TAYLOR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761550"), 
+    "brand" : "ANNA SUI", 
+    "numProducts" : NumberInt(81)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761551"), 
+    "brand" : "ANNARITA N.", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761552"), 
+    "brand" : "ANNE KLEIN", 
+    "numProducts" : NumberInt(155)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761553"), 
+    "brand" : "ANTHROPOLOGIE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761557"), 
+    "brand" : "APT. 9", 
+    "numProducts" : NumberInt(4375)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761558"), 
+    "brand" : "AQUA", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761559"), 
+    "brand" : "AQUATALIA", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155a"), 
+    "brand" : "AQUAZZURA", 
+    "numProducts" : NumberInt(238)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155b"), 
+    "brand" : "ARGENTOVIVO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155c"), 
+    "brand" : "ARIAT", 
+    "numProducts" : NumberInt(666)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155d"), 
+    "brand" : "ARIZONA", 
+    "numProducts" : NumberInt(1570)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576155f"), 
+    "brand" : "ARMANI JEANS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761560"), 
+    "brand" : "ARMENTA", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761561"), 
+    "brand" : "ASH", 
+    "numProducts" : NumberInt(256)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761562"), 
+    "brand" : "ASICS", 
+    "numProducts" : NumberInt(2319)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761563"), 
+    "brand" : "ASOS", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761564"), 
+    "brand" : "ASPESI", 
+    "numProducts" : NumberInt(23)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761565"), 
+    "brand" : "ATHENA", 
+    "numProducts" : NumberInt(272)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761566"), 
+    "brand" : "ATHLETA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156b"), 
+    "brand" : "AVENUE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156c"), 
+    "brand" : "AVON", 
+    "numProducts" : NumberInt(1683)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156d"), 
+    "brand" : "AX PARIS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156e"), 
+    "brand" : "AZALEA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576156f"), 
+    "brand" : "B.TEMPT'D", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761571"), 
+    "brand" : "BAILEY 44", 
+    "numProducts" : NumberInt(162)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761572"), 
+    "brand" : "BALENCIAGA", 
+    "numProducts" : NumberInt(539)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761573"), 
+    "brand" : "BALI", 
+    "numProducts" : NumberInt(708)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761574"), 
+    "brand" : "BALLY", 
+    "numProducts" : NumberInt(166)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761575"), 
+    "brand" : "BALMAIN", 
+    "numProducts" : NumberInt(372)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761578"), 
+    "brand" : "BANDOLINO", 
+    "numProducts" : NumberInt(414)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761579"), 
+    "brand" : "BARBARA BUI", 
+    "numProducts" : NumberInt(42)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157a"), 
+    "brand" : "BAREMINERALS", 
+    "numProducts" : NumberInt(56)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157c"), 
+    "brand" : "BAUBLEBAR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157d"), 
+    "brand" : "BB DAKOTA", 
+    "numProducts" : NumberInt(36)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157e"), 
+    "brand" : "BCBGENERATION", 
+    "numProducts" : NumberInt(594)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576157f"), 
+    "brand" : "BCBGMAXAZRIA", 
+    "numProducts" : NumberInt(512)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761580"), 
+    "brand" : "BEBE", 
+    "numProducts" : NumberInt(1328)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761581"), 
+    "brand" : "BELLA VITA", 
+    "numProducts" : NumberInt(204)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761582"), 
+    "brand" : "BELSTAFF", 
+    "numProducts" : NumberInt(179)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761585"), 
+    "brand" : "BETTY BLUE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761586"), 
+    "brand" : "BEYOND YOGA", 
+    "numProducts" : NumberInt(61)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761587"), 
+    "brand" : "BHLDN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761588"), 
+    "brand" : "BILLABONG", 
+    "numProducts" : NumberInt(77)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761589"), 
+    "brand" : "BIRKENSTOCK", 
+    "numProducts" : NumberInt(480)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158a"), 
+    "brand" : "BLACK HALO", 
+    "numProducts" : NumberInt(71)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158b"), 
+    "brand" : "BLANK NYC", 
+    "numProducts" : NumberInt(119)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158c"), 
+    "brand" : "BLAUER", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158d"), 
+    "brand" : "BLISS", 
+    "numProducts" : NumberInt(395)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576158f"), 
+    "brand" : "BLUE LIFE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761590"), 
+    "brand" : "BLUGIRL", 
+    "numProducts" : NumberInt(23)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761591"), 
+    "brand" : "BLUMARINE", 
+    "numProducts" : NumberInt(23)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761592"), 
+    "brand" : "BOBBI BROWN", 
+    "numProducts" : NumberInt(657)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761593"), 
+    "brand" : "BODEN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761594"), 
+    "brand" : "BODY GLOVE", 
+    "numProducts" : NumberInt(79)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761595"), 
+    "brand" : "BOGS", 
+    "numProducts" : NumberInt(520)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761596"), 
+    "brand" : "BOOHOO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761597"), 
+    "brand" : "BOTKIER", 
+    "numProducts" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761599"), 
+    "brand" : "BRAHMIN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159a"), 
+    "brand" : "BRIAN ATWOOD", 
+    "numProducts" : NumberInt(21)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159b"), 
+    "brand" : "BRIAN DALES", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576159d"), 
+    "brand" : "BROOKS", 
+    "numProducts" : NumberInt(421)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a0"), 
+    "brand" : "BULGARI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a1"), 
+    "brand" : "BULOVA", 
+    "numProducts" : NumberInt(514)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a2"), 
+    "brand" : "BURBERRY", 
+    "numProducts" : NumberInt(1873)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a3"), 
+    "brand" : "BURGI", 
+    "numProducts" : NumberInt(85)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a4"), 
+    "brand" : "BURT'S BEES", 
+    "numProducts" : NumberInt(353)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a5"), 
+    "brand" : "BUTTER LONDON", 
+    "numProducts" : NumberInt(143)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a6"), 
+    "brand" : "BVLGARI", 
+    "numProducts" : NumberInt(102)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a8"), 
+    "brand" : "BY TERRY", 
+    "numProducts" : NumberInt(297)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615a9"), 
+    "brand" : "BYBLOS", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615aa"), 
+    "brand" : "BØRN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ac"), 
+    "brand" : "CAFE'NOIR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ad"), 
+    "brand" : "CALVIN KLEIN", 
+    "numProducts" : NumberInt(2260)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b1"), 
+    "brand" : "CAMILLA", 
+    "numProducts" : NumberInt(75)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b2"), 
+    "brand" : "CARACTERE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b3"), 
+    "brand" : "CARHARTT", 
+    "numProducts" : NumberInt(126)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b6"), 
+    "brand" : "CAROLEE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b8"), 
+    "brand" : "CAROLINE ROSE", 
+    "numProducts" : NumberInt(18)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615b9"), 
+    "brand" : "CARTIER", 
+    "numProducts" : NumberInt(86)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ba"), 
+    "brand" : "CARVEN", 
+    "numProducts" : NumberInt(207)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615bb"), 
+    "brand" : "CASADEI", 
+    "numProducts" : NumberInt(73)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615bc"), 
+    "brand" : "CECE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615bd"), 
+    "brand" : "CELINE", 
+    "numProducts" : NumberInt(38)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615be"), 
+    "brand" : "CHAMPION", 
+    "numProducts" : NumberInt(2260)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615bf"), 
+    "brand" : "CHAN LUU", 
+    "numProducts" : NumberInt(230)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c0"), 
+    "brand" : "CHANEL", 
+    "numProducts" : NumberInt(437)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c1"), 
+    "brand" : "CHANTECAILLE", 
+    "numProducts" : NumberInt(262)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c2"), 
+    "brand" : "CHANTELLE", 
+    "numProducts" : NumberInt(185)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c3"), 
+    "brand" : "CHAPS", 
+    "numProducts" : NumberInt(4606)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615c9"), 
+    "brand" : "CHARTER CLUB", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ca"), 
+    "brand" : "CHASER", 
+    "numProducts" : NumberInt(282)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615cb"), 
+    "brand" : "CHEAP MONDAY", 
+    "numProducts" : NumberInt(70)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615cd"), 
+    "brand" : "CHICO'S", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615cf"), 
+    "brand" : "CHLOÉ", 
+    "numProducts" : NumberInt(733)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d0"), 
+    "brand" : "CHOPARD", 
+    "numProducts" : NumberInt(130)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d5"), 
+    "brand" : "CITIZEN", 
+    "numProducts" : NumberInt(755)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d7"), 
+    "brand" : "CITY CHIC", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d8"), 
+    "brand" : "CLARINS", 
+    "numProducts" : NumberInt(415)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615d9"), 
+    "brand" : "CLARKS", 
+    "numProducts" : NumberInt(937)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615db"), 
+    "brand" : "CLINIQUE", 
+    "numProducts" : NumberInt(442)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615dc"), 
+    "brand" : "CLIPS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615dd"), 
+    "brand" : "CLOSED", 
+    "numProducts" : NumberInt(247)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615de"), 
+    "brand" : "CLOVER CANYON", 
+    "numProducts" : NumberInt(152)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615df"), 
+    "brand" : "CLUB L", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e0"), 
+    "brand" : "CLUB MONACO", 
+    "numProducts" : NumberInt(53)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e3"), 
+    "brand" : "COACH", 
+    "numProducts" : NumberInt(241)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e4"), 
+    "brand" : "COLE HAAN", 
+    "numProducts" : NumberInt(663)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e5"), 
+    "brand" : "COLUMBIA", 
+    "numProducts" : NumberInt(2269)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e6"), 
+    "brand" : "COMMANDO", 
+    "numProducts" : NumberInt(151)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e8"), 
+    "brand" : "CONAIR", 
+    "numProducts" : NumberInt(501)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615e9"), 
+    "brand" : "CONVERSE", 
+    "numProducts" : NumberInt(1268)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ea"), 
+    "brand" : "CORSO COMO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615eb"), 
+    "brand" : "COSABELLA", 
+    "numProducts" : NumberInt(1579)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ec"), 
+    "brand" : "COVER GIRL", 
+    "numProducts" : NumberInt(36)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ee"), 
+    "brand" : "CRISTINAEFFE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ef"), 
+    "brand" : "CROCS", 
+    "numProducts" : NumberInt(1497)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f1"), 
+    "brand" : "CRUCIANI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f4"), 
+    "brand" : "CYCLE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f7"), 
+    "brand" : "DAISY STREET", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615f8"), 
+    "brand" : "DANA BUCHMAN", 
+    "numProducts" : NumberInt(1362)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615fa"), 
+    "brand" : "DANNIJO", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615fb"), 
+    "brand" : "DANSKO", 
+    "numProducts" : NumberInt(284)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615fc"), 
+    "brand" : "DARLING", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615fd"), 
+    "brand" : "DAVID MEISTER", 
+    "numProducts" : NumberInt(74)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615fe"), 
+    "brand" : "DAVID TATE", 
+    "numProducts" : NumberInt(119)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457615ff"), 
+    "brand" : "DAVID YURMAN", 
+    "numProducts" : NumberInt(839)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761600"), 
+    "brand" : "DAYNA U", 
+    "numProducts" : NumberInt(410)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761602"), 
+    "brand" : "DEREK LAM", 
+    "numProducts" : NumberInt(261)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761604"), 
+    "brand" : "DERMALOGICA", 
+    "numProducts" : NumberInt(168)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761605"), 
+    "brand" : "DESIGUAL", 
+    "numProducts" : NumberInt(143)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761607"), 
+    "brand" : "DIESEL", 
+    "numProducts" : NumberInt(1058)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761608"), 
+    "brand" : "DIPTYQUE", 
+    "numProducts" : NumberInt(333)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761609"), 
+    "brand" : "DISNEY", 
+    "numProducts" : NumberInt(4593)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160a"), 
+    "brand" : "DKNY", 
+    "numProducts" : NumberInt(453)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160b"), 
+    "brand" : "DL1961", 
+    "numProducts" : NumberInt(182)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160c"), 
+    "brand" : "DOGEARED", 
+    "numProducts" : NumberInt(91)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576160e"), 
+    "brand" : "DOLCE VITA", 
+    "numProducts" : NumberInt(136)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761610"), 
+    "brand" : "DONDUP", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761611"), 
+    "brand" : "DONNA KARAN", 
+    "numProducts" : NumberInt(157)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761612"), 
+    "brand" : "DONNA MORGAN", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761615"), 
+    "brand" : "DOUUOD", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761616"), 
+    "brand" : "DR. MARTENS", 
+    "numProducts" : NumberInt(421)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761617"), 
+    "brand" : "DR. SCHOLL'S", 
+    "numProducts" : NumberInt(340)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761619"), 
+    "brand" : "DSQUARED2", 
+    "numProducts" : NumberInt(1378)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161a"), 
+    "brand" : "DUNE", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161b"), 
+    "brand" : "DUNE LONDON", 
+    "numProducts" : NumberInt(102)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161c"), 
+    "brand" : "EACH X OTHER", 
+    "numProducts" : NumberInt(22)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161d"), 
+    "brand" : "EAN 13", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161e"), 
+    "brand" : "EARTH", 
+    "numProducts" : NumberInt(119)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576161f"), 
+    "brand" : "EASTLAND", 
+    "numProducts" : NumberInt(633)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761620"), 
+    "brand" : "EASY SPIRIT", 
+    "numProducts" : NumberInt(387)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761622"), 
+    "brand" : "EBERJEY", 
+    "numProducts" : NumberInt(172)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761623"), 
+    "brand" : "ECCO", 
+    "numProducts" : NumberInt(326)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761624"), 
+    "brand" : "ECHO", 
+    "numProducts" : NumberInt(20)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761625"), 
+    "brand" : "EDDIE BAUER", 
+    "numProducts" : NumberInt(217)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761626"), 
+    "brand" : "EDDIE BORGO", 
+    "numProducts" : NumberInt(77)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761627"), 
+    "brand" : "EDIE PARKER", 
+    "numProducts" : NumberInt(40)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761628"), 
+    "brand" : "EDUN", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761629"), 
+    "brand" : "EFFY", 
+    "numProducts" : NumberInt(149)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162a"), 
+    "brand" : "EFFY JEWELRY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162b"), 
+    "brand" : "EILEEN FISHER", 
+    "numProducts" : NumberInt(301)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162c"), 
+    "brand" : "ELEVENTY", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162d"), 
+    "brand" : "ELIE TAHARI", 
+    "numProducts" : NumberInt(564)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576162f"), 
+    "brand" : "ELIZA J", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761632"), 
+    "brand" : "ELLA MOSS", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761633"), 
+    "brand" : "ELLEN TRACY", 
+    "numProducts" : NumberInt(293)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761634"), 
+    "brand" : "ELLERY", 
+    "numProducts" : NumberInt(27)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761635"), 
+    "brand" : "ELOQUII", 
+    "numProducts" : NumberInt(1029)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761636"), 
+    "brand" : "EMILIO PUCCI", 
+    "numProducts" : NumberInt(271)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761638"), 
+    "brand" : "ENTRO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761639"), 
+    "brand" : "ENZA COSTA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163a"), 
+    "brand" : "EQUIPMENT", 
+    "numProducts" : NumberInt(261)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163b"), 
+    "brand" : "ERDEM", 
+    "numProducts" : NumberInt(160)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163c"), 
+    "brand" : "ERES", 
+    "numProducts" : NumberInt(147)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163e"), 
+    "brand" : "ESCADA", 
+    "numProducts" : NumberInt(333)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576163f"), 
+    "brand" : "ESSIE", 
+    "numProducts" : NumberInt(269)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761640"), 
+    "brand" : "ESTEE LAUDER", 
+    "numProducts" : NumberInt(808)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761642"), 
+    "brand" : "ETRO", 
+    "numProducts" : NumberInt(977)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761643"), 
+    "brand" : "EUGENIA KIM", 
+    "numProducts" : NumberInt(125)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761645"), 
+    "brand" : "EVE LOM", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761646"), 
+    "brand" : "EXPRESS", 
+    "numProducts" : NumberInt(892)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761648"), 
+    "brand" : "FACTORY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164a"), 
+    "brand" : "FALIERO SARTI", 
+    "numProducts" : NumberInt(87)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164b"), 
+    "brand" : "FALKE", 
+    "numProducts" : NumberInt(106)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164c"), 
+    "brand" : "FASHION FORMS", 
+    "numProducts" : NumberInt(91)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576164f"), 
+    "brand" : "FAY", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761650"), 
+    "brand" : "FENDI", 
+    "numProducts" : NumberInt(1391)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761651"), 
+    "brand" : "FIGUE", 
+    "numProducts" : NumberInt(27)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761652"), 
+    "brand" : "FILA", 
+    "numProducts" : NumberInt(904)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761655"), 
+    "brand" : "FISICO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761656"), 
+    "brand" : "FITFLOP", 
+    "numProducts" : NumberInt(97)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761657"), 
+    "brand" : "FLEUR DU MAL", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165a"), 
+    "brand" : "FOREVER 21", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165b"), 
+    "brand" : "FORNARINA", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165c"), 
+    "brand" : "FOSSIL", 
+    "numProducts" : NumberInt(82)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165d"), 
+    "brand" : "FRAME", 
+    "numProducts" : NumberInt(189)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576165e"), 
+    "brand" : "FRANCO SARTO", 
+    "numProducts" : NumberInt(324)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761660"), 
+    "brand" : "FREE PEOPLE", 
+    "numProducts" : NumberInt(111)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761663"), 
+    "brand" : "FRYE", 
+    "numProducts" : NumberInt(550)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761664"), 
+    "brand" : "FURLA", 
+    "numProducts" : NumberInt(124)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761665"), 
+    "brand" : "FUZZI", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761666"), 
+    "brand" : "G BY GUESS", 
+    "numProducts" : NumberInt(158)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761667"), 
+    "brand" : "GALLIANO", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761668"), 
+    "brand" : "GAME TIME", 
+    "numProducts" : NumberInt(569)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761669"), 
+    "brand" : "GAP", 
+    "numProducts" : NumberInt(11)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166a"), 
+    "brand" : "GARAGE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166b"), 
+    "brand" : "GENTLE SOULS", 
+    "numProducts" : NumberInt(118)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166c"), 
+    "brand" : "GEOX", 
+    "numProducts" : NumberInt(236)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166d"), 
+    "brand" : "GIAMBA", 
+    "numProducts" : NumberInt(38)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576166f"), 
+    "brand" : "GIANI BERNINI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761675"), 
+    "brand" : "GIVENCHY", 
+    "numProducts" : NumberInt(1124)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761676"), 
+    "brand" : "GLAM", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761677"), 
+    "brand" : "GLAMOROUS", 
+    "numProducts" : NumberInt(23)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761678"), 
+    "brand" : "GOLD CASE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167a"), 
+    "brand" : "GORJANA", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167b"), 
+    "brand" : "GOTHA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167c"), 
+    "brand" : "GUCCI", 
+    "numProducts" : NumberInt(1358)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167d"), 
+    "brand" : "GUERLAIN", 
+    "numProducts" : NumberInt(341)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167e"), 
+    "brand" : "GUESS", 
+    "numProducts" : NumberInt(575)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576167f"), 
+    "brand" : "GURHAN", 
+    "numProducts" : NumberInt(267)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761680"), 
+    "brand" : "H&M", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761681"), 
+    "brand" : "HACHE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761683"), 
+    "brand" : "HALE BOB", 
+    "numProducts" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761684"), 
+    "brand" : "HALSTON", 
+    "numProducts" : NumberInt(50)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761685"), 
+    "brand" : "HANES", 
+    "numProducts" : NumberInt(3583)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761686"), 
+    "brand" : "HANITA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761687"), 
+    "brand" : "HANKY PANKY", 
+    "numProducts" : NumberInt(425)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761688"), 
+    "brand" : "HANRO", 
+    "numProducts" : NumberInt(556)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761689"), 
+    "brand" : "HAUTE HIPPIE", 
+    "numProducts" : NumberInt(198)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168a"), 
+    "brand" : "HAVAIANAS", 
+    "numProducts" : NumberInt(92)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168b"), 
+    "brand" : "HEIDI DAUS", 
+    "numProducts" : NumberInt(169)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168d"), 
+    "brand" : "HELMUT LANG", 
+    "numProducts" : NumberInt(900)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576168e"), 
+    "brand" : "HENRI BENDEL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761690"), 
+    "brand" : "HERMES", 
+    "numProducts" : NumberInt(199)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761691"), 
+    "brand" : "HERSCHEL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761692"), 
+    "brand" : "HERVE LEGER", 
+    "numProducts" : NumberInt(98)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761693"), 
+    "brand" : "HOBO", 
+    "numProducts" : NumberInt(20)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761694"), 
+    "brand" : "HOGAN", 
+    "numProducts" : NumberInt(57)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761695"), 
+    "brand" : "HOURGLASS", 
+    "numProducts" : NumberInt(138)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761697"), 
+    "brand" : "HTC", 
+    "numProducts" : NumberInt(80)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761698"), 
+    "brand" : "HUDSON", 
+    "numProducts" : NumberInt(231)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761699"), 
+    "brand" : "HUE", 
+    "numProducts" : NumberInt(164)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169a"), 
+    "brand" : "HUNTER", 
+    "numProducts" : NumberInt(208)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169b"), 
+    "brand" : "HURLEY", 
+    "numProducts" : NumberInt(1655)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169c"), 
+    "brand" : "HUSH PUPPIES", 
+    "numProducts" : NumberInt(480)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169e"), 
+    "brand" : "ICE", 
+    "numProducts" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576169f"), 
+    "brand" : "ILLESTEVA", 
+    "numProducts" : NumberInt(73)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a1"), 
+    "brand" : "INCOTEX", 
+    "numProducts" : NumberInt(111)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a3"), 
+    "brand" : "INVICTA", 
+    "numProducts" : NumberInt(398)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a4"), 
+    "brand" : "IPPOLITA", 
+    "numProducts" : NumberInt(531)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a5"), 
+    "brand" : "IRO", 
+    "numProducts" : NumberInt(283)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a6"), 
+    "brand" : "ISAAC MIZRAHI", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a7"), 
+    "brand" : "ISABEL MARANT", 
+    "numProducts" : NumberInt(145)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a8"), 
+    "brand" : "ISSEY MIYAKE", 
+    "numProducts" : NumberInt(85)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616a9"), 
+    "brand" : "IVANKA TRUMP", 
+    "numProducts" : NumberInt(353)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616aa"), 
+    "brand" : "J BRAND", 
+    "numProducts" : NumberInt(313)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ab"), 
+    "brand" : "J. JILL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ac"), 
+    "brand" : "J. MENDEL", 
+    "numProducts" : NumberInt(142)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ad"), 
+    "brand" : "J. RENEE", 
+    "numProducts" : NumberInt(100)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ae"), 
+    "brand" : "J.CREW", 
+    "numProducts" : NumberInt(51)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616af"), 
+    "brand" : "J.MCLAUGHLIN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b0"), 
+    "brand" : "J.W.ANDERSON", 
+    "numProducts" : NumberInt(332)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b1"), 
+    "brand" : "JACK ROGERS", 
+    "numProducts" : NumberInt(101)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b2"), 
+    "brand" : "JACK WILLS", 
+    "numProducts" : NumberInt(489)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b3"), 
+    "brand" : "JAG JEANS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b4"), 
+    "brand" : "JAMES PERSE", 
+    "numProducts" : NumberInt(571)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b5"), 
+    "brand" : "JANE IREDALE", 
+    "numProducts" : NumberInt(13)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b6"), 
+    "brand" : "JASON WU", 
+    "numProducts" : NumberInt(166)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b7"), 
+    "brand" : "JCPENNEY", 
+    "numProducts" : NumberInt(1383)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616b9"), 
+    "brand" : "JECKERSON", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616bb"), 
+    "brand" : "JENNI KAYNE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616bf"), 
+    "brand" : "JIJIL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c0"), 
+    "brand" : "JIL SANDER", 
+    "numProducts" : NumberInt(557)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c2"), 
+    "brand" : "JIMMY CHOO", 
+    "numProducts" : NumberInt(645)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c3"), 
+    "brand" : "JIVAGO", 
+    "numProducts" : NumberInt(136)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c5"), 
+    "brand" : "JO MALONE", 
+    "numProducts" : NumberInt(17)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c6"), 
+    "brand" : "JO NO FUI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c7"), 
+    "brand" : "JOAN VASS", 
+    "numProducts" : NumberInt(45)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c8"), 
+    "brand" : "JOCKEY", 
+    "numProducts" : NumberInt(1882)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616c9"), 
+    "brand" : "JOE FRESH", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ca"), 
+    "brand" : "JOE'S JEANS", 
+    "numProducts" : NumberInt(42)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616cb"), 
+    "brand" : "JOHN HARDY", 
+    "numProducts" : NumberInt(1743)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616cc"), 
+    "brand" : "JOHN RICHMOND", 
+    "numProducts" : NumberInt(9)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616cd"), 
+    "brand" : "JOHNNY WAS", 
+    "numProducts" : NumberInt(47)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616cf"), 
+    "brand" : "JOIE", 
+    "numProducts" : NumberInt(755)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d1"), 
+    "brand" : "JOSEPH", 
+    "numProducts" : NumberInt(139)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d3"), 
+    "brand" : "JOSIE NATORI", 
+    "numProducts" : NumberInt(220)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d5"), 
+    "brand" : "JOVANI", 
+    "numProducts" : NumberInt(150)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d6"), 
+    "brand" : "JUCCA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d7"), 
+    "brand" : "JUDITH LEIBER", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d8"), 
+    "brand" : "JUDITH RIPKA", 
+    "numProducts" : NumberInt(202)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616d9"), 
+    "brand" : "JUICE BEAUTY", 
+    "numProducts" : NumberInt(48)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616da"), 
+    "brand" : "JUICY COUTURE", 
+    "numProducts" : NumberInt(915)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616dd"), 
+    "brand" : "JUST CAVALLI", 
+    "numProducts" : NumberInt(186)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616de"), 
+    "brand" : "JUST FOR YOU", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616df"), 
+    "brand" : "KAOS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e0"), 
+    "brand" : "KAREN KANE", 
+    "numProducts" : NumberInt(83)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e1"), 
+    "brand" : "KAREN SCOTT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e3"), 
+    "brand" : "KASPER", 
+    "numProducts" : NumberInt(227)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e4"), 
+    "brand" : "KATE SPADE", 
+    "numProducts" : NumberInt(106)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e5"), 
+    "brand" : "KEDS", 
+    "numProducts" : NumberInt(504)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e6"), 
+    "brand" : "Keen", 
+    "numProducts" : NumberInt(784)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e7"), 
+    "brand" : "KEEPSAKE", 
+    "numProducts" : NumberInt(35)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616e9"), 
+    "brand" : "KENDRA SCOTT", 
+    "numProducts" : NumberInt(57)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ea"), 
+    "brand" : "KENNETH COLE", 
+    "numProducts" : NumberInt(4371)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ee"), 
+    "brand" : "KENSIE", 
+    "numProducts" : NumberInt(158)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ef"), 
+    "brand" : "KENZO", 
+    "numProducts" : NumberInt(1189)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f0"), 
+    "brand" : "KEVYN AUCOIN", 
+    "numProducts" : NumberInt(167)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f1"), 
+    "brand" : "KIEHL'S", 
+    "numProducts" : NumberInt(34)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f2"), 
+    "brand" : "KIPLING", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f3"), 
+    "brand" : "KONSTANTINO", 
+    "numProducts" : NumberInt(139)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f4"), 
+    "brand" : "KORAL", 
+    "numProducts" : NumberInt(96)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f6"), 
+    "brand" : "L'AGENCE", 
+    "numProducts" : NumberInt(187)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f8"), 
+    "brand" : "L'AUTRE CHOSE", 
+    "numProducts" : NumberInt(38)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616f9"), 
+    "brand" : "L'OREAL", 
+    "numProducts" : NumberInt(208)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616fa"), 
+    "brand" : "L-SPACE", 
+    "numProducts" : NumberInt(314)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616fb"), 
+    "brand" : "L.L. BEAN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616fc"), 
+    "brand" : "LA FEMME", 
+    "numProducts" : NumberInt(300)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616fd"), 
+    "brand" : "LA MER", 
+    "numProducts" : NumberInt(127)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616fe"), 
+    "brand" : "LA PERLA", 
+    "numProducts" : NumberInt(414)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457616ff"), 
+    "brand" : "LA PRAIRIE", 
+    "numProducts" : NumberInt(126)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761700"), 
+    "brand" : "LABLANCA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761701"), 
+    "brand" : "LACOSTE", 
+    "numProducts" : NumberInt(1876)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761703"), 
+    "brand" : "LAGOS", 
+    "numProducts" : NumberInt(54)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761704"), 
+    "brand" : "LAMADE", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761705"), 
+    "brand" : "LANA", 
+    "numProducts" : NumberInt(19)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761706"), 
+    "brand" : "LANCÔME", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761707"), 
+    "brand" : "LANDS' END", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761708"), 
+    "brand" : "LANVIN", 
+    "numProducts" : NumberInt(799)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170a"), 
+    "brand" : "LAURA MERCIER", 
+    "numProducts" : NumberInt(237)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170b"), 
+    "brand" : "LAUREN CONRAD", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170d"), 
+    "brand" : "LAVINIATURRA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170e"), 
+    "brand" : "LE SPORT SAC", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576170f"), 
+    "brand" : "LEE", 
+    "numProducts" : NumberInt(1222)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761710"), 
+    "brand" : "LELA ROSE", 
+    "numProducts" : NumberInt(57)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761711"), 
+    "brand" : "LEMLEM", 
+    "numProducts" : NumberInt(18)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761712"), 
+    "brand" : "LES COPAINS", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761713"), 
+    "brand" : "LEVI'S", 
+    "numProducts" : NumberInt(1902)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761714"), 
+    "brand" : "LEVIAN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761716"), 
+    "brand" : "LIFESTRIDE", 
+    "numProducts" : NumberInt(156)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171a"), 
+    "brand" : "LIST", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171c"), 
+    "brand" : "LIU JO", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171d"), 
+    "brand" : "LIVIANA CONTI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171e"), 
+    "brand" : "LIZ CLAIBORNE", 
+    "numProducts" : NumberInt(1993)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576171f"), 
+    "brand" : "LNA", 
+    "numProducts" : NumberInt(78)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761720"), 
+    "brand" : "LODIS", 
+    "numProducts" : NumberInt(202)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761722"), 
+    "brand" : "LOEWE", 
+    "numProducts" : NumberInt(352)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761723"), 
+    "brand" : "LOFT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761724"), 
+    "brand" : "LOLA CRUZ", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761725"), 
+    "brand" : "LOLE", 
+    "numProducts" : NumberInt(88)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761726"), 
+    "brand" : "LONDON TIMES", 
+    "numProducts" : NumberInt(221)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761727"), 
+    "brand" : "LONNA & LILLY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761728"), 
+    "brand" : "LORD & TAYLOR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761729"), 
+    "brand" : "LORO PIANA", 
+    "numProducts" : NumberInt(152)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172a"), 
+    "brand" : "LOUIS VUITTON", 
+    "numProducts" : NumberInt(403)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172b"), 
+    "brand" : "LOUISE ET CIE", 
+    "numProducts" : NumberInt(54)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172c"), 
+    "brand" : "LOVE MOSCHINO", 
+    "numProducts" : NumberInt(131)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172e"), 
+    "brand" : "LUCKY BRAND", 
+    "numProducts" : NumberInt(250)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576172f"), 
+    "brand" : "LUCY", 
+    "numProducts" : NumberInt(928)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761730"), 
+    "brand" : "LULI FAMA", 
+    "numProducts" : NumberInt(54)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761731"), 
+    "brand" : "LULU FROST", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761732"), 
+    "brand" : "LULU*S", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761733"), 
+    "brand" : "M MISSONI", 
+    "numProducts" : NumberInt(199)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761735"), 
+    "brand" : "MAAJI", 
+    "numProducts" : NumberInt(115)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761736"), 
+    "brand" : "MAC DUGGAL", 
+    "numProducts" : NumberInt(195)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761737"), 
+    "brand" : "MACKAGE", 
+    "numProducts" : NumberInt(43)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761738"), 
+    "brand" : "MADDEN-GIRL", 
+    "numProducts" : NumberInt(303)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761739"), 
+    "brand" : "MADEWELL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173a"), 
+    "brand" : "MAGASCHONI", 
+    "numProducts" : NumberInt(6)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173b"), 
+    "brand" : "MAGGY LONDON", 
+    "numProducts" : NumberInt(31)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173c"), 
+    "brand" : "MAIDENFORM", 
+    "numProducts" : NumberInt(882)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173e"), 
+    "brand" : "MAISON MICHEL", 
+    "numProducts" : NumberInt(28)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576173f"), 
+    "brand" : "MAISON SCOTCH", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761740"), 
+    "brand" : "MAIYET", 
+    "numProducts" : NumberInt(46)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761741"), 
+    "brand" : "MAJE", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761742"), 
+    "brand" : "MAJESTIC", 
+    "numProducts" : NumberInt(9163)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761743"), 
+    "brand" : "MAJORICA", 
+    "numProducts" : NumberInt(243)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761744"), 
+    "brand" : "MALIPARMI", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761745"), 
+    "brand" : "MANGO", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761746"), 
+    "brand" : "MANGO OUTLET", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761747"), 
+    "brand" : "MANILA GRACE", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174a"), 
+    "brand" : "MARA HOFFMAN", 
+    "numProducts" : NumberInt(57)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174c"), 
+    "brand" : "MARC FISHER", 
+    "numProducts" : NumberInt(19)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174d"), 
+    "brand" : "MARC JACOBS", 
+    "numProducts" : NumberInt(1320)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174e"), 
+    "brand" : "MARCHESA", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576174f"), 
+    "brand" : "MARCO BICEGO", 
+    "numProducts" : NumberInt(290)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761751"), 
+    "brand" : "MARKUS LUPFER", 
+    "numProducts" : NumberInt(37)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761752"), 
+    "brand" : "MARMOT", 
+    "numProducts" : NumberInt(3251)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761753"), 
+    "brand" : "MARNI", 
+    "numProducts" : NumberInt(458)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761754"), 
+    "brand" : "MARSÈLL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761756"), 
+    "brand" : "MARYSIA SWIM", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761757"), 
+    "brand" : "MASON", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761758"), 
+    "brand" : "MATISSE", 
+    "numProducts" : NumberInt(69)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175a"), 
+    "brand" : "MAURO GRIFONI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175b"), 
+    "brand" : "MAVI JEANS", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175c"), 
+    "brand" : "MAX MARA", 
+    "numProducts" : NumberInt(334)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175d"), 
+    "brand" : "MAX STUDIO", 
+    "numProducts" : NumberInt(392)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175e"), 
+    "brand" : "MAYBELLINE", 
+    "numProducts" : NumberInt(9)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576175f"), 
+    "brand" : "MCM", 
+    "numProducts" : NumberInt(117)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761761"), 
+    "brand" : "MEIRA T", 
+    "numProducts" : NumberInt(205)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761765"), 
+    "brand" : "MELTIN POT", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761766"), 
+    "brand" : "MERONA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761767"), 
+    "brand" : "MERRELL", 
+    "numProducts" : NumberInt(556)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761768"), 
+    "brand" : "MET", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176a"), 
+    "brand" : "MICHAEL KORS", 
+    "numProducts" : NumberInt(1069)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176c"), 
+    "brand" : "MICHAEL STARS", 
+    "numProducts" : NumberInt(65)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176d"), 
+    "brand" : "MICHELE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176e"), 
+    "brand" : "MIH JEANS", 
+    "numProducts" : NumberInt(80)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576176f"), 
+    "brand" : "MILLY", 
+    "numProducts" : NumberInt(305)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761770"), 
+    "brand" : "MINKPINK", 
+    "numProducts" : NumberInt(95)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761771"), 
+    "brand" : "MINNETONKA", 
+    "numProducts" : NumberInt(371)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761772"), 
+    "brand" : "MIRACLESUIT", 
+    "numProducts" : NumberInt(44)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761773"), 
+    "brand" : "MISOOK", 
+    "numProducts" : NumberInt(62)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761774"), 
+    "brand" : "MISS ME", 
+    "numProducts" : NumberInt(45)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761776"), 
+    "brand" : "MISSGUIDED", 
+    "numProducts" : NumberInt(5403)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761777"), 
+    "brand" : "MISSONI", 
+    "numProducts" : NumberInt(565)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761778"), 
+    "brand" : "MIU MIU", 
+    "numProducts" : NumberInt(356)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761779"), 
+    "brand" : "MIZ MOOZ", 
+    "numProducts" : NumberInt(114)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177b"), 
+    "brand" : "MOD-O-DOC", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177c"), 
+    "brand" : "MOLTON BROWN", 
+    "numProducts" : NumberInt(244)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177d"), 
+    "brand" : "MONCLER", 
+    "numProducts" : NumberInt(776)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576177f"), 
+    "brand" : "MONKI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761780"), 
+    "brand" : "MONOCROM", 
+    "numProducts" : NumberInt(5)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761781"), 
+    "brand" : "MONROW", 
+    "numProducts" : NumberInt(60)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761782"), 
+    "brand" : "MONSOON", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761783"), 
+    "brand" : "MOSCHINO", 
+    "numProducts" : NumberInt(580)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761785"), 
+    "brand" : "MOTEL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761786"), 
+    "brand" : "MOTHER", 
+    "numProducts" : NumberInt(173)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761787"), 
+    "brand" : "MOTHERHOOD", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761788"), 
+    "brand" : "MOVADO", 
+    "numProducts" : NumberInt(135)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761789"), 
+    "brand" : "MSGM", 
+    "numProducts" : NumberInt(166)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178a"), 
+    "brand" : "MUK LUKS", 
+    "numProducts" : NumberInt(2061)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178b"), 
+    "brand" : "MUMU", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178c"), 
+    "brand" : "MURAD", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178d"), 
+    "brand" : "M·A·C", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576178f"), 
+    "brand" : "NADRI", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761792"), 
+    "brand" : "NAOT FOOTWEAR", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761794"), 
+    "brand" : "NARS", 
+    "numProducts" : NumberInt(488)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761795"), 
+    "brand" : "NASTY GAL", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761797"), 
+    "brand" : "NATORI", 
+    "numProducts" : NumberInt(227)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761798"), 
+    "brand" : "NATURA BISSE", 
+    "numProducts" : NumberInt(120)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761799"), 
+    "brand" : "NATURALIZER", 
+    "numProducts" : NumberInt(1097)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179a"), 
+    "brand" : "NAUTICA", 
+    "numProducts" : NumberInt(936)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179b"), 
+    "brand" : "NBD", 
+    "numProducts" : NumberInt(18)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179c"), 
+    "brand" : "NEIL BARRETT", 
+    "numProducts" : NumberInt(441)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179d"), 
+    "brand" : "NEIMAN MARCUS", 
+    "numProducts" : NumberInt(2790)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179e"), 
+    "brand" : "NEUTROGENA", 
+    "numProducts" : NumberInt(36)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576179f"), 
+    "brand" : "NEW BALANCE", 
+    "numProducts" : NumberInt(1578)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a2"), 
+    "brand" : "NIC+ZOE", 
+    "numProducts" : NumberInt(28)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a3"), 
+    "brand" : "NICHOLAS", 
+    "numProducts" : NumberInt(126)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a5"), 
+    "brand" : "NICOLE MILLER", 
+    "numProducts" : NumberInt(91)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a6"), 
+    "brand" : "NIKE", 
+    "numProducts" : NumberInt(12286)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a7"), 
+    "brand" : "NILI LOTAN", 
+    "numProducts" : NumberInt(104)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a8"), 
+    "brand" : "NINA", 
+    "numProducts" : NumberInt(360)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617a9"), 
+    "brand" : "NINA RICCI", 
+    "numProducts" : NumberInt(326)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617aa"), 
+    "brand" : "NINE WEST", 
+    "numProducts" : NumberInt(4357)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ab"), 
+    "brand" : "NIXON", 
+    "numProducts" : NumberInt(152)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ac"), 
+    "brand" : "NO KA 'OI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ad"), 
+    "brand" : "NO.21", 
+    "numProducts" : NumberInt(51)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ae"), 
+    "brand" : "NO7", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617af"), 
+    "brand" : "NOISY MAY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b0"), 
+    "brand" : "NOLITA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b1"), 
+    "brand" : "NORDSTROM", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b2"), 
+    "brand" : "NORMA KAMALI", 
+    "numProducts" : NumberInt(56)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b3"), 
+    "brand" : "NY COLLECTION", 
+    "numProducts" : NumberInt(114)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b4"), 
+    "brand" : "NYDJ", 
+    "numProducts" : NumberInt(22)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b5"), 
+    "brand" : "NYX", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b6"), 
+    "brand" : "N°21", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b7"), 
+    "brand" : "O'NEILL", 
+    "numProducts" : NumberInt(812)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b8"), 
+    "brand" : "OASIS", 
+    "numProducts" : NumberInt(87)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617b9"), 
+    "brand" : "OBEY", 
+    "numProducts" : NumberInt(179)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ba"), 
+    "brand" : "ODI ET AMO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617bb"), 
+    "brand" : "OFF-WHITE", 
+    "numProducts" : NumberInt(242)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617bc"), 
+    "brand" : "OLD NAVY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617be"), 
+    "brand" : "OMEGA", 
+    "numProducts" : NumberInt(68)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c0"), 
+    "brand" : "ONE TEASPOON", 
+    "numProducts" : NumberInt(59)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c1"), 
+    "brand" : "ONGOSSAMER", 
+    "numProducts" : NumberInt(31)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c2"), 
+    "brand" : "ONLY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c3"), 
+    "brand" : "ONLY HEARTS", 
+    "numProducts" : NumberInt(39)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c5"), 
+    "brand" : "OPI", 
+    "numProducts" : NumberInt(431)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c6"), 
+    "brand" : "ORCIANI", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c7"), 
+    "brand" : "ORIBE", 
+    "numProducts" : NumberInt(81)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617c8"), 
+    "brand" : "ORIGINS", 
+    "numProducts" : NumberInt(32)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ca"), 
+    "brand" : "P.A.R.O.S.H.", 
+    "numProducts" : NumberInt(12)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617cb"), 
+    "brand" : "PACO RABANNE", 
+    "numProducts" : NumberInt(198)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617cc"), 
+    "brand" : "PAIGE", 
+    "numProducts" : NumberInt(127)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ce"), 
+    "brand" : "PARKER", 
+    "numProducts" : NumberInt(171)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617cf"), 
+    "brand" : "PATAGONIA", 
+    "numProducts" : NumberInt(3192)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d0"), 
+    "brand" : "PATRICIA NASH", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d1"), 
+    "brand" : "PATRIZIA PEPE", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d2"), 
+    "brand" : "PAUL & JOE", 
+    "numProducts" : NumberInt(51)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d3"), 
+    "brand" : "PAUL ANDREW", 
+    "numProducts" : NumberInt(104)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d4"), 
+    "brand" : "PAUL SMITH", 
+    "numProducts" : NumberInt(422)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d5"), 
+    "brand" : "PEDRO GARCIA", 
+    "numProducts" : NumberInt(21)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d6"), 
+    "brand" : "PENDLETON", 
+    "numProducts" : NumberInt(401)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d7"), 
+    "brand" : "PEPE JEANS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d8"), 
+    "brand" : "PESERICO", 
+    "numProducts" : NumberInt(109)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617d9"), 
+    "brand" : "PETER PILOTTO", 
+    "numProducts" : NumberInt(128)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617db"), 
+    "brand" : "PEUGEOT", 
+    "numProducts" : NumberInt(407)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617dc"), 
+    "brand" : "PHILIPP PLEIN", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617de"), 
+    "brand" : "PHILOSOPHY", 
+    "numProducts" : NumberInt(170)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e1"), 
+    "brand" : "PIANURASTUDIO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e3"), 
+    "brand" : "PIERO GUIDI", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e5"), 
+    "brand" : "PIERRE HARDY", 
+    "numProducts" : NumberInt(81)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e6"), 
+    "brand" : "PIKOLINOS", 
+    "numProducts" : NumberInt(224)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e7"), 
+    "brand" : "PILYQ", 
+    "numProducts" : NumberInt(30)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e8"), 
+    "brand" : "PINKO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617e9"), 
+    "brand" : "PJ SALVAGE", 
+    "numProducts" : NumberInt(109)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ea"), 
+    "brand" : "PLEASER USA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ed"), 
+    "brand" : "PORTS 1961", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ee"), 
+    "brand" : "PRABAL GURUNG", 
+    "numProducts" : NumberInt(45)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ef"), 
+    "brand" : "PRADA", 
+    "numProducts" : NumberInt(939)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f0"), 
+    "brand" : "PRANA", 
+    "numProducts" : NumberInt(589)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f2"), 
+    "brand" : "PROPET", 
+    "numProducts" : NumberInt(297)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f3"), 
+    "brand" : "PULSAR", 
+    "numProducts" : NumberInt(221)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f4"), 
+    "brand" : "PUMA", 
+    "numProducts" : NumberInt(1971)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f5"), 
+    "brand" : "QUAY", 
+    "numProducts" : NumberInt(11)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f6"), 
+    "brand" : "QUPID", 
+    "numProducts" : NumberInt(111)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f7"), 
+    "brand" : "R 13", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f8"), 
+    "brand" : "RACHEL COMEY", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617f9"), 
+    "brand" : "RACHEL PALLY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617fa"), 
+    "brand" : "RACHEL ROY", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617fb"), 
+    "brand" : "RACHEL ZOE", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617fc"), 
+    "brand" : "RAG & BONE", 
+    "numProducts" : NumberInt(1172)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617fd"), 
+    "brand" : "RAGA", 
+    "numProducts" : NumberInt(48)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617fe"), 
+    "brand" : "RAILS", 
+    "numProducts" : NumberInt(181)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457617ff"), 
+    "brand" : "RALPH LAUREN", 
+    "numProducts" : NumberInt(17867)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761800"), 
+    "brand" : "RAMY BROOK", 
+    "numProducts" : NumberInt(79)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761802"), 
+    "brand" : "RAY-BAN", 
+    "numProducts" : NumberInt(2633)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761803"), 
+    "brand" : "RAYMOND WEIL", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761806"), 
+    "brand" : "RED VALENTINO", 
+    "numProducts" : NumberInt(324)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761807"), 
+    "brand" : "REDKEN", 
+    "numProducts" : NumberInt(287)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761808"), 
+    "brand" : "REEBOK", 
+    "numProducts" : NumberInt(14866)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761809"), 
+    "brand" : "REED KRAKOFF", 
+    "numProducts" : NumberInt(5)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180a"), 
+    "brand" : "REEF", 
+    "numProducts" : NumberInt(771)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180b"), 
+    "brand" : "REFORMATION", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180c"), 
+    "brand" : "REISS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180d"), 
+    "brand" : "RELISH", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180e"), 
+    "brand" : "RENE CAOVILLA", 
+    "numProducts" : NumberInt(48)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576180f"), 
+    "brand" : "REPLAY", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761810"), 
+    "brand" : "REPORT", 
+    "numProducts" : NumberInt(37)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761811"), 
+    "brand" : "REVLON", 
+    "numProducts" : NumberInt(56)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761812"), 
+    "brand" : "RICHMOND", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761813"), 
+    "brand" : "RICHMOND X", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761814"), 
+    "brand" : "RICK OWENS", 
+    "numProducts" : NumberInt(364)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761816"), 
+    "brand" : "RIEKER", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761817"), 
+    "brand" : "RING", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761818"), 
+    "brand" : "RIP CURL", 
+    "numProducts" : NumberInt(41)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761819"), 
+    "brand" : "RIVER ISLAND", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576181e"), 
+    "brand" : "ROBERTO COIN", 
+    "numProducts" : NumberInt(363)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761821"), 
+    "brand" : "ROCHAS", 
+    "numProducts" : NumberInt(146)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761822"), 
+    "brand" : "ROCKET DOG", 
+    "numProducts" : NumberInt(41)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761823"), 
+    "brand" : "ROCKPORT", 
+    "numProducts" : NumberInt(303)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761824"), 
+    "brand" : "ROGER VIVIER", 
+    "numProducts" : NumberInt(216)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761825"), 
+    "brand" : "ROKSANDA", 
+    "numProducts" : NumberInt(127)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761826"), 
+    "brand" : "ROLAND MOURET", 
+    "numProducts" : NumberInt(216)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761827"), 
+    "brand" : "ROLEX", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761828"), 
+    "brand" : "ROPER", 
+    "numProducts" : NumberInt(113)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761829"), 
+    "brand" : "ROXY", 
+    "numProducts" : NumberInt(330)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182a"), 
+    "brand" : "ROY ROGERS", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182b"), 
+    "brand" : "RTA", 
+    "numProducts" : NumberInt(77)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182c"), 
+    "brand" : "RUCO LINE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182d"), 
+    "brand" : "RVCA", 
+    "numProducts" : NumberInt(166)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182e"), 
+    "brand" : "RYKA", 
+    "numProducts" : NumberInt(394)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576182f"), 
+    "brand" : "SACAI", 
+    "numProducts" : NumberInt(270)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761830"), 
+    "brand" : "SAINT LAURENT", 
+    "numProducts" : NumberInt(2198)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761832"), 
+    "brand" : "SALLY HANSEN", 
+    "numProducts" : NumberInt(96)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761833"), 
+    "brand" : "SALOMON", 
+    "numProducts" : NumberInt(2079)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761835"), 
+    "brand" : "SAM EDELMAN", 
+    "numProducts" : NumberInt(263)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761837"), 
+    "brand" : "SANCTUARY", 
+    "numProducts" : NumberInt(17)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761838"), 
+    "brand" : "SANDRO", 
+    "numProducts" : NumberInt(19)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761839"), 
+    "brand" : "SANUK", 
+    "numProducts" : NumberInt(30)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183a"), 
+    "brand" : "SAUCONY", 
+    "numProducts" : NumberInt(319)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183b"), 
+    "brand" : "SBICCA", 
+    "numProducts" : NumberInt(13)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183c"), 
+    "brand" : "SCALA", 
+    "numProducts" : NumberInt(217)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183d"), 
+    "brand" : "SCHUMACHER", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183e"), 
+    "brand" : "SCHUTZ", 
+    "numProducts" : NumberInt(98)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576183f"), 
+    "brand" : "SCOTCH & SODA", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761840"), 
+    "brand" : "SEA", 
+    "numProducts" : NumberInt(59)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761841"), 
+    "brand" : "SEAFOLLY", 
+    "numProducts" : NumberInt(99)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761842"), 
+    "brand" : "SEBASTIAN", 
+    "numProducts" : NumberInt(122)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761843"), 
+    "brand" : "SEE BY CHLOE", 
+    "numProducts" : NumberInt(212)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761844"), 
+    "brand" : "SEIKO", 
+    "numProducts" : NumberInt(1035)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761845"), 
+    "brand" : "SELECTED", 
+    "numProducts" : NumberInt(25)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761846"), 
+    "brand" : "SELF-PORTRAIT", 
+    "numProducts" : NumberInt(115)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761847"), 
+    "brand" : "SEPHORA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761848"), 
+    "brand" : "SERGIO ROSSI", 
+    "numProducts" : NumberInt(157)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761849"), 
+    "brand" : "SESTO MEUCCI", 
+    "numProducts" : NumberInt(138)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184a"), 
+    "brand" : "SEYCHELLES", 
+    "numProducts" : NumberInt(142)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184b"), 
+    "brand" : "SHABBY APPLE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184c"), 
+    "brand" : "SHEA MOISTURE", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184d"), 
+    "brand" : "SHISEIDO", 
+    "numProducts" : NumberInt(479)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576184e"), 
+    "brand" : "SHOSHANNA", 
+    "numProducts" : NumberInt(108)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761850"), 
+    "brand" : "SIGMA BEAUTY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761851"), 
+    "brand" : "SILVIAN HEACH", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761852"), 
+    "brand" : "SIMONE PERELE", 
+    "numProducts" : NumberInt(116)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761853"), 
+    "brand" : "SIMONE ROCHA", 
+    "numProducts" : NumberInt(79)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761854"), 
+    "brand" : "SISLEY PARIS", 
+    "numProducts" : NumberInt(455)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761855"), 
+    "brand" : "SIVIGLIA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761856"), 
+    "brand" : "SKAGEN", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761857"), 
+    "brand" : "SKECHERS", 
+    "numProducts" : NumberInt(2948)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761858"), 
+    "brand" : "SMALLFLOWER", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761859"), 
+    "brand" : "SMARTWOOL", 
+    "numProducts" : NumberInt(298)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185a"), 
+    "brand" : "SMASHBOX", 
+    "numProducts" : NumberInt(233)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185b"), 
+    "brand" : "SOALLURE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185c"), 
+    "brand" : "SOFT JOIE", 
+    "numProducts" : NumberInt(12)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185d"), 
+    "brand" : "SOLE SOCIETY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576185f"), 
+    "brand" : "SONIA RYKIEL", 
+    "numProducts" : NumberInt(124)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761861"), 
+    "brand" : "SOPHIE HULME", 
+    "numProducts" : NumberInt(22)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761862"), 
+    "brand" : "SOREL", 
+    "numProducts" : NumberInt(270)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761864"), 
+    "brand" : "SPANX", 
+    "numProducts" : NumberInt(287)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761865"), 
+    "brand" : "SPEEDO", 
+    "numProducts" : NumberInt(193)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761866"), 
+    "brand" : "SPERRY", 
+    "numProducts" : NumberInt(384)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761868"), 
+    "brand" : "SPLENDID", 
+    "numProducts" : NumberInt(2058)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761869"), 
+    "brand" : "SPORTMAX", 
+    "numProducts" : NumberInt(33)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186a"), 
+    "brand" : "SPRING STEP", 
+    "numProducts" : NumberInt(959)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186b"), 
+    "brand" : "ST. JOHN", 
+    "numProducts" : NumberInt(463)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576186c"), 
+    "brand" : "STEFANEL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761870"), 
+    "brand" : "STEVE MADDEN", 
+    "numProducts" : NumberInt(2599)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761871"), 
+    "brand" : "STILA", 
+    "numProducts" : NumberInt(8)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761874"), 
+    "brand" : "STYLE&CO.", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761875"), 
+    "brand" : "SUN 68", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761876"), 
+    "brand" : "SUNDRY", 
+    "numProducts" : NumberInt(66)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761877"), 
+    "brand" : "SUNO", 
+    "numProducts" : NumberInt(47)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761878"), 
+    "brand" : "SUOLI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761879"), 
+    "brand" : "SUPERDRY", 
+    "numProducts" : NumberInt(78)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187a"), 
+    "brand" : "SUSANA MONACO", 
+    "numProducts" : NumberInt(63)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187b"), 
+    "brand" : "SWAROVSKI", 
+    "numProducts" : NumberInt(174)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187c"), 
+    "brand" : "SWEATY BETTY", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187d"), 
+    "brand" : "SYDNEY EVAN", 
+    "numProducts" : NumberInt(124)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576187e"), 
+    "brand" : "T TAHARI", 
+    "numProducts" : NumberInt(142)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761880"), 
+    "brand" : "TADASHI SHOJI", 
+    "numProducts" : NumberInt(62)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761881"), 
+    "brand" : "TAG HEUER", 
+    "numProducts" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761882"), 
+    "brand" : "TAHARI", 
+    "numProducts" : NumberInt(154)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761883"), 
+    "brand" : "TAI", 
+    "numProducts" : NumberInt(28)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761884"), 
+    "brand" : "TAILGATE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761885"), 
+    "brand" : "TALBOTS", 
+    "numProducts" : NumberInt(17)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761886"), 
+    "brand" : "TART", 
+    "numProducts" : NumberInt(26)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761887"), 
+    "brand" : "TARTE", 
+    "numProducts" : NumberInt(3)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761888"), 
+    "brand" : "TED BAKER", 
+    "numProducts" : NumberInt(242)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188a"), 
+    "brand" : "TEVA", 
+    "numProducts" : NumberInt(1173)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188b"), 
+    "brand" : "THAKOON", 
+    "numProducts" : NumberInt(15)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188c"), 
+    "brand" : "THALIA SODI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188d"), 
+    "brand" : "THE BODY SHOP", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576188e"), 
+    "brand" : "THE GREAT", 
+    "numProducts" : NumberInt(17)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761890"), 
+    "brand" : "THE KOOPLES", 
+    "numProducts" : NumberInt(426)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761891"), 
+    "brand" : "THE LIMITED", 
+    "numProducts" : NumberInt(226)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761893"), 
+    "brand" : "THE ROW", 
+    "numProducts" : NumberInt(429)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761894"), 
+    "brand" : "THE SAK", 
+    "numProducts" : NumberInt(83)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761895"), 
+    "brand" : "THEORY", 
+    "numProducts" : NumberInt(823)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761898"), 
+    "brand" : "THOM BROWNE", 
+    "numProducts" : NumberInt(310)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761899"), 
+    "brand" : "THOMAS WYLDE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189a"), 
+    "brand" : "THREE DOTS", 
+    "numProducts" : NumberInt(105)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189b"), 
+    "brand" : "TIARA", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189c"), 
+    "brand" : "TIBI", 
+    "numProducts" : NumberInt(357)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189d"), 
+    "brand" : "TIFFANY & CO.", 
+    "numProducts" : NumberInt(66)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189e"), 
+    "brand" : "TIMBERLAND", 
+    "numProducts" : NumberInt(886)
+}
+{ 
+    "_id" : ObjectId("587e182070fe16164576189f"), 
+    "brand" : "TIMEX", 
+    "numProducts" : NumberInt(898)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a0"), 
+    "brand" : "TOD'S", 
+    "numProducts" : NumberInt(346)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a1"), 
+    "brand" : "TOM FORD", 
+    "numProducts" : NumberInt(506)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a2"), 
+    "brand" : "TOMAS MAIER", 
+    "numProducts" : NumberInt(121)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a3"), 
+    "brand" : "TOME", 
+    "numProducts" : NumberInt(28)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a4"), 
+    "brand" : "TOMMY BAHAMA", 
+    "numProducts" : NumberInt(661)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a6"), 
+    "brand" : "TOMS", 
+    "numProducts" : NumberInt(836)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a7"), 
+    "brand" : "TONELLO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a8"), 
+    "brand" : "TOO FACED", 
+    "numProducts" : NumberInt(73)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618a9"), 
+    "brand" : "TOPSHOP", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ab"), 
+    "brand" : "TORY BURCH", 
+    "numProducts" : NumberInt(756)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ac"), 
+    "brand" : "TOUCH UPS", 
+    "numProducts" : NumberInt(193)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ad"), 
+    "brand" : "TOY G.", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ae"), 
+    "brand" : "TRINA TURK", 
+    "numProducts" : NumberInt(183)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618af"), 
+    "brand" : "TRISH MCEVOY", 
+    "numProducts" : NumberInt(123)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b0"), 
+    "brand" : "TROTTERS", 
+    "numProducts" : NumberInt(100)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b1"), 
+    "brand" : "TRU TRUSSARDI", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b2"), 
+    "brand" : "TRUE RELIGION", 
+    "numProducts" : NumberInt(475)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b3"), 
+    "brand" : "TRUE ROYAL", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b4"), 
+    "brand" : "TRUENYC.", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b5"), 
+    "brand" : "TULAROSA", 
+    "numProducts" : NumberInt(52)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b6"), 
+    "brand" : "TUMI", 
+    "numProducts" : NumberInt(295)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b7"), 
+    "brand" : "TWEEZERMAN", 
+    "numProducts" : NumberInt(136)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b8"), 
+    "brand" : "TWIN-SET", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618b9"), 
+    "brand" : "TYR", 
+    "numProducts" : NumberInt(140)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618bb"), 
+    "brand" : "UGG", 
+    "numProducts" : NumberInt(933)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618bc"), 
+    "brand" : "ULLA JOHNSON", 
+    "numProducts" : NumberInt(207)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618bd"), 
+    "brand" : "ULTA", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618be"), 
+    "brand" : "UMGEE USA", 
+    "numProducts" : NumberInt(47)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618bf"), 
+    "brand" : "UNDER ARMOUR", 
+    "numProducts" : NumberInt(682)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c0"), 
+    "brand" : "UNGARO", 
+    "numProducts" : NumberInt(10)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c1"), 
+    "brand" : "UNIONBAY", 
+    "numProducts" : NumberInt(356)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c2"), 
+    "brand" : "UNIQLO", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c4"), 
+    "brand" : "URBAN DECAY", 
+    "numProducts" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c5"), 
+    "brand" : "VALENTINO", 
+    "numProducts" : NumberInt(1471)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c8"), 
+    "brand" : "VANELI", 
+    "numProducts" : NumberInt(326)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618c9"), 
+    "brand" : "VANESSA BRUNO", 
+    "numProducts" : NumberInt(83)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618cb"), 
+    "brand" : "VANITY FAIR", 
+    "numProducts" : NumberInt(486)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618cc"), 
+    "brand" : "VANS", 
+    "numProducts" : NumberInt(4222)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618cd"), 
+    "brand" : "VDP CLUB", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618cf"), 
+    "brand" : "VELVET", 
+    "numProducts" : NumberInt(267)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d1"), 
+    "brand" : "VERA BRADLEY", 
+    "numProducts" : NumberInt(1708)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d2"), 
+    "brand" : "VERA WANG", 
+    "numProducts" : NumberInt(153)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d3"), 
+    "brand" : "VERO MODA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d5"), 
+    "brand" : "VERSACE", 
+    "numProducts" : NumberInt(987)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d6"), 
+    "brand" : "VERSUS", 
+    "numProducts" : NumberInt(272)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d7"), 
+    "brand" : "VETEMENTS", 
+    "numProducts" : NumberInt(130)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d8"), 
+    "brand" : "VIA SPIGA", 
+    "numProducts" : NumberInt(231)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618d9"), 
+    "brand" : "VIC MATIÉ", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618dc"), 
+    "brand" : "VIKTOR & ROLF", 
+    "numProducts" : NumberInt(56)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618dd"), 
+    "brand" : "VILA", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618de"), 
+    "brand" : "VINCE", 
+    "numProducts" : NumberInt(1280)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618df"), 
+    "brand" : "VINCE CAMUTO", 
+    "numProducts" : NumberInt(532)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e1"), 
+    "brand" : "VIONIC", 
+    "numProducts" : NumberInt(77)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e2"), 
+    "brand" : "VIONNET", 
+    "numProducts" : NumberInt(49)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e3"), 
+    "brand" : "VITA FEDE", 
+    "numProducts" : NumberInt(157)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e5"), 
+    "brand" : "VIX", 
+    "numProducts" : NumberInt(17)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e6"), 
+    "brand" : "VODA SWIM", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e7"), 
+    "brand" : "VOLATILE", 
+    "numProducts" : NumberInt(16)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e8"), 
+    "brand" : "VOLCOM", 
+    "numProducts" : NumberInt(1845)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618e9"), 
+    "brand" : "WACOAL", 
+    "numProducts" : NumberInt(224)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618eb"), 
+    "brand" : "WAREHOUSE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ed"), 
+    "brand" : "WHISTLES", 
+    "numProducts" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f0"), 
+    "brand" : "WOLFORD", 
+    "numProducts" : NumberInt(221)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f1"), 
+    "brand" : "WOOLRICH", 
+    "numProducts" : NumberInt(936)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f2"), 
+    "brand" : "XCVI", 
+    "numProducts" : NumberInt(117)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f3"), 
+    "brand" : "XOXO", 
+    "numProducts" : NumberInt(149)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f4"), 
+    "brand" : "Y-3", 
+    "numProducts" : NumberInt(409)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f5"), 
+    "brand" : "YIGAL AZROUEL", 
+    "numProducts" : NumberInt(84)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618f9"), 
+    "brand" : "ZAC POSEN", 
+    "numProducts" : NumberInt(48)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618fb"), 
+    "brand" : "ZALES", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618fd"), 
+    "brand" : "ZIMMERMANN", 
+    "numProducts" : NumberInt(96)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618fe"), 
+    "brand" : "'47", 
+    "numProducts" : NumberInt(14866)
+}
+{ 
+    "_id" : ObjectId("587e182070fe1616457618ff"), 
+    "brand" : "(+) PEOPLE", 
+    "numProducts" : NumberInt(197)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761900"), 
+    "brand" : "1 ONE", 
+    "numProducts" : NumberInt(-1)
+}
+{ 
+    "_id" : ObjectId("587e182070fe161645761901"), 
+    "brand" : "1 STATE", 
+    "numProducts" : NumberInt(87)
+}

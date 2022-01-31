@@ -1,0 +1,46 @@
+Update From Reymart:
+    The previous developers utilized the node-webshot library for taking webpage screenshots. We tried to use this library, but we noticed several performance issues. Many shops are not supported because the api used by this library is quite old, and has long been phased out / unmaintained. As a workaround, we utilized the Puppeteer library, which is a much faster and reliable scraper because it is powered by chromium which is actively maintained by Google, and is compatible with most websites.
+    
+    We have set a cron job once a week for taking shop site screenshots.
+
+    Even though we already used an up-to-date and performant library, we still encountered a few shop-specific errors:
+        1.) Access Denied - The shops below do not allow scrapers / screenshot plugins
+            - kohls.com
+            - finishline.com
+            - gamestop.com
+            - moosejaw.com
+        2.) Captcha - The shops below detected puppeteer as a bot
+            - shiekh.com
+            - speedousa.com
+        3.) White Screen 
+            - express.com
+            - petit-bateau.us
+            - oakley.com
+            - vixpaulahermanny.com
+            - 100percentpure.com
+            - thewalkingcompany.com
+        4.) Shop currently unavailable - The site is not working
+            - roveswimwear.com
+            - shopgreybox.com
+            - zoganic.com
+        5.) 400 bad request - can't visit the site
+            - marksandspencerlondon.com
+
+        To solve problems 1, 2, and 3, we captured the site manually because we can't find any other solution, and this is the only way to bypass some sites' advanced bot detection. (See puppeteer issues: https://github.com/GoogleChrome/puppeteer/issues/3428)
+        
+    Also, there is an issue regarding TwoTaps' list of supported shops. TwoTap has recently added more stores to their catalogue, which now total up to 4,809. But according to its API, only a few hundred of these shops have searchable products (determined via the feed_support property). The problem is that feed_support is quite unreliable, because some products still show up in the search results even if the products' shop is listed as not supporting feeds. This means that we might have to scrape all 4,809 shops for screenshots just to make sure that a slider image is present anytime these shops show up when their products are included in the search results, or we can wait for Two Tap to fix their merchant catalog data. If we choose to scrape only those sites that support feed, some shop slider images won't display each time one or more of these problematic shops' products show up in the homepage.
+    
+Update From Jaycliff:
+    We have already implemented most of the sorting options for the search results. In order to make the SS-specific sorting options work (Favorites, Most Share, etc.), we had to save the products to the database. This means scraping Two Tap's entire product catalog and saving it again in our database. This is because all the social product data are unique within SS itself, so the sorting has to be done in the database. As a side effect, multiple color filtering is now re-enabled, although only for those products with embedded color data.
+    
+    We encountered multiple issues when implementing the sort functions.
+        1.) Our server can't keep up with the memory requirements when sorting product data in our database. Sorting is a heavy process, which is both CPU and RAM-intensive. Searching products in the database is also slower in contrast with Two Tap's native search function. The site crashed several times when testing.
+        
+        2.) Two Tap's endpoint for getting the whole product catalog has recently stopped working properly. It was fine last December (we were able to scrape a total of 1,884,491 products). But now it throws up an internal error halfway through scraping. We have already contacted Two Tap regarding this but didn't receive any feedback yet.
+        
+        3.) Two Tap's product catalog has now increased to 2,555,267. This makes saving/updating the whole catalog more tedious and more resource-intensive. This will affect the overall site's performance/speed.
+        
+        4.) Search results from the database and Two Tap vary greatly on some keywords. Two Tap will sometimes display far less results in contrast with the ones coming from the database.
+        
+    
+    

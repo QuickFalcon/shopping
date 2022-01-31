@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("55d5e45a371429e8235b835f"), 
+    "username" : "rajib_2002bd@yahoo.com", 
+    "password" : "myyear2014", 
+    "fullname" : "Rajib Chowdhury", 
+    "address" : "rampura", 
+    "city" : "dhaka", 
+    "phone" : "01776220433", 
+    "email" : "rajib_2002bd@yahoo.com", 
+    "gender" : true, 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("55d5e3d5371429e8235b835e"), 
+    "username" : "rajib_2002bd@yahoo.com", 
+    "password" : "myyear2014", 
+    "fullname" : "Rajib Chowdhury", 
+    "address" : "rampura", 
+    "city" : "dhaka", 
+    "phone" : "01776220433", 
+    "email" : "rajib_2002bd@yahoo.com", 
+    "gender" : true, 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,15 @@
+<div  class="mid_content" ng-class="$ctrl.isLoggedIn? 'dashboard_page':'home_page'">
+  <div class="container_inner clearfix">
+
+          <!-- End store section -->
+          <!--<stage-slider-component is-logged-in="$ctrl.isLoggedIn" user-info="$ctrl.userInfo"></stage-slider-component>
+          <thumbnail-slider-component></thumbnail-slider-component>-->
+          <dashboard-slider-component is-logged-in="$ctrl.isLoggedIn" user-info="$ctrl.userInfo" user-dashboard-merchant="$ctrl.userDashboardMerchant"></dashboard-slider-component>
+          <dashboard-products-component is-logged-in="$ctrl.isLoggedIn" user-dashboard-merchant="$ctrl.userDashboardMerchant"></dashboard-products-component>
+          <!-- End Product section -->
+
+          <div class="happy_shopping">
+              <a href="" role="button" alt="Socially Shoppable">HAPPY SHOPPING<i class="icon"></i></a>
+          </div>
+      </div>
+  </div>

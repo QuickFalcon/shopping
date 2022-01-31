@@ -1,0 +1,33 @@
+require.config({
+    baseUrl: '../scripts/',
+    waitSeconds: 200,
+
+    // alias libraries paths.  Must set 'angular'
+    paths: {
+        'angular': 'libs/angularjs/angular.min',
+        'angular-route': 'libs/angularjs/angular-route',
+        'angular-ui-router': 'libs/angularjs/angular-ui-router.min',
+        'angularAMD': 'libs/angularjs/angularAMD',
+        'ngload': 'libs/angularjs/ngload',
+        'angular-resource': 'libs/angularjs/angular-resource',
+        'jquery': 'libs/jquery.min',
+        //'jquery-validate': 'libs/jquery.validate.min',
+        //'jquery-dd': 'libs/jquery.dd',
+        'jquery-plugin-checkbox': 'us/plugin.checkbox',
+        'jquery-jcarousel': 'libs/jquery.jcarousel',
+        'jquery-prettyPhoto': "libs/jquery.prettyPhoto",
+        'globaljs': 'us/global'
+    },
+
+    // Add angular modules that does not support AMD out of the box, put it in a shim
+    shim: {
+        'angular-route': [ 'angular' ],
+        'angularAMD': [ 'angular' ],
+        'ngload': [ 'angularAMD' ],
+        'angular-resource': [ 'angular' ],
+        'angular-ui-router': [ 'angular' ]
+    },
+
+    // kick start application
+    deps: ['mainApp']
+});

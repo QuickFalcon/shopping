@@ -1,0 +1,180 @@
+<section class="products_wrap">
+  <div class="select_product_cat">
+    <label>SORT BY</label>
+      <div class="defaultSt" ng-class="{showTooltip : $ctrl.tooltipShow}">
+        <select ng-model="sortOrder" ng-change="$ctrl.updateSorting(sortOrder)" ng-class="{fRedHeart : $ctrl.sFavorite}" convert-to-number>
+          <option value="0" ng-class="{hide : !$ctrl.isLoggedIn}">Favourites</option>
+          <option value="1">Low to High</option>
+          <option value="2">High to Low</option>
+          <option value="3">Newest First</option>
+          <option value="4">Customer Rating</option>
+          <option value="5">Most Shared</option>
+          <option value="6">Most Popular</option>
+          <option value="7">Bestseller</option>
+          <option value="8">% off Sale</option>
+          <option value="9">Relevance</option>
+        </select>
+        <div class="e-tooltip">Coming Soon!</div>
+      </div>
+      <div class="view_all">
+        <span class="viewAt_time">View 80</span>
+        <a ng-click="viewPagination('prev')" title="Previous" class="prev view-page"></a>
+        <a ng-click="loadMore($event,$index + 1)" ng-class="{active:activePage == $index + 1}"  ng-repeat="x in [] | range: numPages-1" ng-show=" $index < current_limit && $index >= current_limit -3">{{$index + 1}}</a>
+        <span>...</span>
+        <a ng-click="loadMore($event,numPages)" ng-class="{active:activePage == numPages}">{{numPages}}</a>
+        <a ng-click="viewPagination('next')" title="Next" class="next view-page"></a>
+      </div>
+    </div>
+
+    <div class="product_group" ng-class="{'ss_loading': !$ctrl.loadDone, 'showInCenter': currentpage>1}">
+      <div class="product_group_inner clearfix" ng-if="$ctrl.isLoggedIn">
+        <div class="col_3" ng-repeat="pro in $ctrl.products track by $index" ng-class="{pageLastPro : ($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index!=0}">
+          <div class="product-info">
+            <div class="product-image">
+              <div class="p_image_innner p_image_bg" style="background-image: url({{(pro.image_url ? pro.image_url : '')}})">
+                <div class="rateit">
+                  <div class="rateis r{{pro.rateAvg| makePositive}}"></div>
+                </div>
+                <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a>
+              </div>
+            </div>
+            <div class="zoomed_s_icons_wrap dsktp_hide">
+              <ul class="zoomed_s_icons">
+                <li>
+                  <i class="icon grey_heart"></i>
+                  <span ng-bind="pro.likeCount || '0'"></span>
+                </li>
+                <li>
+                  <i class="icon grey_arrow"></i>
+                  <span ng-bind="pro.shareCount || '0'"></span>
+                </li>
+                <li>
+                  <i class="icon grey_bag"></i>
+                  <span ng-bind="pro.ratedByUser || '0'"></span>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="shared_icons" >
+              <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='like'}">
+                <i class="icon grey_heart" ng-class="{activated: (pro.likeUser|| favCataloglist.indexOf(pro.catalogId) > -1  )}"></i>
+                <span ng-bind="pro.likeCount || '0'"></span>
+              </li>
+              <li ng-click="openSocialPopup(pro, 'mail', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='mail'}">
+                <i class="icon grey_arrow" ng-class="{activated: (pro.mailUser || mailCatalogList.indexOf(pro.catalogId) > -1)}"></i>
+                <span ng-bind="pro.shareCount || '0'"></span>
+              </li>
+              <li ng-click="openSocialPopup(pro, 'collective', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='collective'}">
+                <i class="icon grey_bag" ng-class="{activated: (pro.rateUser || reviewCataloglist.indexOf(pro.catalogId) > -1 )}"></i>
+                <span ng-bind="pro.ratedByUser || '0'"></span>
+              </li>
+            </ul>
+
+            <ul class="product-details">
+              <li>
+                <a ng-href="#!/SOC/{{pro.catalogId }}/{{ pro.keyword | slugify}}" title="{{pro.keyword}}" alt="{{pro.keyword}}" ng-bind-html="pro.keyword"></a>
+              </li>
+              <li><a ng-bind="pro.brand"></a></li>
+              <li><a ng-href="#!/storechosen/{{pro.merchant}}" ng-bind="pro.merchant"></a></li>
+              <li class="price">
+                <span ng-class="{lineThrough: pro.price_sale>-1&&pro.price_sale!=null}" ng-bind="'$' + pro.price"></span>
+                <span ng-show="pro.price_sale>-1 && pro.price_sale!=null" ng-bind="'$'+ pro.price_sale" class="sale-price"></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="loading" ng-class="($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index+1 != numPages*$ctrl.PRODUCTSLIMITPERLOAD || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index+1 != numPages*$ctrl.PRODUCTSLIMITPERLOAD || $index==0 ? 'targetNo' + productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) : ''}}">
+            <div class="loading-inner">
+              <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) - 1 )">
+                <i class="icon up_arrow"></i>
+              </div>
+              <div class="load_more" ng-click="loadMore($event,($index+1)/$ctrl.PRODUCTSLIMITPERLOAD + ($index+1 == maxIndex ? 1 : 2) )">
+                <span ng-show="$index+1 === maxIndex">Load More</span>
+                <span class="loading_dot" ng-show="!$ctrl.loadDone">Loading</span>
+                <span ng-show="$index+1 !== maxIndex && $ctrl.loadDone">PAGE <span ng-bind="productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD)"></span><!--/ {{($index+1)/$ctrl.PRODUCTSLIMITPERLOAD}}-->/{{numPages}}</span>
+              </div>
+              <div class="next_bx" ng-click="loadMore($event,productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) + ($index+1 == maxIndex ? 0 : 1))">
+                <i class="icon down_arrow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="product_group_inner clearfix" ng-if="!$ctrl.isLoggedIn">
+          <div class="col_3" ng-repeat="pro in $ctrl.products track by $index" ng-class="{pageLastPro : ($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index!=0}">
+            <div class="product-info">
+              <div class="product-image">
+                <div class="p_image_innner p_image_bg" style="background-image: url({{(pro.image_url ? pro.image_url : '')}})">
+                  <div class="rateit">
+                    <div class="rateis r{{pro.rateAvg| makePositive}}"></div>
+                  </div>
+                  <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a>
+                </div>
+              </div>
+              <div class="zoomed_s_icons_wrap dsktp_hide">
+                <ul class="zoomed_s_icons">
+                  <li>
+                    <i class="icon grey_heart"></i>
+                    <span ng-bind="pro.likeCount || '0'"></span>
+                  </li>
+                  <li>
+                    <i class="icon grey_arrow"></i>
+                    <span ng-bind="pro.shareCount || '0'"></span>
+                  </li>
+                  <li>
+                    <i class="icon grey_bag"></i>
+                    <span ng-bind="pro.ratedByUser || '0'"></span>
+
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="shared_icons" >
+                <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='like'}">
+                  <i class="icon grey_heart"></i>
+                    <span ng-bind="pro.likeCount || '0'"></span>
+                </li>
+                <li ng-click="openSocialPopup(pro, 'mail', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='mail'}">
+                  <i class="icon grey_arrow"></i>
+                  <span ng-bind="pro.shareCount || '0'"></span>
+                </li>
+                <li ng-click="openSocialPopup(pro, 'collective', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='collective'}">
+                  <i class="icon grey_bag"></i>
+                  <span ng-bind="pro.ratedByUser || '0'"></span>
+                </li>
+              </ul>
+
+              <ul class="product-details">
+                <li>
+                  <a ng-href="#!/SOC/{{pro.catalogId }}/{{ pro.keyword | slugify}}" title="{{pro.keyword}}" alt="{{pro.keyword}}" ng-bind-html="pro.keyword"></a>
+                </li>
+                <li><a ng-bind="pro.brand"></a></li>
+                <li><a ng-href="#!/storechosen/{{pro.merchant}}" ng-bind="pro.merchant"></a></li>
+                <li class="price">
+                  <span ng-class="{lineThrough: pro.price_sale>-1&&pro.price_sale!=null}" ng-bind="'$' + pro.price"></span>
+                  <span ng-show="pro.price_sale>-1 && pro.price_sale!=null" ng-bind="'$'+ pro.price_sale" class="sale-price"></span>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="loading" ng-class="($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index+1 != numPages*$ctrl.PRODUCTSLIMITPERLOAD || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%$ctrl.PRODUCTSLIMITPERLOAD == 0 && $index+1 != numPages*$ctrl.PRODUCTSLIMITPERLOAD || $index==0 ? 'targetNo' + productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) : ''}}">
+              <div class="loading-inner">
+                <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) - 1 )">
+                  <i class="icon up_arrow"></i>
+                </div>
+                <div class="load_more" ng-click="loadMore($event,($index+1)/$ctrl.PRODUCTSLIMITPERLOAD + ($index+1 == maxIndex ? 1 : 2) )">
+                  <span ng-show="$index+1 === maxIndex">Load More</span>
+                  <span class="loading_dot" ng-show="!$ctrl.loadDone">Loading</span>
+                  <span ng-show="$index+1 !== maxIndex && $ctrl.loadDone">PAGE <span ng-bind="productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD)"></span><!--/ {{($index+1)/$ctrl.PRODUCTSLIMITPERLOAD}}-->/{{numPages}}</span>
+                </div>
+                <div class="next_bx" ng-click="loadMore($event,productPageNo($index,$ctrl.PRODUCTSLIMITPERLOAD) + ($index+1 == maxIndex ? 0 : 1))">
+                  <i class="icon down_arrow"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

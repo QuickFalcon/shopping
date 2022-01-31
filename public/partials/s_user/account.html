@@ -1,0 +1,460 @@
+<style>
+
+    .thumb.user {
+        width: 24px;
+        height: 24px;
+        float: none;
+        position: relative;
+        top: 7px;
+    }
+
+    form .progress {
+        line-height: 15px;
+    }
+
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 700px;
+        height: 700px;
+        float: left;
+
+    }
+
+    .selectedArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        float: left;
+        border: 3px solid #CCC;
+
+    }
+
+    .progress {
+        display: inline-block;
+        width: 300px;
+        border: 3px groove #CCC;
+        margin-top: 4vh;
+        float: left
+    }
+
+    .progress div {
+        font-size: smaller;
+        background: red;
+        width: 0
+    }
+</style>
+
+
+<div class="mid_content account-page" ng-click="popClose()">
+    <div class="container_inner clearfix">
+
+        <ul class="breadcrumbs">
+            <li class="myacchd"><a href="#!/account" style="cursor: pointer;" ng-bind="SmartPathing"></a></li>
+            <li ng-show="pageTitle" class="myacchd"><a href="#!/account" style="cursor: pointer;">  &gt; My Profile</a>
+            </li>
+        </ul>
+
+        <div class="profile-container">
+            <!-- Begin Profile Left Menu -->
+            <!--<div class="profile-left">
+              <div class="menu_wrap">
+                <ul class="profile-menu">
+                  <li class="active red"><a href="">My Profile</a></li>
+                  <li>
+                    <a href="">Shops</a>
+                    <ul class="sub-item">
+                      <li><a href="top_ten.html">Top 10</a></li>
+                      <li><a href="all_store.html">All</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Social</a>
+                    <ul class="sub-item">
+                      <li><a href="">Settings</a></li>
+                      <li><a href="">Support</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="profile-menu">
+                  <li class="profile-item bold"><a href="#/order_history">Order History</a></li>
+                  <li class="profile-item bold"><a href="#/shoppingbag">Shopping Bag</a></li>
+                  <li class="profile-item bold"><a href="#/wishList">Wish List</a></li>
+                  <li class="profile-item profile-btm  bold"><a href="#/company">Company</a></li>
+                  <li class="profile-item  bold"><a href="#/customer_service">Customer Services</a></li>
+                  <li class="profile-item  bold"><a href="#/policy">Policies</a></li>
+                  <li class="profile-item underline separator-2" data-toggle="modal" data-target="#signout-modal"><a href="/api/auth/signout">Sign Out</a></li>
+                </ul>
+                <div class="signOut">Sign Out</div>
+              </div>
+
+            </div>-->
+            <profile-sidebar class="profile-left"></profile-sidebar>
+            <!-- End Profile Left Menu -->
+
+            <!-- Begin Profile Content -->
+            <div class="profile-content" data-ui-view>
+                <div class="box-preview">
+                    <div class="preview-image uploadPhoto border-none" ng-class="{popUpshow : activePopup == '1'}"
+                         ng-click="showPopupFn($event,'1')" style="background-image: url({{userprofile.img_location.length ? '' : '../images/upload-icon-large.png'}})">
+                        <div class="table">
+                            <div class="uploadPhoto_inner">
+                                <img class="preview-img" src="{{userprofile.img_location}}"/>
+                            </div>
+                        </div>
+                        <photo-upload changed="changePhoto(photo)" type="profile"></photo-upload>
+                    </div>
+                    <div class="preview-content">
+                        <div class="form-group edit_username showCircle" ng-class="{'popUpshow': showpopup}" ng-click="triggerpopup($event,1)">
+                            <input type="text" value="" name="username" placeholder="Username"
+                                   ng-model="userprofile.username">
+                            <div class="popUp">
+                                <div class="btn black_btn" ng-click="update_username($event)">Update</div>
+                                <a class="btn cancel_btn" ng-click="reset_userprofilename($event)">Cancel</a>
+                            </div>
+                            <!-- search by word 'backend' in js to close the popup -->
+                        </div>
+                    </div>
+
+                    <div ng-class="upclass ==2? 'photogallery' : 'falseClass'">
+                        <form id="uploadForm" enctype="multipart/form-data" method="post" name="myForm">
+                            <div class="selectedArea">
+                                <img ng-src="{{croppedDataUrl}}" ng-show="myForm.file.$valid" name="cropfile">
+                            </div>
+                            <div style="float:left;">
+                                <br>
+                                <br>
+
+                                <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+                                    <img-crop image="picFile  | ngfDataUrl" area-type="square" area-min-size="500"
+                                              result-image-size="500" result-image-quality=".9"
+                                              result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+                                    </img-crop>
+                                </div>
+
+                                <br>
+                                <!-- Min-height 500px -->
+                                <!-- min-width 500px -->
+
+                                <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*"
+                                       ngf-max-size="2MB" ngf-min-height="500" ngf-min-width="500"
+                                       ngf-capture="'camera'">
+                                <i ng-show="myForm.file.$error.maxSize">File too large
+                                    <span ng-bind="picFile.size / 1000000|number:1"></span>MB: max 2M</i>
+
+                                <br>
+                                <button ng-disabled="!myForm.$valid"
+                                        ng-click="uploadPic(croppedDataUrl)" style="float:left;">Upload Image
+                                </button>
+                                &nbsp;&nbsp;&nbsp;
+                                <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                                <input type="hidden" ng-model="croppedDataUrl">
+
+                                <br>
+                                <span class="progress" ng-show="progress >= 0">
+                    <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+                  </span>
+                                <span ng-show="result">Upload Successful</span>
+                                <br>
+                                <span class="err" ng-show="errorMsg" ng-bind="errorMsg"></span>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div ng-class="upclass === 4 ? 'fbGallery' : 'falseClass'">
+                        <form id="uploadFormFB" enctype="multipart/form-data" method="post" name="yourForm">
+                            <img ng-src="{{fbUserProfilePic}}" title="" class="profile_img">
+                            <br>
+                            <br>
+
+                            <fb:login-button show-faces="true" max-rows="1" size="large"></fb:login-button>
+                            <br><br>
+
+                            <button ng-click="uploadPicSocial(fbUserProfilePic)" style="float:left;">Upload FB image
+                            </button>
+
+                        </form>
+                        <br><br>
+                    </div>
+
+                    <div ng-class="upclass === 3? 'fbGallery' : 'falseClass'">
+                        <form id="uploadFormtwitter" enctype="multipart/form-data" method="post" name="yourForm">
+                            <br>
+                            <strong><a ng-href="{{twitterImportUrl}}"> Verify Twitter Account </a></strong>
+                            <br>
+                            <img ng-src="{{twitterUserProfilePic}}" title="" class="profile_img"
+                                 style="width:200px;height:auto;">
+
+                            <br>
+                            <br>
+
+                            <button ng-click="uploadPicSocial(twitterUserProfilePic)" style="float:left;">Upload Twitter
+                                image
+                            </button>
+                        </form>
+                    </div>
+
+                    <div ng-class="upclass === 1? 'photocamera' : 'falseClass'">
+                        <form id="uploadFormCamera" enctype="multipart/form-data" method="post">
+                            <div class="camera">
+                                <video id="video">Video stream not available.</video>
+                                <br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button id="loadbutton">Start</button>
+                                <button id="videorun"> Pause</button>
+
+                                <button id="startbutton">Capture</button>
+                                <button ng-click="uploadPic2()" style="float:left;">Upload Image</button>
+                            </div>
+
+                            <canvas id="canvas" style="display:none;">
+                            </canvas>
+
+                            <br><br>
+                            <div class="output">
+                                <img id="photo" alt="The screen capture will appear in this box." title="user's image"
+                                     style="width:300px;height:auto;">
+                            </div>
+                            <input type="hidden" id="p" ng-model="xxx">
+
+                        </form>
+                    </div>
+                    <script src="s_js/libs/capture.js"></script>
+                </div><!-- end box preview -->
+                <form>
+                    <div class="box-user-info">
+                        <div class="user-info-container form-container">
+                            <div class="form-row">
+                                <div class="form-group title">
+                                    <label>Title</label>
+                                    <div class="form-group-by">
+                                        <div class="defaultSt">
+                                            <select ng-model="userprofile.gender" convert-to-number>
+                                                <option class="cmb-title-option" value="1">Mr</option>
+                                                <option class="cmb-title-option" value="2">Mrs</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group first-name">
+                                    <label>First Name</label>
+                                    <div class="form-group-by">
+                                        <span class="required"></span>
+                                        <input type="text" name="input-firstname" ng-model="userprofile.firstname"
+                                               placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="form-group adjm">
+                                    <label>MI</label>
+                                    <div class="form-group-by">
+                                        <input type="text" name="input-mi" value="" placeholder="MI"
+                                               ng-model="userprofile.middlename">
+                                    </div>
+                                </div>
+                                <div class="form-group last-name">
+                                    <label>Last Name</label>
+                                    <div class="form-group-by">
+                                        <span class="required"></span>
+                                        <input type="text" name="input-lastname" ng-model="userprofile.lastname"
+                                               placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group email-address">
+                                    <label>Email Address</label>
+                                    <div class="form-group-by">
+                                        <span class="required"></span>
+                                        <input type="text" name="input-email" ng-model="userprofile.email"
+                                               placeholder="Email Address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row subcribe-row">
+                                <div class="form-group">
+                                    <label>Yes I want to receive emails updates for:</label>
+                                    <div class="form-group-by">
+                                        <div class="checkbox-wrapper">
+                                            <input id="ss" type="checkbox" name="ss_subscribe"
+                                                   ng-model="userprofile.ss_subscribe" ng-true-value="true"
+                                                   ng-false-value="false">
+                                            <label for="ss" ng-class="{checked: userprofile.ss_subscribe}">
+                                                sociallyshoppable.com</label>
+                                        </div>
+                                        <div class="checkbox-wrapper">
+                                            <input id="sblog" type="checkbox" name="blog_subscribe"
+                                                   ng-model="userprofile.blog_subscribe" ng-true-value="true"
+                                                   ng-false-value="false">
+                                            <label for="sblog" ng-class="{checked: userprofile.blog_subscribe}">The SS
+                                                Blog</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row gender-row">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div class="form-group-by">
+                                        <div class="radio-wrapper">
+                                            <input type="radio" name="input-gender" value="2"
+                                                   ng-model="userprofile.gender" id="genF">
+                                            <label for="genF" class="input-gender-label">female</label>
+                                        </div>
+                                        <div class="radio-wrapper">
+                                            <input type="radio" name="input-gender" ng-model="userprofile.gender"
+                                                   value="1" id="genM">
+                                            <label for="genM" class="input-gender-label">male</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-dob">
+                                    <label>Birthday</label>
+                                    <div class="form-group-by">
+                                        <div class="form-birthday month">
+                                            <div class="defaultSt">
+                                                <select ng-model="bmonth" ng-options="m for m in months">
+                                                    <option value="">month</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-birthday day">
+                                            <div class="defaultSt">
+                                                <select ng-model="bday" ng-options="d for d in days">
+                                                    <option value="">day</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-birthday year">
+                                            <div class="defaultSt">
+                                                <select ng-model="byear" ng-options="y for y in years">
+                                                    <option value="">year</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-user-address" ng-class="accountloaddone?'':'ss_loading'">
+                        <h2>Address</h2>
+                        <div class="user-info-container form-container">
+                            <div class="form-row">
+                                <div class="form-group country">
+                                    <label>Country</label>
+                                    <div class="form-group-by">
+                                        <div class="defaultSt">
+                                            <select name="cmb-country" ng-model="userprofile.country">
+                                                <option value="{{country}}"
+                                                        ng-repeat="(country,state) in country_state track by $index">
+                                                    {{country}}
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group currency ">
+                                    <label>Currency</label>
+                                    <div class="form-group-by no-scroll">
+                                        <div class="defaultSt">
+                                            <select class="cmb-currency dropdown-style" name="cmb-currency"
+                                                    ng-model="userprofile.currency">
+                                                <option value="us">USD</option>
+                                                <option value="aus">AUS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group address">
+                                    <label>Address</label>
+                                    <div class="form-group-by">
+                                        <input type="text" class="input-address" name="input-address" value=""
+                                               placeholder="Address" ng-model="userprofile.address1">
+                                    </div>
+                                </div>
+                                <div class="form-group aptOrSuite">
+                                    <label>Apt / Suite</label>
+                                    <div class="form-group-by">
+                                        <input type="text" class="input-apt-suit" name="input-apt-suit" value=""
+                                               placeholder="Apt/Suit" ng-model="userprofile.apt">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group city">
+                                    <label>City</label>
+                                    <div class="form-group-by">
+                                        <input type="text" class="input-city" name="input-city" value=""
+                                               placeholder="City" ng-model="userprofile.city">
+                                    </div>
+                                </div>
+                                <div class="form-group state">
+                                    <label>State</label>
+                                    <div class="form-group-by">
+                                        <div class="defaultSt">
+                                            <select ng-model="userprofile.state">
+                                                <option value="{{state}}"
+                                                        ng-repeat="state in country_state[userprofile.country] track by $index">
+                                                    {{state}}
+                                                </option>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group zip">
+                                    <label>Zip Code</label>
+                                    <div class="form-group-by">
+                                        <input type="text" class="input-zipcode" name="input-zipcode" value=""
+                                               placeholder="Zip Code" ng-model="userprofile.zip">
+                                    </div>
+                                </div>
+                                <div class="form-group phone">
+                                    <label>Phone</label>
+
+                                    <div class="form-group-by">
+                                        <span class="required"></span>
+                                        <input type="text" class="input-zipcode" name="input-zipcode" value=""
+                                               placeholder="Phone" ng-model="userprofile.phone">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="box-user-action">
+                        <!-- <div class="fl"><a href="#" class="red-link">My Address Book</a></div> -->
+                        <div class="pull-right">
+                            <a class="link-cancel" ng-click="reset_userprofile()">cancel</a>
+                            <button type="submit" class="btn black_btn" value="" ng-click="update_user()">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+    if (typeof mixpanel !== 'undefined') {
+        mixpanel.track('pageViewed', {
+            'pageName': 'Account',
+            'url': location.pathname + location.search + location.hash /*window.location.pathname*/
+        });
+    }
+</script>

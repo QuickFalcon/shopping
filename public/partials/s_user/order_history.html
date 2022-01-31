@@ -1,0 +1,389 @@
+
+
+    
+
+
+
+    <div class="mid_content social-page">
+        <div class="container_inner clearfix">
+
+
+            <ul class="breadcrumbs no_border">
+                <li><a href="#!/order_history">Order History</a></li> 
+               
+            </ul>
+
+            <div class="profile-container">
+                <!-- Begin Profile Left Menu -->
+                <profile-sidebar class="profile-left"></profile-sidebar>
+                <!-- End Profile Left Menu -->
+                <!-- Begin Profile Content -->
+                <div class="profile-content">
+                
+                    <div class="social_tab" ss-tab="sstab">
+                        <ul class="tab_head" id="tabHead">
+                            <li ng-click="ss.changeTab(1)" ng-class="{active : ss.activeTab == 1}">ORDER <!-- <span class="icon notify_no">12</span> --></li>
+                            <li ng-click="ss.changeTab(2)" ng-class="{active : ss.activeTab == 2}">PURCHASE</li>
+                        </ul>
+                        <div class="tab_content_wrap" id="tabContentWrap">
+                            <div class="tab_content" ng-show="ss.activeTab == 1" ng-class="{active : ss.activeTab === 1}">
+							  
+                                <div class="ss_mail_box" id="notificationBox">
+                                    <h2>ORDER &amp; HISTORY <!-- <span class="icon notify_no">12</span> --></h2>
+                               
+                                    <!-- <div class="search_box"> -->
+                                        <!-- <form> -->
+                                            <!-- <input type="text" placeholder="SEARCH" ng-model="ordertext"> -->
+                                            <!-- <input type="submit" value=""> -->
+                                        <!-- </form> -->
+                                    <!-- </div> -->
+                                    <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+
+
+                                        <li ng-class="box_shadow" ng-repeat="(mkey,orderData) in orderObj track by $index">
+
+
+                                            <div class="box-preview">
+
+                                                <div class="preview-image">
+                                                    <div class="preview-image-inner">
+                                                        <img class="preview-img mCS_img_loaded" src="images/ss_logo.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="username">sociallyshoppable.com</div>
+                                                <!-- <div class="date">{{mkey*1000| date:'MM/dd/yyyy'}}</div> -->
+                                            </div>
+                                            <div class="product_details">
+                                               
+                                                <div class="description">
+
+                                                    <div class="notify_heading">
+
+                                                           SS ORDER ID  <a ng-href="#!/order_placed_view/{{mkey}}" target="_blank">{{mkey}}</a> 
+                                 
+                                                        <div><a href="http://104.236.166.98">sociallyshoppable.com</a></div>
+                                                    </div>
+                                                    <div class="order_itm_grp">
+                                                        <div class="accordion_wrp">
+                                                            <ul class="logo_list">
+                                                         
+                                                                <li ng-repeat="(wsitekey,item) in orderData.userCart.sites track by $index">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                            <a><img ng-src="{{item.info.logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                            </ul>
+                                                            <!-- <div class="grand_total">Total : $2000.00</div> -->
+                                                            <div class="m_accordion_title see_more red">See details</div>
+                                                            <!-- <div class="accordion_title dot_more"> ... </div> -->
+                                                            <div class="order_itm_info_grp">
+
+
+
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in orderData.userCart.sites track by $index">
+                                                                    <div class="order_itm_grp_head">
+                                                                        <div class="image_outer">  <div class="image_inner">  <img ng-src="{{item.info.logo}}" alt=""></div></div>
+                                                                        <div class="order_st_info">We got your order information &amp;  you will get a confirmation message &amp; soon.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>{{item.info.url}} Order</h4>
+                                                                        <!--  <div>Item Name : 1 Cap</div> -->
+                                                                        <div><a ng-href="{{item.info.url}}">{{item.info.name}}</a> Order ID :{{purchaseObj[mkey].sites[wsitekey].order_id}} </div>
+                                                                        <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                                                                        <div class="est_total"><span>Shipping</span>{{item.estimates.prices.shipping_price}}</div>
+                                                                        <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+                                                                    
+
+                                                                        <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="" >
+                                                                                                <div class="rateit">
+                                                                                                    <div class="rateis r{{proMd5.rateAvg| makePositive}}">
+                                                                                                    </div>
+                                                                                                </div>
+																								<!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,proMd5)">+</a> -->
+                                                                                            <!--    <a class="quick-product" data-toggle="modal" data-target="#quick-popup" >+</a> -->
+																							</div>
+                                                                                        
+								
+																						
+																						
+																						</div>
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(proMd5.catalogId)" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{proMd5.quantity}} {{proMd5.title}}</a></div>
+                                                                                            <div>{{proMd5.brand}}</div>
+                                                                                            <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{proMd5.catalogId }}/{{proMd5.title | slugify}}" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{proMd5.catalogId}}</a></div>
+                                                                                            <div class="product-price">${{(proMd5.price.substring(1)*1.0)*proMd5.quantity}}</div>
+                                                                                             <div ng-class="proMd5.orderstatus=='OrderPlaced'?'':'falseClass'">{{proMd5.orderstatus}}</div>
+																							<div ng-class="proMd5.orderstatus=='OrderPlaced'?'falseClass':''">{{proMd5.status}}</div>
+
+																						</div>
+                                                                                                                                                                         	<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+
+
+
+                                                                                    </li>
+
+
+                                                                                </ul>
+
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+																	
+                                                          
+																
+																	   <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By :{{item.card.type }}{{orderData.userCart.card.type }} card end with {{orderData.userCart.card.card_number| limitTo : -4 : 0}}{{item.card.card_number| limitTo : -4 : 0}}</div>
+
+                                                                           <!-- <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div> -->
+                                                                    </div>
+																	
+																	
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div>Est. Delivery : {{item.estimates.delivery_days.min}} - {{item.estimates.delivery_days.max}} Business Days</div>
+                                                                        <div> Shipping To: <br>
+                                                                            {{item.shipping.firstname}} &nbsp;  {{item.shipping.lastname}} <br>
+                                                                            {{item.shipping.address1}} <br>
+                                                                            {{item.shipping.address2}}  <br>
+                                                                            {{item.shipping.city}}, {{item.shipping.state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div><a href="#!/order_placed_view/{{mkey}}" target="_blank">Open in another Page</a> </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </li>
+
+
+
+                                    </ul>
+
+								</div>
+                            </div>
+                           
+                            <div class="tab_content" ng-show="ss.activeTab == 2" ng-class="{active : ss.activeTab === 2}">
+							  
+                                <div class="ss_mail_box" id="notificationBox">
+                                    <h2>PURCHASE &amp; HISTORY <!-- <span class="icon notify_no">12</span> --></h2>
+                               
+                 
+                                    <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+
+
+                                        <li ng-class="box_shadow" ng-repeat="(mkey,purchaseData) in purchaseObj track by $index">
+                                            <!--<div class="close_btn">
+                                                <span title="Delete">x</span>
+                                                <div class="popUp">
+                                                    <div class="btn grey_btn">Delete Purchase Details</div>
+                                                </div>
+                                            </div> -->
+
+                                            <div class="box-preview">
+
+                                                <div class="preview-image">
+
+
+                                                    <div class="preview-image-inner">
+                                                        <img class="preview-img mCS_img_loaded" src="images/ss_logo.png" alt="">
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="username">sociallyshoppable.com</div>
+                                                <!-- <div class="date">{{mkey*1000| date:'MM/dd/yyyy'}}</div> -->
+
+
+                                            </div>
+                                            <div class="product_details">
+                                                
+                                                <div class="description">
+
+                                                    <div class="notify_heading">
+
+                                                    
+                                                     <div>
+                                                            SS PURCHASE ID <a ng-href="#!/confirmation_placed_view/{{mkey}}/{{userinfo['_id']}}"> {{mkey}}</a></div>
+
+
+                                                        <div><a href="http://104.236.166.98">sociallyshoppable.com</a></div>
+                                                    </div>
+                                                    <div class="order_itm_grp">
+                                                        <div class="accordion_wrp">
+
+
+                                                            <ul class="logo_list">
+                                                         
+                                                               <li ng-repeat="(wsitekey,item) in purchaseData.sites track by $index">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                            <a><img ng-src="{{item.info.logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+
+
+                                                            </ul>
+                                                            <!-- <div class="grand_total">Total : $2000.00</div> -->
+                                                            <div class="m_accordion_title see_more red">See details</div>
+                                                            <!-- <div class="accordion_title dot_more"> ... </div> -->
+                                                            <div class="order_itm_info_grp">
+
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in purchaseData.sites track by $index">
+                                                                    <div class="order_itm_grp_head">
+                                                                        <div class="image_outer">
+                                                                            <div class="image_inner">
+                                                                                <img ng-src="{{item.info.logo}}" alt="">
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="order_st_info">We got your order information &amp;you will  get a confirmation message with summary &amp; soon.
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4> Order</h4>
+                                                                        <div><a ng-href="{{item.info.url}}"> {{item.info.name}}</a> Order ID : {{item.order_id}}</div>
+                                                                        <div  ng-class="item.prices.hasOwnProperty('subtotal')? 'falseClass' : 'est_total'"><span>Subtotal</span> {{orderObj[mkey].userCart.sites[wsitekey].estimates.prices.subtotal }}</div>
+                                                                         <div ng-class="item.prices.hasOwnProperty('subtotal')? 'est_total' : 'falseClass'">  <span>Subtotal</span> {{item.prices.subtotal}}      </div>
+
+																		
+																		 <div  ng-class="item.prices.hasOwnProperty('shipping_price')? 'falseClass' : 'est_total'"><span>Shipping</span> {{orderObj[mkey].userCart.sites[wsitekey].estimates.prices.shipping_price }}</div>
+
+																		<div ng-class="item.prices.hasOwnProperty('shipping_price')? 'est_total' : 'falseClass'"><span>Shipping</span> {{item.prices.shipping_price}}</div>
+
+
+                                                                        <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'est_total' : 'falseClass'">  <span>Taxes</span> {{item.prices.sales_tax}}      </div>
+                                                                        <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'falseClass' : 'est_total'">  <span>Taxes</span> {{orderObj[mkey].userCart.sites[wsitekey].estimates.prices.sales_tax }}     </div>
+                                                                        <div ng-class="item.prices.hasOwnProperty('coupon_value')? 'est_total' : 'falseClass'">  <span>Coupon</span> - {{item.prices.coupon_value}}      </div>
+
+
+                                                                         <!--<div class="est_total"><span>Savings</span> -$9</div>-->
+                                                                         <div class="est_total"><span>Total :</span> {{item.prices.final_price}}</div>
+                                                                        <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.products track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="">
+                                                                                                <div class="rateit">
+                                                                                                    <div class="rateis r{{orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].rateAvg| makePositive }}">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="quick_view_for_orders(orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].catalogId)">+</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}">{{proMd5.input_fields.quantity}}
+                                                                                                <a ng-click="quick_view_parent_orders(orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].catalogId)" title="{{proMd5.title}}" alt="{{proMd5.title}}" ng-bind="proMd5.title"> </a>
+                                                                                            </div>
+                                                                                            <div>{{orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].brand }}</div>
+                                                                                            <div title="{{prokey}}">Web ID:  <a ng-href="#!/SOC/{{orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}/{{proMd5.title | slugify}}" title="{{orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}">{{orderObj[mkey].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}</a></div>
+                                                                                            <div class="product-price">${{ (proMd5.price.substring(1) *1.0) * proMd5.input_fields.quantity }}</div>
+                                                                                            <div ng-class="proMd5.status =='done'? 'falseClass' : 'red'" >
+                                                                                                Out Of Stock
+                                                                                            </div>
+                                                                                            <div ng-class="proMd5.status =='done'? '' : 'falseClass'" >
+                                                                                                In Stock
+                                                                                            </div>
+
+
+
+                                                                                        </div>
+                                                                                        <!--    <div class="ur_promotion"><span>Promotion ( 40% off ! )</span> <span class="red">- $50</span> </div>
+
+
+                                                                                           <div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                           <div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+    -->
+
+
+
+                                                                                    </li>
+
+
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By :{{orderObj[mkey].userCart.sites[wsitekey].card.type }} {{item.card.type }}{{orderObj[mkey].userCart.card.type }} card end with {{orderObj[mkey].userCart.sites[wsitekey].card.card_number| limitTo : -4 : 0 }}{{orderObj[mkey].userCart.card.card_number| limitTo : -4 : 0}}</div>
+                                                                        <!-- <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div> -->
+
+
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div ng-class="item.details.hasOwnProperty('shipping_estimate')? '' : 'falseClass'">Est. Delivery : {{item.details.shipping_estimate}}</div>
+                                                                        <div ng-class="item.details.hasOwnProperty('shipping_estimate')? 'falseClass' : ''">Est. Delivery : {{orderObj[mkey].userCart.sites[wsitekey].estimates.delivery_days.min}} - {{orderObj[mkey].userCart.sites[wsitekey].estimates.delivery_days.max}} business days</div>
+
+
+                                                                        <div> Shipping To: <br>
+                                                                            {{orderObj[mkey].fields_input[wsitekey].noauthCheckout.shipping_first_name}} {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_last_name}} <br>
+                                                                            {{orderObj[mkey].fields_input[wsitekey].noauthCheckout.shipping_address}} <br>
+
+                                                                            {{orderObj[mkey].fields_input[wsitekey].noauthCheckout.shipping_city}} , {{orderObj[mkey].fields_input[wsitekey].noauthCheckout.shipping_state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+																<div ><a ng-href="#!/confirmation_placed_view/{{mkey}}/{{userinfo['_id']}}" target="_blank">Open in another Page</a> </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </li>
+
+
+
+                                    </ul>
+
+								</div>
+                            </div>
+                          
+
+					 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

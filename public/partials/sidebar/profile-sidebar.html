@@ -1,0 +1,54 @@
+  <div class="menu_wrap" ng-if="loggedin==1">
+    <ul class="profile-menu">
+      <li ng-class="{'active red': vm.isCurrentPath('/account')}"><a href="#!/account">My Profile</a></li>
+      <li ng-class="{'active red': vm.isCurrentPath('/customizeshop') || vm.isCurrentPath('/store')}">
+        <a>Shops</a>
+        <ul class="sub-item">
+          <li ng-class="{'active red': vm.isCurrentPath('/customizeshop')}"><a href="#!/customizeshop">Top 10</a></li>
+          <li ng-class="{'active red': vm.isCurrentPath('/store')}"><a href="#!/store">All</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Social</a>
+        <ul class="sub-item">
+          <li><a href="#!/social">Settings</a></li>
+          <li><a href="">Support</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="profile-menu">
+      <li class="profile-item bold" ng-class="{'active red': vm.isCurrentPath('/order_history')}"><a href="#!/order_history">Order History</a></li>
+      <li class="profile-item bold" ng-class="{'active red': vm.isCurrentPath('/shoppingbag')}"><a href="#!/shoppingbag">Shopping Bag</a></li>
+      <li class="profile-item bold" ng-class="{'active red': vm.isCurrentPath('/shoppingbag')}"><a href="#!/shoppingbag#saved">Wish List</a></li>
+      <li class="profile-item profile-btm  bold" ng-class="{'active red': vm.isCurrentPath('/company')}"><a href="#!/company">Company</a></li>
+      <li class="profile-item  bold" ng-class="{'active red': vm.isCurrentPath('/customer_service')}"><a href="#!/customer_service">Customer Services</a></li>
+      <li class="profile-item  bold" ng-class="{'active red': vm.isCurrentPath('/policy')}"><a href="#!/policy">Policies</a></li>
+    </ul>
+    <div class="signOut" data-toggle="modal" data-target="#signout-modal"><a ng-click="signout()">Sign Out</a></div>
+  </div>
+ <div class="menu_wrap" ng-if="loggedin!=1">
+    <ul class="profile-menu">
+      <li ng-class="{'active red': vm.isCurrentPath('/account')}"><a href="#!/account">My Profile</a></li>
+      <li ng-class="{'active red': vm.isCurrentPath('/customizeshop') || vm.isCurrentPath('/store')}">
+        <a>Shops</a>
+        <ul class="sub-item">
+          <li ng-class="{'active red': vm.isCurrentPath('/customizeshop')}"><a href="#!/customizeshop">Top 10</a></li>
+          <li ng-class="{'active red': vm.isCurrentPath('/store')}"><a href="#!/store">All</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Social</a>
+        <ul class="sub-item">
+          <li><a href="">Settings</a></li>
+          <li><a href="">Support</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="profile-menu">
+      <li class="profile-item bold" ng-class="{'active red': vm.isCurrentPath('/shoppingbag')}"><a href="#!/shoppingbag">Shopping Bag</a></li>
+      <li class="profile-item profile-btm  bold" ng-class="{'active red': vm.isCurrentPath('/company')}"><a href="#!/company">Company</a></li>
+      <li class="profile-item  bold" ng-class="{'active red': vm.isCurrentPath('/customer_service')}"><a href="#!/customer_service">Customer Services</a></li>
+      <li class="profile-item  bold" ng-class="{'active red': vm.isCurrentPath('/policy')}"><a href="#!/policy">Policies</a></li>
+    </ul>
+    <div class="signOut"><a class="login-link ss_LogIn">LOGIN</a></div>
+  </div>

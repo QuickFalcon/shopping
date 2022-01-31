@@ -1,0 +1,44 @@
+.dashboard-2.full-width .featured .jcarousel ul li {
+    
+    border: 1px solid gray;
+    padding: 10px 19px;
+    margin-left: 14px;
+    margin-right: 0;
+
+    background:rgba(0,0,0,.5);
+    border: 1px solid #ffffff;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li .dashboard-img img{
+	opacity: 1;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li:hover{
+	background: #ffffff;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li .dashboard-img img:hover{
+
+	opacity: 1;
+/*	opacity: 0.75;
+	filter: alpha(opacity=75);
+*/
+/*
+opacity: 1;
+	filter: alpha(opacity=75);
+*/
+
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li.active{
+	border: 1px solid #000000 !important;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li:hover{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+
+.dashboard-item .dashboard-img {
+    border: none;
+}

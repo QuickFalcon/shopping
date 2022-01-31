@@ -1,0 +1,94 @@
+
+
+
+
+
+
+
+	<div class="mid_content urlikefull-page">
+		<div class="container_inner clearfix">
+				<div ng-class="loggedin==1?'content_top has_sidebar':'content_top'">
+
+
+				<div class="content">
+					<ul class="breadcrumbs">
+						<li><a href="#!/social">SOCIAL</a> </li>
+						<li>YOUR LIKE</li>
+					</ul>
+
+					 <div class="product_group border-none" ng-class="{'ss_loading' : !loaddone,'showInCenter':currentpage>1}">
+
+
+					<div class="product_group_inner clearfix">
+                        <div class="col_3" ng-repeat="pro in cproducts track by $index" ng-class="{pageLastPro : ($index+1)%limit == 0 && $index!=0}">
+                            <div class="product-item">
+                                <div class="product-item__social">
+                                    <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
+                                </div>
+                                <div class="product-image">
+                                    <div class="product-item__image">
+                                        <!-- <img ng-src="{{pro.image_url}}" alt=""> -->
+										 <img ng-src="{{pro.photos.photo}}" alt="" ng-if="pro.photos">
+										<img ng-src="{{pro.image_url}}" ng-if="!pro.photos">
+                                    </div>
+                                    <div class="rateit">
+                                        <div class="rateis r{{pro.rateAvg| makePositive}}"><a ng-click="seeCollectiveReview(item.user._id,'SOC/'+pro.catalogId+'/'+pro.keyword)" class="btn white_btn">See Review</a></div>
+                                    </div>
+                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                       ng-click="set_current_product_common_sim('','','','',pro)">+</a>
+                                </div>
+                            </div>
+                            <div class="loading" ng-class="($index+1)%limit == 0 && $index+1 != numPages*limit || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%limit == 0 && $index+1 != numPages*limit || $index==0 ? 'targetNo' + productPageNo($index,limit) : ''}}">
+                                <div class="loading-inner">
+                                    <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,limit) - 1 )">
+                                        <i class="icon up_arrow"></i>
+                                    </div>
+                                    <div class="load_more" ng-click="cloadMore($event,($index+1)/limit + ($index+1 == maxIndex ? 1 : 2) )">
+                                        <span ng-show="$index+1 === maxIndex">Load More</span>
+                                        <span class="loading_dot" ng-show="!loaddone">Loading</span>
+                                        <span ng-show="$index+1 !== maxIndex && loaddone">PAGE <span ng-bind="productPageNo($index,limit)"></span><!--/ {{($index+1)/limit}}-->/{{numPages}}</span>
+                                    </div>
+                                    <div class="next_bx" ng-click="cloadMore($event,productPageNo($index,limit) + ($index+1 == maxIndex ? 0 : 1))">
+                                        <i class="icon down_arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+					</div>
+
+
+
+
+
+
+
+				</div>
+				<!-- End Search Product List -->
+
+
+				<!-- End sidebar -->
+				<user-sidebar ng-if="loggedin==1"></user-sidebar>
+
+
+			</div>
+
+			 <div class="related_cat">
+						<ul ng-show="(collective_keyword!=''|| collective_keyword !='')&& related_popularsearch.length>0">
+							<li>Popular:</li>
+							<li ng-repeat="searchterm in related_popularsearch|limitTo:5 track by $index">
+								<a ng-click="searchbytag(searchterm,$event)">{{searchterm}}</a></li>
+
+						</ul>
+			</div>
+
+			<div class="happy_shopping">
+				<a href="#!/" role="button" alt="Socially Shoppable">HAPPY SHOPPING<i
+						class="icon"></i></a>
+			</div>
+
+
+		</div>
+
+	</div>

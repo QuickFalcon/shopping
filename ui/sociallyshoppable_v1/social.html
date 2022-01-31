@@ -1,0 +1,1580 @@
+
+
+    
+
+
+
+    <div class="mid_content social-page">
+        <div class="container_inner clearfix">
+
+
+            <ul class="breadcrumbs no_border">
+                <li><a href="#">My Account</a></li> 
+                <li>Social</li> 
+            </ul>
+
+            <div class="profile-container">
+                <!-- Begin Profile Left Menu -->
+                <div class="profile-left">
+                    <div class="menu_wrap">
+                        <ul class="profile-menu">
+                            <li><a href="">My Profile</a></li>
+                            <li>
+                                <a href="#">Shops</a>
+                                <ul class="sub-item">
+                                    <li><a href="top_ten.html">Top 10</a></li>
+                                    <li><a href="all_store.html">All</a></li>
+                                </ul>
+                            </li>
+                            <li class="active red">
+                                <a href="#">Social</a>
+                                <ul class="sub-item" style="display: block;">
+                                    <li><a href="">Settings</a></li>
+                                    <li><a href="">Support</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Order History</a></li>
+                            <li><a href="">Shopping Bag</a></li>
+                            <li><a href="">Wish List</a></li>
+                        </ul>
+                        <ul class="profile-menu">
+                            <li><a href="company.html">Company</a></li>
+                            <li><a href="customer_service.html">Customer Services</a></li>
+                            <li><a href="policy.html">Policies</a></li>
+                        </ul>
+                        <div class="signOut">Sign Out</div>
+                    </div>
+
+                </div>
+                <!-- End Profile Left Menu -->
+                <!-- Begin Profile Content -->
+                <div class="profile-content">
+                    <div class="social_top">
+                        <div class="box-preview">
+                            <div class="preview-image">
+                                <img class="preview-img" ng-src="{{userinfo.img_location}}" alt="{{userinfo.username}}">
+                            </div>
+                            <div class="preview-content">
+                                <div class="form-group edit_username">
+                                    <input type="text" value="" name="username" placeholder="{{userinfo.username}}">
+                                </div>
+                                <div class="preview-edit">
+                                    <div class="red-link edit">edit
+                                        <div class="upload_picture_popup popUp">
+                                            <div class="upload_pto_ttl">Upload Picture</div>
+                                            <ul>
+                                                <li><a href="#"><i class="icon instagrm"></i> Import from Instagram</a></li>
+                                                <li><a href="#"><i class="icon pinterst"></i> Import from Pinterest</a></li>
+                                                <li><a href="#"><i class="icon fb"></i> Import from Facebook</a></li>
+                                                <li><a href="#"><i class="icon twitter"></i> Import from Twitter</a></li>
+                                                <li><a href="#"><i class="icon library"></i> Import from Library</a></li>
+                                                <li><a href="#"><i class="icon take_photo"></i> Take Photo</a></li>
+                                            </ul>
+                                            <div class="upload_cancel"><a href="">Cancel</a></div>
+                                        </div>
+                                    </div> |
+                                    <div class="red-link">delete</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-user-info">
+                            <ul class="social_notify">
+                                <li>
+                                    <div>92</div>
+                                    <span> Posts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social_tab">
+                        <ul class="tab_head" id="tabHead">
+                            <li>SS MAIL &amp; NOTIFICATIONS <span class="icon notify_no">12</span></li>
+                            <li>MY WALL</li>
+                            <li>LIKE</li>
+                        </ul>
+                        <div class="tab_content_wrap" id="tabContentWrap">
+
+                            <div class="tab_content">
+                                <div class="ss_mail_box" id="mailBox">
+                                    <h2>SS MAIL <span class="icon notify_no">12</span></h2>
+                                    <div class="search_box">
+                                        <form>
+                                            <input type="text" placeholder="SEARCH">
+                                            <input type="submit" value="">
+                                        </form>
+                                    </div>
+                                    <ul class="ss_mail_list mCustomScrollbar">
+                                        
+										<li ng-class="unique_mail.mail_type =='order' || unique_mail.mail_type =='purchase' ? 'couponStore' : 'falseClass'" ng-repeat="(mkey,unique_mail) in mailObj track by $index">
+                                            <div class="box-preview">
+                                           
+												<div class="preview-image">
+                                                   
+													
+													<div class="preview-image-inner">
+                                                        <img class="preview-img mCS_img_loaded" src="images/ss_logo.png" alt="">
+                                                    </div>
+													
+                                                </div>
+												
+												
+                                                <div class="username">sociallyshoppable.com</div>
+                                                <div class="date">{{mkey*1000| date:'MM/dd/yyyy'}}</div> 
+												
+												
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                             <img src="images/ss_logo.png" alt="">
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    
+                                                    <div class="notify_heading">
+                                                       
+                                                      <div ng-class="unique_mail.mail_type =='order'? '' : 'falseClass'" >
+													   ORDER PROCESSING ID {{unique_mail.purchaseId}}</div>
+													    <div ng-class="unique_mail.mail_type =='purchase'? '' : 'falseClass'" >
+													  ORDER CONFIRM ID {{unique_mail.purchaseId}}</div>
+													   
+													   
+                                                        <div><a href="http://45.55.138.4">sociallyshoppable.com</a></div>
+                                                    </div>
+                                                    <div class="order_itm_grp">
+                                                        <div class="accordion_wrp">
+                                                            
+														
+															<ul class="logo_list">
+																<li ng-repeat="(wsitekey,item) in unique_mail.sites track by $index" ng-class="unique_mail.mail_type =='purchase'? '' : 'falseClass'">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                            <a ng-href="{{item.info.url}}"><img ng-src="{{item.info.logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>                                                               
+															   <li ng-repeat="(wsitekey,item) in unique_mail.user_cart.sites track by $index" ng-class="unique_mail.mail_type =='order'? '' : 'falseClass'">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                             <a ng-href="{{item.info.url}}"><img ng-src="{{item.info.logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+															
+																
+                                                                
+                                                           </ul>
+															<!-- <div class="grand_total">Total : $2000.00</div> -->
+														   <div class="m_accordion_title see_more red">See details</div>
+															<!-- <div class="accordion_title dot_more"> ... </div> -->
+                                                            <div class="order_itm_info_grp">
+																
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in unique_mail.sites track by $index" ng-class="unique_mail.mail_type =='purchase'? '' : 'falseClass'">
+                                                                    <div class="order_itm_grp_head">
+                                                                       <div class="image_outer">
+                                                                            <div class="image_inner">
+                                                                                <img ng-src="{{item.info.logo}}" alt="">
+                                                                            </div>
+                                                                        </div>
+
+
+																	   <div class="order_st_info">We got your order information &amp;you will  get a confirmation message with summary &amp; soon.
+																	   
+																	   
+																	   </div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4><!-- {{item.info.url}} --> Order</h4>
+                                                                        <!-- <div>Item Name : 1 Cap</div> -->
+                                                                        <div>Order ID : {{item.order_id}}</div>
+                                                                        <div class="est_total"><span>Subtotal</span> {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].estimates.prices.subtotal }}</div>
+                                                                        <div class="est_total"><span>Shipping</span> {{item.prices.shipping_price}}</div>
+                                                                    
+																		
+																		<div ng-class="item.prices.hasOwnProperty('sales_tax')? 'est_total' : 'falseClass'">  <span>Taxes</span> {{item.prices.sales_tax}}      </div>
+																		<div ng-class="item.prices.hasOwnProperty('sales_tax')? 'falseClass' : 'est_total'">  <span>Taxes</span> {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].estimates.prices.sales_tax }}     </div>
+																		<div ng-class="item.prices.hasOwnProperty('coupon_value')? 'est_total' : 'falseClass'">  <span>Coupon</span> - {{item.prices.coupon_value}}      </div>
+
+																		
+<!--                                                                         <div class="est_total"><span>Savings</span> -$9</div>
+ -->                                                                        <div class="est_total"><span>Total :</span> {{item.prices.final_price}}</div>
+                                                                        <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list mCustomScrollbar">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.products track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="">
+                                                                                                <div class="rateit">
+                                                                                                    <div class="rateis">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}">{{proMd5.input_fields.quantity}}
+																							{{proMd5.title}}</div>
+                                                                                            <div>{{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].add_to_cart[prokey].brand }}</div>
+                                                                                            <div title="{{prokey}}">Web ID: {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].add_to_cart[prokey].catalogId }}</div>
+                                                                                            <div class="product-price">${{ (proMd5.price.substring(1) *1.0) * proMd5.input_fields.quantity }}</div>
+                                                                                             <div ng-class="proMd5.status =='done'? 'falseClass' : 'red'" >
+																							 Out Of Stock
+																							 </div>
+																							  <div ng-class="proMd5.status =='done'? '' : 'falseClass'" >
+																							 In Stock
+																							 </div>
+																							 
+																						
+																						
+																						</div>
+                                                                                     <!--    <div class="ur_promotion"><span>Promotion ( 40% off ! )</span> <span class="red">- $50</span> </div>
+                                                                                        
+																						
+																						<div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+																						<div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+ -->
+																					
+																					
+																					
+																					</li>
+																			
+																				
+																				</ul>
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By :{{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].card.type }} card end with {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].card.card_number| limitTo : -4 : 0 }}</div>
+                                                                        <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div ng-class="item.details.hasOwnProperty('shipping_estimate')? '' : 'falseClass'">Est. Delivery : {{item.details.shipping_estimate}}</div>
+                                                                         <div ng-class="item.details.hasOwnProperty('shipping_estimate')? 'falseClass' : ''">Est. Delivery : {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].estimates.delivery_days.min}} - {{orderObj[unique_mail.purchaseId].user_cart.sites[wsitekey].estimates.delivery_days.max}} business days</div>
+
+																		
+																		<div> Shipping To: <br>
+                                                                           {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_first_name}} {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_last_name}} <br>
+                                                                            {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_address}} <br>
+                                                                           
+                                                                            {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_city}} , {{orderObj[unique_mail.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               
+															
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in unique_mail.user_cart.sites track by $index" ng-class="unique_mail.mail_type =='order'? '' : 'falseClass'">
+                                                                    <div class="order_itm_grp_head">
+                                                                        <div class="image_outer">  <div class="image_inner">  <img ng-src="{{item.info.logo}}" alt=""></div></div>
+                                                                        <div class="order_st_info">We got your order information &amp;  you will get a confirmation message &amp; soon.
+																		 
+																		
+																		</div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>{{item.info.url}} Order</h4>
+                                                                       <!--  <div>Item Name : 1 Cap</div> -->
+                                                                        <div>Order ID : Pending</div>
+                                                                        <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                                                                        <div class="est_total"><span>Shipping</span>{{item.estimates.prices.shipping_price}}</div>
+                                                                        <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+<!--                                                                         <div class="est_total"><span>Savings</span> -$9</div>
+ -->                                                                        <div class="est_total"><span>Total :</span> {{item.estimates.prices.final_price}}</div>
+                                                                      <!--  	<div>
+																					<span data-toggle="modal" data-target="#returnPolicy"><u><a ng-click="return_policy(item.returns,item.info.name,item.info.logo)">Return Policy</a></u></span>
+																		</div> -->
+
+																	   <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list mCustomScrollbar">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="">
+                                                                                                <div class="rateit">
+                                                                                                    <div class="rateis">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}">{{proMd5.quantity}} {{proMd5.title}}</div>
+                                                                                            <div>{{proMd5.brand}}</div>
+                                                                                            <div title="{{prokey}}">Web ID: {{prokey}}</div>
+                                                                                            <div class="product-price">${{(proMd5.price.substring(1)*1.0)*proMd5.quantity}}</div>
+                                                                                        </div>
+<!--                                                                                         <div class="ur_promotion"><span>Promotion ( 40% off ! )</span> <span class="red">- $50</span> </div>
+ -->                                                                                        	<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+  								                                                             <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+
+																					
+																					
+																					</li>
+                                                                             
+                                                                                  
+                                                                                </ul>
+																			
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By : Visa card</div>
+                                                                      
+																		
+																		<div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div>Est. Delivery : {{item.estimates.delivery_days.min}} - {{item.estimates.delivery_days.max}} Business Days</div>
+                                                                        <div> Shipping To: <br>
+                                                                           {{item.shipping.firstname}} &nbsp;  {{item.shipping.lastname}} <br>
+                                                                           {{item.shipping.address1}} <br>
+                                                                            {{item.shipping.address2}}  <br>
+                                                                           {{item.shipping.city}}, {{item.shipping.state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+																<div class="order_st_info red" ng-class="unique_mail.mail_type =='purchase'? '' : 'falseClass'"><a href="#!/confirmation_placed_view/{{unique_mail.purchaseId}}/{{userinfo._id}}" target="_blank">Open in another Page</a> </div>
+																<div class="order_st_info red" ng-class="unique_mail.mail_type =='order'? '' : 'falseClass'"><a href="#!/order_placed_view/{{mkey}}" target="_blank">Open in another Page</a> </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+
+                                                    </div>
+                                                    
+                                                </div>                                               
+                                            </div>
+                                           
+										
+										</li>
+
+
+										
+										<li>
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <img class="preview-img" src="" alt="">
+                                                </div>
+                                                <div class="username"> User name</div>
+                                                <div class="name">Name</div>
+                                                <div class="date">4/20/16</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi inventore laudantium et a mollitia blanditiis eveniet dolores</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi </p>
+                                                </div>                                               
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <img class="preview-img" src="" alt="" ng-src="{{userinfo.img_location}}">
+                                                </div>
+                                                <div class="username"> User name</div>
+                                                <div class="name">Name</div>
+                                                <div class="date">4/20/16</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi inventore laudantium et a mollitia blanditiis eveniet dolores</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi </p>
+                                                </div>                                               
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <img class="preview-img" src="" alt="">
+                                                </div>
+                                                <div class="username"> User name</div>
+                                                <div class="name">Name</div>
+                                                <div class="date">4/20/16</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi inventore laudantium et a mollitia blanditiis eveniet dolores</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, doloribus, porro. Explicabo eos saepe eligendi </p>
+                                                </div>                                               
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ss_mail_box" id="notificationBox">
+                                    <h2>SS NOTIFICATIONS <span class="icon notify_no">12</span></h2>
+                                    <div class="search_box">
+                                        <form>
+                                            <input type="text" placeholder="SEARCH">
+                                            <input type="submit" value="">
+                                        </form>
+                                    </div>
+                                    <ul class="ss_mail_list mCustomScrollbar">
+									    <!--
+										<li>
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <img class="preview-img" src="images/asos.jpg" alt="">
+                                                </div>
+                                                <div class="username">asos.com</div>
+                                                <div class="date">Just now</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/asos_offer.jpg" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <h4>Promo code alert</h4>
+                                                    <p>20% off of full price items<br> Use code <span class="red">20Ffa456</span> </p>
+                                                    <div class="light_grey">Now until 7/30/16</div>
+                                                    <div class="light_grey">#HappyShopping</div>
+                                                </div>                                               
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <img class="preview-img" src="images/asos.jpg" alt="">
+                                                </div>
+                                                <div class="username">asos.com</div>
+                                                <div class="date">Just now</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/asos_offer.jpg" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+                                                            <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <h4>Promo code alert</h4>
+                                                    <p>20% off of full price items<br> Use code <span class="red">20Ffa456</span> </p>
+                                                    <div class="light_grey">Now untill 7/30/16</div>
+                                                    <div class="light_grey">#HappyShopping</div>
+                                                </div>                                               
+                                            </div>
+                                        </li>
+                                        -->									    
+
+										<li ng-repeat="couponObj in twotap_coupon track by $index">
+                                            <div class="box-preview">
+                                               <!--  {{couponObj.site_id}} -->
+												<div class="preview-image">
+                                                    <div class="preview-image-inner">
+													<img class="preview-img" ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+													</div>
+													<!-- <img class="preview-img" ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+       -->                                      </div>
+                                                <div class="username" title="{{sitesTwotap[couponObj.site_id].url}}"><!-- asos.com --> {{sitesTwotap[couponObj.site_id].url}}</div>
+                                                <div class="date">{{couponObj.starts_at| date:'MM/dd/yyyy'}}</div>
+                                            </div>
+																
+											
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+                                                           
+                                                            <div class="rateit">
+                                                                <div class="rateis">
+                                                                </div>
+                                                            </div>
+															<a class="quick-product" data-toggle="modal" data-target="#promotionPopup" ng-click="set_alert_type($index)">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="shared_icons small">
+                                                        <li>
+                                                            <i class="icon grey_heart"></i>
+                                                            <span>123</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_arrow"></i>
+                                                            <span>456</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon grey_bag"></i>
+                                                            <span>789</span>
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                                <div class="description">
+                                                    <h4>Promo code alert</h4>
+                                                    <p>{{couponObj.label}}<br> Use code <span class="red">{{couponObj.code}}</span> </p>
+                                                    <div class="light_grey">{{couponObj.starts_at| date:'MM/dd/yyyy'}} until {{couponObj.ends_at| date:'MM/dd/yyyy'}}</div>
+                                                    <div class="light_grey">#HappyShopping</div>
+                                                </div>                                               
+                                            </div>
+                                        </li>                               
+
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tab_content">
+                                <div class="my_item product_group mCustomScrollbar clearfix">
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <span class="icon notify_no">12</span>
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <span class="icon notify_no">12</span>
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <span class="icon notify_no">12</span>
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="like_item product_group mCustomScrollbar clearfix">
+
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product shared">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/glindafa.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                           
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/4891.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked shared rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/3d2df70844cf_600.jpeg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>                                    
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                            
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product shared">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/glindafa.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                           
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/4891.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked shared rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/3d2df70844cf_600.jpeg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>                                    
+                                    <div class="col_3 product liked">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                            
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product shared">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/glindafa.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                           
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                    <img src="images/4891.jpg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col_3 product liked shared rated">
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+                                                
+                                                    <img src="images/3d2df70844cf_600.jpeg" alt="">
+                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis">
+                                                        </div>
+                                                    </div>
+                                                    <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a>
+                                                </div>
+                                            </div>
+                                            <ul class="shared_icons">
+                                                <li>
+                                                    <i class="icon grey_heart"></i>
+                                                    <span>123</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_arrow"></i>
+                                                    <span>456</span>
+                                                </li>
+                                                <li>
+                                                    <i class="icon grey_bag"></i>
+                                                    <span>789</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="product-details">
+                                                <li><a href="#!single-product">Item Name</a></li>
+                                                <li><a href="#">Designer Name</a></li>
+                                                <li><a href="#!/storechosen">Shop Name</a></li>
+                                                
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

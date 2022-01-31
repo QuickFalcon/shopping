@@ -1,0 +1,10 @@
+<div class="carousel stage sliderLoading flexslider" id="carouselStage" ngIf="$ctrl.sliderData" stage-slider slider-list="$ctrl.sliderData">
+  <ul class="slides">
+      <li ng-repeat="store in $ctrl.sliderData track by $index">
+          <div class="stage_show">
+              <img ng-src="http://198.199.109.5:900/{{store.domain}}.jpg" alt="{{store.merchant}}" title="{{store.merchant}}">
+              <a href="/storechosen/{{store.merchant}}" class="btn white_btn">SHOP NOW</a>
+          </div>
+      </li>
+  </ul>
+</div>

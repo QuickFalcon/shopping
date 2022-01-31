@@ -1,0 +1,107 @@
+<div class="mid_content blog-page">
+    <div class="container_inner clearfix">
+        <ul class="breadcrumbs">
+            <li class="myacchd"><a href="http://www.sociallyshoppablestyle.com/myaccount" ng-bind="SmartPathing"></a></li>
+            <li ng-show="pageTitle" class="myacchd"><a href="http://www.sociallyshoppablestyle.com/myaccount">  &gt; My Profile</a></li>
+        </ul>
+        <section class="products_wrap">
+            <div class="select_product_cat">
+                <label>SORT BY</label>
+                <div class="defaultSt" ng-class="{showTooltip : tooltipShow}">
+                    <!--<select ng-model="selected_sort" ng-change="blogPro_sorting(selected_sort)">-->
+                    <select>
+                        <option value="Newest First">Newest First</option>
+                        <option value="price asc">Low to High</option>
+                        <option value="price desc">High to Low</option>
+                        <option value="Customer Rating">Customer Rating</option>
+                        <option value="Most Shared">Most Shared</option>
+                        <option value="Most Popular">Most Popular</option>
+                        <option value="Bestseller">Bestseller</option>
+                        <option value="percentOff desc">% off Sale</option>
+                    </select>
+                    <div class="e-tooltip">Coming Soon!</div>
+                </div>
+                <div class="view_all">
+                    <span class="viewAt_time">View 200</span>
+                    <a ng-click="viewPagination('prev')" title="Previous" class="prev view-page"></a>
+                    <a ng-click="lnkProLoadMore($event,$index + 1)" ng-class="{active:activePage == $index + 1}"  ng-repeat="x in [] | range: linkProNumPages-1" ng-show=" $index < current_limit && $index >= current_limit -3">{{$index + 1}}</a>
+                    <span>...</span>
+                    <a ng-click="lnkProLoadMore($event,linkProNumPages)" ng-class="{active:activePage == linkProNumPages}">{{linkProNumPages}}</a>
+                    <a ng-click="viewPagination('next')" title="Next" class="next view-page"></a>
+                </div>
+            </div>
+
+            <div class="product_group">
+                <div class="product_group_inner clearfix" ng-class="{'ss_loading' : !loadDone,'showInCenter':currentpage>1}">
+                    <div class="col_3" ng-repeat="blogPro in linkedPro track by $index" ng-class="{pageLastPro : ($index+1)%limit == 0 && $index!=0}">
+                        <div class="product-info">
+                            <div class="product-image">
+                                <div class="p_image_innner">
+                                    <img ng-src="{{blogPro.img_link}}">
+                                    <div class="rateit">
+                                        <div class="rateis r1"></div>
+                                        <a class="recomended-by" data-toggle="modal" data-target="#recomendedBy" ng-click="currentLinkedPro($index)">Recomended By</a>
+                                    </div>
+                                    <a class="quick-product">+</a>
+                                </div>
+                            </div>
+                            <ul class="product-details">
+                                <li>
+                                    <a ng-href="{{blogPro.ss_url}}" title="{{blogPro.title}}" ng-bind-html="blogPro.title"></a>
+                                </li>
+                                <li class="price"><span ng-class="{lineThrough: blogPro.sale_price.length}" ng-bind="'$' + blogPro.price"></span> <span ng-show="blogPro.sale_price.length" ng-bind="'$'+ blogPro.sale_price" class="sale-price"></span> </li>
+                            </ul>
+                        </div>
+
+                        <div class="loading" ng-class="($index+1)%limit == 0 && $index+1 != maxIndex || $index == 0 ?'':'ng-hide'" ng-attr-id="{{($index+1)%limit == 0 && $index+1 != maxIndex || $index == 0 ? 'targetNo' + productPageNo($index,limit) : ''}}">
+                            <div class="loading-inner">
+                                <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,limit) - 1 )">
+                                    <i class="icon up_arrow"></i>
+                                </div>
+
+                                <div class="load_more" ng-click="lnkProLoadMore($event,($index+1)/limit + matchTarget)">
+                                    <span ng-hide="loadMoreClicked">Load More</span>
+                                    <span class="loading_dot" ng-show="!loadDone">Loading</span>
+                                    <span ng-show="loadMoreClicked && loadDone">PAGE <span ng-bind="productPageNo($index,limit)"></span>/{{linkProNumPages}}</span>
+                                </div>
+                                <div class="next_bx"  ng-click="lnkProLoadMore($event,productPageNo($index,limit) + matchTarget-1)">
+                                    <i class="icon down_arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ng-click="goToTarget( $event, productPageNo($index,limit) + 1 )"-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- Start Recomended by popup -->
+<div class="modal fade common_popup" id="recomendedBy">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="popup-title">Recomended by</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+            </div>
+            <div class="modal-body">
+                <ul class="recomended-list clearfix">
+                    <li class="title">
+                        <div class="author_info">Author</div>
+                        <div class="author_p_title">Article</div>
+                    </li>
+                    <li ng-repeat="recomend in ProRecommended">
+                        <div class="author_info">
+                            <a href="{{recomend.author_page}}" target="_blank" class="author_avatar" title="{{recomend.author_first_name}}"><img ng-src="{{recomend.author_avatar}}"> </a>
+                            <!--<div class="author_name" ng-bind-html="recomend.author_first_name"></div>-->
+                        </div>
+                        <a href="{{recomend.permalink}}" target="_blank" class="author_p_title" ng-bind-html="recomend.post_title"></a>
+                        {{recomend}}
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Recomended by popup -->

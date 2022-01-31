@@ -1,0 +1,13 @@
+<% include header.html %>
+
+  <tr><td style="font-size:16px;line-height:22px; font-weight:700;font-family:'PT Sans','trebuchet ms', sans-serif;text-align:left; color:#69666d;">Hi,</td></tr>
+  <tr><td height="10" style="line-height:10px;font-size:10px"></td></tr>
+  <tr><td style="font-size:13px;line-height:18px;font-family:'PT Sans','trebuchet ms', sans-serif;text-align:left; color:#69666d;">
+    <%= content %>
+  </td></tr>
+  
+  <% if (typeof product === 'object') { %>
+    <% include product.html %>
+  <% } %>
+  
+<% include footer.html %>

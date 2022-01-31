@@ -1,0 +1,48 @@
+
+	<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+		<div class='container-fluid' >
+     <h3> </h3>
+	 <p>Description</p>
+		<p> Please Click and checked The Store To Ignore Regular Image Sync</p>
+		<p> For Edit >>
+         Just Click !! and leave it checked to ignore sync! by default all unchecked store will be synced !			
+			
+
+		</p>
+<p>
+	<input type="text" ng-model="merchant.domain" >
+</p>
+		
+		<h3>Select/ Unselect Store  </h3>
+		
+		<ul style="list-style:none;">
+			<li ng-repeat="str in syncStorelist | filter:merchant track by $index">
+						     <input id="strPartial{{$index}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="store_model[str.domain]" ng-click="updatedStr(str,store_model[str.domain])" >
+                             <label for="strPartial{{$index}}">{{str.domain}} 
+							 </label><!-- <a ng-click="edit_category(cate)">&nbsp; Edit  Store </a> | <a ng-click="dCatg(cate)">Delete STore</a> -->
+								
+			</li>
+        </ul>
+
+
+	
+<!-- 	<a ng-click="clearSelected()">Clear Selected</a> <br><br>
+	<input ng-model="search.category" type="text" ng-model-options="{debounce: 1000}">
+         -->
+		       
+<!-- 		 <input type=text ng-model="lmt" ng-change="change_limit()" ng-model-options="{debounce:1000}">
+ -->		 
+		 
+		 
+		 
+							
+
+		
+		</div>
+	</div>
+		
+
+		
+	
+
+

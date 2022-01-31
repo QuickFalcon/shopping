@@ -1,0 +1,237 @@
+<div class="header_right">
+    <div class="users_wrap">
+        <div class="signIn_signUp">
+            <a class="signup-link ss_SignUp" ng-click="$ctrl.showSignUpModal()">SIGN UP</a> / <a class="login-link ss_LogIn" ng-click="$ctrl.showLoginModal()">LOGIN</a>
+        </div>
+        <div class="user_info">
+            <div class="users_name"><span>{{$ctrl.userInfo.firstname}}</span>'s account
+                <span class="icon notify_no total" ng-if="cart_items_number+saved_item_number+salenotification+undread_mails>0">{{cart_items_number+saved_item_number+salenotification+undread_mails}}</span></div>
+            <div class="dsktp_hide user_photo">
+                <img ng-src="{{$ctrl.userInfo.img_location}}" alt="{{$ctrl.userInfo.firstname}}">
+                <span class="icon notify_no total" ng-if="cart_items_number+saved_item_number+salenotification+undread_mails>0">{{cart_items_number+saved_item_number+salenotification+undread_mails}}</span>
+            </div>
+            <div class="user_inbox">
+                <div class="user_header"><a href="#!/account">My Account</a></div>
+                <ul class="inbox_cat">
+                    <li><a href="#!/mail">Mail<span class="icon notify_no" ng-bind="undread_mails" ng-if="undread_mails>0"></span></a></li>
+                    <li>
+                        <a>Shopping</a>
+                        <ul>
+                            <li>
+                                <a href="#!/mail">Sale Notification<span class="icon notify_no" ng-bind="salenotification" ng-if="salenotification>0"></span></a>
+                            </li>
+                            <li><a href="#!/shoppingbag">Shopping Bag<span class="icon notify_no"
+                                                                           ng-bind="cart_items_number" ng-if="cart_items_number>0"></span></a>
+                            </li>
+                            <li><a href="#!/shoppingbag#saved">Saved for Later <span class="icon notify_no"
+                                                                                     ng-bind="saved_item_number + ' saved'" ng-if="saved_item_number>0"></span></a>
+                            </li>
+                            <li><a href="#!/order_history">Order </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>Social</a>
+                        <ul>
+                            <li><a href="#!/collective">Collective</li>
+                            <li><a href="#!/mywall">My Wall <!--<span class="icon notify_no">0</span>--></a></li>
+                            <li><a href="#!/like">Likes<!--<span class="icon notify_no">0</span>--></a></li>
+
+
+                            <!-- <li><a>Followers <span class="icon notify_no">0</span></a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+                <div class="flag_select">
+                    <div class="show_flag">
+                        <div class="s_flag {{$ctrl.scopeInfo.flag}}"></div>
+                        <div class="s_currencies">$ USD</div>
+                    </div>
+                    <div class="country_popup_wrp">
+                        <div class="btn update_btn">Update</div>
+                        <div class="country_popup clearfix">
+                            <div class="dropdown_wrap">
+                                <select class="aanSelect">
+                                    <option value="">$ USD</option>
+                                    <option value="">C$ CAD</option>
+                                    <option value="">€ EUR</option>
+                                    <option value="">kr NOK</option>
+                                    <option value="">$ AUD</option>
+                                </select>
+                            </div>
+                            <ul class="flag_list">
+                                <li class="flag_au">AU</li>
+                                <li class="flag_ca">CA</li>
+                                <li class="flag_de">DE</li>
+                                <li class="flag_eu">EU</li>
+                                <li class="flag_fr">FR</li>
+                                <li class="flag_jp">JP</li>
+                                <li class="flag_nz">NZ</li>
+                                <li class="flag_uk">UK</li>
+                                <li class="flag_us">US</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_footer">
+                    <div class="notS_out">Not <span ng-bind="$ctrl.userInfo.firstname"></span> ?
+                        <a ng-click="$ctrl.signOut()"> Sign Out</a></div> <!-- href="/api/auth/signout" -->
+                    <a href="#!/account" class="btn grey_btn">go to my account</a>
+                </div>
+            </div>
+        </div>
+        <div class="flag_select">
+            <div class="show_flag">
+                <div class="s_flag flag_us"></div>
+                <div class="s_currencies">$ USD</div>
+            </div>
+            <div class="country_popup">
+                <div class="dropdown_wrap">
+                    <select class="aanSelect">
+                        <option value="">$ USD</option>
+                        <option value="">C$ CAD</option>
+                        <option value="">€ EUR</option>
+                        <option value="">kr NOK</option>
+                        <option value="">$ AUD</option>
+                    </select>
+                </div>
+                <ul class="flag_list">
+                    <li class="flag_au">AU</li>
+                    <li class="flag_ca">CA</li>
+                    <li class="flag_de">DE</li>
+                    <li class="flag_eu">EU</li>
+                    <li class="flag_fr">FR</li>
+                    <li class="flag_jp">JP</li>
+                    <li class="flag_nz">NZ</li>
+                    <li class="flag_uk">UK</li>
+                    <li class="flag_us">US</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="shopping_bag">
+        <div class="saved_item_info">
+            <span><i ng-bind="$ctrl.userInfo.cartItemsNumger"></i>  <em class="mb_hide">items</em></span>
+            <span>{{$ctrl.userInfo.totalCartDistinctStore}} shops</span> <!-- <span ng-bind="total_cart_distinct_store + ' shops'"></span> -->
+            <span class="price" ng-bind="fullTotal|number:2|currency"></span>
+        </div>
+        <div class="saved_for_later">
+            <span>{{$ctrl.userInfo.savedItenNumber}} saved</span><!-- <span ng-bind="saved_item_number + ' saved'"></span> -->
+            <span>for later</span>
+        </div>
+        <div id="miniCartMenu" class="mini-cart-menu" tabindex="-1">
+            <div class="cart-items defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                <ul>
+                    <!-- Heading for Cart Item -->
+                    <li class="item-wrap item_section">
+                        <h4 class="mini-section-title"><a href="#!/shoppingbag" class="btn black_btn">Shopping
+                            Bag</a></h4>
+                    </li>
+                    <!-- List for mini cart item -->
+                    <li class="item-wrap" ng-repeat="c in $ctrl.userInfo.cartDistinctStore track by $index">
+                        <div class="item">
+                            <div class="mini-thumb">
+                                <a href="#!/storechosen/{{c.retailer}}"><img ng-src="{{c.retailer_logo}}" alt="">
+                                </a>
+                            </div>
+                            <a href="#!/storechosen/{{c.retailer}}" class="item-title" ng-bind="c.retailer"></a>
+                        </div>
+                        <div class="quantity"><span>{{c.quantity}}</span> <!-- <span ng-bind="c.quantity"></span> --> Items</div>
+                        <div class="est_total">Est. Total <span class="price"
+                                                                ng-bind="c.store_total_cost|number:2|currency"></span>
+                        </div>
+                        <div class="see-items">
+                            <span class="seeItem">SEE ITEMS</span>
+                        </div>
+                        <ul class="child-items defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                            <li ng-repeat="cartitem in $ctrl.userInfo.userprofile2 | filter: c.retailer track by $index">
+                                <div class="product-image micro">
+                                    <div class="p_image_innner">
+                                        <img ng-src="{{cartitem.product[0].image_url}}">
+                                        <div class="rateit">
+                                            <div class="rateis">
+                                            </div>
+                                        </div>
+
+                                        <a class="quick-product" data-target="#quick-popup" data-toggle="modal" ng-click="set_current_product_common_sim('','',cartitem.productMD5,cartitem.sitekey,cartitem.product[0])">+</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="product_info">
+                                    <!-- <h5 data-target="#quick-popup" data-toggle="modal"
+                                         ng-bind="cartitem.product[0].keyword"></h5> -->
+                                    <h5 data-target="#quick-popup" data-toggle="modal"
+                                        ng-bind="cartitem.product[0].keyword" ng-click="set_current_product_common_sim('','',cartitem.productMD5,cartitem.sitekey,cartitem.product[0])"></h5>
+
+
+                                    <span class="product-price"
+                                          ng-bind="cartitem.current_price|currency"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- End mini cart item -->
+                    <!-- Heading for Saved Item -->
+                    <li class="item-wrap item_section">
+                        <h4 id="mini-saved-items" class="mini-section-title"><a href="#!/shoppingbag"
+                                                                                class="btn black_btn">Saved
+                            Items</a></h4>
+                    </li>
+                    <!-- List for mini saved cart item -->
+                    <li class="item-wrap" ng-repeat="s in cartDistinctDreamStore track by $index">
+                        <div class="item">
+                            <div class="mini-thumb">
+                                <a href="#!/storechosen/{{s.retailer}}"><img ng-src="{{s.retailer_logo}}" alt=""></a>
+                            </div>
+                            <a ng-href="#!/storechosen/{{s.retailer}}" class="item-title" ng-bind="s.retailer"></a>
+                        </div>
+                        <div class="quantity"><span ng-bind="s.quantity"></span> Items</div>
+                        <div class="est_total">Est. Total <span class="price"
+                                                                ng-bind="s.store_total_cost|number:2|currency"></span>
+                        </div>
+                        <div class="see-items">
+                            <span class="seeItem">SEE ITEMS</span>
+                        </div>
+                        <ul class="child-items defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                            <li ng-repeat="saveitem in saveprofile2 | filter:s.retailer track by $index">
+                                <div class="product-image micro">
+                                    <div class="p_image_innner">
+                                        <img ng-src="{{saveitem.product[0].image_url}}">
+                                        <div class="rateit">
+                                            <div class="rateis">
+                                            </div>
+                                        </div>
+                                        <!--   <a class="quick-product" data-toggle="modal"
+                                              data-target="#quick-popup">+</a> -->
+                                        <a class="quick-product" data-toggle="modal" ng-click="set_current_product_common_sim('','',saveitem.productMD5,saveitem.sitekey,saveitem.product[0])">+</a>
+
+                                    </div>
+                                </div>
+                                <div class="product_info">
+                                    <!-- <h5 data-target="#quick-popup" data-toggle="modal"
+                                         ng-bind="saveitem.product[0].keyword"></h5> -->
+                                    <h5 data-target="#quick-popup" data-toggle="modal"
+                                        ng-bind="saveitem.product[0].keyword" ng-click="set_current_product_common_sim('','',saveitem.productMD5,saveitem.sitekey,saveitem.product[0])"></h5>
+
+
+                                    <span class="product-price"
+                                          ng-bind="saveitem.current_price|currency"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- End saved item -->
+                </ul>
+            </div>
+            <div class="cart-buttons">
+                <a href="#!/shoppingbag" class="grey_btn btn">GO TO SHOPPING BAG</a>
+                <a href="#!/shoppingbag#saved" class="grey_btn btn">GO TO SAVED LIST</a>
+            </div>
+        </div>
+    </div>
+    <div id="headOverLay"></div>
+</div>
+<div class="modal fade login-popup" id="loginPopup">
+  <sign-up-component on-initialize-user="$ctrl.onInitializeUser({data: data})" events-scope="$ctrl.eventsScope"></sign-up-component>
+</div>

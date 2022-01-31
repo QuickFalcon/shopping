@@ -1,0 +1,46 @@
+{ 
+    "_id" : ObjectId("5624d561c9ecf10c4053963d"), 
+    "store_name" : "ashford", 
+    "store_url" : "ashford.com", 
+    "image_url" : "images/das3.jpg", 
+    "thumbnail_url" : "images/shop_thumb_1.png", 
+    "store_subcategory" : "sports", 
+    "store_category" : [
+        "men", 
+        "women"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5624df37c9ecf10c4053963e"), 
+    "store_name" : "Nike", 
+    "store_url" : "nike.com", 
+    "image_url" : "images/das3_2.jpg", 
+    "thumbnail_url" : "images/shop_thumb_2.jpg", 
+    "store_email" : "info@nike.com", 
+    "store_subcategory" : "sports", 
+    "store_category" : [
+        "men", 
+        "women"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5639cfa69fde97cb171e6524"), 
+    "store_name" : "BeWild", 
+    "address" : "1 downstreet", 
+    "city" : "dallas", 
+    "country" : "US", 
+    "priority" : NumberInt(1), 
+    "store_url" : "Shopstyle.com", 
+    "image_url" : "images/das3_3.jpg", 
+    "thumbnail_url" : "https://tpc.googlesyndication.com/simgad/5425443038676366432", 
+    "contact_designation" : "info@shopstyle.com", 
+    "store_phone" : "01291029", 
+    "store_subcategory" : "sports", 
+    "store_category" : [
+        "men", 
+        "women"
+    ], 
+    "__v" : NumberInt(0)
+}

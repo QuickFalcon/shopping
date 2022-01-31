@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="appModule" ng-controller="appController as appCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title>Refactor</title>
+    <base href="/refactor" />
+    <!-- css, needs refactoring, check the gulfile.js -->
+    <link rel="stylesheet" type="text/css" href="dist/front.min.css">
+
+    <!-- jquery libs -->
+    <script type="text/javascript" src="app/assets/jquery/jquery.js"></script>
+  </head>
+  <body ng-class="{'signIn' : appCtrl.isLoggedIn, 'nav_open' : addClass && withThis == 'navOpen', 'search_open' : addClass && withThis == 'searchOpen', 'showFilter': openFilter}">
+    <div class="mainWrap">
+      <header-component on-initialize-user="appCtrl.initializeUser(data)" on-uninitialize-user="appCtrl.uninitializeUser()" user-info="appCtrl.userInfo"></header-component>
+      <main-navigation-component></main-navigation-component>
+      <div class="main-content ss_loading showInCenter" ng-class="!appCtrl.loadFull|| !routechange?'ss_loading showInCenter':''">
+          <div ng-view></div>
+          <footer-component></footer-component>
+      </div>
+    </div>
+
+    <quick-view-popup-component></quick-view-popup-component>
+    <!-- Start share popup For Products -->
+    <div class="social_popup modal fade" data-backdrop="true" id="prSocialPopup" social-product="$ctrl.socialPopupProduct" social-tab="$ctrl.socialPopupTab"></div>
+
+
+    <!-- <div class="modal fade login-popup" id="loginPopup">
+      <sign-up-component></sign-up-component>
+    </div>-->
+
+
+    <!-- angularjs libraries -->
+    <script defer type="text/javascript" src="app/assets/angularjs/angular.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-messages.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-sanitize.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-route.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-cookies.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-animate.js"></script>
+    <script defer type="text/javascript" src="app/assets/angularjs/angular-resource.js"></script>
+
+    <!-- bootstrap libs -->
+    <script defer src="s_js/libs/bootstrap.min.js"></script> <!-- outdated, works with the old code -->
+    <script defer src="s_js/libs/angular-toastr.tpls.js"></script> <!-- outdated, works with the old code -->
+    <script defer type="text/javascript" src="public/s_js/libs/jquery.mCustomScrollbar.concat.min.js"></script> <!-- outdated, works with the old code -->
+
+    <!-- libs -->
+    <script defer type="text/javascript" src="app/assets/woocommerce-flexslider/jquery.flexslider.js"></script>
+    <!--<script defer type="text/javascript" src="app/assets/angular-slugify/angular-slugify.js"></script>-->
+    <script defer type="text/javascript" src="app/assets/angular-slugify-old/angular-slugify.js"></script> <!-- outdated, works with the old code -->
+
+    <!-- user defined services -->
+    <script defer type="text/javascript" src="app/services/blogService.js"></script>
+    <script defer type="text/javascript" src="app/services/userApiService.js"></script>
+    <script defer type="text/javascript" src="app/services/validatorsService.js"></script>
+    <script defer type="text/javascript" src="app/services/shopService.js"></script>
+    <script defer type="text/javascript" src="app/services/userService.js"></script>
+
+      <!-- user defined filters -->
+    <script defer type="text/javascript" src="app/filters/utilityFilter.js"></script>
+
+    <!-- user defined directives -->
+    <script defer type="text/javascript" src="app/directives/sliderDirective.js"></script>
+    <script defer type="text/javascript" src="app/directives/validatorsDirective.js"></script>
+    <script defer type="text/javascript" src="app/directives/positionElementDirective.js"></script>
+
+    <!-- user defined components -->
+    <script defer type="text/javascript" src="app/components/header/headerComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/header/headerLeftComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/header/headerMiddleComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/header/headerRightComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/sign-up/signUpComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/navigation/mainNavigationComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/search/mainSearchComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/dashboard/dashboardComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/dashboard/dashboardSliderComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/dashboard/dashboardProductsComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/popup/quickViewPopupComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/sidebar/userSidebarComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/slider/stageSliderComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/slider/thumbnailSliderComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/footer/footerComponent.js"></script>
+
+    <script defer type="text/javascript" src="app/components/my-account/companyComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/my-account/customerServiceComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/my-account/policyComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/my-account/profileSidebarComponent.js"></script>
+    <script defer type="text/javascript" src="app/components/my-account/myWallComponent.js"></script>
+
+    <!-- import legacy libs-->
+    <script defer type="text/javascript" src="app/scripts-legacy/socialPopup.js"></script>
+
+    <script defer type="text/javascript" src="app/services-legacy/authentication.service.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/brandprosperents.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/categoryStringSelect.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/mappedcategory.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/search.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/searchCount.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/setRequiredFieldUserCart.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/socialProduct.service.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/twotap.factory.js"></script>
+    <script defer type="text/javascript" src="app/services-legacy/user.service.js"></script>
+
+    <!-- start point module -->
+    <script defer type="text/javascript" src="app/app.js"></script>
+
+
+
+  </body>
+</html>

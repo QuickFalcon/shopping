@@ -1,0 +1,356 @@
+
+	<div class=x style="width:70%;float:left;margin-left:5%;margin-top:14vh;">
+		<div class='container-fluid' >
+     <h3> </h3>
+	 <p>Description</p>
+		<p> Please Click and checked The Store To Ignore Regular Image Sync</p>
+		<p> For Edit >>
+         Just Click !! and leave it checked to ignore sync! by default all unchecked store will be synced !			
+			
+
+		</p>
+		<p> <div ng-click="importcsv()">Import csv</div> 
+			<a ng-href="resource/commonMerchant.csv">Download CSV </a>
+
+		</p>
+		
+		
+		
+<!-- <p ng-show="storetype==1">
+	<input type="text" ng-model="merchant.merchant" >
+</p>
+<p ng-show="storetype==2">
+	<input type="text" ng-model="twotaop_merchant.name" >
+</p>	 -->
+		<label ng-click="showStoreType(1)" ng-class="storetype ==1?'tabcol' :''" class="tabcol">COMPARISON 3 COLUMN   </label>
+		| <label ng-click="showStoreType(2)" ng-class="storetype ==2?'tabcol':''">TWOTAP   </label>
+		 | <label ng-click="showStoreType(3)" ng-class="storetype ==3?'tabcol':''">COMPARE RESULT   </label>
+<!-- 		 | <label ng-click="showStoreType(4)" ng-class="storetype ==4? 'tabcol':''">COMPARE BIGGER    </label>
+ -->		
+ 
+          <div ng-if="storetype==1" ng-class="{'ss_loading' : !loaddone}">
+			<div style="width:24%;float:left;">
+			<h4>COMMON</h4>
+			<ul style="list-style:none;">
+					<li ng-repeat="astr in prospereStore track by $index" ng-if="astr.twotap">
+									<a ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]">+</a>
+
+									 <label ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]"> {{astr.merchant}}  </label>
+										<div ng-show="commonDiv[astr.merchant]" >
+											<ul style="list-style:none;">
+										
+											<li>Prosperent MerchantID : {{astr.merchantId}}</li> 
+											<li>{{astr.domain}}</li> 
+												 
+											<li>Country : {{astr.country}}</li>
+											<li>Coupon Support: {{astr.coupon_support}}</li>
+											<li>Gift Card Support : {{astr.gift_card_support}}</li>
+											<li>Creates Store Account : {{astr.creates_stores_account}}</li>
+											
+											
+											<li>category : {{astr.category}}</li>
+											<li>description : {{astr.description}}</li>
+											<li>product Data feed : {{astr.productDatafeed}}</li>
+											<li>deep Linking : {{astr.deepLinking}}</li>
+											<li>num Products : {{astr.numProducts}}</li>
+											<li>num Products CA : {{astr.numProductsCA}}</li>
+											<li>num Products UK : {{astr.numProductsUK}}</li>
+											<li>num Coupons US: {{astr.numCouponsUS}}</li>
+											<li>num TravelOffers US : {{astr.numTravelOffersUS}}</li>
+											<li>num Local Deals US : {{astr.numLocalDealsUS}}</li>
+											<li>min Payment Percentage : {{astr.minPaymentPercentage}}</li>
+											<li>max Payment Percentage : {{astr.maxPaymentPercentage}}</li>
+											<li>average Payment Percentage : {{astr.averagePaymentPercentage}}</li>
+											<li>conversion Rate: {{astr.conversionRate}}</li>
+											<li>epc : {{astr.epc}}</li>
+											<li>merchantWeight : {{astr.merchantWeight}}</li>
+											<li>averageCommission : {{astr.averageCommission}}</li>
+											 <li>dateActive : {{astr.dateActive}}</li>
+											</ul>
+										</div>	
+					</li>
+				  </ul>
+				
+			</div>
+	
+	 <div style="width:24%;float:left;">
+				<h4>TWOTAP </h4>
+
+		
+		<ul style="list-style:none;">
+		
+			<li ng-repeat="twostr in TwotapStorelist| orderBy : 'name' track by $index">
+			<a ng-click="showTwoDiv[twostr.name] = !showTwoDiv[twostr.name]">+</a>
+                             <label ng-click="showTwoDiv[twostr.name] = !showTwoDiv[twostr.name]">{{twostr.name}} 
+							 </label>
+							 <div ng-if="showTwoDiv[twostr.name]" >
+									<ul style="list-style:none;">
+									<li><img ng-src="{{twostr.logo}}"></li> 
+									
+									<li>{{twostr.id}}</li> 
+									<li>{{twostr.url}}</li> 
+									 
+									<li>Country : {{twostr.country}}</li>
+									<li>Coupon Support: {{twostr.coupon_support}}</li>
+									<li>Gift Card Support : {{twostr.gift_card_support}}</li>
+									<li>Creates Store Account : {{twostr.creates_stores_account}}</li>
+    				
+									</ul>
+									
+								</div>	
+						 
+								
+			</li>
+		
+			
+      </ul>
+	</div>
+		
+		
+		<div style="width:24%;float:left;"> 
+		<h4>PROSPERENT </h4>
+
+		
+		
+		<ul style="list-style:none;" >
+			<li ng-repeat="(key,str) in prospereStore track by $index">
+						    <a ng-click="showDiv[str.merchant] = !showDiv[str.merchant]">+</a>
+
+                             <label ng-if="str.twotap" style="color:red"> {{str.merchant}} |  <strong>Two Tap</strong> </label>
+							 <label ng-if="!str.twotap" ng-click="showDiv[str.merchant] = !showDiv[str.merchant]"> {{str.merchant}}  </label>
+								<div ng-show="showDiv[str.merchant]" >
+									<ul style="list-style:none;">
+									<li><img ng-src="{{str.logoUrl}}"></li> 
+									
+									<li>{{str.merchantId}}</li> 
+									<li>{{str.domain}}</li> 
+									 
+									<!-- <li>color1 : {{str.color1}}</li>
+									<li>color2 : {{str.color2}}</li> -->
+									<li>category : {{str.category}}</li>
+									<li>description : {{str.description}}</li>
+									<li>product Data feed : {{str.productDatafeed}}</li>
+									<li>deep Linking : {{str.deepLinking}}</li>
+									<li>num Products : {{str.numProducts}}</li>
+									<li>num Products CA : {{str.numProductsCA}}</li>
+									<li>num Products UK : {{str.numProductsUK}}</li>
+									<li>num Coupons US: {{str.numCouponsUS}}</li>
+									<li>num TravelOffers US : {{str.numTravelOffersUS}}</li>
+									<li>num Local Deals US : {{str.numLocalDealsUS}}</li>
+    								<li>min Payment Percentage : {{str.minPaymentPercentage}}</li>
+									<li>max Payment Percentage : {{str.maxPaymentPercentage}}</li>
+									<li>average Payment Percentage : {{str.averagePaymentPercentage}}</li>
+									<li>conversion Rate: {{str.conversionRate}}</li>
+									<li>epc : {{str.epc}}</li>
+									<li>merchantWeight : {{str.merchantWeight}}</li>
+    								<li>averageCommission : {{str.averageCommission}}</li>
+									 <li>dateActive : {{str.dateActive}}</li>
+									</ul>
+								</div>
+			</li>
+        </ul>
+	   
+	
+	</div>
+	
+		
+	 
+	<div style="width:24%;float:left;">
+			<h4>UNCOMMON </h4>
+						<h5>Not In Twotap </h5>
+
+			<ul style="list-style:none;">
+					<li ng-repeat="astr in prospereStore track by $index" ng-if="astr.twotap==undefined">
+									<a ng-click="commonDivx[astr.merchant] = !commonDivx[astr.merchant]">+</a>
+
+									 <label ng-click="commonDivx[astr.merchant] = !commonDivx[astr.merchant]"> {{astr.merchant}}  </label>
+										<div ng-if="commonDivx[astr.merchant]" >
+											<ul style="list-style:none;">
+											
+											<li>Prosperent MerchantID : {{astr.merchantId}}</li> 
+											<li>{{astr.domain}}</li> 
+												 
+											<li>Country : {{astr.country}}</li>
+											<li>Coupon Support: {{astr.coupon_support}}</li>
+											<li>Gift Card Support : {{astr.gift_card_support}}</li>
+											<li>Creates Store Account : {{astr.creates_stores_account}}</li>
+											<li>category : {{astr.category}}</li>
+											<li>description : {{astr.description}}</li>
+											<li>product Data feed : {{astr.productDatafeed}}</li>
+											<li>deep Linking : {{astr.deepLinking}}</li>
+											<li>num Products : {{astr.numProducts}}</li>
+											<li>num Products CA : {{astr.numProductsCA}}</li>
+											<li>num Products UK : {{astr.numProductsUK}}</li>
+											<li>num Coupons US: {{astr.numCouponsUS}}</li>
+											<li>num TravelOffers US : {{astr.numTravelOffersUS}}</li>
+											<li>num Local Deals US : {{astr.numLocalDealsUS}}</li>
+											<li>min Payment Percentage : {{astr.minPaymentPercentage}}</li>
+											<li>max Payment Percentage : {{astr.maxPaymentPercentage}}</li>
+											<li>average Payment Percentage : {{astr.averagePaymentPercentage}}</li>
+											<li>conversion Rate: {{astr.conversionRate}}</li>
+											<li>epc : {{astr.epc}}</li>
+											<li>merchantWeight : {{astr.merchantWeight}}</li>
+											<li>averageCommission : {{astr.averageCommission}}</li>
+											 <li>dateActive : {{astr.dateActive}}</li>
+											</ul>
+										</div>	
+					</li>
+				  </ul>
+				
+			</div>
+
+<!-- 	  <div style="float:left;width:100%;" ng-show="storetype==1">
+			<button ng-click="pageChangedProsperSplice(CurrentPage)">Load More</button>
+			
+			<pre>Loaded Page:  {{CurrentPage}} - {{numPages}}</pre>
+      </div>	 -->
+	
+
+ 	</div>
+		
+		<div ng-if="storetype ==2">
+		<ul style="list-style:none;">
+		
+			<li ng-repeat="twostr in TwotapStorelist| orderBy : 'name'| limitTo:current_limit track by $index" ng-show="$index >= skip_index">
+			<a ng-click="showTwoDiv[twostr.name] = !showTwoDiv[twostr.name]">+</a>
+                             <label ng-click="showTwoDiv[twostr.name] = !showTwoDiv[twostr.name]">{{twostr.name}} 
+							 
+							 {{twostr.prosperent}}
+							 </label>
+
+							 
+							 <div ng-if="showTwoDiv[twostr.name]" >
+									<ul style="list-style:none;">
+									<!--<li><img ng-src="{{twostr.logo}}"></li> -->
+									
+									<li>{{twostr.id}}</li> 
+									<li>{{twostr.url}}</li> 
+									 
+									<li>Country : {{twostr.country}}</li>
+									<li>Coupon Support: {{twostr.coupon_support}}</li>
+									<li>Gift Card Support : {{twostr.gift_card_support}}</li>
+									<li>Creates Store Account : {{twostr.creates_stores_account}}</li>
+    				
+									</ul>
+									
+								</div>	
+						 
+								
+			</li>
+		 <a ng-click="showPrev()">Previous</a> |  <a ng-click="showNext()">Next</a>
+			
+      </ul>
+	  </div>
+	  
+		<div ng-if="storetype ==3">
+			<ul style="list-style:none;">
+			<li ng-repeat="astr in prospereStore track by $index" ng-show="astr.twotap">
+						    <a ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]">+</a>
+
+							 <label ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]"> {{astr.merchant}}  </label>
+								<div ng-show="commonDiv[astr.merchant]" >
+									<ul style="list-style:none;">
+									<li><img ng-src="{{astr.logoUrl}}"></li> 
+									
+									<li>Prosperent MerchantID : {{astr.merchantId}}</li> 
+									<li>{{astr.domain}}</li> 
+									 	 
+									<li>Country : {{astr.country}}</li>
+									<li>Coupon Support: {{astr.coupon_support}}</li>
+									<li>Gift Card Support : {{astr.gift_card_support}}</li>
+									<li>Creates Store Account : {{astr.creates_stores_account}}</li>
+									
+									
+									<li>category : {{astr.category}}</li>
+									<li>description : {{astr.description}}</li>
+									<li>product Data feed : {{astr.productDatafeed}}</li>
+									<li>deep Linking : {{astr.deepLinking}}</li>
+									<li>num Products : {{astr.numProducts}}</li>
+									<li>num Products CA : {{astr.numProductsCA}}</li>
+									<li>num Products UK : {{astr.numProductsUK}}</li>
+									<li>num Coupons US: {{astr.numCouponsUS}}</li>
+									<li>num TravelOffers US : {{astr.numTravelOffersUS}}</li>
+									<li>num Local Deals US : {{astr.numLocalDealsUS}}</li>
+    								<li>min Payment Percentage : {{astr.minPaymentPercentage}}</li>
+									<li>max Payment Percentage : {{astr.maxPaymentPercentage}}</li>
+									<li>average Payment Percentage : {{astr.averagePaymentPercentage}}</li>
+									<li>conversion Rate: {{astr.conversionRate}}</li>
+									<li>epc : {{astr.epc}}</li>
+									<li>merchantWeight : {{astr.merchantWeight}}</li>
+    								<li>averageCommission : {{astr.averageCommission}}</li>
+									 <li>dateActive : {{astr.dateActive}}</li>
+									</ul>
+								</div>	
+			</li>
+          </ul>
+		
+	    </div>
+
+		 <div ng-if="storetype ==4">
+			<ul style="list-style:none;">
+			<li ng-repeat="astr in FullStore track by $index" ng-show="astr.twotap">
+						    <a ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]">+</a>
+
+							 <label ng-click="commonDiv[astr.merchant] = !commonDiv[astr.merchant]"> {{astr.merchant}}  </label>
+								<div ng-if="commonDiv[astr.merchant]" >
+									<ul style="list-style:none;">
+									<li><img ng-src="{{astr.logoUrl}}"></li> 
+									
+									<li>Prosperent MerchantID : {{astr.merchantId}}</li> 
+									<li>{{astr.domain}}</li> 
+									 	 
+									<li>Country : {{astr.country}}</li>
+									<li>Coupon Support: {{astr.coupon_support}}</li>
+									<li>Gift Card Support : {{astr.gift_card_support}}</li>
+									<li>Creates Store Account : {{astr.creates_stores_account}}</li>
+									
+									
+									<li>category : {{astr.category}}</li>
+									<li>description : {{astr.description}}</li>
+									<li>product Data feed : {{astr.productDatafeed}}</li>
+									<li>deep Linking : {{astr.deepLinking}}</li>
+									<li>num Products : {{astr.numProducts}}</li>
+									<li>num Products CA : {{astr.numProductsCA}}</li>
+									<li>num Products UK : {{astr.numProductsUK}}</li>
+									<li>num Coupons US: {{astr.numCouponsUS}}</li>
+									<li>num TravelOffers US : {{astr.numTravelOffersUS}}</li>
+									<li>num Local Deals US : {{astr.numLocalDealsUS}}</li>
+    								<li>min Payment Percentage : {{astr.minPaymentPercentage}}</li>
+									<li>max Payment Percentage : {{astr.maxPaymentPercentage}}</li>
+									<li>average Payment Percentage : {{astr.averagePaymentPercentage}}</li>
+									<li>conversion Rate: {{astr.conversionRate}}</li>
+									<li>epc : {{astr.epc}}</li>
+									<li>merchantWeight : {{astr.merchantWeight}}</li>
+    								<li>averageCommission : {{astr.averageCommission}}</li>
+									 <li>dateActive : {{astr.dateActive}}</li>
+									</ul>
+								</div>	
+			</li>
+          </ul>
+		
+	    </div>
+	
+		
+		<div style="width:100%;float:left;">
+			<ul uib-pagination total-items="totalRecordsAvailable" ng-model="CurrentPage" max-size="20" ng-change="pageChangedProsper()" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="lmt" ng-show="storetype==1"></ul>
+			<pre ng-if="storetype==1">Page: {{CurrentPage}} / {{numPages}}</pre>
+         </div>		
+		
+		<div style="width:100%;float:left;">
+			<ul uib-pagination total-items="totalRecordsAvailable" ng-model="CurrentPage" max-size="20" ng-change="pageChangedProsper()" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="lmt" ng-show="storetype==3"></ul>
+			<pre ng-if="storetype==3">Page: {{CurrentPage}} / {{numPages}}</pre>
+         </div>		
+
+		<ul uib-pagination total-items="totalRecordsAvailable" ng-model="BigCurrentPage" max-size="bignumPages" ng-change="pageChangedBig()" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="biglimit" ng-show="storetype==4"></ul>
+		<pre ng-if="storetype==4">Page: {{BigCurrentPage}} / {{bignumPages}}</pre>
+
+		
+		</div>
+	
+	</div>
+		
+
+		
+	
+
+

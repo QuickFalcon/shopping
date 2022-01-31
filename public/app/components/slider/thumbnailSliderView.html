@@ -1,0 +1,22 @@
+<div class="stage_navigation">
+  <h2 ng-bind="'Top 10 '+menuClicked"> </h2>
+    <div class="nav_carousel">
+        <div class="carousel carousel_store1 flexslider" id="StageNavCarousel" ngIf="$ctrl.sliderData" thumbnail-slider slider-list="$ctrl.sliderData">
+          <ul class="slides">
+            <li ng-repeat="store in $ctrl.sliderData track by $index">
+              <div class="n_thumbnail product-info">
+                <div class="thumbnail-img" style="background-image:url('http://198.199.109.5:900/{{store.domain}}.jpg');">
+                  <a merchant="{{store.merchant}}" class="white_btn btn">Shop</a>
+                </div>
+                <div class="thumb_caption"><a href="/storechosen/{{store.merchant}}" ng-bind="store.merchant"></a></div>
+              </div>
+            </li>
+            <li>
+              <div class="n_thumbnail product-info sync_item" onClick="window.location.href = '/customizeshop'">
+                <div class="img-wrap"><a class="linkbtn" ng-click="customize_shop(menuClicked)">Customize my top 10</a></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div>

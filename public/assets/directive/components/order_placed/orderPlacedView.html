@@ -1,0 +1,129 @@
+<div class="mid_content confirmation-page">
+    <div class="container_inner clearfix">
+        <h1>Thank You</h1>
+        <div class="sub_head">We got your order &amp; will send you
+            <br> a confirmation email soon.</div>
+        <div class="purchs_item_wrap">
+            <div ng-class="num_stores >1?'':'falseClass'">
+                <div class="purchs_item_row" ng-repeat="(wsitekey,item) in twotap_ordered_cart.sites track by $index">
+                    <div class="col_3">
+                        <div class="product_img"> <img ng-src="{{item.info.logo}}" alt="{{item.info.name}}"> </div>
+                    </div>
+                    <div class="col_3 order_info">
+                        <h4>{{item.info.name}} Order</h4>
+                        <!--   <div>Item Name : 1 Cap</div> -->
+                        <div>Merchant Order ID : Pending</div>
+                        <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                        <div class="est_total"><span>Shipping</span> {{item.estimates.prices.shipping_price}}</div>
+                        <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+                        <!--   <div class="est_total"><span>Savings</span> -{{item.estimates.prices.coupon_value}}</div> -->
+                        <div class="est_total"><span>Total :</span> {{item.estimates.prices.final_price}}</div>
+                        <div class="drpDown_wrp">
+                            <div class="detls_cal" style="display:none">
+                                <ul class="product_list" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                    <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                        <div class="product-image micro">
+                                            <div class="p_image_innner"> <img ng-src="{{proMd5.image}}" alt="">
+                                                <div class="rateit">
+                                                    <div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+                                                </div>
+                                                <!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,proMd5)">+</a> -->
+                                                <!--    <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                               ng-click="quick_view_frm_recent(proMd5.catalogId,'','','')">+</a> -->
+                                            </div>
+                                        </div>
+                                        <div class="product_info">
+                                            <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(proMd5.catalogId)" title="{{proMd5.title}}" alt="{{proMd5.title}}"> {{proMd5.quantity}} {{proMd5.title}} </a></div>
+                                            <div>{{proMd5.brand}}</div>
+                                            <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{proMd5.catalogId }}/{{proMd5.title | slugify}}" title="{{proMd5.title}}" alt="{{proMd5.title}}"> 
+                                          {{proMd5.catalogId}}
+                                         </a></div>
+                                            <div class="product-price">${{ (proMd5.price.substring(1) *1.0) * proMd5.quantity}}</div>
+                                        </div>
+                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="see_detls red">SEE DETAILS</div>
+                        </div>
+                    </div>
+                    <div class="col_3">
+                        <h4>Payment Info</h4>
+                        <div>Payment By : {{item.card.type}} card end with {{item.card.card_number| limitTo : -4 : 0}}</div>
+                        <div>Payment Date : {{current_date| date:'dd-MM-yyyy'}}</div>
+                    </div>
+                    <div class="col_3">
+                        <h4>Shipping Info</h4>
+                        <div>Est. Delivery : {{item.shipping_options[item.shipping_option]}} </div>
+                        <div> Shipping To:
+                            <br> {{item.shipping.firstname}} {{item.shipping.lastname}}
+                            <br> {{item.shipping.address1}}
+                            <br> {{item.shipping.address2}}
+                            <br> {{item.shipping.city}}, {{item.shipping.state}} </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-class="num_stores >1?'falseClass':''">
+                <div class="purchs_item_row" ng-repeat="item in twotap_ordered_cart.sites track by $index">
+                    <div class="col_3">
+                        <div class="product_img"> <img ng-src="{{item.info.logo}}" alt="{{item.info.name}}"></a>
+                        </div>
+                    </div>
+                    <div class="col_3 order_info">
+                        <h4>{{item.info.name}} Order</h4>
+                        <!--   <div>Item Name : 1 Cap</div> -->
+                        <div>Order ID : Pending</div>
+                        <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                        <div class="est_total"><span>Shipping</span> {{item.estimates.prices.shipping_price}}</div>
+                        <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+                        <!--                 <div class="est_total"><span>Savings</span> -{{item.estimates.prices.coupon_value}}</div>
+ -->
+                        <div class="est_total"><span>Total :</span> {{item.estimates.prices.final_price}}</div>
+                        <div class="drpDown_wrp">
+                            <div class="detls_cal" style="display:none">
+                                <ul class="product_list" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                    <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                        <div class="product-image micro">
+                                            <div class="p_image_innner"> <img ng-src="{{proMd5.image}}" alt="">
+                                                <div class="rateit">
+                                                    <div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+                                                </div>
+                                                <!--  <a class="quick-product" data-toggle="modal" data-target="#quick-popup"  ng-click="quick_view_frm_recent(proMd5.catalogId,'','','')" >+</a> --></div>
+                                        </div>
+                                        <div class="product_info">
+                                            <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(proMd5.catalogId)" title="{{proMd5.title}}" alt="{{proMd5.title}}">{{proMd5.quantity}} {{proMd5.title}}</a></div>
+                                            <div>{{proMd5.brand}}</div>
+                                            <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{proMd5.catalogId }}/{{proMd5.title | slugify}}" title="{{proMd5.title}}" alt="{{proMd5.title}}"> 
+                                          {{proMd5.catalogId}}
+                                         </a></div>
+                                            <div class="product-price">${{ (proMd5.price.substring(1) *1.0) * proMd5.quantity }}</div>
+                                        </div>
+                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="see_detls red">SEE DETAILS</div>
+                        </div>
+                    </div>
+                    <div class="col_3">
+                        <h4>Payment Info</h4>
+                        <div>Payment By : {{twotap_ordered_cart.card.type}} card end with {{twotap_ordered_cart.card.card_number| limitTo : -4 : 0}}</div>
+                        <div>Payment Date : {{current_date| date:'dd-MM-yyyy'}}</div>
+                    </div>
+                    <div class="col_3">
+                        <h4>Shipping Info</h4>
+                        <div>Est. Delivery : {{item.shipping_options[item.shipping_option]}}</div>
+                        <div> Shipping To:
+                            <br> {{twotap_ordered_cart.shipping.firstname}} {{twotap_ordered_cart.shipping.lastname}}
+                            <br> {{twotap_ordered_cart.shipping.address1}}
+                            <br> {{twotap_ordered_cart.shipping.address2}}
+                            <br> {{twotap_ordered_cart.shipping.city}}, {{twotap_ordered_cart.shipping.state}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

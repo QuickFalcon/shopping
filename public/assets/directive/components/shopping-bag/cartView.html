@@ -1,0 +1,713 @@
+<div class="mid_content shopping_bag_page">
+	<div class="container_inner clearfix">
+		<ul class="breadcrumbs">
+			<li ng-repeat="path in pathTorch"><a ng-href="{{path.poth}}">{{path.label}}</a></li>
+		</ul>
+		<h2 class="dsktp_hide page_title">Shopping bag</h2>
+		<aside class="left_sidebar">
+			<div class="dropdown_wrap">
+				<div class="defaultSt">
+					<select data-ng-model="browser_action" data-ng-change="browser_method(browser_action)">
+						<option value="Go Back">Go Back</option>
+						<option value="Last Search">Last Search</option>
+						<option value="Last Shop">Last Shop</option>
+						<option value="Last Item">Last Item</option>
+						<option value="Dashboard">Dashboard</option>
+					</select>
+				</div>
+			</div>
+			<div class="recent_view">
+				<h3>RECENTLY VIEWED</h3>
+				<ul class="recentview_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+					<li ng-repeat="arrObj in recentItems">
+						<div ng-repeat="arrItem in arrObj.timestamp">
+							<div class="product-image mini">
+								<div class="p_image_innner"> <img ng-src="{{arrItem.image_url}}" title="{{arrItem.keyword}}  by {{arrItem.merchant}}">
+									<div class="rateit">
+										<div class="rateis r{{arrItem.rateAvg| makePositive}}"> </div>
+									</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',arrItem)">+</a> </div>
+							</div>
+							<div class="caption"><a ng-click="menuShopApi('',arrItem.merchant)"> {{ arrItem.keyword | limitTo: 20 }}{{arrItem.keyword.length > 20 ? '...' : ''}}</a> </div>
+						</div>
+					</li>
+				</ul>
+				<div class="bottom_link"><a class="red-link" ng-click="continue_shopping()">CONTINUE SHOPPING</a></div>
+			</div>
+			<div class="recent_view saved">
+				<h3>SAVED</h3>
+				<ul ng-class="loggedin ==1?'recentview_list defaultScroll':'falseclass'" ng-repeat="(wsitekey,item) in twotap_wishlist_cart.sites track by $index" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }" data-wsitekey="{{ wsitekey }}" ng-if="!!item.add_to_cart">
+					<li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+						<div class="product-image mini">
+							<div class="p_image_innner"> <img ng-src="{{proMd5.image}}" title="{{proMd5.title}}  by {{item.info.name}}">
+								<div class="rateit">
+									<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+                                </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'wish','add')">+</a>
+                            </div>
+						</div>
+						<div class="caption"><a ng-href="{{proMd5.lnk}}">{{proMd5.title| limitTo: 20}}{{proMd5.title.length > 20 ? '...' : ''}}</a></div>
+					</li>
+				</ul>
+				<div class="bottom_link"><a ng-click="gotoSaved()" class="red-link goTarget">SAVED ITEMS</a></div>
+			</div>
+		</aside>
+		<section class="content">
+			<div class="s_bag_right_top">
+				<h1>My <i class="icon ss-logo-grey"></i> <br>Shopping Bag</h1>
+				<div class="info_summary">
+					<div>{{num_items}} Items / {{num_stores}} Shops</div>
+					<div>{{valid_coupons}} Coupon code(s) applied / {{valid_coupon_store}} Shops</div>
+					<div class="btn red_btn checkout_all" ng-click="twotapCheckoutCart(2)">Checkout all</div>
+					<br>
+					<br>
+					<div ng-if="!ck_all">Currently Checking Out {{cur_merchant}} Only</div>
+				</div>
+				<div class="s_bag_total">
+					<div class="total_col">
+						<div class="clearfix total_saving"> <span>Est. Total saving</span> <span>{{saving|currency}}</span> </div>
+						<div ng-class="estimated_price_totals != undefined? '' : 'falseClass'"> <span>Subtotal</span> <span ng-if="failed_sub_total==0">{{estimated_price_totals.subtotal }}</span>
+							<!--Subtotal will change--><span ng-if="failed_sub_total>0">{{(estimated_price_totals.subtotal.substring(1) *1.0 + failed_sub_total) | currency:'$':true:'1.2-2'}}</span> </div>
+						<div ng-class="estimated_price_totals == undefined? '' : 'falseClass'"> <span>Subtotal</span>
+							<!--  <span>{{(estimated_price_totals.subtotal.substring(1) *1.0 + failed_sub_total) | currency:'$':true:'1.2-2'}}</span> --><span>{{ failed_sub_total | currency:'$':true:'1.2-2'}}
+                            </span> </div>
+						<div ng-class="estimated_price_totals!= undefined? '' : 'falseClass'"> <span>Est. Shipping cost</span> <span>{{estimated_price_totals.shipping_price }}</span> </div>
+						<div ng-class="estimated_price_totals!= undefined? 'falseClass' : ''"> <span>Est. Shipping cost</span> <span>$0</span> </div>
+						<div ng-class="estimated_price_totals!= undefined? '' : 'falseClass'"> <span>Est. Tax</span> <span>{{estimated_price_totals.sales_tax }}</span> </div>
+						<div ng-class="estimated_price_totals!= undefined? 'falseClass' : ''"> <span>Est. Tax</span> <span>$0</span> </div>
+						<div ng-class="estimated_price_totals!= undefined? '' : 'falseClass'"> <span>Discount</span> <span>-{{estimated_price_totals.coupon_value }}</span> </div>
+						<div ng-class="estimated_price_totals!= undefined? 'falseClass' : ''"> <span>Discount</span> <span>-$0</span> </div>
+						<div ng-class="failed_sub_total> 0? 'falseClass' : ''"> <span><b>Est. Total</b> </span>
+							<!-- total will change--><span>{{estimated_price_totals.final_price }}</span> </div>
+						<div ng-class="failed_sub_total> 0? '' : 'falseClass'"> <span><b>Est. Total</b> </span> <span ng-class="estimated_price_totals== undefined? 'falseClass' : ''"> {{((estimated_price_totals.final_price.substring(1) *1.0) + failed_sub_total) | currency:'$':true:'1.2-2'}}
+							</span>
+							<!--Subtotal will change--><span ng-class="estimated_price_totals== undefined? '' : 'falseClass'"> {{failed_sub_total | currency:'$':true:'1.2-2'}}</span> </div>
+						<div><a ng-click="resetCart()">Clear all Carts</a></div>
+					</div>
+				</div>
+			</div>
+			<!-- Header -->
+			<div class="s_bag_brand_wrp">
+				<div ng-class='{2:"ss_loading s_bag",1:"ss_loading", 0:"falseClass",3:"falseClass", undefined:"falseClass"}[ss_cart_load]'></div>
+				<div ng-class="initTwotapLoaddone==0?'ss_loading':'falseClass'"></div>
+				<div class="s_bag_brand" ng-repeat="(wsitekey,item) in twotap_builtin_cart.sites track by $index">
+					<div class="s_bag_details">
+						<div class="s_bag_heading">
+							<div class="stores-logo" style="background-image:url({{item.info.logo}});" title="{{item.info.name}}"></div>
+							<div class="item">ITEM</div>
+							<div class="color">COLOR</div>
+							<div class="size">SIZE</div>
+							<div class="price">PRICE</div>
+							<div class="qty">QTY.</div>
+							<div class="total">TOTAL</div>
+						</div>
+						<div class="s_bag_content cart {{item.info.name}}">
+							<div class="s_bag_row" ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+								<div class="product-image mini">
+									<div class="p_image_innner"> <img ng-src="{{proMd5.image}}">
+										<div class="rateit">
+											<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+										</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'cart','add')">+</a> </div>
+								</div>
+								<div class="item">
+									<div class="title" title="{{proMd5.title}}"><a ng-href="{{proMd5.lnk}}"> {{proMd5.title}}</a></div>
+									<div class="title"><a>{{proMd5.brand}}</a></div>
+									<div class="web_id" title="Web ID: {{proMd5.catalogId}}">Web ID: <a ng-href="{{proMd5.lnk}}">{{proMd5.catalogId}}</a></div>
+									<div class="bundle" ng-repeat="rname in proMd5.required_field_names track by $index" ng-if="rname!='color' && rname!='size' && rname!='quantity'"> {{rname}} : {{ proMd5[rname] }} </div>
+									<div class="decide_link">
+										<div class="btn grey_btn" ng-click="movetoSavelist(proMd5.catalogId,prokey,wsitekey,1,proMd5)">Move to Saved List</div>
+										<div class="remove">
+											<div class="btn cancel_btn">Remove</div>
+											<div class="popUp">
+												<div class="btn grey_btn" ng-click="deleteFromCartCatIdTwoVal(proMd5.catalogId,prokey,wsitekey,1)">Remove the Item</div> <a class="btn grey_btn" ng-click="movetoSavelist(proMd5.catalogId,prokey,wsitekey,1,proMd5)">Save for later</a> </div>
+										</div>
+									</div>
+								</div>
+								<div class="specify_wrap">
+									<div class="color">
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<select ng-model="proMd5.color" ng-change="reset_size_list(proMd5,proMd5.color,$index)">
+													<option ng-repeat="itemByColor in proMd5.required_field_values.color track by $index" value="{{itemByColor.value}}">{{itemByColor.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? 's' : 'falseClass'">
+											<div class="defaultSt">
+												<!--   <select data-ng-model="proMd5.size" data-ng-change="requiredvalueChange(proMd5.required_field_values,twotap_builtin_cart,wsitekey,prokey,-1)"> -->
+												<select data-ng-model="proMd5.size">
+													<option ng-repeat="itemBySize in proMd5.required_field_values.size track by $index" value="{{itemBySize.value}}">{{itemBySize.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div ng-class="proMd5.percentOff ==null || proMd5.percentOff =='' ?'price':'falseClass'">
+										<div class="org_price"> {{proMd5.price}}</div>
+									</div>
+									<div ng-class="proMd5.percentOff ==null || proMd5.percentOff =='' ?'falseClass':'price'">
+										<div class="org_price">ORIG {{proMd5.orig_price}}</div>
+										<div class="sale_price">SALE {{proMd5.price}}</div>
+									</div>
+									<div class="qty">
+										<div class="dropdown_wrap">
+											<form>
+												<div class="defaultSt">
+													<select data-ng-model="proMd5.quantity" data-ng-change="quantityChange(proMd5.quantity,twotap_builtin_cart,wsitekey,prokey,-1)" convert-to-number>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span></div>
+								<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span></div>
+								<div class="total">
+									<div class="total_price"> {{ proMd5.quantity * proMd5.price.substring(1) *1.0 | currency}}</div>
+								</div>
+							</div>
+							<div class="s_bag_row stock_out" ng-repeat="(prokey,proMd5) in item.failed_to_add_to_cart track by $index">
+								<div class="product-image mini">
+									<div class="p_image_innner"> <img ng-src="{{proMd5.image}}">
+										<div class="rateit">
+											<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+										</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'cart','failed')">+</a> </div>
+								</div>
+								<div class="item">
+									<div class="title" title="{{proMd5.title}}"> <a ng-href="{{proMd5.lnk}}"> {{proMd5.title}} </a> </div>
+									<div class="title"><a>{{proMd5.brand}}</a></div>
+									<div class="web_id" title="Web ID: {{proMd5.catalogId}}">Web ID: <a ng-href="{{proMd5.lnk}}">{{proMd5.catalogId}}</a></div>
+									<div class="bundle" ng-repeat="rname in proMd5.required_field_names track by $index" ng-if="rname!='color' && rname!='size' && rname!='quantity'"> {{rname}} : {{ proMd5[rname] }} </div>
+									<div class="decide_link">
+										<div class="btn grey_btn" ng-click="movetoSavelist(proMd5.catalogId,prokey,wsitekey,-1,proMd5)">Move to Saved List</div>
+										<div class="remove">
+											<div class="btn cancel_btn">Remove</div>
+											<div class="popUp">
+												<div class="btn grey_btn" ng-click="deleteFromCartCatIdTwoVal(proMd5.catalogId,prokey,wsitekey,-1)">Remove the Item</div> <a class="btn grey_btn" ng-click="movetoSavelist(proMd5.catalogId,prokey,wsitekey,-1,proMd5)">Save for later</a> </div>
+										</div>
+									</div>
+								</div>
+								<div class="specify_wrap">
+									<div class="color">
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<select ng-model="proMd5.color" ng-change="reset_size_list(proMd5,proMd5.color,$index)">
+													<option ng-repeat="itemByColor in proMd5.required_field_values.color track by $index" value="{{itemByColor.value}}">{{itemByColor.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<!-- <select data-ng-model="proMd5.size" data-ng-change="requiredvalueChange(proMd5.required_field_values,twotap_builtin_cart,wsitekey,prokey,-100)"> -->
+												<select data-ng-model="proMd5.size">
+													<option ng-repeat="itemBySize in proMd5.required_field_values.size track by $index" value="{{itemBySize.value}}">{{itemBySize.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div ng-class="proMd5.price ==null ?'falseClass':'price'">
+										<div class="org_price"> {{proMd5.price}}</div>
+									</div>
+									<div ng-class="proMd5.price ==null ?'price':'falseClass'">
+										<div class="org_price"> {{proMd5.orig_price|currency}}</div>
+									</div>
+									<div class="qty">
+										<div class="dropdown_wrap">
+											<form>
+												<div class="defaultSt">
+													<select ng-model="proMd5.quantity" ng-change="quantityChange(proMd5.quantity,twotap_builtin_cart,wsitekey,prokey,-100)" convert-to-number>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div ng-class="proMd5.price == null ?'falseClass':'total'">
+									<div class="total_price"> {{ proMd5.quantity * proMd5.price.substring(1) * 1.0 | currency}}</div>
+								</div>
+								<div ng-class="proMd5.price ==null ?'total':'falseClass'">
+									<div class="total_price">{{ proMd5.quantity * proMd5.orig_price | currency}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Costing form-->
+					<div class="costing_wrap">
+						<div class="checkOut_box"> <a ng-click="gotoSaved()" class="link-save-item red-link goTarget"><i class="icon save_item"></i>Saved Items</a> </div>
+						<div class="checkOut_box">
+							<div class="checkOut_box_inner">
+								<form>
+									<div class="subtotal-header">
+										<div ng-class="item.failed_sub_total_store==0 ?'fl' : 'falseClass'"><span>Subtotal:</span> {{item.estimates.prices.subtotal}} ( {{item.quantity_store_wise}} items )</div>
+										<div ng-class="(item.failed_sub_total_store > 0) && (item.estimates== undefined) ?'fl' : 'falseClass'"> <span>Subtotal:</span> {{item.failed_sub_total_store | currency:'$':true:'1.2-2' }} ({{item.quantity_store_wise}} items ) </div>
+										<div ng-class="(item.failed_sub_total_store > 0) && (item.estimates!= undefined) ?'fl' : 'falseClass'"> <span>Subtotal:</span> {{(item.estimates.prices.subtotal.substring(1) *1.0 + failed_sub_total_store) | currency:'$':true:'1.2-2' }} ( {{item.quantity_store_wise}} items ) </div>
+										<div class="p_code_avail" ng-class="item.coupon_support==true?'' : 'falseClass'">
+											<div class="p_code_avail_inner"> <i class="icon bell"></i>
+												<div>Coupon Code Available!</div>
+											</div>
+											<div class="popUp">
+												<div class="btn grey_btn findCoupon" ng-click="getcoupon(item.info.name,item)">find Coupon code in my mail</div>
+												<div class="btn grey_btn subscribeCoupon" ng-click="show_subscribe_window(item.info.name,item)">subscribe to get promo codes</div>
+											</div>
+										</div>
+										<!-- href="social.php#notificationBox" target="_blank" -->
+									</div>
+									<div ng-class="item.coupon_support==true?'' : 'falseClass'">
+										<div class="form_wrap promo_code clearfix" style="display:block;">
+											<div class="form_wrap_inner">
+												<div ng-class="item.estimates.coupons[item.coupon1].status=='invalid' || item.estimates.coupons[item.coupon1].status=='unknown' || item.estimates.coupons[item.coupon1].status=='inactive' ?'falseClass' : 'f_row'">
+													<label class="valid">{{item.estimates.coupons[item.coupon1].label}} </label>
+													<div class="f_field valid" title="{{item.estimates.coupons[item.coupon1].status}}">
+														<input type="text" placeholder="Enter 1st coupon code" ng-model="item.coupon1">
+														<div ng-class="item.estimates.coupons[item.coupon1].status=='valid'?'valid_checkMark' : 'falseClass'" title="Verified"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon1].status=='invalid' || item.estimates.coupons[item.coupon1].status=='unknown' || item.estimates.coupons[item.coupon1].status=='inactive' ?'f_row' : 'falseClass'">
+													<label class="red">Invalid code &nbsp; {{item.estimates.coupons[item.coupon1].label}} </label>
+													<div class="f_field invalid" title="{{item.estimates.coupons[item.coupon1].status}}">
+														<input type="text" placeholder="Enter 1st coupon code" ng-model="item.coupon1" ng-change="remove_invalid(item.coupon1,1)">
+														<div class="invalid_cross" title="{{item.estimates.coupons[item.coupon1].status}}"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon2].status=='invalid' || item.estimates.coupons[item.coupon2].status=='unknown' || item.estimates.coupons[item.coupon2].status=='inactive' ?'falseClass' : 'f_row'">
+													<label class="valid">{{item.estimates.coupons[item.coupon2].label}} </label>
+													<div class="f_field valid" title="{{item.estimates.coupons[item.coupon2].status}}">
+														<input type="text" placeholder="Enter 2nd coupon code" ng-model="item.coupon2">
+														<div ng-class="item.estimates.coupons[item.coupon2].status=='valid'?'valid_checkMark' : 'falseClass'" title="Verified"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon2].status=='invalid' || item.estimates.coupons[item.coupon2].status=='unknown' || item.estimates.coupons[item.coupon2].status=='inactive' ?'f_row' : 'falseClass'">
+													<label class="red">Invalid code &nbsp; {{item.estimates.coupons[item.coupon2].label}} </label>
+													<div class="f_field invalid" title="{{item.estimates.coupons[item.coupon2].status}}">
+														<input type="text" placeholder="Enter 2nd coupon code" ng-model="item.coupon2" ng-change="remove_invalid(item.coupon2,2)">
+														<div class="invalid_cross" title="{{item.estimates.coupons[item.coupon2].status}}"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon3].status=='invalid' || item.estimates.coupons[item.coupon3].status=='unknown' || item.estimates.coupons[item.coupon3].status=='inactive' ?'falseClass' : 'f_row'">
+													<label class="valid">{{item.estimates.coupons[item.coupon3].label}} </label>
+													<div class="f_field valid" title="{{item.estimates.coupons[item.coupon3].status}}">
+														<input type="text" placeholder="Enter 3rd coupon code" ng-model="item.coupon3">
+														<div ng-class="item.estimates.coupons[item.coupon3].status=='valid'?'valid_checkMark' : 'falseClass'" title="Verified"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon3].status=='invalid' || item.estimates.coupons[item.coupon3].status=='unknown' || item.estimates.coupons[item.coupon3].status=='inactive' ?'f_row' : 'falseClass'">
+													<label class="red">Invalid code &nbsp; {{item.estimates.coupons[item.coupon3].label}} </label>
+													<div class="f_field invalid" title="{{item.estimates.coupons[item.coupon3].status}}">
+														<input type="text" placeholder="Enter 3rd coupon code" ng-model="item.coupon3" ng-change="remove_invalid(item.coupon3,3)">
+														<div class="invalid_cross" title="{{item.estimates.coupons[item.coupon3].status}}"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon4].status=='invalid' || item.estimates.coupons[item.coupon4].status=='unknown' || item.estimates.coupons[item.coupon4].status=='inactive' ?'falseClass' : 'f_row'">
+													<label class="valid">{{item.estimates.coupons[item.coupon4].label}} </label>
+													<div class="f_field valid" title="{{item.estimates.coupons[item.coupon4].status}}">
+														<input type="text" placeholder="Enter 4th coupon code" ng-model="item.coupon4">
+														<div ng-class="item.estimates.coupons[item.coupon4].status=='valid'?'valid_checkMark' : 'falseClass'" title="Verified"></div>
+													</div>
+												</div>
+												<div ng-class="item.estimates.coupons[item.coupon4].status=='invalid' || item.estimates.coupons[item.coupon4].status=='unknown' || item.estimates.coupons[item.coupon4].status=='inactive' ?'f_row' : 'falseClass'">
+													<label class="red">Invalid code &nbsp; {{item.estimates.coupons[item.coupon4].label}} </label>
+													<div class="f_field invalid" title="{{item.estimates.coupons[item.coupon4].status}}">
+														<input type="text" placeholder="Enter 4th coupon code" ng-model="item.coupon4" ng-change="remove_invalid(item.coupon4,4)">
+														<div class="invalid_cross" title="{{item.estimates.coupons[item.coupon4].status}}"></div>
+													</div>
+												</div>
+												<div class="f_row">
+													<label></label>
+													<div class="f_field">
+														<input type="submit" value="Apply" class="btn black_btn applyBtn" ng-click="priceEstimationMerchantWise(item.info.name,-1)"> </div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="subtotal-shipping">
+										<div class="subtotal-shipping-label">Shipping:</div>
+										<ul class="subtotal-list">
+											<li ng-repeat="(key,shippingOption) in item.shipping_options track by $index">
+												<input type="radio" name="radio-shipping{{wsitekey}}" id="ship_{{wsitekey}}_{{$index}}" ng-model="item.shipping_option" value="{{key}}" ng-click="estimateFunction(twotap_builtin_cart,-3,considered_items,'cart')">
+												<label for="ship_{{wsitekey}}_{{$index}}">{{shippingOption}} - {{shipping_chrg[wsitekey][key]}} </label>
+											</li>
+										</ul>
+									</div>
+									<div class="charge-info">
+										<ul class="charge-list clearfix">
+											<li ng-class="(item.estimates!= undefined)?'' : 'falseClass'"> <span>Estimated Shipping charges:</span> <span>{{item.estimates.prices.shipping_price}}</span> </li>
+											<li ng-class="(item.estimates== undefined)?'' : 'falseClass'"> <span>Estimated Shipping charges:</span> <span>$0</span> </li>
+											<li class="estm_txt" ng-class="(item.estimates!= undefined)?'' : 'falseClass'"> <span>Estimated Taxes: </span> <span>{{item.estimates.prices.sales_tax}}</span> </li>
+											<li class="estm_txt" ng-class="(item.estimates== undefined)?'' : 'falseClass'"> <span>Estimated Taxes: </span> <span>$0</span> </li>
+											<li class="estm_txt"> <span>Discount: </span> <span ng-if="item.estimates!= undefined && item.estimates.prices.coupon_value!='applied at checkout'">-{{item.estimates.prices.coupon_value}}</span> <span ng-if="item.estimates== undefined || item.estimates.prices.coupon_value=='applied at checkout'">-</span> </li>
+											<li ng-class="item.failed_sub_total_store==0 ?'' : 'falseClass'"> <span><b>Estimated Total:</b></span> <span class="red">{{item.estimates.prices.final_price}}</span> </li>
+											<li ng-class="(item.failed_sub_total_store > 0) && (item.estimates== undefined)?'' : 'falseClass'"> <span><b>Estimated Total:</b></span> <span class="red">{{item.failed_sub_total_store | currency:'$':true:'1.2-2' }} </span> </li>
+											<li ng-class="(item.failed_sub_total_store > 0) && (item.estimates!= undefined) ?'' : 'falseClass'"> <span><b>Estimated Total:</b></span> <span class="red">{{(item.estimates.prices.final_price.substring(1) *1.0 + item.failed_sub_total_store) | currency:'$':true:'1.2-2'}}</span> </li>
+											<li class="estimated_dtls"><u class="why_estmted"><a>Why estimated?</a></u>
+												<div class="popUp"> Actual tax will be calculated when your order is processed. Tax may vary slightly from what is displayed he re. </div>
+											</li>
+											<li class="purchase_info"><span data-toggle="modal" data-target="#returnPolicy"><u><a ng-click="return_policy(item.returns,item.info.name,item.info.logo)">Return Policy</a></u></span></li>
+										</ul>
+									</div>
+									<div class="form-row">
+										<div class="btn black_btn" ng-click="twotapCheckoutMerchantWise(item.shop,2)">Checkout {{item.info.name}}'s only</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order_box s_bag">
+				<div class="placeOrder_wrap">
+					<div class="btn red_btn checkout_all" ng-click="twotapCheckoutCart(2)">Checkout all</div>
+				</div>
+				<div class="order_total" ng-class="failed_sub_total== 0? '' : 'falseClass'">Total: <span class="price">{{estimated_price_totals.final_price }}</span></div>
+				<div class="order_total" ng-class="failed_sub_total> 0 && estimated_price_totals== undefined ? '': 'falseClass'">Total: <span class="price">{{ failed_sub_total  | currency:'$':true:'1.2-2' }}</span></div>
+				<div class="order_total" ng-class="failed_sub_total> 0 && estimated_price_totals!= undefined ? '': 'falseClass'">Total: <span class="price">{{(estimated_price_totals.final_price.substring(1) *1.0 + failed_sub_total) | currency:'$':true:'1.2-2' }}</span></div>
+			</div>
+			<!-- Start saved item -->
+			<div class="s_bag_savedItem" id="saved">
+				<div class="s_bag_right_top">
+					<h1>My <i class="icon ss-logo-grey"></i> <br>Saved list</h1>
+					<div class="info_summary">
+						<div>
+							<!--{{num_items_wish}}-->{{saved_item_number}} Items / {{num_stores_wish}} Shops</div> <a ng-click="reset_wishlist()" ng-if="loggedin==1">Clear all Wishlist</a>
+						<!-- <div class="btn red_btn checkout_all">Checkout all</div> --></div>
+					<div class="s_bag_total">
+						<div class="total_col">
+							<div ng-class="failed_wish_sub_total== 0? '' : 'falseClass'"> <span><b>Est. Sub Total</b> </span> <span>{{estimated_price_totals_wish.subtotal}}</span> </div>
+							<div ng-class="failed_wish_sub_total> 0 ? '': 'falseClass'"> <span><b>Est. Sub Total</b> </span> <span>${{ failed_wish_sub_total + success_wish_sub_total }}</span> </div>
+							<!-- <div ng-class="failed_wish_sub_total> 0 && estimated_price_totals_wish!= undefined ? '': 'falseClass'"> -->
+							<!-- <span><b>Est. Sub Total</b> </span> -->
+							<!-- <span>{{estimated_price_totals_wish.subtotal.substring(1) *1.0 + failed_wish_sub_total }}</span> -->
+							<!-- </div> -->
+						</div>
+					</div>
+				</div>
+				<div ng-class='{2:"ss_loading s_list",1:"ss_loading", 0:"falseClass",3:"falseClass", undefined:"falseClass"}[ss_wish_load]'></div>
+				<div ng-class="initWishLoaddone==0?'ss_loading':'falseClass'"></div>
+				<div ng-class="loggedin ==1?'s_bag_brand':'falseclass'" ng-repeat="(wsitekey,item) in twotap_wishlist_cart.sites track by $index">
+					<div class="s_bag_details">
+						<div class="s_bag_heading">
+							<div class="stores-logo" style="background-image:url({{item.info.logo}});" title="{{item.info.name}}"></div>
+							<div class="item">ITEM</div>
+							<div class="color">COLOR</div>
+							<div class="size">SIZE</div>
+							<div class="price">PRICE</div>
+							<div class="qty">QTY.</div>
+							<div class="total">TOTAL</div>
+						</div>
+						<div class="s_bag_content">
+							<div class="s_bag_row" ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+								<div class="product-image mini">
+									<div class="p_image_innner"> <img ng-src="{{proMd5.image}}">
+										<div class="rateit">
+											<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+										</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'wish','add')">+</a> </div>
+								</div>
+								<div class="item">
+									<div class="title"><a ng-href="{{proMd5.lnk}}">{{proMd5.title}}</a></div>
+									<div class="title"><a>{{proMd5.brand}}</a></div>
+									<div class="web_id">Web ID: <a ng-href="{{proMd5.lnk}}">{{proMd5.catalogId}}</a></div>
+									<div class="bundle" ng-repeat="rname in proMd5.required_field_names track by $index" ng-if="rname!='color' && rname!='size' && rname!='quantity'"> {{rname}} : {{ proMd5[rname] }} </div>
+									<div class='decide_link'>
+										<div ng-class="{1:'btn grey_btn', 0:'falseClass', undefined:'falseClass'}[proMd5.movetobagPossible]" ng-click="moveToCart(proMd5.catalogId,prokey,wsitekey,1,proMd5)"> Move to bag </div>
+										<div ng-class="{1:'remove', 0:'falseClass', undefined:'falseClass'}[proMd5.movetobagPossible]">
+											<div class="btn cancel_btn">Remove</div>
+											<div class="popUp">
+												<div class="btn grey_btn" ng-click="deleteFromWishIdTwoVal(proMd5.catalogId,prokey,wsitekey,1)">Remove the Item</div> <a class="btn grey_btn" ng-click="moveToCart(proMd5.catalogId,prokey,wsitekey,1,proMd5)">Move to bag</a> </div>
+										</div>
+										<div ng-class="{0:'btn black_btn updateBtn', 1:'falseClass', undefined:'falseClass'}[proMd5.movetobagPossible]"> <span ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'wish','add')">Update</span>
+											<div class="popUp"><span class="mb_hide">Click to</span> Update Details.</div>
+										</div>
+										<div ng-class="{0:'remove', 1:'falseClass', undefined:'falseClass'}[proMd5.movetobagPossible]">
+											<div class="btn cancel_btn">Remove</div>
+											<div class="popUp">
+												<div class="btn grey_btn" ng-click="deleteFromWishIdTwoVal(proMd5.catalogId,prokey,wsitekey,1)">Remove the Item</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="specify_wrap">
+									<div class="color">
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<select ng-model="proMd5.color" ng-change="reset_size_list(proMd5,proMd5.color,$index)">
+													<option ng-repeat="itemByColor in proMd5.required_field_values.color track by $index" value="{{itemByColor.value}}">{{itemByColor.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<!--  -->
+												<!-- {{proMd5.size}}
+                                                        <div ng-repeat="itemBySize in proMd5.required_field_values.size track by $index" >{{itemBySize.value}} &nbsp; {{itemBySize.text}}</div>
+ -->
+												<!-- <select ng-model="proMd5.size" ng-click="size_change(wsitekey,prokey)" data-ng-change="requiredvalueChange(proMd5.required_field_values,twotap_wishlist_cart,wsitekey,prokey,-9)"> -->
+												<select ng-model="proMd5.size" ng-click="size_change(wsitekey,prokey)">
+													<option ng-repeat="itemBySize in proMd5.required_field_values.size track by $index" value="{{itemBySize.value}}">{{itemBySize.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div ng-class="proMd5.percentOff ==null || proMd5.percentOff =='' ?'price':'falseClass'">
+										<div class="org_price"> {{proMd5.price}}</div>
+									</div>
+									<div ng-class="proMd5.percentOff ==null || proMd5.percentOff =='' ?'falseClass':'price'">
+										<div class="org_price">ORIG {{proMd5.orig_price}}</div>
+										<div class="sale_price">SALE {{proMd5.price}}</div>
+									</div>
+									<div class="qty">
+										<div class="dropdown_wrap">
+											<form>
+												<div class="defaultSt">
+													<select data-ng-model="proMd5.quantity" data-ng-change="quantityChange(proMd5.quantity,twotap_wishlist_cart,wsitekey,prokey,-9)" convert-to-number>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span></div>
+								<div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span></div>
+								<div class="total">
+									<div class="total_price">{{ proMd5.quantity* proMd5.price.substring(1) *1.0 | currency}}</div>
+								</div>
+							</div>
+							<div class="s_bag_row stock_out" ng-repeat="(prokey,proMd5) in item.failed_to_add_to_cart track by $index">
+								<div class="product-image mini">
+									<div class="p_image_innner"> <img ng-src="{{proMd5.image}}">
+										<div class="rateit">
+											<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+										</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_pro_update(proMd5,item,prokey,wsitekey,'wish','failed')">+</a> </div>
+								</div>
+								<div class="item">
+									<div class="title" title="{{proMd5.title}}"> <a ng-href="{{proMd5.lnk}}"> {{proMd5.title}} </a> </div>
+									<div class="title"><a>{{proMd5.brand}}</a></div>
+									<div class="web_id" title="Web ID: {{proMd5.catalogId}}">Web ID: <a ng-href="{{proMd5.lnk}}">{{proMd5.catalogId}}</a></div>
+									<div class="bundle" ng-repeat="rname in proMd5.required_field_names track by $index" ng-if="rname!='color' && rname!='size' && rname!='quantity'"> {{rname}} : {{ proMd5[rname] }} </div>
+									<div class="decide_link">
+										<div class="remove">
+											<div class="btn cancel_btn">Remove</div>
+											<div class="popUp">
+												<div class="btn grey_btn" ng-click="deleteFromWishIdTwoVal(proMd5.catalogId,prokey,wsitekey,-1)">Remove the Item</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="specify_wrap">
+									<div class="color">
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<select ng-model="proMd5.color" ng-change="reset_size_list(proMd5,proMd5.color,$index)">
+													<option ng-repeat="itemByColor in proMd5.required_field_values.color track by $index" value="{{itemByColor.value}}">{{itemByColor.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('color')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="size">
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? '' : 'falseClass'">
+											<div class="defaultSt">
+												<!-- <select data-ng-model="proMd5.size" data-ng-change="requiredvalueChange(proMd5.required_field_values,twotap_builtin_cart,wsitekey,prokey,-100)"> -->
+												<select data-ng-model="proMd5.size">
+													<option ng-repeat="itemBySize in proMd5.required_field_values.size track by $index" value="{{itemBySize.value}}">{{itemBySize.text}}</option>
+												</select>
+											</div>
+										</div>
+										<div ng-class="proMd5.required_field_names.indexOf('size')> -1? 'falseClass' : ''">
+											<div class="defaultSt">
+												<select>
+													<option> -</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div ng-class="proMd5.price ==null ?'falseClass':'price'">
+										<div class="org_price"> {{proMd5.price}}</div>
+									</div>
+									<div ng-class="proMd5.price ==null ?'price':'falseClass'">
+										<div class="org_price"> {{proMd5.orig_price|currency}}</div>
+									</div>
+									<div class="qty">
+										<div class="dropdown_wrap">
+											<form>
+												<div class="defaultSt">
+													<select ng-model="proMd5.quantity" ng-change="quantityChange(proMd5.quantity,twotap_builtin_cart,wsitekey,prokey,-100)" convert-to-number>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div ng-class="proMd5.price == null ?'falseClass':'total'">
+									<div class="total_price"> {{ proMd5.quantity * proMd5.price.substring(1) * 1.0 | currency}}</div>
+								</div>
+								<div ng-class="proMd5.price ==null ?'total':'falseClass'">
+									<div class="total_price">{{ proMd5.quantity * proMd5.orig_price | currency}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Only for mobile to show left sidebar at the bottom -->
+		<div class="section_bottom dsktp_hide">
+			<div class="recent_summary clearfix">
+				<h2>RECENTLY VIEWED</h2>
+				<div class="nav_carousel">
+					<div class="carousel mini_thumb_slider">
+						<ul class="stage_nav">
+							<li ng-repeat="arrObj in recentItems">
+								<div ng-repeat="arrItem in arrObj.timestamp track by $index">
+									<div class="product-image mini">
+										<div class="p_image_innner"> <img ng-src="{{arrItem.image_url}}" title="{{arrItem.keyword}}  by {{arrItem.merchant}}">
+											<div class="rateit">
+												<div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+											</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',arrItem)">+</a> </div>
+									</div>
+									<div class="caption"><a ng-click="menuShopApi('',arrItem.merchant)"> {{ arrItem.keyword | limitTo: 20 }}{{arrItem.keyword.length > 20 ? '...' : ''}}</a> </div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="recent_summary clearfix">
+				<h2><a href="#saved" class="goTarget">SAVED</a></h2>
+				<div class="nav_carousel">
+					<div class="carousel mini_thumb_slider">
+						<ul class="stage_nav">
+							<li ng-repeat="item in saveprofile2 track by $index">
+								<div class="product-image mini">
+									<div class="p_image_innner"> <img ng-src="{{item.product[0].image_url}}" alt="">
+										<div class="rateit">
+											<div class="rateis r{{item.product[0].rateAvg| makePositive}}"> </div>
+										</div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',item.product[0])">+</a> </div>
+								</div>
+								<div class="caption"><a>{{item.keyword}}</a></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <script type="text/javascript" src="s_js/jsapi.js" id="removedJs"></script>
+ -->
+<!--     <script type="text/javascript">
+        setTimeout(function() {
+            $('#removedJs').remove();
+        },30000)
+    </script> -->

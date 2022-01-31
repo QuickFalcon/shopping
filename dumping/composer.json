@@ -1,0 +1,19 @@
+{
+    "name": "muin/ss",
+    "description": "Social Shoppable Data Dumping",
+    "type": "Raw",
+    "authors": [
+        {
+            "name": "Mainul Islam Muin",
+            "email": "mainuljs@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "feehi/mongodb-php-orm": "^0.1.1",
+        "two-tap/php-sdk": "^1.0",
+        "psr/log": "^1.0",
+        "semantics3/semantics3-php": "dev-master",
+        "neitanod/forceutf8": "^2.0"
+    }
+}

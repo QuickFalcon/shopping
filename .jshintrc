@@ -1,0 +1,5 @@
+{
+  "node": true,
+  "predef": ["angular", "sShoppable", "Promise"],
+  "esnext": true
+}

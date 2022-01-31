@@ -1,0 +1,1054 @@
+
+<div class="mid_content search_result_page">
+    <div class="container_inner clearfix">
+        <div ng-class="loggedin==1?'content_top has_sidebar':'content_top'">
+
+            <ul class="breadcrumbs">
+                <li ng-repeat="path in pathTorch"><a ng-href="{{path.poth}}">{{path.label}}</a></li>
+
+            </ul>
+
+            <aside class="left_sidebar mb_hide">
+                <div class="filter_tools">
+                    <div class="search_wrap">
+                        <h3>Search
+                            <a ng-click="clearFilter()" style="font-size:.6em;float:right;">Clear&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        </h3>
+                        <div class="search_box">
+                            <input type="text" autocomplete="off" placeholder="Satchels" ng-model="selected_key">
+                            <input type="button" ng-click="searching_within_page(selected_key,$event)">
+                        </div>
+                    </div>
+
+
+                    <div class="filter_wrap">
+                        <h3>Narrow By </h3>
+                        <!-- Promotion Filter -->
+                        <div class="filter_widget">
+                            <!-- <div class="filter_title f_accordion_title" ng-bind="'Promotions ['+saleOfferTotal+']' "></div> -->
+                            <div class="filter_title f_accordion_title" ng-bind="'Promotions'"></div>
+
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+                                    <!--<li ng-show="saleOfferTotal>0 || saleOffer"> -->
+                                    <li>
+                                        <input type="checkbox" id="saleOfferId121Sale" value="false" ng-true-value="true" ng-false-value="false" ng-click="setIsDiscount($event,saleOffer)" ng-model="saleOffer">
+                                        <label for="saleOfferId121Sale" ng-bind="'Sales &amp; Offers'" ng-class="{checked : saleOffer}"> </label>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="filter_widget">
+                            <div class="filter_title f_accordion_title" ng-bind="'Gender'"></div>
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+                                    <li>
+                                        <input type="checkbox" id="maleId" value="false" ng-true-value="true" ng-false-value="false" ng-click="setMale(maleVal)" ng-model="maleVal">
+                                        <label for="maleId" ng-bind="'Male'" ng-class="{checked : maleVal}"> </label>
+                                        <input type="checkbox" id="femaleId" value="false" ng-true-value="true" ng-false-value="false" ng-click="setFemale(femaleVal)" ng-model="femaleVal">
+                                        <label for="femaleId" ng-bind="'Female'" ng-class="{checked : femaleVal}"> </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Store Filter -->
+                        <div class="filter_widget">
+
+                            <div class="filter_title f_accordion_title" ng-bind="'Shops ['+ totalMerchants+']'" ng-if="already_showed_all_merchant"></div>
+                            <div class="filter_title f_accordion_title" ng-bind="'Shops'" ng-if="!already_showed_all_merchant"></div>
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+                                    <li ng-repeat="retailer in retailerList.slice(0,5)|filter:merc track by $index">
+
+                                        <input type="checkbox" id="sretailersmall{{$index}}" ng-true-value="true" ng-false-value="false" ng-click="changeMerchantList(retailer['merchant'],prosearch[retailer['merchant']],retailer)" ng-model="prosearch[retailer['merchant']]">
+                                        <label for="sretailersmall{{$index}}" ng-class="{checked : prosearch[retailer.merchant] }" ng-bind="retailer['merchant']"></label>
+                                        <!-- <label for="sretailersmall{{$index}}" ng-class="{checked : prosearch[retailer.merchant] }" ng-bind="retailer['merchant']+'('+retailer.groupCount+retailer.numProducts+')'"></label> -->
+                                    </li>
+                                </ul>
+                                <ul class="filter_list full_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                    <li ng-repeat="retailer in retailerList.slice(0,retailerList.length)|filter:merc track by $index">
+                                        <input type="checkbox" id="sretailerdet{{$index}}" ng-true-value="true" ng-false-value="false" ng-click="changeMerchantList(retailer['merchant'],prosearch[retailer['merchant']],retailer)" ng-model="prosearch[retailer['merchant']]">
+                                        <label for="sretailerdet{{$index}}" ng-class="{checked : prosearch[retailer.merchant] }" ng-bind="retailer['merchant']"></label>
+                                        <!-- <label for="sretailerdet{{$index}}" ng-class="{checked : prosearch[retailer.merchant] }" ng-bind="retailer['merchant']+'('+retailer.groupCount+retailer.numProducts+')'"></label> -->
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="f_accordion_title dot_more" ng-click="showallmerchantFromSearch()" ng-show="retailerList.length>5"> ...</div>
+                        </div>
+
+                        <div class="filter_widget">
+                            <div class="filter_title f_accordion_title" ng-bind="'Categories ['+ totalCategories +']'"></div>
+                            <div class="f_accordion_content">
+
+
+                                <ul class="filter_list top_list">
+                                    <li ng-repeat="cate in customCategoryList track by $index">
+                                        <input id="catPartial{{cate.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catlocal[cate['category']]" ng-click="catSearchWithSelectPower(cate['category'],catlocal[cate['category']],cate,1)" >
+                                        <label for="catPartial{{cate.cid}}" ng-class="{checked : catlocal[cate['category']]}">{{cate.category}}
+                                        </label>
+                                        <a ng-click="commonDiv[cate['category']] = !commonDiv[cate['category']]" ng-show="cate.categoryList.length>0"> <span ng-if="!commonDiv[cate['category']]"> +</span> <span ng-if="commonDiv[cate['category']]"> -</span> </a>
+                                        <ul style="list-style:none;" class="p_0" ng-show="commonDiv[cate['category']]" >
+                                            <li ng-repeat="cate_level2 in cate.categoryList track by $index">
+                                                <input id="catLevel2{{cate_level2.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catlocal[cate_level2['category']]" ng-click="catSearchWithSelectPower(cate_level2['category'],catlocal[cate_level2['category']],cate_level2,2)">
+                                                <label for="catLevel2{{cate_level2.cid}}" ng-class="{checked : catlocal[cate_level2['category']]}">{{cate_level2.category}}
+                                                </label>
+
+                                                <a ng-click="commonDiv[cate_level2['category']] = !commonDiv[cate_level2['category']]" ng-show="cate_level2.categoryList.length>0"> <span ng-if="!commonDiv[cate_level2['category']]"> +</span> <span ng-if="commonDiv[cate_level2['category']]"> -</span> </a>
+
+                                                <ul style="list-style:none;" class="p_0" ng-show="commonDiv[cate_level2['category']]">
+                                                    <li ng-repeat="cate_level3 in cate_level2.categoryList track by $index">
+                                                        <input id="catLevel3{{cate_level3.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catlocal[cate_level3['category']]" ng-click="catSearchWithSelectPower(cate_level3['category'],catlocal[cate_level3['category']],cate_level3,3)">
+                                                        <label for="catLevel3{{cate_level3.cid}}" ng-class="{checked : catlocal[cate_level3['category']]}">{{cate_level3.category}}
+                                                        </label>
+
+                                                        <a ng-click="commonDiv[cate_level3['category']] = !commonDiv[cate_level3['category']]" ng-show="cate_level3.categoryList.length>0"> <span ng-if="!commonDiv[cate_level3['category']]"> +</span> <span ng-if="commonDiv[cate_level3['category']]"> -</span> </a>
+
+
+                                                        <ul style="list-style:none;" class="p_0" ng-show="commonDiv[cate_level3['category']]">
+                                                            <li ng-repeat="cate_level4 in cate_level3.categoryList track by $index">
+                                                                <input id="catLevel4{{cate_level4.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catlocal[cate_level4['category']]"  ng-click="catSearchWithSelectPower(cate_level4['category'],catlocal[cate_level4['category']],cate_level4,4)">
+                                                                <label for="catLevel4{{cate_level4.cid}}" ng-class="{checked : catlocal[cate_level4['category']]}">{{cate_level4.category}}
+                                                                </label>
+                                                                <a ng-click="commonDiv[cate_level4['category']] = !commonDiv[cate_level4['category']]" ng-show="cate_level4.categoryList.length>0"> <span ng-if="!commonDiv[cate_level4['category']]"> +</span> <span ng-if="commonDiv[cate_level4['category']]"> -</span> </a>
+
+                                                                <ul style="list-style:none;" class="p_0" ng-show="commonDiv[cate_level4['category']]">
+                                                                    <li ng-repeat="cate_level5 in cate_level4.categoryList track by $index">
+                                                                        <input id="catLevel5{{cate_level5.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catlocal[cate_level5['category']]" ng-click="catSearchWithSelectPower(cate_level5['category'],catlocal[cate_level5['category']],cate_level5,5)">
+                                                                        <label for="catLevel5{{cate_level5.cid}}" ng-class="{checked : catlocal[cate_level5['category']]}">{{cate_level5.category}}
+                                                                        </label>
+                                                                        <!--<a ng-click="commonDiv[cate_level5['category']] = !commonDiv[cate_level5['category']]" ng-show="cate_level5.categoryList.length>0"> + </a>-->
+
+                                                                    </li>
+                                                                </ul>
+
+
+                                                            </li>
+                                                        </ul>
+
+
+
+                                                    </li>
+                                                </ul>
+
+
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--<div class="f_accordion_title dot_more" ng-show="customCategoryList.length>5"> ...</div>-->
+                        </div>
+                        <!-- Designer Filter -->
+                        <div class="filter_widget">
+                            <div class="filter_title f_accordion_title" ng-bind="'Designers ['+ totalBrands+']'" ng-if="already_showed_all_brand"></div>
+                            <div class="filter_title f_accordion_title" ng-bind="'Designers'" ng-if="!already_showed_all_brand"></div>
+
+
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+
+
+                                    <li ng-repeat="brd in brandList.slice(0,5) track by $index">
+
+                                        <input type="checkbox" id="brndoInd{{brd.brand}}" ng-true-value="true" ng-false-value="false" ng-click="changeBrandList(brd['brand'],brdglocal[brd['brand']],brd)" ng-model="brdglocal[brd['brand']]" ng-if="brd['brand']!=null">
+                                        <!--<label for="brndoInd{{brd['brand']}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-bind="brd['brand']+'('+brd.groupCount+')'" ng-if="brd['brand']!=null"> <i>()</i>
+                                        </label> -->
+                                        <label for="brndoInd{{brd.brand}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-bind="brd['brand']" ng-if="brd['brand']!=null">
+                                            <i></i>
+                                        </label>
+
+                                    </li>
+
+                                </ul>
+
+                                    <!--   <input ng-model="brandsearch" ng-model-options="{debounce: 500}" ng-change="recall_brand(brandsearch)"> -->
+
+
+
+                                <ul class="filter_list full_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+
+
+                                    <input ng-model="brandsearch.brand">
+
+
+
+
+                                    <li ng-repeat="brd in brandList|filter:brandsearch track by $index">
+
+                                        <input type="checkbox" id="brndoRest{{brd['brand']}}" ng-true-value="true" ng-false-value="false" ng-click="changeBrandList(brd['brand'],brdglocal[brd['brand']],brd)" ng-model="brdglocal[brd['brand']]" ng-if="brd['brand']!=null">
+                                        <!--<label for="brndoRest{{brd['brand']}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-bind="brd['brand']+'('+brd.groupCount+')'" ng-if="brd['brand']!=null">
+                                        </label> -->
+                                        <label for="brndoRest{{brd['brand']}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-bind="brd['brand']">
+                                        </label>
+
+
+                                    </li>
+                                    <!--<li><a ng-click="generateAllBrands()">See More ... </a></li> -->
+                                </ul>
+
+
+                            </div>
+                            <div class="f_accordion_title dot_more" ng-click="showallbrandFromSearch()" ng-show="brandList.length>5" > ...</div>
+                        </div>
+                        <!-- Color Filter -->
+                        <div class="filter_widget">
+                            <div class="filter_title">Color</div>
+                            <ul class="filter_list color_list">
+                                <li>
+                                    <input type="checkbox" id="promoid2a" ng-true-value="true" ng-false-value="false" ng-model="temcol.yellow" ng-click="setColorWithThis(temcol['yellow'],'yellow')">
+                                    <label for="promoid2a" ng-class="{checked : temcol['yellow']}"><span style="background:yellow;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2b" ng-true-value="true" ng-false-value="false" ng-model="temcol.gold" ng-click="setColorWithThis(temcol['gold'],'gold')">
+                                    <label for="promoid2b" ng-class="{checked : temcol['gold']}"><span style="background:gold;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2c" ng-true-value="true" ng-false-value="false" ng-model="temcol.orange" ng-click="setColorWithThis(temcol['orange'],'orange')">
+                                    <label for="promoid2c" ng-class="{checked : temcol['orange']}"><span style="background:orange;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2d" ng-true-value="true" ng-false-value="false" ng-model="temcol.brown" ng-click="setColorWithThis(temcol['brown'],'brown')">
+                                    <label for="promoid2d" ng-class="{checked : temcol['brown']}"><span style="background:brown;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2e" ng-true-value="true" ng-false-value="false" ng-model="temcol.red" ng-click="setColorWithThis(temcol['red'],'red')">
+                                    <label for="promoid2e" ng-class="{checked : temcol['red']}"><span style="background:red;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2f" ng-true-value="true" ng-false-value="false" ng-model="temcol.pink" ng-click="setColorWithThis(temcol['pink'],'pink')">
+                                    <label for="promoid2f" ng-class="{checked : temcol['pink']}"><span style="background:pink;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2g" ng-true-value="true" ng-false-value="false" ng-model="temcol.violet" ng-click="setColorWithThis(temcol['violet'],'violet')">
+                                    <label for="promoid2g" ng-class="{checked : temcol['violet']}"><span style="background:violet;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2h" ng-true-value="true" ng-false-value="false" ng-model="temcol.fuchsia" ng-click="setColorWithThis(temcol['fuchsia'],'fuchsia')">
+                                    <label for="promoid2h" ng-class="{checked : temcol['fuchsia']}"><span style="background:fuchsia;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2i" ng-true-value="true" ng-false-value="false" ng-model="temcol.magenta" ng-click="setColorWithThis(temcol['magenta'],'magenta')">
+                                    <label for="promoid2i" ng-class="{checked : temcol['magenta']}"><span style="background:magenta;" ng-model="temcol"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2j" ng-true-value="true" ng-false-value="false" ng-model="temcol.purple" ng-click="setColorWithThis(temcol['purple'],'purple')">
+                                    <label for="promoid2j" ng-class="{checked : temcol['purple']}"><span style="background:purple;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2k" ng-true-value="true" ng-false-value="false" ng-model="temcol.cyan" ng-click="setColorWithThis(temcol['cyan'],'cyan')">
+                                    <label for="promoid2k" ng-class="{checked : temcol['cyan']}"><span style="background:cyan;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2l" ng-true-value="true" ng-false-value="false" ng-model="temcol.turquoise" ng-click="setColorWithThis(temcol['turquoise'],'turquoise')">
+                                    <label for="promoid2l" ng-class="{checked : temcol['turquoise']}"><span style="background:turquoise;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2m" ng-true-value="true" ng-false-value="false" ng-model="temcol.teal" ng-click="setColorWithThis(temcol['teal'],'teal')">
+                                    <label for="promoid2m" ng-class="{checked : temcol['teal']}"><span style="background:teal;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2n" ng-true-value="true" ng-false-value="false" ng-model="temcol.green" ng-click="setColorWithThis(temcol['green'],'green')">
+                                    <label for="promoid2n" ng-class="{checked : temcol['green']}"><span style="background:green;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2o" ng-true-value="true" ng-false-value="false" ng-model="temcol.blue" ng-click="setColorWithThis(temcol['blue'],'blue')">
+                                    <label for="promoid2o" ng-class="{checked : temcol['blue']}"><span style="background:blue;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2p" ng-true-value="true" ng-false-value="false" ng-model="temcol.white" ng-click="setColorWithThis(temcol['white'],'white')">
+                                    <label for="promoid2p" ng-class="{checked : temcol['white']}"><span style="background:white;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2Be" ng-true-value="true" ng-false-value="false" ng-model="temcol.beige" ng-click="setColorWithThis(temcol['beige'],'beige')">
+                                    <label for="promoid2Be" ng-class="{checked : temcol['beige']}"><span style="background:beige;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2q" ng-true-value="true" ng-false-value="false" ng-model="temcol.gray" ng-click="setColorWithThis(temcol['gray'],'gray')">
+                                    <label for="promoid2q" ng-class="{checked : temcol['gray']}"><span style="background:gray;"></span></label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="promoid2r" ng-true-value="true" ng-false-value="false" ng-model="temcol.indigo" ng-click="setColorWithThis(temcol['indigo'],'indigo')">
+                                    <label for="promoid2r" ng-class="{checked : temcol['indigo']}"><span style="background:indigo;"></span></label>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="promoid2s" ng-true-value="true" ng-false-value="false" ng-model="temcol.black" ng-click="setColorWithThis(temcol['black'],'black')">
+                                    <label for="promoid2s" ng-class="{checked : temcol['black']}"><span style="background:black;"></span></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Price Filter -->
+                        <div class="filter_widget">
+                            <div class="filter_title f_accordion_title" ng-bind="'Price ['+totalRecordsFound+']'"></div>
+                            <div class="f_accordion_content">
+                                <div class="defaultSt min-price-limit">
+                                    <select ng-model="minprice" convert-to-number ng-change="setminprice(minprice)">
+
+                                        <option value="0">$0</option>
+                                        <option value="25">$25</option>
+                                        <option value="50">$50</option>
+                                        <option value="75">$75</option>
+                                        <option value="100">$100</option>
+                                        <option value="150">$150</option>
+                                        <option value="200">$200</option>
+                                        <option value="250">$250</option>
+                                        <option value="300">$300</option>
+                                        <option value="350">$350</option>
+                                        <option value="400">$400</option>
+                                        <option value="450">$450</option>
+                                        <option value="500">$500</option>
+                                        <option value="600">$600</option>
+                                        <option value="700">$700</option>
+                                        <option value="800">$800</option>
+                                        <option value="900">$900</option>
+                                        <option value="1000">$1000</option>
+                                    </select>
+                                </div>
+                                <div class="defaultSt max-price-limit">
+                                    <select ng-model="maxprice" convert-to-number ng-change="setmaxprice(maxprice)">
+                                        <option value="25">$25</option>
+                                        <option value="50">$50</option>
+                                        <option value="75">$75</option>
+                                        <option value="100">$100</option>
+                                        <option value="150">$150</option>
+                                        <option value="200">$200</option>
+                                        <option value="250">$250</option>
+                                        <option value="300">$300</option>
+                                        <option value="350">$350</option>
+                                        <option value="400">$400</option>
+                                        <option value="450">$450</option>
+                                        <option value="500">$500</option>
+                                        <option value="600">$600</option>
+                                        <option value="700">$700</option>
+                                        <option value="800">$800</option>
+                                        <option value="900">$900</option>
+                                        <option value="1000000">$1000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Show Only Filter -->
+                        <!--<div class="filter_widget">
+                            <div class="filter_title f_accordion_title">Show Only [25]</div>
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+                                    <li>
+                                        <input type="checkbox" id="customerrated" value="" ng-model="customertoprated">
+                                        <label for="customerrated" ng-class="{checked : customertoprated }">Customer's &amp; Top &amp; Rated [12]</label>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div> -->
+
+
+                        <div class="filter_widget">
+                            <!-- <div class="filter_title f_accordion_title">Occasion [{{occ_cas_count+occ_vac_count+occ_wor_count+occ_oth_count}}]</div> -->
+
+                            <div class="filter_title f_accordion_title">Occasion</div>
+
+                            <div class="f_accordion_content">
+                                <ul class="filter_list top_list">
+
+                                    <!-- <li ng-show="occ_cas_count>0 || ocassion_casual"> -->
+                                    <li>
+                                        <input type="checkbox" id="casual" ng-model="ocassion_casual" ng-true-value="true" ng-false-value="false" ng-click="commonAction('casual',ocassion_casual)">
+                                        <label for="casual" ng-class="{checked : ocassion_casual }" ng-bind="'Casual'"> </label>
+                                    </li>
+                                    <!--	<li ng-show="occ_vac_count>0||ocassion_vacation"> -->
+                                    <li>
+                                        <input type="checkbox" id="vacati" ng-model="ocassion_vacation" ng-true-value="true" ng-false-value="false" ng-click="commonAction('vacation',ocassion_vacation)">
+                                        <label for="vacati" ng-class="{checked : ocassion_vacation }" ng-bind="'Vacation'"></label>
+                                    </li>
+                                    <!-- <li ng-show="occ_wor_count>0||ocassion_work"> -->
+                                    <li>
+                                        <input type="checkbox" id="work" ng-model="ocassion_work" ng-true-value="true" ng-false-value="false" ng-click="commonAction('work',ocassion_work)">
+                                        <label for="work" ng-class="{checked : ocassion_work }" ng-bind="'Wear to Work'"></label>
+                                    </li>
+                                    <!-- <li ng-show="occ_oth_count>0||ocassion_other"> -->
+                                    <li>
+                                        <input type="checkbox" id="otherOc" ng-model="ocassion_other" ng-true-value="true" ng-false-value="false" ng-click="commonAction('other',ocassion_other)">
+                                        <label for="otherOc" ng-class="{checked : ocassion_other }" ng-bind="'Other Occasion'"></label>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="select_product_cat dsktp_hide">
+                    <label>SORT BY</label>
+                    <div class="defaultSt">
+                        <select class="fRedHeart" ng-model="sortorder" ng-change="update_sorting(sortorder)" convert-to-number>
+                            <option value="0" ng-class="{hide : loggedin != 1}">Favourites</option>
+                            <option value="1">Low to High</option>
+                            <option value="2">High to Low</option>
+                            <option value="3">Newest First</option>
+                            <option value="4">Customer Rating</option>
+                            <option value="5">Most Shared</option>
+                            <option value="6">Most Popular</option>
+                            <option value="7">Bestseller</option>
+                            <option value="8">% off Sale</option>
+                            <option value="9">Relevance</option>
+
+                        </select>
+                    </div>
+                </div>
+
+
+            </aside>
+            <!-- End Search Filter For Desktop-->
+
+            <!-- Start Search Filter for mobile -->
+            <aside class="left_sidebar dsktp_hide filterIn_mb">
+                <div ng-click="$event.stopPropagation();$parent.openFilter=true">
+                    <div class="filterHead">Filter</div>
+                    <div class="filter_tools">
+                        <div class="close_btn dsktp_hide" ng-click="$event.stopPropagation();$parent.openFilter=false">X</div>
+                        <div class="filter_tool_inner" ng-class="{'pushLeft':fSlideLeft}">
+                            <div class="filter_wrap selected_store">
+                                <h3>Narrow By</h3>
+                                <div class="clear-filter red" ng-click="clearFilter()">CLEAR</div>
+                                <!-- Promotion Filter -->
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(1)">Promotions <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(9)">Gender<span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+
+                                <!-- Store Filter -->
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(2)">Shops <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul>
+                                            <li ng-repeat="checkedMer in selected_merchantlistByclick">
+                                                <input type="checkbox" id="{{checkedMer}}" ng-click="removeMerchantSearchbox(checkedMer)" checked>
+                                                <label for="{{checkedMer}}" ng-bind="checkedMer" class="checked"> </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Category Filter -->
+
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(3)">Categories <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul>
+                                            <li ng-repeat="checkedCat in selected_categorylist">
+                                                <input type="checkbox" id="{{checkedCat}}" ng-click="removeCategorySearchbox(checkedCat)" checked>
+                                                <label for="{{checkedCat}}" ng-bind="checkedCat" class="checked"> </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Designer Filter -->
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(4)">Designers <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul>
+                                            <li ng-repeat="checkedBrand in selected_brandlist">
+                                                <input type="checkbox" id="{{checkedBrand}}" ng-click="removeBrandSearchbox(checkedBrand)" checked>
+                                                <label for="{{checkedBrand}}" ng-bind="checkedBrand" class="checked"> </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Color Filter -->
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(5)">Color <span></span></div>
+                                    <div class="filter_list color_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                                <!-- Price Filter -->
+                                <div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(6)">Price <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+
+                                <!-- Show only Filter -->
+                                <!--<div class="filter_widget">
+                                    <div class="filter_title" ng-click="showThisGr(7)">SHOW ONLY <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div> -->
+                                <!-- Occasion Filter -->
+                                <div class="filter_widget" ng-click="showThisGr(8)">
+                                    <div class="filter_title">OCCASION <span></span></div>
+                                    <div class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="filter_wrap store_bank">
+                                <div class="btn grey_btn" id="backToResult" ng-click="$parent.fSlideLeft = false;">back</div>
+                                <!-- Promotion Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 1">
+                                    <!--	<div class="filter_title" ng-bind="'Promotions ['+saleOfferTotal+']' "></div> -->
+                                    <div class="filter_title" ng-bind="'Promotions'"></div>
+
+                                    <ul class="filter_list defaultScroll">
+                                        <!--<li ng-show="saleOfferTotal>0 || saleOffer"> -->
+
+											<li>
+											<input type="checkbox" id="saleOfferId131" value="false" ng-true-value="true" ng-false-value="false" ng-click="setIsDiscount($event,saleOffer)" ng-model="saleOffer">
+                                            <label for="saleOfferId131" ng-bind="'Sales &amp; Offers'" ng-class="{checked : saleOffer}"> </label>
+                                            <!--	<label for="saleOfferId121" ng-bind="'Sales &amp; Offers ['+saleOfferTotal+']' " ng-class="{checked : saleOffer}"> </label> -->
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="filter_widget" ng-if="filterGr === 9">
+                                    <div class="filter_title" ng-bind="'Gender'"></div>
+
+                                    <ul class="filter_list defaultScroll">
+                                        <li>
+                                            <input type="checkbox" id="maleId1" value="false" ng-true-value="true" ng-false-value="false" ng-click="setMale(maleVal)" ng-model="maleVal">
+                                            <label for="maleId1" ng-bind="'Male'" ng-class="{checked : maleVal}"> </label>
+                                            <input type="checkbox" id="femaleId1" value="false" ng-true-value="true" ng-false-value="false" ng-click="setFemale(femaleVal)" ng-model="femaleVal">
+                                            <label for="femaleId1" ng-bind="'Female'" ng-class="{checked : femaleVal}"> </label>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <!-- Store Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 2">
+                                    <div class="filter_title" ng-bind="'Shops ['+totalMerchants+']'"></div>
+                                    <ul class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <li ng-repeat="retailer in retailerList|filter:merc track by $index">
+                                            <input type="checkbox" id="sretailer{{$index}}" ng-true-value="true" ng-false-value="false" ng-click="changeMerchantList(retailer['merchant'],prosearch[retailer['merchant']],retailer)" ng-model="prosearch[retailer['merchant']]">
+                                            <label for="sretailer{{$index}}" ng-class="{checked : prosearch[retailer.merchant] }" ng-bind="retailer['merchant']"></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Category Filter -->
+
+                                <div class="filter_widget" ng-if="filterGr === 3">
+                                    <div class="filter_title" ng-bind="'Categories ['+ totalCategories +']'"></div>
+                                    <ul class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <li ng-repeat="cat in customCategoryList track by $index">
+                                            <input type="checkbox" id="promoidC_{{cat['category']}}" ng-true-value="true" ng-false-value="false" ng-click="catSearch(cat['category'],catlocal[cat['category']])" ng-model="catlocal[cat['category']]">
+                                            <label for="promoidC_{{cat['category']}}" ng-class="{checked : catlocal[cat['category']]}" ng-bind="cat['category']"><!--<i>()</i> -->
+                                            </label>
+                                            <a ng-click="commonDiv[cat['category']] = !commonDiv[cat['category']]" ng-show="cat.categoryList.length>0"> + </a>
+                                            <ul style="list-style:none;" ng-show="commonDiv[cat['category']]">
+                                                <li ng-repeat="cat2 in cat.categoryList track by $index">
+                                                    <input type="checkbox" id="promoid2C_{{cat2['category']}}" ng-true-value="true" ng-false-value="false" ng-click="catSearch(cat2['category'],catlocal[cat2['category']])" ng-model="catlocal[cat2['category']]">
+                                                    <label for="promoid2C_{{cat2['category']}}" ng-class="{checked : catlocal[cat2['category']]}" ng-bind="cat2['category']"><!--<i>()</i> -->
+                                                    </label>
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Designer Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 4">
+                                    <div class="filter_title" ng-bind="'Designers ['+totalBrands+']'"></div>
+                                    <ul class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <li ng-repeat="brd in brandList track by $index">
+
+                                            <input type="checkbox" id="brndo{{brd.brand}}" ng-true-value="true" ng-false-value="false" ng-click="changeBrandList(brd['brand'],brdglocal[brd['brand']],brd)" ng-model="brdglocal[brd['brand']]">
+                                            <!--<label for="brndo{{brd['brand']}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-if="brd['brand']!=null" ng-bind="brd['brand']" ng-bind="brd['brand']+'('+brd.groupCount+')'">
+                                            </label> -->
+                                            <label for="brndo{{brd.brand}}" ng-class="{checked : brdglocal[brd['brand']] }" ng-bind="brd['brand']">
+                                            </label>
+
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Color Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 5">
+                                    <div class="filter_title">Color</div>
+                                    <ul class="filter_list color_list">
+                                        <li>
+                                            <input type="checkbox" id="promoidColora" ng-true-value="true" ng-false-value="false" ng-model="temcol.yellow" ng-click="setColorWithThis(temcol['yellow'],'yellow')">
+                                            <label for="promoidColora" ng-class="{checked : temcol['yellow']}"><span style="background:yellow;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorb" ng-true-value="true" ng-false-value="false" ng-model="temcol.gold" ng-click="setColorWithThis(temcol['gold'],'gold')">
+                                            <label for="promoidColorb" ng-class="{checked : temcol['gold']}"><span style="background:gold;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorc" ng-true-value="true" ng-false-value="false" ng-model="temcol.orange" ng-click="setColorWithThis(temcol['orange'],'orange')">
+                                            <label for="promoidColorc" ng-class="{checked : temcol['orange']}"><span style="background:orange;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColord" ng-true-value="true" ng-false-value="false" ng-model="temcol.brown" ng-click="setColorWithThis(temcol['brown'],'brown')">
+                                            <label for="promoidColord" ng-class="{checked : temcol['brown']}"><span style="background:brown;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColore" ng-true-value="true" ng-false-value="false" ng-model="temcol.red" ng-click="setColorWithThis(temcol['red'],'red')">
+                                            <label for="promoidColore" ng-class="{checked : temcol['red']}"><span style="background:red;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorf" ng-true-value="true" ng-false-value="false" ng-model="temcol.pink" ng-click="setColorWithThis(temcol['pink'],'pink')">
+                                            <label for="promoidColorf" ng-class="{checked : temcol['pink']}"><span style="background:pink;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorg" ng-true-value="true" ng-false-value="false" ng-model="temcol.violet" ng-click="setColorWithThis(temcol['violet'],'violet')">
+                                            <label for="promoidColorg" ng-class="{checked : temcol['violet']}"><span style="background:violet;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorh" ng-true-value="true" ng-false-value="false" ng-model="temcol.fuchsia" ng-click="setColorWithThis(temcol['fuchsia'],'fuchsia')">
+                                            <label for="promoidColorh" ng-class="{checked : temcol['fuchsia']}"><span style="background:fuchsia;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColori" ng-true-value="true" ng-false-value="false" ng-model="temcol.magenta" ng-click="setColorWithThis(temcol['magenta'],'magenta')">
+                                            <label for="promoidColori" ng-class="{checked : temcol['magenta']}"><span style="background:magenta;" ng-model="temcol"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorj" ng-true-value="true" ng-false-value="false" ng-model="temcol.purple" ng-click="setColorWithThis(temcol['purple'],'purple')">
+                                            <label for="promoidColorj" ng-class="{checked : temcol['purple']}"><span style="background:purple;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColork" ng-true-value="true" ng-false-value="false" ng-model="temcol.cyan" ng-click="setColorWithThis(temcol['cyan'],'cyan')">
+                                            <label for="promoidColork" ng-class="{checked : temcol['cyan']}"><span style="background:cyan;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorl" ng-true-value="true" ng-false-value="false" ng-model="temcol.turquoise" ng-click="setColorWithThis(temcol['turquoise'],'turquoise')">
+                                            <label for="promoidColorl" ng-class="{checked : temcol['turquoise']}"><span style="background:turquoise;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorm" ng-true-value="true" ng-false-value="false" ng-model="temcol.teal" ng-click="setColorWithThis(temcol['teal'],'teal')">
+                                            <label for="promoidColorm" ng-class="{checked : temcol['teal']}"><span style="background:teal;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorn" ng-true-value="true" ng-false-value="false" ng-model="temcol.green" ng-click="setColorWithThis(temcol['green'],'green')">
+                                            <label for="promoidColorn" ng-class="{checked : temcol['green']}"><span style="background:green;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColoro" ng-true-value="true" ng-false-value="false" ng-model="temcol.blue" ng-click="setColorWithThis(temcol['blue'],'blue')">
+                                            <label for="promoidColoro" ng-class="{checked : temcol['blue']}"><span style="background:blue;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorp" ng-true-value="true" ng-false-value="false" ng-model="temcol.white" ng-click="setColorWithThis(temcol['white'],'white')">
+                                            <label for="promoidColorp" ng-class="{checked : temcol['white']}"><span style="background:white;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorq" ng-true-value="true" ng-false-value="false" ng-model="temcol.beige" ng-click="setColorWithThis(temcol['beige'],'beige')">
+                                            <label for="promoidColorq" ng-class="{checked : temcol['beige']}"><span style="background:beige;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorgray" ng-true-value="true" ng-false-value="false" ng-model="temcol.gray" ng-click="setColorWithThis(temcol['gray'],'gray')">
+                                            <label for="promoidColorgray" ng-class="{checked : temcol['gray']}"><span style="background:gray;"></span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="promoidColorr" ng-true-value="true" ng-false-value="false" ng-model="temcol.indigo" ng-click="setColorWithThis(temcol['indigo'],'indigo')">
+                                            <label for="promoidColorr" ng-class="{checked : temcol['indigo']}"><span style="background:indigo;"></span></label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="promoidColors" ng-true-value="true" ng-false-value="false" ng-model="temcol.black" ng-click="setColorWithThis(temcol['black'],'black')">
+                                            <label for="promoidColors" ng-class="{checked : temcol['black']}"><span style="background:black;"></span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Price Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 6">
+                                    <div class="filter_title" ng-bind="'Price ['+totalRecordsFound+']'"></div>
+                                    <div class="filter_list">
+                                        <div class="defaultSt min-price-limit">
+                                            <select ng-model="minprice" convert-to-number ng-change="setminprice(minprice)">
+
+                                                <option value="0">$0</option>
+                                                <option value="25">$25</option>
+                                                <option value="50">$50</option>
+                                                <option value="75">$75</option>
+                                                <option value="100">$100</option>
+                                                <option value="150">$150</option>
+                                                <option value="200">$200</option>
+                                                <option value="250">$250</option>
+                                                <option value="300">$300</option>
+                                                <option value="350">$350</option>
+                                                <option value="400">$400</option>
+                                                <option value="450">$450</option>
+                                                <option value="500">$500</option>
+                                                <option value="600">$600</option>
+                                                <option value="700">$700</option>
+                                                <option value="800">$800</option>
+                                                <option value="900">$900</option>
+                                                <option value="1000">$1000</option>
+                                            </select>
+                                        </div>
+                                        <div class="defaultSt max-price-limit">
+                                            <select ng-model="maxprice" convert-to-number ng-change="setmaxprice(maxprice)">
+                                                <option value="25">$25</option>
+                                                <option value="50">$50</option>
+                                                <option value="75">$75</option>
+                                                <option value="100">$100</option>
+                                                <option value="150">$150</option>
+                                                <option value="200">$200</option>
+                                                <option value="250">$250</option>
+                                                <option value="300">$300</option>
+                                                <option value="350">$350</option>
+                                                <option value="400">$400</option>
+                                                <option value="450">$450</option>
+                                                <option value="500">$500</option>
+                                                <option value="600">$600</option>
+                                                <option value="700">$700</option>
+                                                <option value="800">$800</option>
+                                                <option value="900">$900</option>
+                                                <option value="1000000">$1000+</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Show only Filter -->
+                                <div class="filter_widget" ng-if="filterGr === 7">
+                                    <div class="filter_title">Show only </div>
+                                    <ul class="filter_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                        <li>
+                                            <input type="checkbox" id="customerratedM" value="" ng-model="customertoprated">
+                                            <label for="customerratedM" ng-class="{checked : customertoprated }">Customer's &amp; Top &amp; Rated [12]</label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="filter_widget" ng-if="filterGr === 8">
+                                    <div class="filter_title">Occasion</div>
+                                    <!-- <div class="filter_title">Occasion [{{occ_cas_count+occ_vac_count+occ_wor_count+occ_oth_count}}]</div> -->
+
+                                    <div class="f_accordion_content">
+                                        <ul class="filter_list defaultScroll">
+
+                                            <li>
+                                                <input type="checkbox" id="casualM" ng-model="ocassion_casual" ng-true-value="true" ng-false-value="false" ng-click="commonAction('casual',ocassion_casual)">
+                                                <label for="casualM" ng-class="{checked : ocassion_casual }" ng-bind="'Casual'"> </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="vacatiM" ng-model="ocassion_vacation" ng-true-value="true" ng-false-value="false" ng-click="commonAction('vacation',ocassion_vacation)">
+                                                <label for="vacatiM" ng-class="{checked : ocassion_vacation }" ng-bind="'Vacation'"></label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="workM" ng-model="ocassion_work" ng-true-value="true" ng-false-value="false" ng-click="commonAction('work',ocassion_work)">
+                                                <label for="workM" ng-class="{checked : ocassion_work }" ng-bind="'Wear to Work'"></label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="otherOcM" ng-model="ocassion_other" ng-true-value="true" ng-false-value="false" ng-click="commonAction('other',ocassion_other)">
+                                                <label for="otherOcM" ng-class="{checked : ocassion_other }" ng-bind="'Other Occasion'"></label>
+                                            </li>
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="select_product_cat dsktp_hide">
+                    <label>SORT BY</label>
+                    <div class="defaultSt">
+                        <select class="fRedHeart" ng-model="sortorder" ng-change="update_sorting(sortorder)" convert-to-number>
+                            <option value="0" ng-class="{hide : loggedin != 1}">Favourites</option>
+                            <option value="1">Low to High</option>
+                            <option value="2">High to Low</option>
+                            <option value="3">Newest First</option>
+                            <option value="4">Customer Rating</option>
+                            <option value="5">Most Shared</option>
+                            <option value="6">Most Popular</option>
+                            <option value="7">Bestseller</option>
+                            <option value="8">% off Sale</option>
+                            <option value="9">Relevance</option>
+
+                        </select>
+
+
+                    </div>
+                </div>
+            </aside>
+            <!-- End Search Filter for mobile -->
+
+            <div class="content">
+                <h3 ng-bind="totalRecordsFound+' PRODUCTS'" ng-class="searchforstring==''?'':'ng-hide'"></h3>
+                <h3 ng-bind="totalRecordsFound+' PRODUCTS FOR '+searchforstring" ng-class="searchforstring!=''?'':'ng-hide'"></h3>
+
+                <div class="sorting_wrap mb_hide">
+                    <div class="select_product_cat">
+                        <label>SORT BY</label>
+
+                        <div class="defaultSt" ng-class="{showTooltip : tooltipShow}">
+                            <select ng-model="sortorder" ng-change="update_sorting(sortorder)" ng-class="{fRedHeart : sFavorite}" convert-to-number>
+                                <option value="0" ng-class="{hide : loggedin != 1}">Favourites</option>
+                                <option value="1">Low to High</option>
+                                <option value="2">High to Low</option>
+                                <option value="3">Newest First</option>
+                                <option value="4">Customer Rating</option>
+                                <option value="5">Most Shared</option>
+                                <option value="6">Most Popular</option>
+                                <option value="7">Bestseller</option>
+                                <option value="8">% off Sale</option>
+                                <option value="9">Relevance</option>
+
+                            </select>
+                            <div class="e-tooltip">Coming Soon!</div>
+                        </div>
+
+
+                    </div>
+                    <div class="view_all">
+                        <span class="viewAt_time">View 80</span>
+                        <a ng-click="viewPagination('prev')" title="Previous" class="prev view-page"></a>
+                        <a ng-click="loadMore($event,$index + 1)" ng-class="{active:activePage == $index + 1}" ng-repeat="x in [] | range: numPages-1" ng-show=" $index < current_limit && $index >= current_limit -3">{{$index + 1}}</a>
+                        <span>...</span>
+                        <a ng-click="loadMore($event,numPages)" ng-class="{active:activePage == numPages}">{{numPages}}</a>
+                        <a ng-click="viewPagination('next')" title="Next" class="next view-page"></a>
+                    </div>
+                </div>
+
+
+                <div class="product_group" ng-class="{'ss_loading' : !loaddone,'showInCenter':currentpage>1}">
+
+					  <div class="product_group_inner clearfix" ng-if="loggedin==1">
+                        <div class="col_3" ng-repeat="pro in products track by $index" ng-class="{pageLastPro : ($index+1)%limit == 0 && $index!=0}">
+
+                            <div class="product-info">
+                                <div class="product-image">
+                                    <div class="p_image_innner">
+                                      <img ng-src="{{ color_arr.length > 0 ? (pro.image_url | lookForImage: color_arr:pro.color_images) : pro.image_url }}" alt="{{pro.category | slugify }}-{{ pro.keyword | slugify}}" title="{{pro.keyword }}">
+                                        <!--  <img ng-src="{{pro.image_url}}" alt="{{pro.category | slugify }}-{{ pro.keyword | slugify}}" title="{{pro.keyword }}"> -->
+
+										<div class="rateit">
+                                            <div class="rateis r{{pro.rateAvg| makePositive}}">
+                                            </div>
+                                        </div>
+                                        <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a>
+                                    </div>
+
+							   </div>
+
+								  <div class="zoomed_s_icons_wrap dsktp_hide">
+                                    <ul class="zoomed_s_icons">
+                                        <li>
+                                            <i class="icon grey_heart"></i>
+                                             <span ng-bind="pro.likeCount || '0'"></span>
+
+										</li>
+                                        <li>
+                                            <i class="icon grey_arrow"></i>
+											<span ng-bind="pro.shareCount || '0'"></span>
+                                        </li>
+                                        <li>
+                                            <i class="icon grey_bag"></i>
+											<span ng-bind="pro.ratedByUser || '0'"></span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="shared_icons" >
+
+
+									 <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='like'}">
+                                        <i class="icon grey_heart" ng-class="{activated: (pro.likeUser|| favCataloglist.indexOf(pro.catalogId) > -1  )}"></i>
+                                        <span ng-bind="pro.likeCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'mail', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='mail'}">
+                                        <i class="icon grey_arrow" ng-class="{activated: (pro.mailUser || mailCatalogList.indexOf(pro.catalogId) > -1)}"></i>
+                                        <span ng-bind="pro.shareCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'collective', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='collective'}">
+                                        <i class="icon grey_bag" ng-class="{activated: (pro.rateUser || reviewCataloglist.indexOf(pro.catalogId) > -1 )}"></i>
+                                        <span ng-bind="pro.ratedByUser || '0'"></span>
+                                    </li>
+
+                                </ul>
+
+                                <ul class="product-details">
+                                    <li>
+                                        <a ng-href="#!/SOC/{{pro.catalogId }}/{{ pro.keyword | slugify}}" title="{{pro.keyword}}" alt="{{pro.keyword}}">{{pro.keyword}}</a>
+                                    </li>
+                                   <!--<li><a title="{{pro.category}}">{{pro.category}}</a></li>-->
+                                    <li><a>{{pro.brand}}</a></li>
+                                    <!--<li><a title="{{pro.all_categories}}"> {{pro.all_categories}}</a></li>-->
+                                    <li><a ng-href="#!/storechosen/{{pro.merchant}}">{{pro.merchant}}</a></li>
+                                    <li class="price">
+                                        <span ng-class="{lineThrough: pro.price_sale>-1 && pro.price_sale!=null}" ng-bind="'$' + pro.price"></span>
+                                        <span ng-show="pro.price_sale>-1 && pro.price_sale!=null" ng-bind="'$'+ pro.price_sale" class="sale-price"></span>
+                                    </li>
+
+								</ul>
+                            </div>
+                            <div class="loading" ng-class="($index+1)%limit == 0 && $index+1 != numPages*limit || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%limit == 0 && $index+1 != numPages*limit || $index==0 ? 'targetNo' + productPageNo($index,limit) : ''}}">
+                                <div class="loading-inner">
+                                    <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,limit) - 1 )">
+                                        <i class="icon up_arrow"></i>
+                                    </div>
+                                    <div class="load_more" ng-click="loadMore($event,($index+1)/limit + ($index+1 == maxIndex ? 1 : 2) )">
+                                        <span ng-show="$index+1 === maxIndex">Load More</span>
+                                        <span class="loading_dot" ng-show="!loaddone">Loading</span>
+                                        <span ng-show="$index+1 !== maxIndex && loaddone">PAGE <span ng-bind="productPageNo($index,limit)"></span><!--/ {{($index+1)/limit}}-->/{{numPages}}</span>
+                                    </div>
+                                    <div class="next_bx" ng-click="loadMore($event,productPageNo($index,limit) + ($index+1 == maxIndex ? 0 : 1))">
+                                        <i class="icon down_arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+				        <div class="product_group_inner clearfix" ng-if="loggedin!=1">
+
+                        <div class="col_3" ng-repeat="pro in products track by $index" ng-class="{pageLastPro : ($index+1)%limit == 0 && $index!=0}">
+                            <div class="product-info">
+
+                                <div class="product-image">
+
+                                    <div class="p_image_innner">
+                                      <img ng-src="{{ color_arr.length > 0 ? (pro.image_url | lookForImage: color_arr:pro.color_images) : pro.image_url }}" alt="{{pro.category | slugify }}-{{ pro.keyword | slugify}}" title="{{pro.keyword }}">
+                                        <!--  <img ng-src="{{pro.image_url}}" alt="{{pro.category | slugify }}-{{ pro.keyword | slugify}}" title="{{pro.keyword }}"> -->
+
+										<div class="rateit">
+                                            <div class="rateis r{{pro.rateAvg| makePositive}}">
+                                            </div>
+                                        </div>
+                                        <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a>
+                                    </div>
+
+							   </div>
+
+								  <div class="zoomed_s_icons_wrap dsktp_hide">
+                                    <ul class="zoomed_s_icons">
+                                        <li>
+                                            <i class="icon grey_heart"></i>
+                                             <span ng-bind="pro.likeCount || '0'"></span>
+
+										</li>
+                                        <li>
+                                            <i class="icon grey_arrow"></i>
+											<span ng-bind="pro.shareCount || '0'"></span>
+                                        </li>
+                                        <li>
+                                            <i class="icon grey_bag"></i>
+											<span ng-bind="pro.ratedByUser || '0'"></span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="shared_icons" >
+
+
+									 <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='like'}">
+                                        <i class="icon grey_heart"></i>
+                                        <span ng-bind="pro.likeCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'mail', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='mail'}">
+                                        <i class="icon grey_arrow"></i>
+                                        <span ng-bind="pro.shareCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'collective', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='collective'}">
+                                        <i class="icon grey_bag"></i>
+                                        <span ng-bind="pro.ratedByUser || '0'"></span>
+                                    </li>
+
+                                </ul>
+
+                                <ul class="product-details">
+                                    <li>
+                                        <a ng-href="#!/SOC/{{pro.catalogId }}/{{ pro.keyword | slugify}}" title="{{pro.keyword}}" alt="{{pro.keyword}}" ng-bind-html="pro.keyword"></a>
+                                    </li>
+                                    <!--	<li>
+                                           <ul class="s_product_color_bx1" >
+                                            <li class="s_p_clr" ng-repeat="colitem in pro.color"> {{colitem}}
+                                             <label><span style="background-color:{{colitem}}">&nbsp;</span></label>
+                                            </li>
+
+                                           </ul>
+								  </li>  -->
+                                   <!--<li><a ng-bind="pro.category" title="{{pro.category}}"></a></li>-->
+                                    <li><a> {{pro.brand}}</a></li>
+                                  <!--<li><a title="{{pro.all_categories}}"> {{pro.all_categories}}</a></li>-->
+
+                                    <li><a ng-href="#!/storechosen/{{pro.merchant}}" ng-bind="pro.merchant"></a></li>
+                                    <li class="price">
+                                        <span ng-class="{lineThrough: pro.price_sale>-1 && pro.price_sale!=null}" ng-bind="'$' + pro.price"></span>
+                                        <span ng-show="pro.price_sale>-1 && pro.price_sale!=null" ng-bind="'$'+ pro.price_sale" class="sale-price"></span>
+                                    </li>
+
+								</ul>
+                            </div>
+                            <div class="loading" ng-class="($index+1)%limit == 0 && $index+1 != numPages*limit || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%limit == 0 && $index+1 != numPages*limit || $index==0 ? 'targetNo' + productPageNo($index,limit) : ''}}">
+                                <div class="loading-inner">
+                                    <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,limit) - 1 )">
+                                        <i class="icon up_arrow"></i>
+                                    </div>
+                                    <div class="load_more" ng-click="loadMore($event,($index+1)/limit + ($index+1 == maxIndex ? 1 : 2) )">
+                                        <span ng-show="$index+1 === maxIndex">Load More</span>
+                                        <span class="loading_dot" ng-show="!loaddone">Loading</span>
+                                        <span ng-show="$index+1 !== maxIndex && loaddone">PAGE <span ng-bind="productPageNo($index,limit)"></span><!--/ {{($index+1)/limit}}-->/{{numPages}}</span>
+                                    </div>
+                                    <div class="next_bx" ng-click="loadMore($event,productPageNo($index,limit) + ($index+1 == maxIndex ? 0 : 1))">
+                                        <i class="icon down_arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+			   </div>
+
+            </div>
+            <!-- End Search Product List -->
+            <user-sidebar ng-if="loggedin==1"></user-sidebar>
+        </div>
+
+
+        <div class="related_cat">
+            <ul ng-show="(selected!=''|| selected_key !='')&& related_popularsearch.length>0">
+                <li>Related:</li>
+                <li ng-repeat="searchterm in related_popularsearch|limitTo:5 track by $index">
+                    <a ng-click="searchbytag(searchterm,$event)">{{searchterm}}</a></li>
+
+            </ul>
+        </div>
+
+        <div class="happy_shopping">
+            <a ng-click="menuCategorySearchApi('dashboard')" role="button" alt="Socially Shoppable">HAPPY SHOPPING<i class="icon"></i></a>
+        </div>
+
+    </div>
+
+</div>

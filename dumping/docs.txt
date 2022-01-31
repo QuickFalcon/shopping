@@ -1,0 +1,110 @@
+composer require feehi/mongodb-php-orm --ignore-platform-reqs
+
+
+apache
+http://104.236.166.98:8090/
+
+
+https://prosperent.com/account
+rajib_2002bd@yahoo.com
+myyear2014
+104.236.166.98
+22
+root
+password: allah1
+
+
+http://docs.twotap.com/docs documentation
+https://core.twotap.com/publishers/sign_in
+rajib_2002bd@yahoo.com
+myyear2014
+
+sudo apt-get purge php-pear
+sudo apt-get install -f php-pear php5-dev
+
+# sudo apt-get update
+# sudo apt-get install libpcre3 libpcre3-dev
+
+sudo apt-get install mongodb
+
+First Install CURL by typing sudo apt-get install curl
+Then Restart Apache by typing sudo service apache2 restart
+Then Install PHP5 CURL by typing sudo apt-get install php5-curl
+will prompt to install... type y or yes!
+Then Restart Apache by typing sudo service apache2 restart Done!
+
+http://www.htpcbeginner.com/how-to-install-webmin-on-ubuntu/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ajenti-control-panel-on-ubuntu-13-04
+
+
+sudo iptables -A INPUT -p tcp -d 0/0 -s 0/0 --dport 10000 -j ACCEPT
+
+
+// publicToken: '56842635c4b9b3fa82b222e29f24e8', // rajib_2002bd@yahoo
+// publicToken: 'c6ba4e4b8728bf182c63a8ee4cb67e', // gmail
+// publicToken: '6d0e68bb519fbf83ca229a876463f2', //desparado2010@yahoo.com
+// publicToken: 'e1f4d3811042d33b643677b3280f6c', //  rajib.brunel yahoo
+// privateToken: '7d57cea803701d9efda6d27cdf9a37550fb5fa59978433c301'  // yahoo
+// privateToken: 'f025898a79ff81df3c2b0f9b90d19e4a7f147835aa7ad8febd' // gmail
+// privateToken: '592b0afc65af267b409120dbfe8ff18477d31ddd727ae80df5' //@desparado2010@yahoo.com
+// privateToken: 'c5c7f51f3c684cf739b35584e0f244be969006d1c4cf117a0b' // rajib.brunel
+
+
+
+sociallyshoppable2tap@gmail.com
+pass: ss123$$!!
+public key: bc35986ded29131f39f1e0b11250c3
+private key: 0e3fbb72afd92529c4b521e5884d6857a1d05dd70cc9adbc24
+
+
+cj developer key:
+009f0e9f37255dea712bbb087383a8dd59c09d20e19db8718d61dca2c4c4ec6b95add30700784071dc439e6363a7f40e585316739015ac6fde734372144d08d687/487d357ac080e8d3e3063e77c6cd32f430a06bd7e735a42ab72b02d3829becfb762a500ae992f99e1c842e397d82669edc4c5bd5125e33fa78f68a7de513dae1
+
+
+semantics3:
+API Key:	SEM355D844D3BE30F097DCCF5308211FFD13
+Secret:	MDdiYWE5ZjRlMjc3ZTI1YTIzOWM3ZTE4NDZkOWZjMWY
+
+
+sudo apt-get install php5-oauth
+extension=oauth.so
+
+/home/gitlab-runner/builds/397d2c88/0/ss/socshop/
+
+/home/gitlab-runner/builds/3dcb5502/0/ss/socshop/
+
+http://codehangar.io/concatenate-and-minify-javascript-with-gulp/
+
+bower init --config.interactive
+
+
+var api_key = '762d9805252a289b0bd20dfb16b40acc';
+var api_secret = '3afa788ebdba0365d8d52aa373b5a776';
+
+rajib_2002bd@yahoo.com
+myyear2014
+
+
+https://gtmetrix.com/reports/gitlab.sociallyshoppable.com/Hp0dXBFl
+
+git clean -ffdx
+
+http://serverfault.com/questions/585528/set-gitlab-external-web-port-number
+
+git remote set-url origin http://gitlab.sociallyshoppable.com:88/ss/socshop.git
+
+
+myyear2016
+http://gitlab.sociallyshoppable.com:88/users/sign_in
+aan-rajib@aan-nahl.com
+
+php -dmemory_limit=1G /usr/local/bin/composer update
+
+
+rriyona@yahoo.com
+Rriyona1
+
+
+http://stackoverflow.com/questions/17801094/php-curl-how-to-add-the-user-agent-value-or-overcome-the-servers-blocking-curl-r
+http://stackoverflow.com/questions/9391137/can-servers-block-curl-requests

@@ -1,0 +1,114 @@
+<div class="mid_content collective_page">
+    <div class="container_inner clearfix">
+        <div class="top_section has_sidebar">
+            <div class="collective_display">
+                <ul class="breadcrumbs">
+                    <li ng-repeat="path in pathTorch"><a ng-href="{{path.poth}}">{{path.label}}</a></li>
+                </ul>
+                <h1 class="collective_logo">collective</h1>
+                <div class="collective_search clearfix">
+                    <h2>Discover</h2>
+                    <div class="search_box collectiveSearch">
+                        <form ng-submit="actionCollective()">
+                            <input type="text" name="serch" ng-model="collective_keyword">
+                            <input type="submit" value="">
+                            <div class="defaultSt">
+                                <select class="aanSelect collective_select" ng-model="optionValue" ng-change="actionCollective()">
+                                    <option value="all">All</option>
+                                    <option value="hashtag">Hashtags</option>
+                                    <option value="mostrated">Customer Top Rated</option>
+                                    <option value="mostreviewed">Most Reviewed</option>
+                                    <option value="mostshared">Most Shared</option>
+                                    <option value="myfav" ng-if="loggedin==1">My Favorited Products</option>
+                                    <option value="myreview" ng-if="loggedin==1">My Reviews</option>
+                                    <option value="topten" ng-if="loggedin==1">My Top 10 Shops' Products</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="collective_sresult">{{totalRecordsFound}} products</div>
+                </div>
+                <div class="product_group border-none" ng-class="{'ss_loading' : !loaddone,'showInCenter':currentpage>1}">
+                    <div class="product_group_inner clearfix">
+                        <div class="col_3" ng-repeat="pro in cproducts track by $index" ng-class="{pageLastPro : ($index+1)%limit == 0 && $index!=0}">
+                            <div class="product-item">
+                                <div class="product-item__social">
+                                    <!-- <a href="#"><i class="fa fa-facebook"></i></a> --></div>
+                                <div class="product-image">
+                                    <div class="product-item__image">
+                                        <!-- <img ng-src="{{pro.image_url}}" alt=""> --><img ng-src="{{pro.photos.photo}}" alt="" ng-if="pro.photos"> <img ng-src="{{pro.image_url}}" ng-if="!pro.photos"> </div>
+                                    <div class="rateit">
+                                        <div class="rateis r{{pro.rateAvg| makePositive}}"><a ng-click="seeCollectiveReview(item.user._id,'SOC/'+pro.catalogId+'/'+pro.keyword)" class="btn white_btn">See Review</a></div>
+                                    </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',pro)">+</a> </div>
+                            </div>
+                            <div class="loading" ng-class="($index+1)%limit == 0 && $index+1 != numPages*limit || $index == 0  ?'':'ng-hide'" ng-attr-id="{{($index+1)%limit == 0 && $index+1 != numPages*limit || $index==0 ? 'targetNo' + productPageNo($index,limit) : ''}}">
+                                <div class="loading-inner">
+                                    <div class="prev_bx" ng-click="goToTarget( $event, productPageNo($index,limit) - 1 )"> <i class="icon up_arrow"></i> </div>
+                                    <div class="load_more" ng-click="cloadMore($event,($index+1)/limit + ($index+1 == maxIndex ? 1 : 2) )"> <span ng-show="$index+1 === maxIndex">Load More</span> <span class="loading_dot" ng-show="!loaddone">Loading</span> <span ng-show="$index+1 !== maxIndex && loaddone">PAGE <span ng-bind="productPageNo($index,limit)"></span>
+                                        <!--/ {{($index+1)/limit}}-->/{{numPages}}</span>
+                                    </div>
+                                    <div class="next_bx" ng-click="cloadMore($event,productPageNo($index,limit) + ($index+1 == maxIndex ? 0 : 1))"> <i class="icon down_arrow"></i> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <user-sidebar ng-if="loggedin==1"></user-sidebar>
+        </div>
+        <div class="section_bottom">
+            <div class="recent_summary clearfix" ng-hide="recentItemsx.length==0">
+                <h2>RECENTLY VIEWED ITEMS</h2>
+                <div class="nav_carousel">
+                    <div class="carousel mini_thumb_slider" minithumb-slider>
+                        <ul class="stage_nav">
+                            <li ng-repeat="arrObj in recentItemsx track by $index">
+                                <div ng-repeat="arrItem in arrObj.timestamp">
+                                    <div class="product-image mini">
+                                        <div class="p_image_innner"> <img ng-src="{{arrItem.image_url}}" title="{{arrItem.keyword}}  by {{arrItem.merchant}}">
+                                            <div class="rateit">
+                                                <div class="rateis r{{arrItem.rateAvg| makePositive}}"> </div>
+                                            </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',arrItem)">+</a> </div>
+                                    </div>
+                                    <div class="caption"><a ng-click="menuShopApi('',arrItem.merchant)"> {{
+                                        arrItem.keyword | limitTo: 20 }}{{arrItem.keyword.length > 20 ? '...' : ''}}</a> </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="recent_summary clearfix" ng-show="similiaritems.length>0">
+                <h2><a href="#saved" class="goTarget">RECOMMENDED / SIMILAR ITEMS </a></h2>
+                <div class="nav_carousel">
+                    <div class="carousel mini_thumb_slider" minithumb-slider>
+                        <ul class="stage_nav">
+                            <li ng-repeat="item in similiaritems|limitTo:25 track by $index" ng-if="item.rateAvg>8">
+                                <div class="product-image mini">
+                                    <div class="p_image_innner"> <img ng-src="{{item.image_url}}" alt="{{item.keyword}}">
+                                        <div class="rateit">
+                                            <div class="rateis r{{item.rateAvg| makePositive}}"> </div>
+                                        </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,item)">+</a> </div>
+                                </div>
+                                <div class="caption"><a ng-href="#!/SOC/{{item.catalogId }}/{{ item.keyword | slugify}}"> {{
+                                    item.keyword | limitTo: 20 }}{{item.keyword.length > 20 ? '...' : ''}}</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="related_cat">
+            <ul ng-show="(collective_keyword!=''|| collective_keyword !='')&& related_popularsearch.length>0">
+                <li>Popular:</li>
+                <li ng-repeat="searchterm in related_popularsearch|limitTo:5 track by $index"> <a ng-click="searchbytag(searchterm,$event)">{{searchterm}}</a></li>
+            </ul>
+        </div>
+        <div class="happy_shopping"> <a href="#!/" role="button" alt="Socially Shoppable">HAPPY SHOPPING<i
+                    class="icon"></i></a> </div>
+    </div>
+</div>
+<!-- Javascripts -->
+<script>
+    window.dataUrl = 'data/photos.json';
+</script>

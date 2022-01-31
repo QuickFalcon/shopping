@@ -1,0 +1,128 @@
+
+
+
+    <div class="mid_content confirmation-page">
+        <div class="container_inner clearfix">
+
+       
+			                       
+
+          <h1>Thank You</h1>
+          <div class="sub_head">This is purchase confirmation message <br> Please check your email. </div>
+               
+		  
+          <div class="purchs_item_wrap">
+            <div ng-repeat="(wsitekey,item) in current_order.sites track by $index">
+			
+             <div class="purchs_item_row">         
+			
+			  
+			   <div class="col_3">
+                <div class="product_img">
+                 <img ng-src="{{item.info.logo}}" alt="{{item.info.name}}"></a>
+                </div>
+              </div>
+			  <div class="col_3 order_info">
+                <h4>{{item.info.name}} Order</h4>
+              <!--   <div>Item Name : 1 Cap</div> -->
+                <div>Order ID : {{item.order_id}}</div>
+                <div class="est_total"><span>Subtotal</span> {{current_order_cart.sites[wsitekey].estimates.prices.subtotal}}</div>
+               
+               
+			   <div class="est_total"><span>Shipping</span> {{item.prices.shipping_price}}</div>
+             
+				
+					<div ng-class="item.prices.hasOwnProperty('sales_tax')? 'est_total' : 'falseClass'">  <span>Taxes</span> {{item.prices.sales_tax}}      </div>
+					<div ng-class="item.prices.hasOwnProperty('sales_tax')? 'falseClass' : 'est_total'">  <span>Taxes</span> {{current_order_cart.sites[wsitekey].estimates.prices.subtotal }}     </div>
+	             <div ng-class="item.prices.hasOwnProperty('coupon_value')? 'est_total' : 'falseClass'">  <span>Coupon</span> - {{item.prices.coupon_value}}      </div>
+				
+              <!--   <div class="est_total"><span>Savings</span> -{{item.estimates.prices.coupon_value}}</div> -->
+                <div class="est_total"><span>Total :</span> {{item.prices.final_price}}</div>
+                <div class="drpDown_wrp">
+				     <div class="see_detls red">SEE DETAILS</div>     
+                    <div class="detls_cal" style="display:none">
+                        <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                            <li ng-repeat="(prokey,proMd5) in item.products track by $index">
+                                <div class="product-image micro">
+                                    <div class="p_image_innner">
+                                        <img ng-src="{{proMd5.image}}" alt="">
+                                        <div class="rateit">
+                                            <div class="rateis r{{current_order_cart.sites[wsitekey].add_to_cart[prokey].rateAvg| makePositive}}">
+                                            </div>
+                                        </div>
+                                        <!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,current_order_cart.sites[wsitekey].add_to_cart[prokey])">+</a> -->
+                                         <!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup"
+                                               ng-click="quick_view_parent_orders(current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId)">+</a>
+                                         -->
+									</div>
+                                </div>
+                                <div class="product_info">
+                                    <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId)" title="{{proMd5.title}}" alt="{{proMd5.title}}"> {{proMd5.input_fields.quantity}} {{proMd5.title}}</a></div>
+                                    <div>{{current_order_cart.sites[wsitekey].add_to_cart[prokey].brand}}</div>
+                                    <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId }}/{{proMd5.title | slugify}}" title="{{current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId }}" alt="{{current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId }}"> {{current_order_cart.sites[wsitekey].add_to_cart[prokey].catalogId}}</a></div>
+                                    <div class="product-price"> ${{(proMd5.price.substring(1) *1.0)* proMd5.input_fields.quantity }}</div>
+									<div ng-class="proMd5.status =='done'? 'falseClass' : 'red'" >
+									 Sorry! Out Of Stock
+									</div>
+									<div ng-class="proMd5.status =='done'? '' : 'falseClass'" >
+									 Success! In Stock
+									</div>
+                                </div>
+                              	   <div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.input_fields.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+									<div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.input_fields.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.original_price.substring(1) *1.0 ) *  proMd5.quantity)| currency}}</span> </div>
+
+
+
+						   </li>
+                           
+                   
+                         
+                         
+                           
+                           
+                        </ul>
+                    
+					</div> 
+                    
+
+                </div>
+				<span data-toggle="modal" data-target="#returnPolicy"><u><a ng-click="return_policyz(current_order_cart.sites[wsitekey].returns,item.info.name,item.info.logo)">Return Policy</a></u></span>
+              </div>
+             
+    
+			  
+			  
+			  <div class="col_3">
+                <h4>Payment Info</h4>
+				  <div ng-class="num_of_sites >1?'':'falseClass'">
+                   Payment By : {{current_order_cart.sites[wsitekey].card.type}} card end with {{current_order_cart.sites[wsitekey].card.card_number| limitTo : -4 : 0}}</div>
+				   <div ng-class="num_of_sites >1?'falseClass':''">
+                   Payment By : {{current_order_cart.card.type}} card</div>
+                <div>Payment Date : {{current_order.created_at | date:'dd-MM-yyyy'}}</div>
+              </div>
+			  
+			  
+			  
+               <div class="col_3">
+                <h4>Shipping Info</h4>
+                   <div ng-class="item.details.hasOwnProperty('shipping_estimate')? '' : 'falseClass'">Est. Delivery : {{item.details.shipping_estimate}}</div>
+			   <div  ng-class="item.details.hasOwnProperty('shipping_estimate')? 'falseClass' : ''">Est. Delivery :  {{current_order_cart.sites[wsitekey].shipping_options[current_order_fields_input[wsitekey].shipping_option]}} </div>
+                <div> Shipping To: <br>
+                    {{current_order_fields_input[wsitekey].noauthCheckout.shipping_first_name}} {{current_order_fields_input[wsitekey].noauthCheckout.shipping_last_name}} <br>
+                    {{current_order_fields_input[wsitekey].noauthCheckout.shipping_address}} <br>
+                    {{current_order_fields_input[wsitekey].noauthCheckout.shipping_city}}, {{current_order_fields_input[wsitekey].noauthCheckout.shipping_state}}
+                </div>
+              </div>
+            </div>
+        
+
+			</div>
+          </div>
+            
+
+            
+        </div>
+
+    </div>
+
+

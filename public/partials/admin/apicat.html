@@ -1,0 +1,600 @@
+<!-- API PRODUCTS -->
+   <div style="overflow:auto;height:auto;">
+  
+
+ <div class=left style="margin-top:14vh;width:20%;float:left;padding-left:1%;padding-top:5%;padding-right:1%;">
+<label>
+    <input type="radio" ng-model="product.gender" value="1">
+    Male
+  </label>
+  <label>
+    <input type="radio" ng-model="product.gender" ng-value="2">
+    Female
+  </label>
+  <label>
+    <input type="radio" ng-model="product.gender" value="0">
+    Unisex
+  </label><br/>
+<b>Brand</b>	<br>
+<select ng-model="product.brand"> 
+ <option ng-value="{{product.brand}}" selected>{{product.brand}}</option> 
+   <option value="Avon">Avon</option>
+  <option value="Generic">Generic</option>
+   <option value="Huggies">Huggies</option>
+   <option value="Mainstays">Mainstays</option>
+   <option value="Lakeview Outdoor Designs"> Lakeview Outdoor Designs  </option>
+</select><br>
+
+
+<!-- <b>Designer</b>	<br>
+Obsolete
+<select ng-model="product.designer"> 
+     <option value="">All</option> 
+   <option value="designer1">designer 1</option>
+  <option value="designer2">designer 2</option>
+   <option value="designer3">designer 3</option>
+   <option value="designer4">designer 4</option>
+   <option value="designer5">designer 5 </option>
+</select> -->
+<br>
+<input type=checkbox ng-model="select_premium"  ng-true-value="true" ng-false-value="false" ng-change="premium_designer_change()"> Premium Designers<br>
+
+
+
+<br>
+
+
+
+<b>COLOR</b>	<br>
+
+<!--
+<a ng-click="toggleFilter(color)" class="color-choice red not-active" ng-repeat="color in colors" ng-if="color.count" active="color.active">
+          
+        </a>-->
+		
+<div class="colorpanel" style="background-color:grey;width:100%;">
+	
+	   <div id=black style="height:30px;width:30px;background-color:black;float:left;margin:1px;" ng-click="setColor('black')"></div> 
+	<div id=blue style="height:30px;width:30px;background-color:blue;float:left;margin:1px;" ng-click="setColor('blue')"></div>
+<div id=cyan style="height:30px;width:30px;background-color:cyan;float:left;margin:1px;" ng-click="setColor('cyan')"></div>
+ <div id=green style="height:30px;width:30px;background-color:green;float:left;margin:1px;" ng-click="setColor('green')"></div> 
+ <div id=teal style="height:30px;width:30px;background-color:teal;float:left;margin:1px;" ng-click="setColor('teal')"></div> 
+ <div id=turquoise style="height:30px;width:30px;background-color:turquoise;float:left;margin:1px;" ng-click="setColor('turquoise')"></div> 
+ <div id=indigo style="height:30px;width:30px;background-color:indigo;float:left;margin:1px;" ng-click="setColor('indigo')"></div> 
+ <div id=gray title="gray" style="height:30px;width:30px;background-color:gray;float:left;margin:1px;" ng-click="setColor('gray')"></div>  
+ <div id=purple title="purple" style="height:30px;width:30px;background-color:purple;float:left;margin:1px;" ng-click="setColor('purple')"></div>  
+<div id=brown title="brown" style="height:30px;width:30px;background-color:brown;float:left;margin:1px;" ng-click="setColor('brown')"></div>
+<div id=tan title="tan" style="height:30px;width:30px;background-color:tan;float:left;margin:1px;" ng-click="setColor('tan')"></div>
+<div id=violet title="violet" style="height:30px;width:30px;background-color:violet;float:left;margin:1px;" ng-click="setColor('violet')"></div>
+  <div id=beige style="height:30px;width:30px;background-color:beige;float:left;margin:1px;" ng-click="setColor('beige')"></div>    
+ <div id=fuchsia style="height:30px;width:30px;background-color:fuchsia;float:left;margin:1px;" ng-click="setColor('fuchsia')"></div> 
+ <div id=gold style="height:30px;width:30px;background-color:gold;float:left;margin:1px;" ng-click="setColor('gold')"></div>  
+ <div id=magenta style="height:30px;width:30px;background-color:magenta;float:left;margin:1px;" ng-click="setColor('magenta')"></div>  
+
+ 
+ <div id=orange title="violet" style="height:30px;width:30px;background-color:orange;float:left;margin:1px;" ng-click="setColor('orange')"></div>
+  <div id=pink style="height:30px;width:30px;background-color:pink;float:left;margin:1px;" ng-click="setColor('pink')"></div>    
+ <div id=red style="height:30px;width:30px;background-color:red;float:left;margin:1px;" ng-click="setColor('red')"></div> 
+ <div id=white style="height:30px;width:30px;background-color:white;float:left;margin:1px;" ng-click="setColor('white')"></div>  
+ <div id=yellow style="height:30px;width:30px;background-color:yellow;float:left;margin:1px;" ng-click="setColor('yellow')"></div>  
+ 
+</div>		
+	<!--	
+<div class="colorpanel" style="background-color:grey;width:90%;">
+<div id=black style="height:30px;width:30px;background-color:black;float:left;margin:1px;" ng-click="setColor('black')"></div>
+
+<div id=red style="height:30px;width:30px;background-color:red;float:left;margin:1px;" ng-click="setColor('red')"></div>
+<div id=pink style="height:30px;width:30px;background-color:pink;float:left;margin:1px;" ng-click="setColor('pink')"></div>
+
+<div id=orange style="height:30px;width:30px;background-color:orange;float:left;margin:1px;" ng-click="setColor('orange')"></div>
+<div id=yellow style="height:30px;width:30px;background-color:yellow;float:left;margin:1px;" ng-click="setColor('yellow')"></div>
+
+<div id=green style="height:30px;width:30px;background-color:green;float:left;margin:1px;" ng-click="setColor('green')"></div>
+<div id=SkyBlue style="height:30px;width:30px;background-color:SkyBlue;float:left;margin:1px;" ng-click="setColor('SkyBlue')"></div>
+<div id=blue style="height:30px;width:30px;background-color:blue;float:left;margin:1px;" ng-click="setColor('blue')"></div>
+<div id=Purple style="height:30px;width:30px;background-color:Purple;float:left;margin:1px;" ng-click="setColor('Purple')"></div>
+<div id=white style="height:30px;width:30px;background-color:white;float:left;margin:1px;" ng-click="setColor('white')"></div>
+<div id=AliceBlue style="height:30px;width:30px;background-color:AliceBlue;float:left;margin:1px;" ng-click="setColor('AliceBlue')"></div>
+<div id=AntiqueWhite style="height:30px;width:30px;background-color:AntiqueWhite;float:left;margin:1px;" ng-click="setColor('AntiqueWhite')"></div>
+<div id=Aqua style="height:30px;width:30px;background-color:Aqua;float:left;margin:1px;" ng-click="setColor('Aqua')"></div>
+<div id=Aquamarine style="height:30px;width:30px;background-color:Aquamarine;float:left;margin:1px;" ng-click="setColor('Aquamarine')"></div>
+ <div id=Azure style="height:30px;width:30px;background-color:Azure;float:left;margin:1px;" ng-click="setColor('Azure')"></div>	
+  <div id=Beige style="height:30px;width:30px;background-color:Beige;float:left;margin:1px;" ng-click="setColor('Beige')"></div>		
+  <div id=Bisque style="height:30px;width:30px;background-color:Bisque;float:left;margin:1px;" ng-click="setColor('Bisque')"></div>	
+   <div id=Black style="height:30px;width:30px;background-color:Black;float:left;margin:1px;" ng-click="setColor('Black')"></div>	
+   <div id=BlanchedAlmond style="height:30px;width:30px;background-color:BlanchedAlmond;float:left;margin:1px;" ng-click="setColor('BlanchedAlmond')"></div>	
+<div id=Blue style="height:30px;width:30px;background-color:Blue;float:left;margin:1px;" ng-click="setColor('Blue')"></div>
+<div id=BlueViolet style="height:30px;width:30px;background-color:BlueViolet;float:left;margin:1px;" ng-click="setColor('BlueViolet')"></div>
+<div id=Brown style="height:30px;width:30px;background-color:Brown;float:left;margin:1px;" ng-click="setColor('Brown')"></div>
+<div id=BurlyWood style="height:30px;width:30px;background-color:BurlyWood;float:left;margin:1px;" ng-click="setColor('BurlyWood')"></div>
+
+
+<div id=CadetBlue style="height:30px;width:30px;background-color:CadetBlue;float:left;margin:1px;" ng-click="setColor('CadetBlue')"></div>
+<div id=Chartreuse style="height:30px;width:30px;background-color:Chartreuse;float:left;margin:1px;" ng-click="setColor('Chartreuse')"></div>
+<div id=Chocolate style="height:30px;width:30px;background-color:Chocolate;float:left;margin:1px;" ng-click="setColor('Chocolate')"></div>
+
+
+
+<div id=Coral style="height:30px;width:30px;background-color:Coral;float:left;margin:1px;" ng-click="setColor('Coral')"></div>
+
+
+<div id=Chocolate style="height:30px;width:30px;background-color:Chocolate;float:left;margin:1px;" ng-click="setColor('Chocolate')"></div>
+<div id=CornflowerBlue style="height:30px;width:30px;background-color:CornflowerBlue;float:left;margin:1px;" ng-click="setColor('CornflowerBlue')"></div>
+<div id=Cornsilk style="height:30px;width:30px;background-color:Cornsilk;float:left;margin:1px;" ng-click="setColor('Cornsilk')"></div>
+
+
+<div id=Chocolate style="height:30px;width:30px;background-color:Chocolate;float:left;margin:1px;" ng-click="setColor('Chocolate')"></div>
+<div id=Crimson style="height:30px;width:30px;background-color:Crimson;float:left;margin:1px;" ng-click="setColor('Crimson')"></div>
+
+
+
+<div id=Cyan style="height:30px;width:30px;background-color:Cyan;float:left;margin:1px;" ng-click="setColor('Cyan')"></div>
+<div id=DarkBlue style="height:30px;width:30px;background-color:DarkBlue;float:left;margin:1px;" ng-click="setColor('DarkBlue')"></div>
+<div id=DarkCyan style="height:30px;width:30px;background-color:DarkCyan;float:left;margin:1px;" ng-click="setColor('DarkCyan')"></div>
+<div id=DarkGoldenRod style="height:30px;width:30px;background-color:DarkGoldenRod;float:left;margin:1px;" ng-click="setColor('DarkGoldenRod')"></div>
+<div id=DarkGray style="height:30px;width:30px;background-color:DarkGray;float:left;margin:1px;" ng-click="setColor('DarkGray')"></div>
+
+<div id=DarkGreen style="height:30px;width:30px;background-color:DarkGreen;float:left;margin:1px;" ng-click="setColor('DarkGreen')"></div>
+
+<div id=DarkKhaki style="height:30px;width:30px;background-color:DarkKhaki;float:left;margin:1px;" ng-click="setColor('DarkKhaki')"></div>
+<div id=DarkMagenta style="height:30px;width:30px;background-color:DarkMagenta;float:left;margin:1px;" ng-click="setColor('DarkMagenta')"></div>
+<div id=DarkOliveGreen style="height:30px;width:30px;background-color:DarkOliveGreen;float:left;margin:1px;" ng-click="setColor('DarkOliveGreen')"></div>
+<div id=DarkOrange style="height:30px;width:30px;background-color:DarkOrange;float:left;margin:1px;" ng-click="setColor('DarkOrange')"></div>
+ <div id=DarkOrchid style="height:30px;width:30px;background-color:DarkOrchid;float:left;margin:1px;" ng-click="setColor('DarkOrchid')"></div>	
+<div id=DarkRed style="height:30px;width:30px;background-color:DarkRed;float:left;margin:1px;" ng-click="setColor('DarkRed')"></div>	
+
+ <div id=DarkSalmon style="height:30px;width:30px;background-color:DarkSalmon;float:left;margin:1px;" ng-click="setColor('DarkSalmon')"></div>	
+
+
+ <div id=DarkSeaGreen style="height:30px;width:30px;background-color:DarkSeaGreen;float:left;margin:1px;" ng-click="setColor('DarkSeaGreen')"></div>	
+ <div id=DarkSlateBlue style="height:30px;width:30px;background-color:DarkSlateBlue;float:left;margin:1px;" ng-click="setColor('DarkSlateBlue')"></div>	
+  <div id=DarkSlateGray style="height:30px;width:30px;background-color:DarkSlateGray;float:left;margin:1px;" ng-click="setColor('DarkSlateGray')"></div>	
+
+ <div id=DarkTurquoise style="height:30px;width:30px;background-color:DarkTurquoise;float:left;margin:1px;" ng-click="setColor('DarkTurquoise')"></div>	
+   <div id=DarkViolet style="height:30px;width:30px;background-color:DarkViolet;float:left;margin:1px;" ng-click="setColor('DarkViolet')"></div>	
+ 
+   <div id=DeepPink style="height:30px;width:30px;background-color:DeepPink;float:left;margin:1px;" ng-click="setColor('DeepPink')"></div>	
+    <div id=DeepSkyBlue style="height:30px;width:30px;background-color:DeepSkyBlue;float:left;margin:1px;" ng-click="setColor('DeepSkyBlue')"></div>
+    <div id=DimGray style="height:30px;width:30px;background-color:DimGray;float:left;margin:1px;" ng-click="setColor('DimGray')"></div>	
+       <div id=DodgerBlue style="height:30px;width:30px;background-color:DodgerBlue;float:left;margin:1px;" ng-click="setColor('DodgerBlue')"></div>
+      <div id=FireBrick style="height:30px;width:30px;background-color:FireBrick;float:left;margin:1px;" ng-click="setColor('FireBrick')"></div>
+      <div id=FloralWhite style="height:30px;width:30px;background-color:FloralWhite;float:left;margin:1px;" ng-click="setColor('FloralWhite')"></div>	
+       <div id=ForestGreen style="height:30px;width:30px;background-color:ForestGreen;float:left;margin:1px;" ng-click="setColor('ForestGreen')"></div>	
+ <div id=Fuchsia style="height:30px;width:30px;background-color:Fuchsia;float:left;margin:1px;" ng-click="setColor('Fuchsia')"></div>	
+  <div id=Gainsboro style="height:30px;width:30px;background-color:Gainsboro;float:left;margin:1px;" ng-click="setColor('Gainsboro')"></div>	
+ 
+ <div id=GhostWhite style="height:30px;width:30px;background-color:GhostWhite;float:left;margin:1px;" ng-click="setColor('GhostWhite')"></div>	
+
+ <div id=Gold style="height:30px;width:30px;background-color:Gold;float:left;margin:1px;" ng-click="setColor('Gold')"></div>	
+
+ <div id=GoldenRod style="height:30px;width:30px;background-color:GoldenRod;float:left;margin:1px;" ng-click="setColor('GoldenRod')"></div>	
+ <div id=Gray style="height:30px;width:30px;background-color:Gray;float:left;margin:1px;" ng-click="setColor('Gray')"></div>	
+ <div id=Green style="height:30px;width:30px;background-color:Green;float:left;margin:1px;" ng-click="setColor('Green')"></div>	
+ 
+<div id=GreenYellow style="height:30px;width:30px;background-color:GreenYellow;float:left;margin:1px;" ng-click="setColor('GreenYellow')"></div>	
+
+
+<div id=HoneyDew style="height:30px;width:30px;background-color:HoneyDew;float:left;margin:1px;" ng-click="setColor('HoneyDew')"></div>	
+
+<div id=HotPink style="height:30px;width:30px;background-color:HotPink;float:left;margin:1px;" ng-click="setColor('HotPink')"></div>	
+
+<div id=IndianRed style="height:30px;width:30px;background-color:IndianRed;float:left;margin:1px;" ng-click="setColor('IndianRed')"></div>	
+
+
+
+Indigo  	#4B0082	 	Shades	Mix
+Ivory 	#FFFFF0	 	Shades	Mix
+Khaki 	#F0E68C	 	Shades	Mix
+Lavender 	#E6E6FA	 	Shades	Mix
+LavenderBlush 	#FFF0F5	 	Shades	Mix
+LawnGreen 	#7CFC00	 	Shades	Mix
+LemonChiffon 	#FFFACD	 	Shades	Mix
+LightBlue 	#ADD8E6	 	Shades	Mix
+LightCoral 	#F08080	 	Shades	Mix
+LightCyan 	#E0FFFF	 	Shades	Mix
+LightGoldenRodYellow 	#FAFAD2	 	Shades	Mix
+LightGray 	#D3D3D3	 	Shades	Mix
+LightGreen 	#90EE90	 	Shades	Mix
+LightPink 	#FFB6C1	 	Shades	Mix
+LightSalmon 	#FFA07A	 	Shades	Mix
+LightSeaGreen 	#20B2AA	 	Shades	Mix
+LightSkyBlue 	#87CEFA	 	Shades	Mix
+LightSlateGray 	#778899	 	Shades	Mix
+LightSteelBlue 	#B0C4DE	 	Shades	Mix
+LightYellow 	#FFFFE0	 	Shades	Mix
+Lime 	#00FF00	 	Shades	Mix
+LimeGreen 	#32CD32	 	Shades	Mix
+Linen 	#FAF0E6	 	Shades	Mix
+Magenta 	#FF00FF	 	Shades	Mix
+Maroon 	#800000	 	Shades	Mix
+MediumAquaMarine 	#66CDAA	 	Shades	Mix
+MediumBlue 	#0000CD	 	Shades	Mix
+MediumOrchid 	#BA55D3	 	Shades	Mix
+MediumPurple 	#9370DB	 	Shades	Mix
+MediumSeaGreen 	#3CB371	 	Shades	Mix
+MediumSlateBlue 	#7B68EE	 	Shades	Mix
+MediumSpringGreen 	#00FA9A	 	Shades	Mix
+MediumTurquoise 	#48D1CC	 	Shades	Mix
+MediumVioletRed 	#C71585	 	Shades	Mix
+MidnightBlue 	#191970	 	Shades	Mix
+MintCream 	#F5FFFA	 	Shades	Mix
+MistyRose 	#FFE4E1	 	Shades	Mix
+Moccasin 	#FFE4B5	 	Shades	Mix
+NavajoWhite 	#FFDEAD	 	Shades	Mix
+Navy 	#000080	 	Shades	Mix
+OldLace 	#FDF5E6	 	Shades	Mix
+Olive 	#808000	 	Shades	Mix
+OliveDrab 	#6B8E23	 	Shades	Mix
+Orange 	#FFA500	 	Shades	Mix
+OrangeRed 	#FF4500	 	Shades	Mix
+Orchid 	#DA70D6	 	Shades	Mix
+PaleGoldenRod 	#EEE8AA	 	Shades	Mix
+PaleGreen 	#98FB98	 	Shades	Mix
+PaleTurquoise 	#AFEEEE	 	Shades	Mix
+PaleVioletRed 	#DB7093	 	Shades	Mix
+PapayaWhip 	#FFEFD5	 	Shades	Mix
+PeachPuff 	#FFDAB9	 	Shades	Mix
+Peru 	#CD853F	 	Shades	Mix
+Pink 	#FFC0CB	 	Shades	Mix
+Plum 	#DDA0DD	 	Shades	Mix
+PowderBlue 	#B0E0E6	 	Shades	Mix
+Purple 	#800080	 	Shades	Mix
+RebeccaPurple 	#663399	 	Shades	Mix
+Red 	#FF0000	 	Shades	Mix
+RosyBrown 	#BC8F8F	 	Shades	Mix
+RoyalBlue 	#4169E1	 	Shades	Mix
+SaddleBrown 	#8B4513	 	Shades	Mix
+Salmon 	#FA8072	 	Shades	Mix
+SandyBrown 	#F4A460	 	Shades	Mix
+SeaGreen 	#2E8B57	 	Shades	Mix
+SeaShell 	#FFF5EE	 	Shades	Mix
+Sienna 	#A0522D	 	Shades	Mix
+Silver 	#C0C0C0	 	Shades	Mix
+SkyBlue 	#87CEEB	 	Shades	Mix
+SlateBlue 	#6A5ACD	 	Shades	Mix
+SlateGray 	#708090	 	Shades	Mix
+Snow 	#FFFAFA	 	Shades	Mix
+SpringGreen 	#00FF7F	 	Shades	Mix
+SteelBlue 	#4682B4	 	Shades	Mix
+Tan 	#D2B48C	 	Shades	Mix
+Teal 	#008080	 	Shades	Mix
+Thistle 	#D8BFD8	 	Shades	Mix
+Tomato 	#FF6347	 	Shades	Mix
+Turquoise 	#40E0D0	 	Shades	Mix
+Violet 	#EE82EE	 	Shades	Mix
+Wheat 	#F5DEB3	 	Shades	Mix
+White 	#FFFFFF	 	Shades	Mix
+WhiteSmoke 	#F5F5F5	 	Shades	Mix
+Yellow 	#FFFF00	 	Shades	Mix
+YellowGreen 
+
+</div>-->
+<br>
+<div style="width:90%;float:left;">
+
+<!--
+<select ng-model="product.color" style="float:left;width:100%;">
+   <option value="">All</option> 
+
+   <option value="black">black</option>
+  <option value="red">red</option>
+   <option value="pink">pink</option>
+    <option value="orange">orange</option>
+  <option value="yellow">yellow</option>
+   <option value="green">green</option>
+    <option value="SkyBlue">SkyBlue</option>
+  <option value="blue">blue</option>
+   <option value="Purple">Purple</option>
+   <option value="white">white</option>
+   
+</select><br>
+-->
+
+<select ng-model="product.color" style="float:left;width:100%;">
+<option value="">All</option> 
+<option ng-value={{product.color}} selected>{{product.color}}</option> 
+<option value="aliceblue">AliceBlue</option> 
+<option value="antiquewhite">AntiqueWhite </option>
+<option value="">Aqua </option>
+<option value="">Aquamarine </option>
+<option value="">Azure </option>
+<option value="">Beige</option> 
+<option value="">Bisque </option>
+<option value="">Black </option>
+<option value="">BlanchedAlmond </option>
+<option value="">Blue </option>
+<option value="">BlueViolet </option>
+<option value="">Brown </option>
+<option value="">BurlyWood </option>
+<option value="">CadetBlue </option>
+<option value="">Chartreuse </option>
+<option value="">Chocolate </option>
+<option value="">Coral </option>
+<option value="">CornflowerBlue</option> 
+<option value="">Cornsilk </option>
+<option value="">Crimson </option>
+<option value="">Cyan </option>
+<option value="">DarkBlue </option>
+<option value="">DarkCyan </option>
+<option value="">DarkGoldenRod</option> 
+<option value="">DarkGray </option>
+<option value="">DarkGreen </option>
+<option value="">DarkKhaki </option>
+<option value="">DarkMagenta </option>
+<option value="">DarkOliveGreen </option>
+<option value="">DarkOrange </option>
+<option value="">DarkOrchid </option>
+<option value=""></option>
+<option value="">DarkSalmon </option>
+<option value="">DarkSeaGreen </option>
+<option value="">DarkSlateBlue </option>
+<option value=""><option value="">DarkSlateGray </option>
+<option value="">DarkTurquoise </option>
+<option value="">DarkViolet </option>
+<option value="">DeepPink </option>
+<option value="">DeepSkyBlue </option>
+<option value="">DimGray </option>
+<option value="">DodgerBlue </option>
+<option value="">FireBrick </option>
+<option value="">FloralWhite </option>
+<option value="">ForestGreen </option>
+<option value="">Fuchsia </option>
+<option value="">Gainsboro </option>
+<option value="">GhostWhite</option> 
+<option value="">Gold </option>
+<option value="">GoldenRod </option>
+<option value="">Gray </option>
+<option value="">Green </option>
+<option value="">GreenYellow </option>
+<option value="">HoneyDew </option>
+<option value="">HotPink </option>
+<option value="">IndianRed  </option>
+<option value="">Indigo  </option>
+<option value="">Ivory </option>
+<option value="">Khaki </option>
+<option value="">Lavender </option>
+<option value="">LavenderBlush </option>
+<option value="">LawnGreen </option>
+<option value="">LemonChiffon </option>
+<option value="">LightBlue </option>
+<option value="">LightCoral </option>
+<option value="">LightCyan </option>
+<option value="">LightGoldenRodYellow </option>
+<option value=""><option value="">LightGray </option>
+<option value="">LightGreen </option>
+<option value="">LightPink </option>
+<option value="">LightSalmon </option>
+<option value="">LightSeaGreen </option>
+<option value="">LightSkyBlue </option>
+<option value="">LightSlateGray </option>
+<option value="">LightSteelBlue </option>
+<option value="">LightYellow </option>
+<option value="">Lime </option>
+<option value="">LimeGreen </option>
+<option value="">Linen </option>
+<option value="">Magenta </option>
+<option value="">Maroon </option>
+<option value="">MediumAquaMarine </option>
+<option value="">MediumBlue </option>
+<option value="">MediumOrchid </option>
+<option value="">MediumPurple </option>
+<option value="">MediumSeaGreen </option>
+<option value="">MediumSlateBlue </option>
+<option value="">MediumSpringGreen </option>
+<option value="">MediumTurquoise </option>
+<option value="">MediumVioletRed </option>
+<option value="">MidnightBlue </option>
+<option value="">MintCream </option>
+<option value="">MistyRose </option>
+<option value="">Moccasin </option>
+<option value="">NavajoWhite </option>
+<option value="">Navy </option>
+<option value="">OldLace </option>
+<option value="">Olive </option>
+<option value="">OliveDrab </option>
+<option value="">Orange </option>
+<option value="">OrangeRed </option>
+<option value="">Orchid </option>
+<option value="">PaleGoldenRod </option>
+<option value="">PaleGreen </option>
+<option value="">PaleTurquoise </option>
+<option value="">PaleVioletRed </option>
+<option value="">PapayaWhip </option>
+<option value="">PeachPuff </option>
+<option value="">Peru </option>
+<option value="">Pink </option>
+<option value="">Plum </option>
+<option value="">PowderBlue </option>
+<option value="purple">Purple </option>
+<option value="rebeccapurple">RebeccaPurple </option>
+<option value="red">Red </option>
+<option value="rosybrown">RosyBrown </option>
+<option value="">RoyalBlue </option>
+<option value="">SaddleBrown </option>
+<option value="">Salmon </option>
+<option value="">SandyBrown </option>
+<option value="">SeaGreen </option>
+<option value="">SeaShell </option>
+<option value="">Sienna </option>
+<option value="">Silver </option>
+<option value="">SkyBlue </option>
+<option value="">SlateBlue </option>
+<option value="">SlateGray </option>
+<option value="">Snow </option>
+<option value="">SpringGreen </option>
+<option value="">SteelBlue </option>
+<option value="">Tan </option>
+<option value="">Teal </option>
+<option value="">Thistle </option>
+<option value="">Tomato </option>
+<option value="">Turquoise </option>
+<option value="">Violet </option>
+<option value="">Wheat </option>
+<option value="">White </option>
+<option value="">WhiteSmoke </option>
+<option value="">Yellow </option>
+<option value="">YellowGreen </option>
+</select>
+
+
+
+
+
+</div>
+<div style="width:90%;float:left;">
+<b>Retailer</b><br>
+<select ng-model="product.merchant" style="width:100%;" >
+   <option value="{{product.merchant}}" selected>{{product.merchant}}</option> 
+   <option value="">ALL</option> 
+  <option value="Avon">Avon</option>
+  <option value="BabyEarth">BabyEarth</option>
+ <option value="7 For All Mankind"> 7 For All Mankind</option>
+<option value="Aldo">Aldo</option>
+<option value="Allen Edmonds">Allen Edmonds </option>
+<option value="American Apparel"> American Apparel</option>
+<option value="American Eagle Outfitters">American Eagle Outfitters	</option>
+<option value="Ann Taylor">Ann Taylor</option>
+<option value="Anthropologie">Anthropologie</option>
+<option value="ashford">ashford	</option>
+<option value="Athleta">Athleta	</option>
+<option value="Avon">Avon</option>
+<option value="BabyEarth">BabyEarth </option>
+<option value="Backcountry">Backcountry</option>
+<option value="Banana Republic">Banana Republic	</option>
+<option value="Barneys New York"> Barneys New York</option>
+<option value="Beauty.com">Beauty.com</option>
+<option value="bebe">bebe</option>
+<option value="Bench">Bench</option>
+<option value="BeWild">BeWild</option>
+<option value="Bloomingdale's UK">Bloomingdale's UK	</option>
+<option value="Bluefly">Bluefly</option>
+<option value="Boden">Boden </option>
+<option value="Bodycandy Body Jewelry">Bodycandy Body Jewelry</option>
+<option value="Boutique To You"> Boutique To You</option>
+<option value="Brooks Brothers"> Brooks Brothers</option>
+<option value="Buffalo David Bitton"> Buffalo David Bitton</option>
+ <option value="Gap">Gap </option>
+ <option value="Overstock.com">Overstock.com </option>
+ <option value="Walmart">Walmart </option>
+</select>
+</div>
+
+
+<div style="width:90%;float:left;">
+Occasion<br>
+<input type=checkbox ng-model="select_oc_casual"  ng-true-value="true" ng-false-value="false" ng-change="occasion_casual_change()"> Casual <br>
+<input type=checkbox ng-model="select_oc_vacation"  ng-true-value="true" ng-false-value="false" ng-change="occasion_vacation_change()"> Vacation<br> 
+<input type=checkbox ng-model="select_oc_work"  ng-true-value="true" ng-false-value="false" ng-change="occasion_work_change()"> Wear to Work<br>
+<input type=checkbox ng-model="select_oc_other"  ng-true-value="true" ng-false-value="false" ng-change="occasion_other_change()"> Other Occasion<br>
+</div>
+
+
+
+
+
+
+
+
+	</div>
+
+	<div class=middle style="width:70%;float:left;margin-top:14vh;height:auto;">
+    
+	
+          <!--{{CatId}}-->
+	 
+      <div id=ind_pro style="width:80%;">
+      
+	  
+	  <h3><input type=text ng-model="product.keyword" style="width:100%;">  </h3>
+    <!--  <h4>		  availability{{ product.availability}} </h4> -->
+      		
+		
+		
+		
+		<a ng-href="{{ product.affiliate_url}}" target="_blank" title="click to visit product site">
+		<img src="{{product.image_url }}" alt="{{product.keyword }}"></a>  
+		  
+
+		<!--<script type="text/javascript">  
+		mixpanel.track_links("#productcheckout a", "clickCheckout", {
+				"referrer": document.referrer,
+				"product" : document.title
+			});
+       </script>-->
+		<br><br> 
+	 <!--  availability{{ availability }} <br> -->
+	   
+       <strong> availability check through twotap  </strong> {{product.availability}} &nbsp;&nbsp;&nbsp;
+	   		Prosperent availability  {{ product.prosper_availability }}
+
+	
+ <a ng-href="#/apiproduct/{{product.productId}}">Product Id {{product.productId }} </a> 
+ <a ng-href="#/apicat/{{product.catalogId }}"> Catalog ID {{product.catalogId }} </a>
+		
+		
+	  <strong>Select SS category </strong>
+	  
+
+<select ng-model="product.SS_category">
+    <option value="">ALL</option> 
+  <option value="women">WOMEN</option> 
+  <option value="men">MEN</option> 
+    <option value="shoes">SHOES</option> 
+    <option value="accessories">ACCESSORIES</option> 
+    <option value="beauty">BEAUTY</option> 
+       <option value="kids">KIDS</option> 
+	   <option value="home">HOME</option> 
+	    <option value="gifts">GIFTS</option> 
+		 <option value="others">OTHERS</option> 
+
+</select>
+
+	 <strong>Manually write SS category </strong> <input type="text" ng-model="product.SS_category"> <br>
+ <strong>Prosperent Category </strong>  {{ product.category }} <br>
+ <strong> Keywords  </strong><input type=text ng-model="product.keywords" style="width:80%;"> <br>
+	 <strong>	Brand  </strong>{{product.brand }}  &nbsp;&nbsp;&nbsp;
+		 <strong> Merchant </strong>{{ product.merchant }}<br>
+		 <strong>Color</strong> {{product.color }}  &nbsp; &nbsp;&nbsp; 
+HEX Color : {{product.colorcode }}
+&nbsp;&nbsp;&nbsp;&nbsp;
+{{product.size }} 
+<div style="height:30px;width:30px;background-color:{{product.color }} ;float:left;margin:1px;"></div>
+		  <br>
+         <strong>Price </strong>{{ product.price }} &nbsp;{{ product.currency }} <br>
+       <strong>Price Sale </strong> {{product.price_sale}}  &nbsp; &nbsp;&nbsp;     <strong> percentOff    </strong> {{product.percentOff}}   
+         <strong> Sales & Offers     </strong> {{product.sale_offer}}                   
+
+
+				<br>        
+       
+        <strong>  Product url </strong> <input type=text ng-model="product.url" style="width:80%;"><br>
+         <strong>  Affiliate url  </strong><a ng-href="{{ product.affiliate_url}}" target="_blank">  {{ product.affiliate_url}} </a>
+		 <p> <strong> <u>Description </u> </strong> <br> <textarea name="description" ng-model="product.description" rows=5 cols=90 > </textarea> 
+		  
+	    <form ng-submit="saveproducts()">
+	
+	      <input type=submit value="Save">
+        </form> 
+		 </p>
+		<p>  
+      
+		<a ng-href="https://checkout.twotap.com?public_token={{twotap_public_token}}&unique_token={{ uniqueID }}&products={{ product.url}} &affiliate_links={{ product.affiliate_url}}&confirm_url=http://45.55.138.4:80/confirm&userId={{ userId}}&test_mode=fake_confirm">
+		
+		
+		Demo Checkout 
+		 </a> |   <a ng-href="admin#/productdb/{{CatId }}"> Look Up Database</a>
+		 
+  		</p>
+  
+
+
+	</div>  
+		 
+
+</div>
+	
+
+
+
+
+</div>

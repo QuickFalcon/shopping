@@ -1,0 +1,123 @@
+
+    
+	<div class=x style="width:60%;float:left;margin-left:15%;margin-top:14vh;">
+
+	
+
+<div class='container-fluid' >
+
+
+	<div class=middle style="width:70%;float:left;margin-top:0vh;height:auto;">
+    
+	
+          <!--{{CatId}}-->
+
+      		  <h3><input type=text ng-model="product.keyword" style="width:100%;">  </h3>
+			  
+			 
+    	  
+		 <strong>Product url</strong><input type=url ng-model="product.url" style="width:100%;"><br>
+		  <a ng-href="{{ product.url}}" title="Visit Product url"> Check product url</a>   	  <br>
+	  <strong> SS category </strong>
+<select ng-model="product.SS_category">
+    <option value="">ALL</option> 
+  <option value="women">WOMEN</option> 
+  <option value="men">MEN</option> 
+    <option value="shoes">SHOES</option> 
+    <option value="accessories">ACCESSORIES</option> 
+    <option value="beauty">BEAUTY</option> 
+       <option value="kids">KIDS</option> 
+	   <option value="home">HOME</option> 
+	    <option value="gifts">GIFTS</option> 
+		 <option value="others">OTHERS</option> 
+
+</select>
+<input type="text" ng-model="product.SS_category"> <br>
+	 <br>
+	  
+	  <a ng-href="{{product.image_url}}" title="Visit Product Site">    <img ng-src="{{product.image_url}}" alt="{{product.keyword }}" title="{{product.keyword }}"></a>  
+      <br><strong>Affiliate url</strong><input type="url" ng-model="product.affiliate_url" style="width:100%;"><br>
+      <a ng-href="{{ product.affiliate_url }}" target="_blank"> Click affiliate url</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+	 <strong>   CatalogId   </strong>{{product.catalogId }} <br>
+	<strong> Availability  </strong> {{product.availability}} &nbsp;&nbsp;&nbsp;
+     <strong>Prosperent Category </strong> {{product.category}} <br>
+         <strong>	Brand  </strong>{{product.brand }}  &nbsp;&nbsp;&nbsp;
+		 <strong> Merchant </strong>{{ product.merchant }}<br>
+		  <strong> Designer </strong>{{ product.designer }}<br>
+	     <strong>Price </strong><input type=text ng-model="product.price" >
+         <strong>price_sale </strong><input type=text ng-model="product.price_sale" >
+    	 
+		 <strong>percentOff </strong><input type=text ng-model="product.percentOff" >
+         <strong>sale_offer </strong><input type=text ng-model="product.sale_offer" >
+		 		 <strong>currency </strong><input type=text ng-model="product.currency" >
+    <br>        
+         <strong>Color</strong>  
+		 <select ng-model="product.color">
+		   <option value="">All</option> 
+		   <option value="black">black</option>
+		  <option value="red">red</option>
+		   <option value="pink">pink</option>
+			<option value="orange">orange</option>
+		  <option value="yellow">yellow</option>
+		   <option value="green">green</option>
+			<option value="SkyBlue">SkyBlue</option>
+		  <option value="blue">blue</option>
+		   <option value="Purple">Purple</option>
+		   <option value="white">white</option>
+   </select> 
+   <div style="height:16px;width:16px;background-color:{{ product.color }};float:right;margin:1px;"></div>
+		  &nbsp; &nbsp;&nbsp; Size <input type=text ng-model="product.size" > 
+		Entry date {{create_date}} | update date {{update_date}}
+
+
+		
+		<br>
+<strong> Keywords  </strong><input type=text ng-model="product.keywords" style="width:100%;">   <br>		
+   
+	 	<a ng-href="https://checkout.twotap.com?public_token={{twotap_public_token}}&unique_token={{ uniqueID }}&products={{product.url}} &affiliate_links={{ product.affiliate_url}}&confirm_url=http://45.55.138.4:80/confirm&userId={{ userId}}&test_mode=fake_confirm"
+		target="_blank">
+		
+		
+		Demo Checkout
+		 </a> |  <a ng-href="#/product/{{CatId}}"> Look up API</a>
+	  
+    <form ng-submit="updateproduct()">
+	
+	      <input type=submit value="Update">
+        </form> 
+	 <input type=button ng-click="del_product()" value="delete">
+		
+	
+		 <p> <strong> <u>Description </u> </strong> <br>
+		 <textarea name="description" ng-model="product.description" rows=5 cols=90 > </textarea> 
+		  
+	
+		 </p>
+	
+  
+
+
+	</div>  
+		 
+
+</div>
+ </div>	
+	
+      
+
+
+
+ 
+
+   
+  
+  
+   
+	
+ 
+
+   <div class=right style="width:5%;float:left;">
+
+
+    </div>

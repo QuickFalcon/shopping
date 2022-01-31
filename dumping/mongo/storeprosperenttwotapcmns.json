@@ -1,0 +1,664 @@
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6be"), 
+    "merchant" : "7 For All Mankind"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6bf"), 
+    "merchant" : "Affliction"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c1"), 
+    "merchant" : "Allen Edmonds"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c2"), 
+    "merchant" : "American Apparel"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c3"), 
+    "merchant" : "American Eagle Outfitters"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c4"), 
+    "merchant" : "Ann Taylor"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c0"), 
+    "merchant" : "Aldo"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c5"), 
+    "merchant" : "Anthropologie"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c7"), 
+    "merchant" : "Athleta"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c9"), 
+    "merchant" : "BabyEarth"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ca"), 
+    "merchant" : "Backcountry"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c8"), 
+    "merchant" : "Avon"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6cc"), 
+    "merchant" : "Barneys New York"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6cd"), 
+    "merchant" : "Beauty.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ce"), 
+    "merchant" : "bebe"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6cb"), 
+    "merchant" : "Banana Republic"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6cf"), 
+    "merchant" : "Bench"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d0"), 
+    "merchant" : "BeWild"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d1"), 
+    "merchant" : "Bloomingdales"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d3"), 
+    "merchant" : "Boden"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d4"), 
+    "merchant" : "Bodycandy Body Jewelry"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6c6"), 
+    "merchant" : "ashford"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d6"), 
+    "merchant" : "Brooks Brothers"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d5"), 
+    "merchant" : "Boutique To You"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d8"), 
+    "merchant" : "Buffalo David Bitton"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d2"), 
+    "merchant" : "Bluefly"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d9"), 
+    "merchant" : "buycostumes.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6d7"), 
+    "merchant" : "Brookstone"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6db"), 
+    "merchant" : "Cafe Press"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6dc"), 
+    "merchant" : "Camp Saver"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6da"), 
+    "merchant" : "Cabela's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6dd"), 
+    "merchant" : "Carnet de Mode"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e1"), 
+    "merchant" : "Chicnova"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6df"), 
+    "merchant" : "Carter's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e0"), 
+    "merchant" : "Charlotte Russe"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e2"), 
+    "merchant" : "Chico's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e4"), 
+    "merchant" : "Choies"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e5"), 
+    "merchant" : "Claire's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e7"), 
+    "merchant" : "Cushe Footwear"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e8"), 
+    "merchant" : "Daniel Wellington"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e3"), 
+    "merchant" : "The Children's Place"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6de"), 
+    "merchant" : "Carson's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e6"), 
+    "merchant" : "Columbia Sportswear"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6e9"), 
+    "merchant" : "Dexclusive"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ec"), 
+    "merchant" : "drugstore.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6eb"), 
+    "merchant" : "Dorothy Perkins"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ed"), 
+    "merchant" : "Eastern Mountain Sports"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ea"), 
+    "merchant" : "DisneyStore"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ee"), 
+    "merchant" : "Eddie Bauer"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ef"), 
+    "merchant" : "evo"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f0"), 
+    "merchant" : "Express"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f1"), 
+    "merchant" : "Fanatics"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f2"), 
+    "merchant" : "Flight Club"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f3"), 
+    "merchant" : "Forever 21"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f4"), 
+    "merchant" : "Fossil"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f5"), 
+    "merchant" : "Frederick's of Hollywood"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f7"), 
+    "merchant" : "Gadgets And Gear"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f8"), 
+    "merchant" : "Gaiam"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f9"), 
+    "merchant" : "Gap"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6f6"), 
+    "merchant" : "French Connection"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6fa"), 
+    "merchant" : "Gilt"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6fc"), 
+    "merchant" : "Guess"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6ff"), 
+    "merchant" : "Haggar Clothing Co."
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6fe"), 
+    "merchant" : "Gypsy Warrior"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6fd"), 
+    "merchant" : "Guess Factory"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b701"), 
+    "merchant" : "Heels.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b703"), 
+    "merchant" : "Hockey Monkey"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b704"), 
+    "merchant" : "Hot Topic"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b702"), 
+    "merchant" : "Henri Bendel"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b709"), 
+    "merchant" : "Jack Wills"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b708"), 
+    "merchant" : "Intermix"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70a"), 
+    "merchant" : "JCPenney"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70c"), 
+    "merchant" : "Jimmy Jazz"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70b"), 
+    "merchant" : "Jenson USA"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b6fb"), 
+    "merchant" : "Golfsmith"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70d"), 
+    "merchant" : "Joe's New Balance Outlet"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70e"), 
+    "merchant" : "Juicy Couture"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b705"), 
+    "merchant" : "Houser Shoes"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b706"), 
+    "merchant" : "HSN"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b700"), 
+    "merchant" : "Hatley"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b710"), 
+    "merchant" : "Kenneth Cole"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b712"), 
+    "merchant" : "Kurt Geiger"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b713"), 
+    "merchant" : "Lacrosse Monkey"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b714"), 
+    "merchant" : "Lane Bryant"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b715"), 
+    "merchant" : "Lastcall"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b718"), 
+    "merchant" : "LOFT"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b716"), 
+    "merchant" : "Leonisa"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b717"), 
+    "merchant" : "Lids"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71a"), 
+    "merchant" : "lucy Activewear"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71c"), 
+    "merchant" : "Marc Jacobs Beauty"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b719"), 
+    "merchant" : "Lucky Brand"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71b"), 
+    "merchant" : "Macy's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71d"), 
+    "merchant" : "maurices"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71e"), 
+    "merchant" : "Merrell"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b711"), 
+    "merchant" : "Kohl's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b707"), 
+    "merchant" : "Ice"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b720"), 
+    "merchant" : "MLB Shop"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b71f"), 
+    "merchant" : "Miss Selfridge"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b70f"), 
+    "merchant" : "Junk Food Clothing"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b721"), 
+    "merchant" : "Moosejaw"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b722"), 
+    "merchant" : "Mr. Kate"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b723"), 
+    "merchant" : "Mytheresa"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b724"), 
+    "merchant" : "Nascar.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b726"), 
+    "merchant" : "Necessary Clothing"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b727"), 
+    "merchant" : "NFL Shop"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b725"), 
+    "merchant" : "NBA Store"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72a"), 
+    "merchant" : "Original Penguin"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b728"), 
+    "merchant" : "Old Navy"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72b"), 
+    "merchant" : "OshKosh B'gosh"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72d"), 
+    "merchant" : "PacSun"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b729"), 
+    "merchant" : "OnlineShoes"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72e"), 
+    "merchant" : "Paul Fredrick"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72c"), 
+    "merchant" : "Overstock.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b730"), 
+    "merchant" : "Philips"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b731"), 
+    "merchant" : "PinkBasis"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b732"), 
+    "merchant" : "PlanetShoes"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b72f"), 
+    "merchant" : "Payless ShoeSource"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b733"), 
+    "merchant" : "Rakuten"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b734"), 
+    "merchant" : "Ralph Lauren"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b736"), 
+    "merchant" : "Reebok"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b737"), 
+    "merchant" : "REI"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b738"), 
+    "merchant" : "Road Runner Sports"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b739"), 
+    "merchant" : "rue21"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b735"), 
+    "merchant" : "Rebecca Minkoff"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73a"), 
+    "merchant" : "Saks Fifth Avenue"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73b"), 
+    "merchant" : "Sam's Club"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73c"), 
+    "merchant" : "Scarves.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73d"), 
+    "merchant" : "Shoebuy.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73e"), 
+    "merchant" : "ShoeMall"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b73f"), 
+    "merchant" : "Shoes.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b740"), 
+    "merchant" : "Sierra Trading Post"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b741"), 
+    "merchant" : "SINGER22"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b742"), 
+    "merchant" : "Solstice Sunglasses"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b743"), 
+    "merchant" : "Sosie"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b744"), 
+    "merchant" : "Spencer's"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b745"), 
+    "merchant" : "Splash Boutique"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b747"), 
+    "merchant" : "SSENSE"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b748"), 
+    "merchant" : "Stage Stores"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b749"), 
+    "merchant" : "Stein Mart"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b746"), 
+    "merchant" : "Splendid"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74a"), 
+    "merchant" : "Steve Madden"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74b"), 
+    "merchant" : "Street Moda"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74c"), 
+    "merchant" : "Stuart Weitzman"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74d"), 
+    "merchant" : "Sunglass Hut"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74e"), 
+    "merchant" : "SuperDry"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b74f"), 
+    "merchant" : "Swell"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b751"), 
+    "merchant" : "Teva"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b750"), 
+    "merchant" : "Talbots"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b753"), 
+    "merchant" : "The Limited"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b754"), 
+    "merchant" : "The Sports Authority"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b756"), 
+    "merchant" : "ThinkGeek"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b752"), 
+    "merchant" : "The Children's Place"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b755"), 
+    "merchant" : "The North Face"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b757"), 
+    "merchant" : "Tibi"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75a"), 
+    "merchant" : "TOMS"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75b"), 
+    "merchant" : "Topman"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b759"), 
+    "merchant" : "Timberland"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b758"), 
+    "merchant" : "Ties.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75c"), 
+    "merchant" : "Trendy Golf"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75d"), 
+    "merchant" : "UGG Australia"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75e"), 
+    "merchant" : "UnbeatableSale.com"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b760"), 
+    "merchant" : "Vans"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b761"), 
+    "merchant" : "Vera Bradley"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b762"), 
+    "merchant" : "Woolrich"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b763"), 
+    "merchant" : "Younkers"
+}
+{ 
+    "_id" : ObjectId("56fa1f9a6688631b71a4b75f"), 
+    "merchant" : "Urban Outfitters"
+}

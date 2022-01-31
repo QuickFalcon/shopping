@@ -1,0 +1,36 @@
+{ 
+    "_id" : ObjectId("58370ec5887ded70872e0601"), 
+    "updatedAt" : ISODate("2016-11-24T16:01:09.234+0000"), 
+    "createdAt" : ISODate("2016-11-24T16:01:09.234+0000"), 
+    "catalogId" : "892bed08cbeebf38553a46af5d209691", 
+    "user" : ObjectId("58370e86887ded70872e0600"), 
+    "photo" : "/uploads/collective/collectiveUpload-1480003268725.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58370ed6887ded70872e0602"), 
+    "updatedAt" : ISODate("2016-11-24T16:01:26.373+0000"), 
+    "createdAt" : ISODate("2016-11-24T16:01:26.373+0000"), 
+    "catalogId" : "fc40d1143d63003a3c5eb36d9eab1e1d", 
+    "user" : ObjectId("58370e86887ded70872e0600"), 
+    "photo" : "/uploads/collective/collectiveUpload-1480003286362.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58370f88887ded70872e0603"), 
+    "updatedAt" : ISODate("2016-11-24T16:04:24.402+0000"), 
+    "createdAt" : ISODate("2016-11-24T16:04:24.402+0000"), 
+    "catalogId" : "0c94bf58f0c0b824ea48e464cbfad1cb", 
+    "user" : ObjectId("58370e86887ded70872e0600"), 
+    "photo" : "/uploads/collective/collectiveUpload-1480003464397.jpg", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58370fa4887ded70872e0604"), 
+    "updatedAt" : ISODate("2016-11-24T16:04:52.268+0000"), 
+    "createdAt" : ISODate("2016-11-24T16:04:52.268+0000"), 
+    "catalogId" : "61aed405068840092a702436878a6ef3", 
+    "user" : ObjectId("58370e86887ded70872e0600"), 
+    "photo" : "/uploads/collective/collectiveUpload-1480003492264.jpeg", 
+    "__v" : NumberInt(0)
+}

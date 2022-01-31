@@ -1,0 +1,395 @@
+<style type="text/css">
+    .thumb.user {
+        width: 24px;
+        height: 24px;
+        float: none;
+        position: relative;
+        top: 7px;
+    }
+    form .progress {
+        line-height: 15px;
+    }
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 700px;
+        height: 700px;
+        float: left;
+    }
+    .selectedArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        float: left;
+        border: 3px solid #CCC;
+    }
+    .progress {
+        /* display: inline-block; */
+        width: 300px;
+        border: 3px groove #CCC;
+        margin-top: 4vh;
+        float: left;
+    }
+    .progress div {
+        font-size: smaller;
+        background: red;
+        width: 0
+    }
+</style>
+<div class="mid_content social-page">
+    <div class="container_inner clearfix">
+        <ul class="breadcrumbs no_border">
+            <li><a href="#!/mail_coupon">Mail</a></li>
+            <!-- <li>Social</li>  -->
+        </ul>
+        <div class="profile-container">
+            <!-- Begin Profile Left Menu -->
+            <profile-sidebar class="profile-left"></profile-sidebar>
+            <!-- End Profile Left Menu -->
+            <!-- Begin Profile Content -->
+            <div class="profile-content">
+                <div class="social_top">
+                    <div class="box-preview">
+                        <div class="preview-image uploadPhoto border-none" ng-class="{popUpshow : activePopup == '1'}" ng-click="showPopupFn($event,'1')">
+                            <div class="uploadPhoto_inner"> <img class="preview-img" src="{{userinfo.img_location}}" /> </div>
+                            <photo-upload changed="changePhoto(photo)" type="profile"></photo-upload>
+                        </div>
+                        <div class="preview-content">
+                            <div class="form-group edit_username showCircle">
+                                <input type="text" value="" name="username" placeholder="Username" ng-model="userinfo.username">
+                                <div class="popUp">
+                                    <div class="btn black_btn" ng-click="update_user()">Update</div> <a class="btn cancel_btn">Cancel</a> </div>
+                                    <!-- search by word 'backend' in js to close the popup -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social_tab" ss-tab="sstab">
+                    <ul class="tab_head" id="tabHead">
+                        <li ng-click="ss.changeTab(1)" ng-class="{active : ss.activeTab === 1}">SS MAIL &amp; NOTIFICATIONS <span class="icon notify_no">{{undread_mails + undread_coupons }}</span> </li>
+                        <li ng-click="ss.changeTab(2)" ng-class="{active : ss.activeTab === 2}">MY WALL</li>
+                    </ul>
+                    <div class="tab_content_wrap" id="tabContentWrap">
+                        <div class="tab_content" ng-show="ss.activeTab === 1" ng-class="{active : ss.activeTab === 1}">
+                            <div class="ss_mail_box" id="notificationBox">
+                                <ul class="mail_menu">
+                                    <li ng-class="{active : receive == 1}"><a ng-click="setreceive(1)">MY MAIL</a> </li>
+                                    <li ng-class="{active : receive == 2}"><a ng-click="setreceive(2)">SENT</a> </li>
+                                </ul>
+                                <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}" ng-if="receive == 1">
+                                    <li class="box_shadow" ng-repeat="pro in myreceivedemail">
+                                        <div class="close_btn" ng-if="pro.mail_type=='purchase' || pro.mail_type=='order'"> <span title="Delete">x</span>
+                                            <div class="popUp">
+                                                <div class="btn grey_btn" ng-click="deletereceiveMail(pro._id)">Delete Message</div>
+                                                <div class="btn black_btn">Cancel</div>
+                                            </div>
+                                        </div>
+                                        <div class="close_btn" ng-if="pro.mail_type!='purchase' && pro.mail_type!='order'"> <span title="Delete">x</span>
+                                            <div class="popUp">
+                                                <div class="btn grey_btn" ng-click="deleteUpreceiveMail(pro._id)">Delete Message</div>
+                                                <div class="btn black_btn">Cancel</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-preview">
+                                            <div class="preview-image">
+                                                <div class="preview-image-inner">
+                                                    <a href="#!/account"><img class="preview-img mCS_img_loaded" ng-src="{{userinfo.img_location}}" alt="{{userinfo.firstname}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="username">
+                                                <a title="{{userinfo.username}}" ng-bind="userinfo.username" href="#!/account"></a>
+                                            </div>
+                                            <div class="date">{{pro.createdAt| date:'MM/dd/yyyy'}}</div>
+                                        </div>
+                                        <div class="product_details" ng-if="pro.mail_type=='purchase' || pro.mail_type=='order'">
+                                            <div class="product-info">
+                                                <div class="product-image mini">
+                                                    <div class="p_image_innner"> <img src="images/ss_logo.png" alt=""> </div>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="notify_heading">
+                                                    <div ng-class="pro.mail_type =='order'? '' : 'falseClass'"> SS ORDER PROCESSING ID {{pro.mail_object.purchaseId}}</div>
+                                                    <div ng-class="pro.mail_type =='purchase'? '' : 'falseClass'"> SS ORDER CONFIRM ID {{pro.mail_object.purchaseId}}</div>
+                                                    <div><a href="http://gitlab.sociallyshoppable.com">sociallyshoppable.com</a></div>
+                                                </div>
+                                                <div class="order_itm_grp">
+                                                    <div class="accordion_wrp">
+                                                        <ul class="logo_list">
+                                                            <li ng-repeat="(wsitekey,item) in pro.mail_object.sites track by $index" ng-if="pro.mail_type =='purchase'">
+                                                                <div class="image_outer">
+                                                                    <div class="image_inner">
+                                                                        <a ng-href="{{makeusableMerchant[wsitekey].url}}"><img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li ng-repeat="(wsitekey,item) in pro.mail_object.userCart.sites track by $index" ng-if="unique_mail.mail_type =='order'">
+                                                                <div class="image_outer">
+                                                                    <div class="image_inner">
+                                                                        <a ng-href="{{makeusableMerchant[wsitekey].url}}"><img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="m_accordion_title see_more red" ng-click="update_flag(pro._id)">See details</div>
+                                                        <div class="order_itm_info_grp">
+                                                            <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in pro.mail_object.sites track by $index" ng-class="pro.mail_type =='purchase'? '' : 'falseClass'">
+                                                                <div class="order_itm_grp_head">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner"> <img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt=""> </div>
+                                                                    </div>
+                                                                    <div class="order_st_info">We got your order information &amp;you will get a confirmation message with summary &amp; soon. </div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4><!-- {{item.info.url}} --> Order</h4>
+                                                                    <div>SS Order ID : {{item.order_id}}</div>
+                                                                    <div class="est_total"><span>Subtotal</span> {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.prices.subtotal }}</div>
+                                                                    <div class="est_total"><span>Shipping</span> {{item.prices.shipping_price}}</div>
+                                                                    <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'est_total' : 'falseClass'"> <span>Taxes</span> {{item.prices.sales_tax}} </div>
+                                                                    <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'falseClass' : 'est_total'"> <span>Taxes</span> {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.prices.sales_tax }} </div>
+                                                                    <div ng-class="item.prices.hasOwnProperty('coupon_value')? 'est_total' : 'falseClass'"> <span>Coupon</span> - {{item.prices.coupon_value}} </div>
+                                                                    <div class="est_total"><span>Total :</span> {{item.prices.final_price}}</div>
+                                                                    <div class="drpDown_wrp">
+                                                                        <div class="detls_cal" style="display:none">
+                                                                            <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                <li ng-repeat="(prokey,proMd5) in item.products track by $index">
+                                                                                    <div class="product-image micro">
+                                                                                        <div class="p_image_innner"> <img ng-src="{{proMd5.image}}" alt="">
+                                                                                            <div class="rateit">
+                                                                                                <div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="product_info">
+                                                                                        <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId)" title="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}" alt="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}">{{proMd5.input_fields.quantity}}
+                                                                                                {{proMd5.title}}</a></div>
+                                                                                        <div>{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].brand }}</div>
+                                                                                        <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}/{{proMd5.title | slugify}}" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}</a></div>
+                                                                                        <div class="product-price">${{(proMd5.price.substring(1) *1.0) * proMd5.input_fields.quantity }}</div>
+                                                                                        <div ng-class="proMd5.status =='done'? 'falseClass' : 'red'"> Out Of Stock </div>
+                                                                                        <div ng-class="proMd5.status =='done'? '' : 'falseClass'"> In Stock </div>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="see_detls red">SEE DETAILS</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4>Payment Info</h4>
+                                                                    <div>Payment By :{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].card.type }} card end with {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].card.card_number| limitTo : -4 : 0 }}</div>
+                                                                    <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4>Shipping Info</h4>
+                                                                    <div ng-class="item.details.hasOwnProperty('shipping_estimate')? '' : 'falseClass'">Est. Delivery : {{item.details.shipping_estimate}}</div>
+                                                                    <div ng-class="item.details.hasOwnProperty('shipping_estimate')? 'falseClass' : ''">Est. Delivery : {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.delivery_days.min}} - {{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].estimates.delivery_days.max}} business days</div>
+                                                                    <div> Shipping To:
+                                                                        <br> {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_first_name}} {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_last_name}}
+                                                                        <br> {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_address}}
+                                                                        <br> {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_city}} , {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_state}} </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in pro.userCart.sites track by $index" ng-class="pro.mail_type =='order'? '' : 'falseClass'">
+                                                                <div class="order_itm_grp_head">
+                                                                    <div class="image_outer">
+                                                                        <div class="image_inner"> <img ng-src="{{item.info.logo}}" alt=""></div>
+                                                                    </div>
+                                                                    <div class="order_st_info">We got your order information &amp; you will get a confirmation message &amp; soon. </div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4>{{item.info.url}} Order</h4>
+                                                                    <div>Order ID : Pending</div>
+                                                                    <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                                                                    <div class="est_total"><span>Shipping</span>{{item.estimates.prices.shipping_price}}</div>
+                                                                    <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+                                                                    <div class="est_total"><span>Total :</span> {{item.estimates.prices.final_price}}</div>
+                                                                    <div class="drpDown_wrp">
+                                                                        <div class="detls_cal" style="display:none">
+                                                                            <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                                                                    <div class="product-image micro">
+                                                                                        <div class="p_image_innner"> <img ng-src="{{proMd5.image}}" alt="">
+                                                                                            <div class="rateit">
+                                                                                                <div class="rateis r{{proMd5.rateAvg| makePositive}}"> </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="product_info">
+                                                                                        <div title="{{proMd5.title}}">{{proMd5.quantity}} <a ng-click="quick_view_parent_orders(proMd5.catalogId)">  {{proMd5.title}}</a></div>
+                                                                                        <div>{{proMd5.brand}}</div>
+                                                                                        <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{proMd5.catalogId}}/{{proMd5.title | slugify}}" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{proMd5.catalogId}}</a></div>
+                                                                                        <div class="product-price">${{(proMd5.price.substring(1)*1.0)*proMd5.quantity}}</div>
+                                                                                    </div>
+                                                                                    <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                    <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'"><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="see_detls red">SEE DETAILS</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4>Payment Info</h4>
+                                                                    <div>Payment By : Visa card</div>
+                                                                    <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                </div>
+                                                                <div class="order_itm_info">
+                                                                    <h4>Shipping Info</h4>
+                                                                    <div>Est. Delivery : {{item.estimates.delivery_days.min}} - {{item.estimates.delivery_days.max}} Business Days</div>
+                                                                    <div> Shipping To:
+                                                                        <br> {{item.shipping.firstname}} &nbsp; {{item.shipping.lastname}}
+                                                                        <br> {{item.shipping.address1}}
+                                                                        <br> {{item.shipping.address2}}
+                                                                        <br> {{item.shipping.city}}, {{item.shipping.state}} </div>
+                                                                </div>
+                                                            </div>
+                                                            <div ng-class="pro.mail_type =='purchase'? '' : 'falseClass'"><a href="#!/confirmation_placed_view/{{unique_mail.purchaseId}}/{{userinfo._id}}" target="_blank">Open in another Page</a> </div>
+                                                            <div ng-class="pro.mail_type =='order'? '' : 'falseClass'"><a href="#!/order_placed_view/{{unique_mail.purchaseId}}" target="_blank">Open in another Page</a> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product_details" ng-if="pro.mail_type!='purchase' && pro.mail_type!='order'">
+                                            <div class="product-info">
+                                                <div class="product-image mini">
+                                                    <div class="p_image_innner"> <img ng-src="{{pro.product.image_url}}" alt="">
+                                                        <div class="rateit">
+                                                            <div class="rateis r{{pro.product.rateAvg| makePositive}}"> </div>
+                                                        </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro.product)">+</a> </div>
+                                                </div>
+                                                <div class="zoomed_s_icons_wrap dsktp_hide">
+                                                    <ul class="zoomed_s_icons">
+                                                        <li> <i class="icon grey_heart"></i> <span ng-bind="pro.product.likeCount || '0'"></span> </li>
+                                                        <li> <i class="icon grey_arrow"></i> <span ng-bind="pro.product.shareCount || '0'"></span> </li>
+                                                        <li> <i class="icon grey_bag"></i> <span ng-bind="pro.product.ratedByUser || '0'"></span> </li>
+                                                    </ul>
+                                                </div>
+                                                <ul class="shared_icons small">
+                                                    <li ng-click="openSocialPopup(pro.product, 'like', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='like'}"> <i class="icon grey_heart" ng-class="{activated: pro.product.likeUser}"></i> <span ng-bind="pro.product.likeCount || '0'"></span> </li>
+                                                    <li ng-click="openSocialPopup(pro.product, 'mail', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='mail'}"> <i class="icon grey_arrow" ng-class="{activated: pro.product.mailUser}"></i> <span ng-bind="pro.product.shareCount || '0'"></span> </li>
+                                                    <li ng-click="openSocialPopup(pro.product, 'collective', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='collective'}"> <i class="icon grey_bag" ng-class="{activated: pro.product.reviewUser}"></i> <span ng-bind="pro.product.ratedByUser || '0'"></span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="description">
+                                                <div class="notify_heading">
+                                                    <div class="text-uppercase">{{pro.subject}}</div>
+                                                </div>
+                                                <div class="shared_to"><strong>FROM: </strong>{{ pro.from }} </div>
+                                                <p ng-bind-html="pro.text"> </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- Coupon code alert box -->
+                                    <li ng-repeat="couponObj in twotap_coupon track by $index" ng-show="sitesTwotap.hasOwnProperty(couponObj.site_id)" class="box_shadow">
+                                        <div class="close_btn"> <span title="Delete">x</span>
+                                            <div class="popUp">
+                                                <div class="btn grey_btn" ng-click="remove_coupon_from_mylist(couponObj.site_id,couponObj.code)">Delete Message</div>
+                                                <div class="btn black_btn">Cancel</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-preview">
+                                            <div class="preview-image">
+                                                <div class="preview-image-inner"> <img class="preview-img" ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt=""> </div>
+                                            </div>
+                                        </div>
+                                        <div class="product_details">
+                                            <div class="product-info">
+                                                <div class="product-image mini">
+                                                    <div class="p_image_innner"> <img ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="description">
+                                                <div class="notify_heading">
+                                                    <div class="text-uppercase">Coupon code alert!</div>
+                                                    <div>{{couponObj.label}}
+                                                        <br> Use code <b class="red">{{couponObj.code}}</b>
+                                                    </div>
+                                                </div>
+                                                <p class="light_grey italic">{{couponObj.starts_at| date:'MM/dd/yyyy'}} untill {{couponObj.ends_at| date:'MM/dd/yyyy'}}</p>
+                                                <div class="light_grey">#HappyShopping #SocShop</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}" ng-if="receive == 2">
+                                    <li class="box_shadow" ng-repeat="pro in mysentemail">
+                                        <div class="close_btn"> <span title="Delete">x</span>
+                                            <div class="popUp">
+                                                <div class="btn grey_btn" ng-click="deletesentMail(pro._id)">Delete Message</div>
+                                                <div class="btn black_btn">Cancel</div>
+                                            </div>
+                                        </div>
+                                        <div class="box-preview">
+                                            <div class="preview-image">
+                                                <div class="preview-image-inner">
+                                                    <a href="#!/account"><img class="preview-img mCS_img_loaded" ng-src="{{userinfo.img_location}}" alt="{{userinfo.firstname}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="username">
+                                                <a title="{{userinfo.username}}" ng-bind="userinfo.username" href="#!/account"></a>
+                                            </div>
+                                            <div class="date">{{pro.createdAt| date:'MM/dd/yyyy'}}</div>
+                                        </div>
+                                        <div class="product_details">
+                                            <div class="product-info">
+                                                <div class="product-image mini">
+                                                    <div class="p_image_innner"> <img ng-src="{{pro.product.image_url}}" alt="">
+                                                        <div class="rateit">
+                                                            <div class="rateis r{{pro.product.rateAvg| makePositive}}"> </div>
+                                                        </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro.product)">+</a> </div>
+                                                </div>
+                                                <div class="zoomed_s_icons_wrap dsktp_hide">
+                                                    <ul class="zoomed_s_icons">
+                                                        <li> <i class="icon grey_heart"></i> <span ng-bind="pro.product.likeCount || '0'"></span> </li>
+                                                        <li> <i class="icon grey_arrow"></i> <span ng-bind="pro.product.shareCount || '0'"></span> </li>
+                                                        <li> <i class="icon grey_bag"></i> <span ng-bind="pro.product.ratedByUser || '0'"></span> </li>
+                                                    </ul>
+                                                </div>
+                                                <ul class="shared_icons small">
+                                                    <li ng-click="openSocialPopup(pro.product, 'like', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='like'}"> <i class="icon grey_heart" ng-class="{activated: pro.product.likeUser}"></i> <span ng-bind="pro.product.likeCount || '0'"></span> </li>
+                                                    <li ng-click="openSocialPopup(pro.product, 'mail', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='mail'}"> <i class="icon grey_arrow" ng-class="{activated: pro.product.mailUser}"></i> <span ng-bind="pro.product.shareCount || '0'"></span> </li>
+                                                    <li ng-click="openSocialPopup(pro.product, 'collective', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='collective'}"> <i class="icon grey_bag" ng-class="{activated: pro.product.reviewUser}"></i> <span ng-bind="pro.product.ratedByUser || '0'"></span> </li>
+                                                </ul>
+                                            </div>
+                                            <div class="description">
+                                                <div class="notify_heading">
+                                                    <div class="text-uppercase">{{pro.subject}}</div>
+                                                </div>
+                                                <div class="shared_to"><strong>SHARED: </strong>{{ pro.to }} </div>
+                                                <p ng-bind-html="pro.text"> </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab_content" ng-show="ss.activeTab === 2" ng-class="{active : ss.activeTab === 2}">
+                            <div class="fr p_t_10 seeFull_page"><a href="#">See full page view</a> </div>
+                            <div class="my_item product_group clearfix defaultScroll defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                <div class="col_3 product" ng-repeat="activityItem in userHistory">
+                                    <div class="product-info">
+                                        <div class="product-image">
+                                            <div class="p_image_innner"> <img ng-src="{{activityItem.image_url}}" alt="{{activityItem.keyword}}">
+                                                <div class="rateit">
+                                                    <div class="rateis r{{activityItem.rateAvg}}"> </div>
+                                                </div> <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',activityItem)">+</a> </div>
+                                        </div>
+                                        <ul class="shared_icons">
+                                            <li ng-click="openSocialPopup(activityItem, 'like', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='like'}"> <i class="icon grey_heart" ng-class="{activated: (activityItem.likeUser|| favCataloglist.indexOf(activityItem.catalogId) > -1)}"></i> <span ng-bind="activityItem.likeCount || '0'"></span> </li>
+                                            <li ng-click="openSocialPopup(activityItem, 'mail', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='mail'}"> <i class="icon grey_arrow" ng-class="{activated: (activityItem.mailUser || mailCatalogList.indexOf(activityItem.catalogId) > -1)}"></i> <span ng-bind="activityItem.shareCount || '0'"></span> </li>
+                                            <li ng-click="openSocialPopup(activityItem, 'collective', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='collective'}"> <i class="icon grey_bag" ng-class="{activated: (activityItem.rateUser || reviewCataloglist.indexOf(activityItem.catalogId) > -1 )}"></i> <span ng-bind="activityItem.ratedByUser || '0'"></span> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

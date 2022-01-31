@@ -1,0 +1,210 @@
+<style>
+
+    .thumb.user {
+        width: 24px;
+        height: 24px;
+        float: none;
+        position: relative;
+        top: 7px;
+    }
+
+    form .progress {
+        line-height: 15px;
+    }
+
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 700px;
+        height: 700px;
+        float: left;
+
+    }
+
+    .selectedArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
+        float: left;
+        border: 3px solid #CCC;
+
+    }
+
+    .progress {
+        display: inline-block;
+        width: 300px;
+        border: 3px groove #CCC;
+        margin-top: 4vh;
+        float: left
+    }
+
+    .progress div {
+        font-size: smaller;
+        background: red;
+        width: 0
+    }
+</style>
+
+
+<div class="mid_content account-page">
+    <div class="container_inner clearfix">
+
+        <ul class="breadcrumbs">
+            <li ng-show="pageTitle" class="myacchd"> &gt; User Profile
+            </li>
+        </ul>
+
+        <div class="profile-container">
+            <!-- Begin Profile Left Menu -->
+            <!--<div class="profile-left">
+              <div class="menu_wrap">
+                <ul class="profile-menu">
+                  <li class="active red"><a href="">My Profile</a></li>
+                  <li>
+                    <a href="">Shops</a>
+                    <ul class="sub-item">
+                      <li><a href="top_ten.html">Top 10</a></li>
+                      <li><a href="all_store.html">All</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Social</a>
+                    <ul class="sub-item">
+                      <li><a href="">Settings</a></li>
+                      <li><a href="">Support</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="profile-menu">
+                  <li class="profile-item bold"><a href="#/order_history">Order History</a></li>
+                  <li class="profile-item bold"><a href="#/shoppingbag">Shopping Bag</a></li>
+                  <li class="profile-item bold"><a href="#/wishList">Wish List</a></li>
+                  <li class="profile-item profile-btm  bold"><a href="#/company">Company</a></li>
+                  <li class="profile-item  bold"><a href="#/customer_service">Customer Services</a></li>
+                  <li class="profile-item  bold"><a href="#/policy">Policies</a></li>
+                  <li class="profile-item underline separator-2" data-toggle="modal" data-target="#signout-modal"><a href="/api/auth/signout">Sign Out</a></li>
+                </ul>
+                <div class="signOut">Sign Out</div>
+              </div>
+
+            </div>-->
+            <profile-sidebar class="profile-left"></profile-sidebar>
+            <!-- End Profile Left Menu -->
+
+            <!-- Begin Profile Content -->
+            <div class="profile-content" data-ui-view>
+                <div class="box-preview">
+                    <div class="preview-image uploadPhoto border-none">
+                        <div class="table">
+                            <div class="uploadPhoto_inner">
+                                <img class="preview-img" src="{{genuserprofile.img_location}}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-content">
+                            <span ng-bind="genuserprofile.username"> </span>
+                          
+                            <!-- search by word 'backend' in js to close the popup -->
+                    </div>
+
+                    
+
+
+                
+
+                 
+                </div><!-- end box preview -->
+                <form>
+                    <div class="box-user-info">
+                        <div class="user-info-container form-container">
+                            <div class="form-row">
+                                <div class="form-group title">
+                                   
+								<div>
+								   <label ng-if="genuserprofile.gender==1">Mr</label>
+                                     <label ng-if="genuserprofile.gender==2">Mrs</label>
+
+									 <label ng-bind="genuserprofile.firstname"></label>
+								                                    <label  ng-model="genuserprofile.middlename"></label>
+                                    <label ng-bind="genuserprofile.lastname"></label>
+                                    </div> 
+                                </div>
+                               
+                            </div>
+                            <div class="form-row gender-row">
+                                <div class="form-group">
+                                    <div class="form-group-by">
+                                   
+                                       
+                                         <div ng-if="genuserprofile.gender==1"> male</div>
+                                         <div ng-if="genuserprofile.gender==2"> female</div>
+
+								   </div>
+                                </div>
+                              
+                            </div>
+                            <div class="form-row subcribe-row">
+                                <div class="form-group">
+                                    <div class="form-group-by">
+                                        <div class="checkbox-wrapper">
+                                                            
+                                                    <label ng-if="genuserprofile.ss_subscribe"> sociallyshoppable.com subscribed</label>
+
+										
+										</div>
+                                        <div class="checkbox-wrapper">
+                              
+                                            <label ng-if="genuserprofile.blog_subscribe">The SS Blog subscribed</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="box-user-address">
+                        <h2>Address</h2>
+                        <div class="user-info-container form-container">
+                            <div class="form-row">
+                                <div class="form-group country">
+                                    <label ng-bind="genuserprofile.country">Country</label>
+                                  
+                                </div>
+                               
+                            </div>
+                          
+                            <div class="form-row">
+                                <div class="form-group city">
+                                    <label ng-bind="genuserprofile.city">City</label>
+                                
+                                </div>
+                                <div class="form-group state">
+                                    <label ng-bind="genuserprofile.state"></label>
+                                  
+                                </div>
+                            </div>
+                           
+
+
+                        </div>
+                    </div>
+             
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+    if (typeof mixpanel !== 'undefined') {
+        mixpanel.track('pageViewed', {
+            'pageName': 'Account',
+            'url': location.pathname + location.search + location.hash /*window.location.pathname*/
+        });
+    }
+</script>

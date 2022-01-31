@@ -1,0 +1,11 @@
+{ 
+    "_id" : ObjectId("58b7c2d0e4a21c4c0e79d464"), 
+    "updatedAt" : ISODate("2017-03-02T06:59:28.272+0000"), 
+    "createdAt" : ISODate("2017-03-02T06:59:28.272+0000"), 
+    "to" : "rajib_2002bd@yahoo.com", 
+    "subject" : "Checkout what I found on SociallyShoppable.com", 
+    "text" : "#HappyShopping #SocShop #productName", 
+    "catalogId" : "203d506b89325e8b3c305d7d83c53f8d", 
+    "user" : ObjectId("58942ac95f0748671a925ba0"), 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,86 @@
+{ 
+    "_id" : ObjectId("567a93a413dc35f110ab99f5"), 
+    "userid" : ObjectId("560bb327e872e1fc3d387c50"), 
+    "activity_product_id" : ObjectId("56239184479ee9a8297662ab"), 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("567a939613dc35f110ab99f4"), 
+    "userid" : ObjectId("560bb327e872e1fc3d387c50"), 
+    "activity_product_id" : ObjectId("561e05d64848cc0e4278c856"), 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("567a93ad13dc35f110ab99f6"), 
+    "userid" : ObjectId("560bb327e872e1fc3d387c50"), 
+    "activity_product_id" : ObjectId("55f69d27031b35a16bdfefd5"), 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5695dd7efb5ac1e62a7f3191"), 
+    "userid" : ObjectId("560bb327e872e1fc3d387c50"), 
+    "activity_product_id" : ObjectId("568e53ee0fdfc1b2115cdf7b"), 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("56e835eae826c59858587142"), 
+    "userid" : ObjectId("56e6a41f478cb55c30b911b2"), 
+    "activity_product_id" : ObjectId("56cf580f97b604ee48610788"), 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5730757131c582504447f465"), 
+    "userid" : ObjectId("56e6a1f6478cb55c30b911b1"), 
+    "catalogId" : "d89917091adaf7b87f44495b156e95e8", 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5730ca13a3f69d29534b378c"), 
+    "userid" : ObjectId("56e6a1f6478cb55c30b911b1"), 
+    "catalogId" : "371f3cfa3fc15cda826def841be76727", 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5730ca1ea3f69d29534b378d"), 
+    "userid" : ObjectId("56e6a1f6478cb55c30b911b1"), 
+    "catalogId" : "dd7cf7643fcc4713bc20572da86487ae", 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5730ca2ca3f69d29534b378e"), 
+    "userid" : ObjectId("56e6a1f6478cb55c30b911b1"), 
+    "catalogId" : "4103a96673037fdd570bafc44d9f292c", 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5732c2317998de7676aba517"), 
+    "userid" : ObjectId("56e6a1f6478cb55c30b911b1"), 
+    "catalogId" : "0f4328507031c77f6c669ccacd81d5be", 
+    "uaction" : "like", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("57d66b3bd4535d2c1a0a62af"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("57d66b6d1be4d42c1c9989ad"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("57d66c16fe29402cf8882cb8"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("57d66c4990c0382d57d88be2"), 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,165 @@
+{ 
+    "_id" : ObjectId("57e5144b7b287c5950d2c6fd"), 
+    "cid" : NumberInt(3), 
+    "parent" : NumberInt(9), 
+    "category" : "toy", 
+    "level" : NumberInt(2), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(5)
+}
+{ 
+    "_id" : ObjectId("584e9a4632b78f0454d84a9e"), 
+    "cid" : NumberInt(7), 
+    "parent" : NumberInt(-1), 
+    "category" : "gift", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("58281f9417d6a81510f1daa1"), 
+    "cid" : NumberInt(9), 
+    "parent" : NumberInt(-1), 
+    "category" : "kid", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(4)
+}
+{ 
+    "_id" : ObjectId("584a72f97aec290d0897ee59"), 
+    "cid" : NumberInt(10), 
+    "parent" : NumberInt(-1), 
+    "category" : "accessories", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5826a9f30f888022d42027a5"), 
+    "cid" : NumberInt(5), 
+    "parent" : NumberInt(-1), 
+    "category" : "women", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("581cb9010b582906c81eee05"), 
+    "cid" : NumberInt(4), 
+    "parent" : NumberInt(-1), 
+    "category" : "men", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+
+    ], 
+    "__v" : NumberInt(5)
+}
+{ 
+    "_id" : ObjectId("584e95a032b78f0454d84a9b"), 
+    "cid" : NumberInt(5), 
+    "parent" : NumberInt(-1), 
+    "category" : "beauty", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+        "jewelry > jewelry sets", 
+        "jewelry > girls > necklaces & pendants > pendants", 
+        "jewelry > girls > rings", 
+        "jewelry > men > bracelets", 
+        "jewelry > men > bracelets > cuff", 
+        "jewelry > loose gemstones > jewelry > men", 
+        "jewelry > loose gemstones", 
+        "jewelry > men > cuff links", 
+        "jewelry > men > earrings", 
+        "jewelry > men > bracelets > link", 
+        "jewelry > girls > earrings > drop & dangle", 
+        "jewelry > girls > earrings", 
+        "jewelry > girls > bracelets", 
+        "jewelry > bracelets > link", 
+        "jewelry > bracelets > cuff", 
+        "jewelry > boys > rings"
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("584e97d732b78f0454d84a9c"), 
+    "cid" : NumberInt(6), 
+    "parent" : NumberInt(-1), 
+    "category" : "home", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+        "baby products > nursery > bedding", 
+        "baby products > nursery > bedding > bassinet bedding > sheets", 
+        "baby products > nursery > bedding > crib bedding > bedding sets", 
+        "baby products > nursery > bedding > crib bedding > bumpers", 
+        "baby products > nursery > bedding > crib bedding > sheets", 
+        "baby products > nursery > bedding > gift sets", 
+        "baby products > nursery > bedding > pillows"
+    ], 
+    "__v" : NumberInt(2)
+}
+{ 
+    "_id" : ObjectId("57e4fec27e1a8552280fa0d8"), 
+    "cid" : NumberInt(1), 
+    "parent" : NumberInt(-1), 
+    "category" : "shoes", 
+    "level" : NumberInt(1), 
+    "prosperent_categories" : [
+        "shoes > boys > athletic > basketball", 
+        "shoes > boys > crib shoes", 
+        "shoes > boys > boots", 
+        "shoes > boys > first walkers", 
+        "shoes > boys > loafers", 
+        "shoes > boys > outdoor > snow boots", 
+        "shoes > boys > oxfords", 
+        "shoes > boys > sandals", 
+        "shoes > boys > slippers", 
+        "shoes > boys > sneakers", 
+        "shoes > boys > sneakers > shoes > girls > sneakers", 
+        "shoes > girls > athletic > basketball", 
+        "shoes > girls > athletic > dance", 
+        "shoes > girls > athletic > running", 
+        "shoes > girls > athletic > skateboarding", 
+        "shoes > girls > athletic > soccer", 
+        "shoes > girls > boots", 
+        "shoes > girls > first walkers", 
+        "shoes > girls > flats", 
+        "shoes > girls > outdoor > rain boots", 
+        "shoes > girls > outdoor > snow boots", 
+        "shoes > girls > oxfords", 
+        "shoes > girls > sandals", 
+        "shoes > girls > slippers", 
+        "shoes > girls > sneakers", 
+        "shoes > men > athletic > basketball", 
+        "shoes > men > oxfords", 
+        "shoes > men > sandals", 
+        "shoes > men > athletic > boating", 
+        "shoes > men > athletic > bowling", 
+        "shoes > men > athletic > football", 
+        "shoes > men > athletic > golf", 
+        "shoes > men > athletic > racquet sports", 
+        "shoes > men > athletic > racquet sports > tennis", 
+        "shoes > men > athletic > running", 
+        "shoes > men > athletic > skateboarding", 
+        "shoes > men > athletic > soccer", 
+        "shoes > men > athletic > walking", 
+        "shoes > men > athletic > trail running", 
+        "shoes > men > fashion sneakers", 
+        "shoes > men > boots", 
+        "shoes > men > outdoor > hunting", 
+        "shoes > men > outdoor > rain footwear", 
+        "shoes > men > outdoor > snow boots", 
+        "shoes > men > outdoor > sport sandals", 
+        "shoes > men > slippers"
+    ], 
+    "__v" : NumberInt(7)
+}

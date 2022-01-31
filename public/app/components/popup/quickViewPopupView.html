@@ -1,0 +1,324 @@
+<div class="modal fade sliderInModal quickView" id="quick-popup" ng-class="{disNone : $ctrl.hide}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="popup-title">Quick View</h3>
+                <a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}" class="popup-plus">+</a>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">X</span></button>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="quick-popup-left">
+                    <div class="quick-carousel-wrap">
+                        <div class="quick-carousel" id="quickThumb" quickview-slider>
+                            <ul class="q_slide">
+
+
+                                <li>
+                                    <div class="img-wrap" style="background-image: url({{current_product.image}})"><!--<img ng-src="{{current_product.image}}" alt="">--></div>
+                                </li>
+                                <li ng-repeat="img_item in current_product.alt_images track by $index">
+                                    <div class="img-wrap" style="background-image: url({{img_item}})"><!--<img ng-src="{{img_item}}" alt="">--></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- <a class="quick-nav quick-prev"><span></span></a>
+                                    <a class="quick-nav quick-next"><span></span></a> -->
+                    </div>
+                    <div class="quick-thumb-carousel-wrap">
+                        <div class="quick-thumb-carousel" id="quickThumbNav" quickview-slidernav>
+                            <ul class="quick_nav">
+                                <li>
+                                    <div class="img-wrap" style="background-image: url({{current_product.image}})"></div>
+                                </li>
+
+                                <li ng-repeat="img_item in current_product.alt_images track by $index">
+                                    <div class="img-wrap" style="background-image: url({{img_item}})"><img ng-src="{{img_item}}" alt=""></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- <a class="quick-thumb-nav quick-thumb-prev"><span></span></a>
+                                    <a class="quick-thumb-nav quick-thumb-next"><span></span></a> -->
+                    </div>
+                </div>
+                <div class="quick-popup-right">
+                    <div class="s_product_right_d clearfix">
+                        <div class="product_title">
+                            <h2><a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}" ng-bind-html="current_product.keyword"></a></h2></div>
+
+
+                        <div class="product_sb_ttl">{{current_product.brand}}</div>
+                        <div class="product_sku">Item# <a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}">{{current_product.catalogId}}</a>
+                        </div>
+                        <div class="product_sku" ng-show="current_product.upc!='' && current_product.upc!=null">Universal Product Code# {{current_product.upc}}</div>
+                        <div class="product_sku" ng-show="current_product.isbn!='' && current_product.isbn!=null">ISBN# {{current_product.isbn}}</div>
+
+                        <div ng-class="quickview_update==1?'s_product_price':'falseClass'">
+                            ${{current_product.price}}
+                        </div>
+
+                        <div ng-class="setcurrentitemfrom == 'localstorage' && quickview_update!=1?'s_product_price':'falseClass'">
+                            <span>{{current_product.price}}</span>
+                        </div>
+                        <div ng-class="setcurrentitemfrom == 'prosperent' && current_product.price_sale !=-1 && quickview_update!=1? 's_product_price':'falseClass'">
+                            <span>WAS ${{current_product.price}}</span>
+                            <span class="t_red">NOW ${{current_product.current_price}}</span><i class="icn_all sale_alert"></i>
+                        </div>
+
+                        <div ng-class="setcurrentitemfrom =='prosperent' &&(current_product.price_sale ==-1) && quickview_update!=1? 's_product_price':'falseClass'">
+                            ${{current_product.price}}
+                        </div>
+
+
+                        <div class="s_product_review_rating">
+                            <div class="rateis r{{current_product.rateAvg| makePositive}}" ng-class=""></div>
+                            <div class="s_product_review">
+                                <span><a href="#">SS Ratings &amp; Reviews</a> </span>
+                            </div>
+                        </div>
+                        <div class="product_icns shareInModal">
+
+                            <div class="zoomed_s_icons_wrap dsktp_hide">
+                                <ul class="zoomed_s_icons">
+                                    <li ng-click="openSocialPopup(current_product, 'like', $event)">
+                                        <i class="icon grey_heart" ng-class="{activated: (current_product.likeUser|| favCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                                        <span ng-bind="current_product.likeCount || '0'"></span>
+
+                                    </li>
+                                    <li ng-click="openSocialPopup(current_product, 'mail', $event)">
+                                        <i class="icon grey_arrow" ng-class="{activated: (current_product.mailUser|| mailCatalogList.indexOf(current_product.catalogId) > -1)}"></i>
+                                        <span ng-bind="current_product.shareCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(current_product, 'collective', $event)">
+                                        <i class="icon grey_bag" ng-class="{activated: (current_product.reviewUser|| reviewCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                                        <span ng-bind="current_product.ratedByUser || '0'"></span>
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="shared_icons">
+
+
+                                <li ng-click="openSocialPopup(current_product, 'like', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='like'}">
+                                    <i class="icon grey_heart" ng-class="{activated: (current_product.likeUser|| favCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                                    <span ng-bind="current_product.likeCount || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(current_product, 'mail', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='mail'}">
+                                    <i class="icon grey_arrow" ng-class="{activated: (current_product.mailUser|| mailCatalogList.indexOf(current_product.catalogId) > -1)}"></i>
+                                    <span ng-bind="current_product.shareCount || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(current_product, 'collective', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='collective'}">
+                                    <i class="icon grey_bag" ng-class="{activated: (current_product.reviewUser|| reviewCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                                    <span ng-bind="current_product.ratedByUser || '0'"></span>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+
+                        <!--{{current_product}} -->
+
+                        <div class="s_product_clr_sz_bx" ng-class="{'ss_loading' : !qvLoading}">
+                            <div class="s_product_color_size clearfix">
+                                <div class="s_product_color" ng-class="current_product.required_field_names.indexOf('color')> -1 ? '' : 'border_bottom_none'">
+
+                                    <div ng-class="current_product.required_field_names.indexOf('color')> -1 ? '' : 'falseClass'">
+
+                                        <div class="s_product_color_t">
+                                            COLOR:<span ng-class="required_field_values.color!='' &&  required_field_values.color!=undefined?'':'falseClass'">{{qvcolorText}}</span>
+                                            <span ng-class="required_field_values.color==''|| required_field_values.color==undefined|| required_field_values.color==null?'red':'falseClass'"> Select Color</span>
+
+                                        </div>
+
+                                        <ul class="s_product_color_bx">
+                                            <li class="s_p_clr"
+                                                ng-repeat="itemByColor in qvcolorjson track by $index">
+
+                                                <input type="radio" name="qqselectColorm1"
+                                                       id="qquickcolor_{{$index}}"
+                                                       value="{{itemByColor.value}}" ng-model="required_field_values.color" ng-click="set_color_mother(qvcolorjson,itemByColor)">
+                                                <label for="qquickcolor_{{$index}}">
+                                                    <span style='background-color:{{itemByColor.value}};background-image:url({{itemByColor.value.indexOf("http")>-1 ? itemByColor.value : itemByColor.image }})'></span>
+
+                                                </label>
+
+
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class='s_product_size'>
+                                    <div ng-class="current_product.required_field_names.indexOf('size')> -1 ? '' : 'falseClass'">
+
+                                        <div class="s_product_size_t"><!-- <span class="red"> -->SIZE: <span
+                                                ng-class="required_field_values.size!=''&& required_field_values.size!=undefined && required_field_values.size!=null?'':'falseClass'">{{required_field_values.size}}</span>
+
+                                            <span ng-class="required_field_values.size==''|| required_field_values.size==undefined|| required_field_values.size==null?'red':'falseClass'"> Select Size</span>
+                                        </div>
+                                        <ul class="s_product_size_bx">
+                                            <li class="s_p_size"
+                                                ng-repeat="itemBySize in qvsizejson track by $index">
+                                                <input type="radio" name="ssax" id="qquicksizex_{{$index}}" value="{{itemBySize.value}}" ng-model="required_field_values.size" ng-click="set_size_mother(qvsizejson,itemBySize)">
+                                                <label for="qquicksizex_{{$index}}"><span>{{itemBySize.text}}</span></label>
+                                            </li>
+                                        </ul>
+
+                                        <!--
+                                        <div class="s_product_sz_guide"><a data-target="#size-guide-popup" role="button"
+                                                                           data-toggle="modal">Size Guide</a></div> -->
+                                    </div>
+
+
+                                </div>
+                                <div ng-repeat="rname in current_product.required_field_names track by $index" ng-if="rname!='color' &&  rname!='size' && rname!='quantity' ">
+                                    <div ng-class="current_product.required_field_values.hasOwnProperty(rname)? '' : 'falseClass'">
+                                        <div class="s_product_color_t">{{rname}}:</div>
+
+                                        <ul class="s_product_common_bx" ng-if="quickview_update==1">
+                                            <li class="s_p_clr"
+                                                ng-repeat="jsonOption in current_product.requiredjsons[rname] track by $index">
+                                                <input type="radio" name="selectOptx{{rname}}" id="x{{rname}}{{$index}}"
+                                                       value="{{jsonOption.value}}" ng-model="required_field_values[rname]" ng-click="set_json_field_mother(current_product.requiredjsons[rname],jsonOption)">
+                                                <label for="x{{rname}}{{$index}}">
+                                                    <span ng-bind="jsonOption.text"></span></label>
+                                            </li>
+
+                                        </ul>
+                                        <ul class="s_product_common_bx" ng-if="current_product.required_field_values[rname].data[0].input_type!='text' && quickview_update==0 ">
+                                            <li class="s_p_clr"
+                                                ng-repeat="jsonOption in current_product.requiredjsons[rname] track by $index">
+                                                <input type="radio" name="selectOpt{{rname}}" id="{{rname}}{{$index}}"
+                                                       value="{{jsonOption.value}}" ng-model="required_field_values[rname]" ng-click="set_json_field_mother(current_product.requiredjsons[rname],jsonOption)">
+                                                <label for="{{rname}}{{$index}}">
+                                                    <span ng-bind="jsonOption.text"></span></label>
+                                            </li>
+
+                                        </ul>
+                                        <input type="text" ng-model="required_field_values[rname]" ng-if="current_product.required_field_values[rname].data[0].input_type=='text' && quickview_update==0">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="s_product_qty_bag clearfix">
+                                <div class="s_product_qty">
+                                    <span class="qty_lebel">QUANTITY:</span>
+                                    <div class="quantity-dropdown">
+                                        <form>
+                                            <div class="defaultSt">
+                                                <select ng-model="required_field_values['quantity']" convert-to-number>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- <div class="" ng-class="quickvew ==0 ?'defaultSt':'falseClass'">
+                                                 <select ng-model="current_product['quantity']" convert-to-number>
+                                                     <option value="1">1</option>
+                                                     <option value="2">2</option>
+                                                     <option value="3">3</option>
+                                                     <option value="4">4</option>
+                                                     <option value="5">5</option>
+                                                     <option value="6">6</option>
+                                                     <option value="7">7</option>
+                                                     <option value="8">8</option>
+                                                     <option value="9">9</option>
+                                                     <option value="10">10</option>
+                                                     <option value="11">11</option>
+                                                     <option value="12">12</option>
+                                                     <option value="13">13</option>
+                                                     <option value="14">14</option>
+                                                     <option value="15">15</option>
+                                                 </select>
+                                             </div> -->
+
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!--
+                                <div ng-class="quickview_update==1 ?'falseClass':'s_product_a_t_b'">
+                                  <div class="black_btn btn" data-toggle="modal" data-target="#addToBag"> ADD TO BAG
+                                  </div>
+                                </div> {{proAvailable}} -->
+
+
+                                <div ng-class="quickvew ==1 ?'s_product_a_t_b':'falseClass'">
+                                    <div class="black_btn btn" ng-click="addToCart(current_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)
+"> ADD TO BAG
+                                    </div> <!--from Quick View -->
+                                    <!-- <div ng-class="{true:'ng-hide',false:'black_btn btn',undefined:'ng-hide'}[proAvailable]"> Unavailable -->
+                                    <!-- </div> -->
+                                </div>
+                                <div ng-class="quickview_update!=1 && quickvew ==0?'s_product_a_t_b' :'falseClass'">
+                                    <div class="black_btn btn" ng-click="addToCart(current_product,current_product.quantity, proDetails, current_product.required_field_values, current_product.price, current_sitekey, current_prokey, proDetails.cart_id)
+"> ADD TO BAG
+                                    </div>
+                                    <!-- <div ng-class="{true:'ng-hide',false:'black_btn btn',undefined:'ng-hide'}[proAvailable]"> Unavailable -->
+                                    <!-- </div> -->
+                                </div>
+
+                                <div ng-class="quickview_update==0 && quickvew==1?'s_product_wishlist':'falseClass'">
+
+                                    <span><a ng-click="addtoWishlistGlobal(current_product,required_field_values)">+ ADD TO SAVED LIST</a></span>
+                                </div>
+
+
+                                <!--  <div ng-class="quickview_update==0 || qvtwotapapidataready==0 ?'falseClass':'s_product_wishlist'">
+
+                                      <span><a ng-click="addToWishCartQV(prosper_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)">+ ADD TO SAVED LIST</a></span>
+                                  </div> -->
+
+                                <div ng-class="quickview_update==1 || qvtwotapapidataready==0 ?'falseClass':'s_product_wishlist'">
+
+                                    <span><a ng-click="addToWishCartQV(prosper_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)">+ ADD TO SAVED LIST</a></span>
+                                </div>
+
+                                <div ng-class="quickview_update==1 ?'s_product_a_t_b':'falseClass'">
+
+                                    <div class="black_btn btn" ng-click="update_promd5()"> UPDATE</div>
+                                </div>
+
+
+                                <div ng-class="quickview_update==1 && twotap_wishlist_cart.sites[current_sitekey].add_to_cart[current_prokey].movetobagPossible == 1?'s_product_wishlist':'falseClass'">
+
+                                    <span><a
+                                            ng-click="moveToCart(current_product.catalogId,current_prokey,current_sitekey,1,current_product)">+ MOVE TO BAG</a></span>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box_bottom">
+                        <a ng-href="#!/SOC/{{current_product.catalogId}}/{{current_product.keyword}}" class="more-link">View Full Details</a>
+                        <a href="#!/shoppingbag" class="black_btn btn q_action">GO TO SHOPPING BAG</a>
+                        <!-- <a href="#!/procuct_details" class="black_btn btn q_action">GO TO PRODUCT DETAILS</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

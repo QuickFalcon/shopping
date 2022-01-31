@@ -1,0 +1,18 @@
+{ 
+    "_id" : ObjectId("56251cfba4afb26f44422e2c"), 
+    "store_name" : "Ashford", 
+    "menuItem" : "gifts", 
+    "store_id" : "", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("56251cf0a4afb26f44422e2b"), 
+    "store_name" : "Nike", 
+    "menuItem" : "shoes", 
+    "store_id" : "", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("57d66c4990c0382d57d88be3"), 
+    "__v" : NumberInt(0)
+}

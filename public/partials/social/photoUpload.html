@@ -1,0 +1,10 @@
+<div class="upload_picture_popup popUp">
+  <div class="upload_pto_ttl">Upload Picture</div>
+  <ul>
+    <!--li><i class="icon instagrm"></i> Import from Instagram</li-->
+    <li ng-click="vm.getFacebookPhoto()" ng-if="vm.isTypeAllowed('facebook')"><i class="icon fb"></i> Import from Facebook</li>
+    <li ng-click="vm.getFromLibrary()" ng-if="vm.isTypeAllowed('upload')"><i class="icon take_photo"></i> Import or take photo</li>
+  </ul>
+</div>
+
+<input type="file" class="uploadPhotoInput" accept="image/*" ngf-select="vm.uploadPhoto($file)" style="display:none">

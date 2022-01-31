@@ -1,0 +1,224 @@
+<form ng-submit="searching_product()">
+  <div toggleCls class="search_box_input" ng-class="{search_show : vm.showsearch }" ng-click="vm.searchEng($event)">
+
+    <input type="text" ng-model="selected" typeahead="state for state in suggestions | filter:$viewValue | limitTo:1" typeahead-min-length="1" typeahead-wait-ms="500" name="search" autocomplete="off" id="khoj">
+
+	
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    <div ng-show="noResults">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
+	
+	
+    <div class="s_category_wrap" >
+      <ul class="s_category_list searchCategory">
+        <li ng-click="vm.changeTab(1)" ng-class="{active : vm.activeTab === 1}">all</li>
+        <li ng-click="vm.changeTab(2)" ng-class="{active : vm.activeTab === 2}">shops</li>
+        <li ng-click="vm.changeTab(3)" ng-class="{active : vm.activeTab === 3}">categories</li>
+        <li ng-click="vm.changeTab(4)" ng-class="{active : vm.activeTab === 4}">designers</li>
+      </ul>
+      <div class="s_result searchResult">
+        <div class="s_result_inner" ng-show="vm.activeTab === 1" ng-class="{active : vm.activeTab === 1}">
+          <div class="s_result_left">
+            <div class="s_result_header">A-X</div>
+            <ul class="s_result_alphabet">
+              <li><a href="#hash">#</a></li>
+              <li ng-repeat="letter in vm.alphabet"><a href="#{{letter}}" ng-bind="letter"></a></li>
+              <li class="view_all"><a href="">VIEW ALL</a></li>
+            </ul>
+          </div>
+          <div class="s_result_divider"></div>
+          <div class="s_result_right">
+          </div>
+        </div>
+        <div class="s_result_inner" ng-show="vm.activeTab === 2" ng-class="{active : vm.activeTab === 2}">
+          <div class="s_result_left">
+            <div class="s_result_header">A-Y</div>
+            <ul class="s_result_alphabet">
+              <li><a href="#hash">#</a></li>
+              <li ng-repeat="letter in vm.alphabet"><a href="#{{letter}}" ng-bind="letter"></a></li>
+              <li class="view_all"><a ng-click="vm.emptyselecteditem('shop',true)">VIEW ALL</a></li>
+            </ul>
+          </div>
+          <div class="s_result_divider"></div>
+          <div class="s_result_right">
+            <div class="s_result_right_header">
+              <div class="s_select_cat">
+                <input type="checkbox" checked="checked" id="checkAllShop" ng-model="vm.checkAllShop">
+                <label class="checked" for="checkAllShop" ng-class="{checked : vm.checkAllShop}" ng-click="vm.emptyselecteditem('shop',vm['checkAllShop'])">ALL SHOPS</label>
+
+              </div>
+              <div class="s_result_action">
+                <div class="btn clear_btn" ng-click="clearSelectedStores()">CLEAR</div>
+                <div class="btn cancel_btn" ng-click="vm.cancelSearch($event)">CANCEL</div>
+                <div class="btn submit_btn" ng-click="searching_product()">SUBMIT</div>
+              </div>
+            </div>
+            <div class="s_content_list mCustomScrollbar">
+              <div class="s_list_heading">ALL</div>
+
+              <div class="s_alphabet_item" ng-show="(retailerList|startWithOther).length">
+                <h3 id="hash">#</h3>
+                <ul>
+                  <li ng-repeat="mer in retailerList|startWithOther track by $index">
+                    <input type="checkbox" id="sretailer{{mer['merchant']}}" ng-true-value="true" ng-false-value="false" ng-click="changeMerchantSearchbox(mer['merchant'],pro[mer['merchant']],$index)" ng-model="pro[mer['merchant']]">
+                    <label for="sretailer{{mer['merchant']}}" ng-class="{checked : pro[mer['merchant']] || vm.checkAllShop }">{{mer['merchant']}}  <i>({{mer.numProducts}} )</i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="s_alphabet_item"  ng-repeat="letter in vm.alphabet" ng-show="(retailerList|cfilter:letter).length">
+                <h3 id="{{letter}}" ng-bind="letter"></h3>
+                <ul>
+                  <li ng-repeat="mer in retailerList|cfilter:letter track by $index">
+                    <input type="checkbox" id="sretailer{{mer['merchant']}}" ng-true-value="true" ng-false-value="false" ng-click="changeMerchantSearchbox(mer['merchant'],pro[mer['merchant']],$index)" ng-model="pro[mer['merchant']]">
+                    <label for="sretailer{{mer['merchant']}}" ng-class="{checked : pro[mer['merchant']] || vm.checkAllShop }">{{mer['merchant']}} <i>({{mer.numProducts}} )</i></label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s_result_inner" ng-show="vm.activeTab === 3" ng-class="{active : vm.activeTab === 3}">
+          <div class="s_result_left">
+            <div class="s_result_header">A-Z</div>
+            <ul class="s_result_alphabet">
+              <li><a href="#hash1">#</a></li>
+              <li ng-repeat="letter in vm.alphabet"><a href="#{{letter}}1" ng-bind="letter"></a></li>
+              <li class="view_all"><a ng-click="vm.emptyselecteditem('category',true)">VIEW ALL</a></li>
+            </ul>
+          </div>
+          <div class="s_result_divider"></div>
+          <div class="s_result_right">
+            <div class="s_result_right_header">
+              <div class="s_select_cat">
+                <input type="checkbox" checked="checked" id="checkAllCat" ng-model="vm.checkAllCat">
+                <label class="checked" for="checkAllCat" ng-class="{checked : vm.checkAllCat}" ng-click="vm.emptyselecteditem('category',vm['checkAllCat'])">ALL CATEGORIES</label>
+              </div>
+              <div class="s_result_action">
+                <div class="btn clear_btn" ng-click="clearSelectedCategories()">CLEAR</div>
+                <div class="btn cancel_btn" ng-click="vm.cancelSearch($event)">CANCEL</div>
+                <div class="btn submit_btn" ng-click="searching_product()">SUBMIT</div>
+              </div>
+            </div>
+            <div class="s_content_list mCustomScrollbar">
+              <div class="s_list_heading">ALL</div>
+              <div class="s_alphabet_item" ng-repeat="letter in vm.alphabet" ng-show="(parentcustomCategoryList|catfilter:letter).length">
+                <h3 id="{{letter}}1" ng-bind="letter"></h3>
+                <ul>
+                  <li ng-repeat="cat in parentcustomCategoryList|catfilter:letter track by $index" >
+                    <input type="checkbox" id="sitemCat_{{cat['category']}}" ng-true-value="true" ng-false-value="false" ng-click="changeCategorySearchbox(cat['category'],catg[cat['category']])" ng-model="catg[cat['category']]">
+                    <label for="sitemCat_{{cat['category']}}" ng-class="{checked : catg[cat['category']] || vm.checkAllCat}">{{cat['category']}}<!--<i>()</i> -->
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s_result_inner" ng-show="vm.activeTab === 4" ng-class="{active : vm.activeTab === 4}">
+          <div class="s_result_left">
+            <div class="s_result_header">A-P</div>
+            <ul class="s_result_alphabet">
+              <li><a href="#hash2">#</a></li>
+              <li ng-repeat="letter in vm.alphabet"><a href="#{{letter}}2" ng-bind="letter"></a></li>
+              <li class="view_all"><a ng-click="emptyselecteditem('brand',true)">VIEW ALL</a></li>
+            </ul>
+          </div>
+          <div class="s_result_divider"></div>
+          <div class="s_result_right">
+            <div class="s_result_right_header">
+              <div class="s_select_cat">
+                <input type="checkbox" checked="checked" id="checkAllDegnr" ng-model="vm.checkAllDegnr">
+                <label for="checkAllDegnr" class="checked" ng-class="{checked : vm.checkAllDegnr}" ng-click="vm.emptyselecteditem('brand',vm['checkAllDegnr'])">ALL DESIGNERS</label>
+              </div>
+              <div class="s_result_action">
+                <div class="btn clear_btn" ng-click="clearSelectedDesigners()">CLEAR</div>
+                <div class="btn cancel_btn" ng-click="vm.cancelSearch($event)">CANCEL</div>
+                <div class="btn submit_btn" ng-click="searching_product()">SUBMIT</div>
+              </div>
+            </div>
+            <div class="s_content_list mCustomScrollbar" id="brandzindex">
+              <div class="s_list_heading">ALL</div>
+              <div class="s_alphabet_item" ng-show="(brandList|startWithOtherBrand).length">
+                <h3 id="hash2">#</h3>
+                <ul>
+                  <li ng-repeat="brd in brandList|startWithOtherBrand track by $index">
+                    <input type="checkbox" id="brandid_{{brd.brand}}" ng-true-value="true" ng-false-value="false" ng-click="changeBrandSearchbox(brd.brand,brdg[brd.brand],$index)" ng-model="brdg[brd.brand]">
+                    <label for="brandid_{{brd.brand}}" ng-class="{checked : brdg[brd.brand]||vm.checkAllDegnr }">{{brd.brand}} <i></i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="s_alphabet_item" ng-repeat="letter in vm.alphabet" ng-show="(brandList|bfilter:letter).length">
+                <h3 id="{{letter}}2" ng-bind="letter"></h3>
+                <ul>
+                  <li ng-repeat="brd in brandList|bfilter:letter track by $index">
+                    <input type="checkbox" id="brandid_{{brd.brand}}" ng-true-value="true" ng-false-value="false" ng-click="changeBrandSearchbox(brd.brand,brdg[brd.brand],$index)" ng-model="brdg[brd.brand]">
+                    <label for="brandid_{{brd.brand}}" ng-class="{checked : brdg[brd.brand]||vm.checkAllDegnr }">{{brd.brand}} <i></i>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <a ng-click="generateAllBrands()">More </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="s_current_selection">
+          <div class="selection_header">CURRENT SELECTIONS:</div>
+          <div class="current_selection_list mCustomScrollbar">
+            <ul class="all_customize">
+              <li>
+                <div class="chooseFrm_all" ng-click="vm.changeTab(2)" ng-class="{active : vm.activeTab === 2}">
+                  <input type="checkbox" checked="checked" id="checkAllShop" ng-model="vm.checkAllShop">
+                  <label class="checked" for="checkAllShop" ng-class="{checked : vm.checkAllShop}" ng-click="vm.emptyselecteditem('shop',vm['checkAllShop'])"></label>
+                </div>
+                <div class="goto_all" ng-click="vm.changeTab(2)" ng-class="{active : vm.activeTab === 2}">All Shops</div>
+                <div class="selected_title">SELECTED SHOPS</div>
+                <ul class="group_cont">
+                  <li ng-repeat="smerchat in selected_merchantlistByclick">
+                    <input type="checkbox" id="selectedm{{smerchat}}" ng-true-value="true" ng-false-value="false" ng-click="removeMerchantSearchbox(smerchat)" ng-model="selmerchant[smerchat]" ng-init="selmerchant[smerchat]=true">
+                    <label for="selectedm{{smerchat}}" ng-class="{checked :selmerchant[smerchat] }">{{smerchat}} <i></i>
+                    </label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="chooseFrm_all" ng-click="vm.changeTab(3)" ng-class="{active : vm.activeTab === 3}">
+                  <input type="checkbox" checked="checked" id="checkAllCat" ng-model="vm.checkAllCat">
+                  <label class="checked" for="checkAllCat" ng-class="{checked : vm.checkAllCat}" ng-click="vm.emptyselecteditem('category',vm['checkAllCat'])"></label>
+                </div>
+                <div class="goto_all" ng-click="vm.changeTab(3)" ng-class="{active : vm.activeTab === 3}">All Categories</div>
+                <div class="selected_title">SELECTED CATEGORIES</div>
+                <ul class="group_cont">
+                  <li ng-repeat="scategory in selected_categorylist">
+                    <input type="checkbox" id="selectedca{{scategory}}" ng-true-value="true" ng-false-value="false" ng-click="removeCategorySearchbox(scategory)" ng-model="selcategory[scategory]" ng-init="selcategory[scategory]=true">
+                    <label for="selectedca{{scategory}}" ng-class="{checked :selcategory[scategory] }" >{{scategory}} <i></i>
+                    </label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="chooseFrm_all" ng-click="vm.changeTab(4)" ng-class="{active : vm.activeTab === 4}">
+                  <input type="checkbox" checked="checked" id="checkAllDegnr" ng-model="vm.checkAllDegnr">
+                  <label for="checkAllDegnr" class="checked" ng-class="{checked : vm.checkAllDegnr}" ng-click="vm.emptyselecteditem('brand',vm['checkAllDegnr'])"></label>
+                </div>
+                <div class="goto_all" ng-click="vm.changeTab(4)" ng-class="{active : vm.activeTab === 4}">All Designers</div>
+                <div class="selected_title">SELECTED DESIGNERS</div>
+                <ul class="group_cont">
+                  <li ng-repeat="sbrand in selected_brandlist">
+                    <input type="checkbox" id="selectedbr{{sbrand}}" ng-true-value="true" ng-false-value="false" ng-click="removeBrandSearchbox(sbrand)" ng-model="selbrand[sbrand]" ng-init="selbrand[sbrand]=true">
+                    <label for="selectedbr{{sbrand}}" ng-class="{checked :selbrand[sbrand] }" >{{sbrand}} <i></i>
+                    </label>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="submit" value="">
+</form>

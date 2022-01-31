@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'CalibriLight';
+    src: url('calibril.eot');
+    src: url('calibril.eot') format('embedded-opentype'),
+         url('calibril.woff') format('woff'),
+         url('calibril.ttf') format('truetype'),
+         url('calibril.svg#CalibriLight') format('svg');
+}
+@font-face {
+    font-family: 'CalibriRegular';
+    src: url('calibri_3.eot');
+    src: url('calibri_3.eot') format('embedded-opentype'),
+         url('calibri_3.woff') format('woff'),
+         url('calibri_3.ttf') format('truetype'),
+         url('calibri_3.svg#CalibriRegular') format('svg');
+}
+@font-face {
+    font-family: 'CalibriBold';
+    src: url('calibrib_3.eot');
+    src: url('calibrib_3.eot') format('embedded-opentype'),
+         url('calibrib_3.woff') format('woff'),
+         url('calibrib_3.ttf') format('truetype'),
+         url('calibrib_3.svg#CalibriBold') format('svg');
+}
+@font-face {
+    font-family: 'CalibriItalic';
+    src: url('calibrii_3.eot');
+    src: url('calibrii_3.eot') format('embedded-opentype'),
+         url('calibrii_3.woff') format('woff'),
+         url('calibrii_3.ttf') format('truetype'),
+         url('calibrii_3.svg#CalibriItalic') format('svg');
+}

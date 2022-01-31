@@ -1,0 +1,133 @@
+define(['common'], function (angularAMD, jquery) {
+  'use strict';
+  var mainApp = angular.module('WebApp', ['ui.router', 'ngResource']);
+
+  mainApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('home', angularAMD.route({
+        url: '/home',
+        templateUrl: '../views/home.html',
+        controllerUrl: "controllers/dashboard2Ctr"
+      }))
+      .state('dashboard2', angularAMD.route({
+        url: '/dashboard2',
+        templateUrl: '../views/dashboard2.html',
+        controllerUrl: "controllers/dashboard2Ctr"
+      }))
+      .state('dashboard3', angularAMD.route({
+        url: '/dashboard3',
+        templateUrl: '../views/dashboard3.html',
+        controllerUrl: "controllers/dashboard2Ctr"
+      }))
+      .state('dashboard4', angularAMD.route({
+        url: '/dashboard4',
+        templateUrl: '../views/dashboard4.html',
+        controllerUrl: "controllers/dashboard2Ctr"
+      }))
+      .state('search', angularAMD.route({
+        url: '/search',
+        templateUrl: '../views/searchResult.html',
+        controllerUrl: "controllers/searchResultController"
+      }))
+      .state('catalog', angularAMD.route({
+        url: '/catalog',
+        templateUrl: '../views/catalog.html'
+      }))
+      .state('shoppingbag', angularAMD.route({
+        url: '/shoppingbag',
+        templateUrl: '../views/shoppingbag.html',
+        controllerUrl: 'controllers/allStoreCtr'
+      }))
+      .state('allstore', angularAMD.route({
+        url: '/allstore',
+        templateUrl: '../views/account/allStore.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('topten', angularAMD.route({
+        url: '/topten',
+        templateUrl: '../views/account/topTen.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('discover', angularAMD.route({
+        url: '/discover',
+        templateUrl: '../views/account/discover.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('company', angularAMD.route({
+        url: '/company',
+        templateUrl: '../views/account/company.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('policy', angularAMD.route({
+        url: '/policy',
+        templateUrl: '../views/account/policy.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('customerService', angularAMD.route({
+        url: '/customerService',
+        templateUrl: '../views/account/customerService.html',
+        controllerUrl: "controllers/customerServiceCtr"
+      }))
+      .state('following', angularAMD.route({
+        url: '/following',
+        templateUrl: '../views/account/following.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('followingSocial', angularAMD.route({
+        url: '/followingSocial',
+        templateUrl: '../views/account/followingSocial.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('myWall', angularAMD.route({
+        url: '/myWall',
+        templateUrl: '../views/account/myWall.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('followers', angularAMD.route({
+        url: '/followers',
+        templateUrl: '../views/account/followers.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('posts', angularAMD.route({
+        url: '/posts',
+        templateUrl: '../views/account/posts.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('detail', angularAMD.route({
+        url: '/detail',
+        templateUrl: '../views/detail.html',
+        controllerUrl: "controllers/detailController"
+      }))
+      .state('profile', angularAMD.route({
+        url: '/profile',
+        templateUrl: '../views/account/profile.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('follower', angularAMD.route({
+        url: '/follower',
+        templateUrl: '../views/account/follower.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('postyoulike', angularAMD.route({
+        url: '/postyoulike',
+        templateUrl: '../views/account/postyoulike.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+      .state('ssmail', angularAMD.route({
+        url: '/ssmail',
+        templateUrl: '../views/account/ssMailNotification.html',
+        controllerUrl: "controllers/allStoreCtr"
+      }))
+
+    ;
+
+    // Else
+    $urlRouterProvider
+      .otherwise('/home');
+
+
+  }]);
+
+  return angularAMD.bootstrap(mainApp);
+});

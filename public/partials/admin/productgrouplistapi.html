@@ -1,0 +1,326 @@
+<!--Admin Search Products from API-->
+
+    <div>
+
+     
+	<div class=left style="width:15%;float:left;padding-left:5%;padding-top:5%;">
+	<div class="sliderExample" style="margin-top:3vh;">
+		<div ui-slider="{range: true}" min="0.00" max="9999.00" step="0.1" use-decimals ng-model="cost.range"></div>
+	</div>
+	<a href="" ng-click="setPrice(0.00,25.00)"> Within $25 </a><br>
+	<a href="" ng-click="setPrice(25.00,50.00)"> $25 to $50</a><br>
+
+	<a href="" ng-click="setPrice(50.00,100.00)"> $50 to $100</a><br>
+	<a href="" ng-click="setPrice(100.00,200.00)"> $100 to $200</a><br>
+	<a href="" ng-click="setPrice(200.00,9999.00)">$200 & Above</a><br>
+	Minimum Price<input type=number size=6 ng-model="cost.range[0]" style="width:100px;" step="any"><br>
+	Maximum Price<input type=number size=6 ng-model="cost.range[1]" style="width:100px;" step="any"><br>
+
+<strong>Brand</strong>	<br>
+<select ng-model="select_brand" ng-change="brand_change()"> 
+   <option value="">All</option> 
+   <option value="Avon">Avon</option>
+   <option value="Generic">Generic</option>
+   <option value="Huggies">Huggies</option>
+   <option value="Mainstays">Mainstays</option>
+</select><br>
+
+
+<strong>COLOR</strong><br>
+
+<!--
+<a ng-click="toggleFilter(color)" class="color-choice red not-active" ng-repeat="color in colors" ng-if="color.count" active="color.active">
+          
+        </a>-->
+<!--
+<div class="colorpanel" style="background-color:grey;width:100%;">
+<div id=black style="height:30px;width:30px;background-color:black;float:left;margin:1px;" ng-click="setColor('black')"></div>
+
+<div id=red style="height:30px;width:30px;background-color:red;float:left;margin:1px;" ng-click="setColor('red')"></div>
+<div id=pink style="height:30px;width:30px;background-color:pink;float:left;margin:1px;" ng-click="setColor('pink')"></div>
+
+<div id=orange style="height:30px;width:30px;background-color:orange;float:left;margin:1px;" ng-click="setColor('orange')"></div>
+<div id=yellow style="height:30px;width:30px;background-color:yellow;float:left;margin:1px;" ng-click="setColor('yellow')"></div>
+
+<div id=green style="height:30px;width:30px;background-color:green;float:left;margin:1px;" ng-click="setColor('green')"></div>
+<div id=SkyBlue style="height:30px;width:30px;background-color:SkyBlue;float:left;margin:1px;" ng-click="setColor('SkyBlue')"></div>
+<div id=blue style="height:30px;width:30px;background-color:blue;float:left;margin:1px;" ng-click="setColor('blue')"></div>
+<div id=Purple style="height:30px;width:30px;background-color:Purple;float:left;margin:1px;" ng-click="setColor('Purple')"></div>
+<div id=white style="height:30px;width:30px;background-color:white;float:left;margin:1px;" ng-click="setColor('white')"></div>
+
+ 
+</div>
+<br>
+<div style="width:100%;float:left;">
+<select ng-model="select_color"  style="float:left;width:100%;">
+   <option value="">All</option> 
+
+   <option value="black">black</option>
+  <option value="red">red</option>
+   <option value="pink">pink</option>
+    <option value="orange">orange</option>
+  <option value="yellow">yellow</option>
+   <option value="green">green</option>
+    <option value="SkyBlue">SkyBlue</option>
+  <option value="blue">blue</option>
+   <option value="Purple">Purple</option>
+   <option value="white">white</option>
+   
+</select><br>
+</div>-->
+<div style="width:100%;float:left;">
+<b>Stores</b><br>
+<select ng-model="select_merchant" ng-change="merchant_change()" >
+  <option value="">All</option> 
+  <option value="Avon">Avon</option>
+  <option value="BabyEarth">BabyEarth</option>
+  
+ <option value="Bodycandy Body Jewelry">Bodycandy Body Jewelry</option>
+  <option value="Gap">Gap </option>
+
+  <option value="Overstock.com">Overstock.com </option>
+ <option value="Walmart">Walmart </option>
+   
+ <option value="7 For All Mankind"> 7 For All Mankind</option>
+<option value="Aldo">Aldo</option>
+<option value="Allen Edmonds">Allen Edmonds </option>
+<option value="American Apparel"> American Apparel</option>
+<option value="American Eagle Outfitters">American Eagle Outfitters	</option>
+<option value="Ann Taylor">Ann Taylor</option>
+<option value="Anthropologie">Anthropologie</option>
+<option value="ashford">ashford	</option>
+<option value="Athleta">Athleta	</option>
+<option value="Avon">Avon</option>
+<option value="BabyEarth">BabyEarth </option>
+<option value="Backcountry">Backcountry</option>
+<option value="Banana Republic">Banana Republic	</option>
+<option value="Barneys New York"> Barneys New York</option>
+<option value="Beauty.com">Beauty.com</option>
+<option value="bebe">bebe</option>
+<option value="Bench">Bench</option>
+<option value="BeWild">BeWild</option>
+<option value="Bloomingdale's UK">Bloomingdale's UK	</option>
+<option value="Bluefly">Bluefly</option>
+<option value="Boden">Boden </option>
+<option value="Bodycandy Body Jewelry">Bodycandy Body Jewelry</option>
+<option value="Boutique To You"> Boutique To You</option>
+<option value="Brooks Brothers"> Brooks Brothers</option>
+<option value="Buffalo David Bitton"> Buffalo David Bitton</option>
+</select>
+</div>
+
+
+
+<div style="width:100%;float:left;margin-bottom:3vh;margin-top:3vh;">
+<b>SALES & DEAL</b><br>
+   	<div class="sliderExample" style="margin-bottom:3vh;">
+		<div ui-slider="{range: true}" min="0.00" max="100.00" data-tick step="5" use-decimals ng-model="percent.range"></div>
+	</div>
+   <a href="" ng-click="setMinDiscount(1.00)">1% Off or More
+</a><br>
+   <a href="" ng-click="setMinDiscount(10.00)">10% Off or More
+</a><br>
+<a href="" ng-click="setMinDiscount(25.00)">25% Off or More</a><br>
+<a href="" ng-click="setMinDiscount(50.00)">50% Off or More
+</a><br>
+<a href="" ng-click="setMinDiscount(70.00)">70% Off or More
+</a><br>
+
+</div>
+
+ <button id="clear-filter" ng-click="clearFilter()" type="button">Clear Filter</button>
+	<h3>Filters</h3>
+	<strong>
+		{{select_dept}} <br>{{select_brand}}<br>{{select_merchant}}
+
+	</strong>
+	</div>
+    
+	<div class=middle style="width:60%;float:left;margin-top:14vh;">
+
+	
+
+<div class='container-fluid' >
+  <form method="POST" ng-submit='searching()'>
+	   
+  <!--  <pre>Search key : {{selected.keyword | json}} & {{totalRecordsAvailable}}</pre>-->
+     {{selected | json}}
+     {{ totalRecordsAvailable }} records available
+	<!-- {{numPages}}	-->
+		<select ng-model="select_dept" ng-change="update_suggestion()" style="float:left;">
+		 <option value="">All</option> 
+		<option value="*women*">women</option>
+        <option value="*men*|!*women*">men</option> <!-- will return men -->
+		 <option value="*shoe*">Shoes</option> 
+		 <option value="*accessories*">Accessories</option>
+		 <option value="*beauty*">Beauty</option> 
+		 <option value="*kid*">Kids</option>
+		 <option value="*home*">Home</option> 
+		 <option value="*gift*">Gifts</option>
+		 <option value="*other*">Local Others</option>
+		</select>
+    	
+		
+		
+	
+   <input type="text" ng-model="selected" typeahead="state for state in suggestions | filter:$viewValue | limitTo:9" class="form-control" name="search" autocomplete="off" style="width:50%;float:left;" >
+    
+	
+	
+	
+	<div style="float:left;width:100%;">
+	  	
+		<strong>Sort By</strong>
+
+		<select ng-model="selected_sorting" ng-change="update_sorting()" >
+		<option value="keyword">title</option>
+	     <option value="relevance">relevance</option> <!-- will return men -->
+		 <option value="brand">brand</option> 
+		 <option value="merchant">merchant</option>
+		 <option value="merchantId">merchantId</option> 
+		 <option value="price">price</option>
+		 <option value="price_sale">price_sale</option> 
+		 <option value="minPrice">minPrice</option>
+		 <option value="maxPrice">maxPrice</option>
+		  <option value="minPriceSale">minPriceSale</option>
+		 <option value="maxPriceSale">maxPriceSale</option> 
+		 <option value="percentOff">percentOff</option>
+		 <option value="groupCount">groupCount</option>
+	    </select>
+		
+
+  <select ng-model="sortorder" ng-change="update_sort_order()" >
+    <option value="+asc">Ascending</option>
+    <option value="+desc">Descending</option>
+
+  </select>
+
+		
+		<strong>Group By</strong>
+		<select ng-model="selected_groupby" ng-change="update_groupby()">
+		 <option value="">All</option>
+		 <option value="merchant">merchant</option>
+		 <option value="merchantId">merchantId</option> 
+		 <option value="productId">productId</option> 
+
+	    </select>
+	
+       <input type=submit value="Search" style="float:left;">
+    </div>
+
+
+
+  </form>
+  
+   <!-- <input type="text" ng-model="selected.keyword" typeahead="state.keyword for state in countries | filter:$viewValue | limitTo:9" class="form-control" name="search" autocomplete="off" >-->
+
+   
+  
+  
+  
+    <!--<input type=button value="Save" ng-click="saveproducts()">-->
+
+   <!--  {{total_record}} Records
+    {{totalRecordsAvailable}} -->
+ 
+ <!--
+ <div ng-repeat="pro in countries | filter:selected |filter:{category: select_dept, brand:select_brand,merchant:select_merchant,color:select_color} | filter:priceFilter | filter:percentFilter" class=lft style="width:30%;padding:5%;float:left;">
+       <br>
+  
+   <h3><a href="/product/{{pro.catalogId }}&api_key=0da1ade1627ce72127d551d52d5b55e7"> {{ pro.name }} </a> </h3>
+      
+
+    
+    
+    <a href="/product/{{ pro.catalogId }}&api_key=0da1ade1627ce72127d551d52d5b55e7" id="productx">
+    <img src="{{pro.image_url}}" alt="{{pro.name }}" title="{{pro.name }}" class="search-result-item-image" style="width:100%;"></a>  
+        <br> 
+       
+     Brand {{ pro.brand }} <br>
+     category {{ pro.category }} <br>
+    
+	 <div ng-show="pro.discount">
+	  Price {{ pro.currency }} {{ pro.saleprice }} <strike>{{ pro.currency }} {{ pro.price }}</strike>   <br>
+     </div>
+      <div ng-hide="pro.discount">
+	 {{ pro.currency }} {{ pro.price }}
+	  </div>
+	       Color {{ pro.color }} <br>
+
+     Merchant {{ pro.merchant }} <br>
+     CatalogId {{ pro.catalogId }} <br>
+
+     <a href="{{ pro.affiliate_url }}"> Visit Product web Site </a>
+    
+    
+    
+    </div> -->
+	
+	<!--<div ng-repeat="pro in countries |filter:{keyword:selected.keyword, category: select_dept, brand:select_brand,merchant:select_merchant} | filter:priceFilter | filter:percentFilter" class=lft style="width:30%;padding:5%;float:left;">
+   -->
+	
+	<!--<div ng-repeat="pro in countries |filter:{category: select_dept, brand:select_brand,merchant:select_merchant} | filter:priceFilter | filter:percentFilter" class=lft style="width:30%;padding:5%;float:left;">-->
+	
+	<!--Api returned product -->
+	<div ng-repeat="pro in products" class=lft style="width:30%;padding:5%;float:left;">
+    <h1 style="font-size:100%;"><a ng-href="#/apiproduct/{{pro.productId}}"> {{ pro.keyword }} </a> </h1>
+	<img src="{{pro.image_url}}" alt="{{pro.name }}" title="{{pro.name }}" class="search-result-item-image" style="width:100%;"></a>  
+     Brand {{ pro.brand }} <br>
+     category {{ pro.category }} <br>
+    	
+ <div ng-hide="pro.price_sale ==''">Price {{ pro.currency }} {{ pro.price_sale }} <strike>{{ pro.currency }} {{ pro.price }}</strike> 
+ </div>
+<div ng-show="pro.price_sale ==''">{{ pro.currency }} {{ pro.price }}
+</div> 
+    Merchant {{ pro.merchant }} <br>
+    <!-- CatalogId {{ pro.catalogId }} <br>-->
+     productId {{ pro.productId }} <br>
+	 source  {{pro.groupCount}}
+	 
+    <!-- <a ng-href="{{ pro.affiliate_url }}"> Visit Product web Site </a> -->
+  
+   </div>
+	
+ </div>	
+	
+<!--<input type=text ng-model="nametest" name="nametest"> -->
+      
+
+	<div style="width:100%;">
+<!--   
+   <h4>Default</h4>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+    <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
+    <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></pagination>
+    <pre>The selected page no: {{currentPage}}</pre>
+    <button class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>
+-->
+   
+   <!-- <pager total-items="bigTotalItems" ng-model="bigCurrentPage" style="display: inline;"></pager>-->
+  
+
+    <pagination total-items="totalRecordsAvailable" ng-model="CurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="limit" ng-change="pageChanged()"></pagination>
+  <pre>Page: {{CurrentPage}} / {{numPages}}</pre>
+    </div>
+<!-- Used to disable the pagination component
+    total-items  : Total number of items in all pages.
+    items-per-page  (Defaults: 10) : Maximum number of items per page. A value less than one indicates all items on one page.
+    max-size  (Defaults: null) : Limit number for pagination size.
+    num-pages readonly (Defaults: angular.noop) : An optional expression assigned the total number of pages to display.
+     rotate (Defaults: true) : Whether to keep current page in the middle of the visible ones.
+    direction-links (Default: true) : Whether to display Previous / Next buttons.
+    previous-text (Default: 'Previous') : Text for Previous button.
+    next-text (Default: 'Next') : Text for Next button.
+    boundary-links (Default: false) : Whether to display First / Last buttons.
+    first-text (Default: 'First') : Text for First button.
+    last-text (Default: 'Last') : Text for Last button.
+ -->
+   <div class=right style="width:5%;float:left;">
+
+
+    </div>
+
+
+ 
+   </div>

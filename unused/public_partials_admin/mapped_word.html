@@ -1,0 +1,125 @@
+
+<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+	<div class='container-fluid' >
+		<h3>Mapped a word to Categories</h3>
+		<p>Description</p>
+		<p> This will mapped a specific key word to some categories, . </p>
+		<p> For Create >>
+		<ul>
+			<li>Step 1. click new for refresh </li>
+			<li>Step 2. write down your desired word(should be unique name)</li>
+			<li>Step 3. select categorylist from bottom by clicking checkboxes</li>
+
+
+			<li>Step 4. Click Create</li>
+		</p>
+		<p> For Edit >>
+			click specific item's edit option .
+
+		<ul>
+			<li>Step 1. click edit button beside the word</li>
+			<li>Step 2. Click Update</li>
+
+		</ul>
+
+
+		</p>
+
+		<p> For Delete >>
+			click specific item's delete option .
+
+
+
+		</p>
+
+
+
+
+
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br><br>
+
+
+
+
+
+
+		<ul style="list-style:none;">
+
+
+
+
+			<li ng-repeat="cate in mapped_word track by $index">
+				<label for="catPartial{{cate.cid}}">{{cate.category}}
+				</label> <a ng-click="edit_category(cate)">&nbsp; Edit  </a> |
+
+
+				<a ng-click="dCatg(cate)">Delete</a> |  {{cate.position}}
+				
+			</li>
+		</ul>
+
+		<h3>Write the Word </h3>
+
+		<input type=text ng-model="category_name">
+		<br>		<br>
+		<input type=button ng-click="refresh_category()" value="New">
+		<input type=button ng-click="create_custom_mapping(category_name,selectedCategoryListObj)" value="Create">
+		<!--<input type=button ng-click="edit_custom_category()" value="update">	-->
+
+
+		<br>
+		<br>
+		<div ng-class="{'ss_loading' : !loaddoneEdit}">
+
+
+			<ul style="list-style:none;">
+				<li ng-repeat="selected_cat in selectedCategoryListObj track by $index" >
+
+					<input id="s_cat{{selected_cat.categoryId}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catForEdit[selected_cat.categoryId]" ng-click="changeCategoryListSelected(selected_cat,catForEdit[selected_cat.categoryId])">
+					<label for="s_cat{{selected_cat.categoryId}}"> {{selected_cat.category}}
+					</label>  ({{selected_cat.numProducts}})
+
+				</li>
+			</ul>
+
+		</div>
+
+		<br> <br>
+		<a ng-click="clearSelected()">Clear Selected</a> <br><br>
+
+
+		<h3>Select Category From Bottom for word mapping purpose</h3>
+		<input ng-model="search.category" type="text" ng-model-options="{debounce: 1000}">
+
+		<br><br><br>
+
+		<input type=hidden ng-model="lmt" ng-change="change_limit()" ng-model-options="{debounce:1000}" ng-blur="have_intvalue()">
+
+
+		<div id="catall" ng-class="{'ss_loading' : !loaddone}">
+
+			<ul style="list-style:none;" >
+
+
+				<li ng-repeat="catP in prosperent_catList|filter:search track by $index">
+					<input id="catPros{{catP.categoryId}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="allcategory[catP.categoryId]" ng-click="changeCategoryList(catP,allcategory[catP.categoryId])">
+					<label for="catPros{{catP.categoryId}}"> {{catP.category}} ({{catP.numProducts}})
+					</label>
+
+				</li>
+			</ul>
+		</div>
+
+		<ul uib-pagination total-items="totalRecordsAvailable" ng-model="CurrentPage" max-size="20" ng-change="pageChangedCategory()" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="lmt"></ul>
+		<pre>Page: {{CurrentPage}} / {{numPages}}</pre>
+
+	</div>
+</div>
+
+<!-- end: REGISTRATION -->
+
+		
+	
+
+

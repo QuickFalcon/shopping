@@ -1,0 +1,214 @@
+top - 05:15:01 up 157 days, 14:27,  1 user,  load average: 0.13, 0.12, 0.05
+Tasks: 207 total,   1 running, 203 sleeping,   2 stopped,   1 zombie
+%Cpu(s): 14.5 us, 21.7 sy,  0.0 ni, 54.7 id,  9.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   4046732 total,  3870672 used,   176060 free,    53796 buffers
+KiB Swap:  4194300 total,   981292 used,  3213008 free.   979052 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 1304 gitlab-+  20   0   49860   4496   1312 S   6.5  0.1   1688:29 redis-server
+    1 root      20   0   33648   2320   1188 S   0.0  0.1   1:02.78 init
+    2 root      20   0       0      0      0 S   0.0  0.0   0:19.66 kthreadd
+    3 root      20   0       0      0      0 S   0.0  0.0   1:07.71 ksoftirqd/0
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0H
+    7 root      20   0       0      0      0 S   0.0  0.0 178:43.10 rcu_sched
+    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0.0  0.0   0:33.38 migration/0
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:44.81 watchdog/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:49.11 watchdog/1
+   12 root      rt   0       0      0      0 S   0.0  0.0   0:33.36 migration/1
+   13 root      20   0       0      0      0 S   0.0  0.0   1:01.64 ksoftirqd/1
+   15 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:0H
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   17 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 netns
+   18 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 perf
+   19 root      20   0       0      0      0 S   0.0  0.0   0:06.58 khungtaskd
+   20 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 writeback
+   21 root      25   5       0      0      0 S   0.0  0.0   0:00.00 ksmd
+   22 root      39  19       0      0      0 S   0.0  0.0   2:12.72 khugepaged
+   23 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 crypto
+   24 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kintegrityd
+   25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   26 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kblockd
+   27 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ata_sff
+   28 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 md
+   29 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 devfreq_wq
+   34 root      20   0       0      0      0 S   0.0  0.0  49433:04 kswapd0
+   35 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 vmstat
+   36 root      20   0       0      0      0 S   0.0  0.0   0:00.00 fsnotify_mark
+   37 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ecryptfs-kthrea
+   53 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kthrotld
+   54 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 acpi_thermal_pm
+   55 root      20   0       0      0      0 S   0.0  0.0   0:00.00 vballoon
+   56 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   57 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   58 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   59 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   60 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   61 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   62 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   63 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   64 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   65 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   66 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   67 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   68 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   69 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   70 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   71 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   72 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   73 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   74 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   75 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   76 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   77 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   78 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   79 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   80 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+   81 root      20   0       0      0      0 S   0.0  0.0   0:00.00 scsi_eh_0
+   82 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 scsi_tmf_0
+   83 root      20   0       0      0      0 S   0.0  0.0   0:00.00 scsi_eh_1
+   84 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 scsi_tmf_1
+   90 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ipv6_addrconf
+  103 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 deferwq
+  104 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 charger_manager
+  149 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  150 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  151 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  153 root      20   0       0      0      0 S   0.0  0.0   0:00.00 scsi_eh_2
+  154 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  155 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 scsi_tmf_2
+  156 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  157 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kpsmoused
+  159 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  162 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  166 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset
+  191 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ttm_swap
+  200 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 qxl_gc
+  477 root      20   0       0      0      0 S   0.0  0.0   6:46.39 jbd2/vda1-8
+  478 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 ext4-rsv-conver
+  578 www-data  20   0  393648  20168   8848 S   0.0  0.5   0:27.00 apache2
+  579 www-data  20   0  392620  19252   8952 S   0.0  0.5   0:13.73 apache2
+  581 www-data  20   0  392600  18880   8892 S   0.0  0.5   1:12.07 apache2
+  582 www-data  20   0  392784  19120   8916 S   0.0  0.5   1:31.91 apache2
+  583 www-data  20   0  392900  19512   8932 S   0.0  0.5   0:50.23 apache2
+  723 root      20   0   19608    728    596 S   0.0  0.0   0:00.30 upstart-udev-br
+  730 root       0 -20       0      0      0 S   0.0  0.0   0:22.80 kworker/0:1H
+  732 root      20   0   51944     40     40 S   0.0  0.0   0:00.04 systemd-udevd
+  789 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kvm-irqfd-clean
+  798 www-data  20   0  392972  18932   8284 S   0.0  0.5   0:33.98 apache2
+  984 root      20   0   15396    248    124 S   0.0  0.0   0:00.23 upstart-socket-
+  999 root       0 -20       0      0      0 S   0.0  0.0   0:21.31 kworker/1:1H
+ 1060 www-data  20   0  391788  17740   8284 S   0.0  0.4   1:08.35 apache2
+ 1072 root      20   0   52376   6768   1932 S   0.0  0.2 516:15.13 gitlab-ci-multi
+ 1100 message+  20   0   39244   1340   1136 S   0.0  0.0   0:00.57 dbus-daemon
+ 1134 root      20   0   43452   1680   1520 S   0.0  0.0   0:00.28 systemd-logind
+ 1136 syslog    20   0  256616  31412    980 S   0.0  0.8   4:20.19 rsyslogd
+ 1185 root      20   0   15412    160     48 S   0.0  0.0   0:00.20 upstart-file-br
+ 1286 root      20   0    4368     24      0 S   0.0  0.0   2:12.23 runsvdir
+ 1288 root      20   0    4216     68     64 S   0.0  0.0   0:00.53 runsv
+ 1289 root      20   0    4216      0      0 S   0.0  0.0   0:00.51 runsv
+ 1290 root      20   0    4216      0      0 S   0.0  0.0   0:00.59 runsv
+ 1291 root      20   0    4216    388    360 S   0.0  0.0   0:03.23 runsv
+ 1292 root      20   0    4216      0      0 S   0.0  0.0   0:00.50 runsv
+ 1293 root      20   0    4216      0      0 S   0.0  0.0   0:00.52 runsv
+ 1294 root      20   0    4216      0      0 S   0.0  0.0   0:00.51 runsv
+ 1295 root      20   0   16060     40     36 S   0.0  0.0   0:00.00 getty
+ 1296 root      20   0    4360    640    596 S   0.0  0.0   0:02.66 svlogd
+ 1297 root      20   0    4360    612    568 S   0.0  0.0   7:42.18 svlogd
+ 1298 root      20   0    4360      0      0 S   0.0  0.0   0:00.33 svlogd
+ 1299 root      20   0    4360    388    344 S   0.0  0.0   0:00.43 svlogd
+ 1300 root      20   0    4360    668    624 S   0.0  0.0   0:40.67 svlogd
+ 1301 root      20   0    4360      0      0 S   0.0  0.0   0:00.36 svlogd
+ 1303 root      20   0   42160    152     48 S   0.0  0.0   0:00.06 nginx
+ 1306 git       20   0  389596   9644   3252 S   0.0  0.2 176:58.57 gitlab-workhors
+ 1307 root      20   0    4360      0      0 S   0.0  0.0   0:00.50 svlogd
+ 1308 gitlab-+  20   0 1086944   1244   1136 S   0.0  0.0   1:11.63 postgres
+ 1309 git       20   0   18032   1108    956 S   0.0  0.0  78:22.27 gitlab-unicorn-
+ 1321 root      20   0   16060     40     36 S   0.0  0.0   0:00.00 getty
+ 1338 root      20   0   16060     28     24 S   0.0  0.0   0:00.00 getty
+ 1339 root      20   0   16060     40     36 S   0.0  0.0   0:00.00 getty
+ 1343 root      20   0   16060     40     36 S   0.0  0.0   0:00.00 getty
+ 1356 gitlab-+  20   0   46832   1092    400 S   0.0  0.0  29:47.07 nginx
+ 1357 gitlab-+  20   0   46940   1940   1104 S   0.0  0.0  29:07.42 nginx
+ 1367 gitlab-+  20   0   42348    164      0 S   0.0  0.0   0:54.99 nginx
+ 1381 daemon    20   0   19140     24      0 S   0.0  0.0   0:00.16 atd
+ 1383 root      20   0   23656   1176   1056 S   0.0  0.0   0:34.96 cron
+ 1402 root      20   0   61384    776    672 S   0.0  0.0   3:22.08 sshd
+ 1405 root      20   0    4372     36     32 S   0.0  0.0   0:00.00 acpid
+ 1452 gitlab-+  20   0 1087440  26636  26412 S   0.0  0.7   2:17.46 postgres
+ 1453 gitlab-+  20   0 1087440     60      0 S   0.0  0.0   1:27.25 postgres
+ 1454 gitlab-+  20   0 1087440   3284   3160 S   0.0  0.1   1:26.74 postgres
+ 1455 gitlab-+  20   0 1088308   1916   1564 S   0.0  0.0   1:44.04 postgres
+ 1456 gitlab-+  20   0   26644    948    748 S   0.0  0.0   6:14.48 postgres
+ 1461 mysql     20   0  615848  11748      0 S   0.0  0.3  88:01.68 mysqld
+ 1476 root      20   0   85892     40      0 S   0.0  0.0   0:00.00 nginx
+ 1477 www-data  20   0   86232     72      0 S   0.0  0.0   9:32.55 nginx
+ 1478 www-data  20   0   86232     72      0 S   0.0  0.0  10:04.14 nginx
+ 1479 www-data  20   0   86232    468    260 S   0.0  0.0   8:13.79 nginx
+ 1480 www-data  20   0   86232    328     72 S   0.0  0.0   9:02.52 nginx
+ 1485 root      20   0  157052     92      0 S   0.0  0.0   0:08.28 /usr/bin/python
+ 1617 root      20   0   25344    744    640 S   0.0  0.0   1:20.97 master
+ 1622 postfix   20   0   27572    172      0 S   0.0  0.0   0:45.87 qmgr
+ 1645 root      20   0   24784    732    680 S   0.0  0.0   0:00.57 pure-ftpd
+ 1742 git       20   0  554160  26824   2220 S   0.0  0.7   0:49.09 bundle
+ 1762 nobody    20   0  157792     88      0 S   0.0  0.0   0:07.77 /usr/local/bin/
+ 2063 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kauditd
+ 2064 root      20   0   93380   2652   1288 S   0.0  0.1   4:13.29 miniserv.pl
+ 2071 root      20   0   16060     32     28 S   0.0  0.0   0:00.00 getty
+ 2218 root      20   0 1290408  76248   9080 S   0.0  1.9 176:30.91 node /SS_CRON_V
+ 2544 root      20   0  927148  25028   5176 S   0.0  0.6 168:38.18 PM2 v2.4.6: God
+ 5724 root      20   0  385136  17008  10600 S   0.0  0.4   3:26.24 apache2
+ 6866 git       20   0  866748 549128   2760 S   0.0 13.6   1852:29 bundle
+ 6885 gitlab-+  20   0 1100612    928    728 S   0.0  0.0   0:00.01 postgres
+ 7802 gitlab-+  20   0 1121620  15884   6328 S   0.0  0.4   0:01.18 postgres
+ 8805 git       20   0  722704 357792   5172 S   0.0  8.8  47:06.54 bundle
+ 8816 gitlab-+  20   0 1201592 116080  16252 S   0.0  2.9   2:13.03 postgres
+10157 www-data  20   0  393596  20176   8900 S   0.0  0.5   0:04.58 apache2
+12236 git       20   0  920900 336052   5116 S   0.0  8.3 439:18.07 bundle
+12243 gitlab-+  20   0 1303356 176820  19680 S   0.0  4.4  20:35.17 postgres
+12628 gitlab-+  20   0 1122036  17772   6280 S   0.0  0.4   0:01.17 postgres
+14109 git       20   0  942868 366920   4512 S   0.0  9.1 444:15.68 bundle
+14116 gitlab-+  20   0 1271032 182220  19508 S   0.0  4.5  20:37.60 postgres
+14205 root      20   0  107856   6560   5484 S   0.0  0.2   0:00.98 sshd
+14285 root      20   0   23100   5452   3156 S   0.0  0.1   0:00.38 bash
+14652 gitlab-+  20   0 1120072  15320   5320 S   0.0  0.4   0:01.11 postgres
+14923 root      20   0       0      0      0 S   0.0  0.0   0:46.53 kworker/1:1
+18256 gitlab-+  20   0 1111440  11352   5388 S   0.0  0.3   0:00.54 postgres
+18259 gitlab-+  20   0 1108776  12600   6528 S   0.0  0.3   0:00.51 postgres
+18260 gitlab-+  20   0 1110936  11728   6168 S   0.0  0.3   0:00.54 postgres
+18261 gitlab-+  20   0 1111168  12304   6368 S   0.0  0.3   0:00.54 postgres
+18264 gitlab-+  20   0 1110940  13240   6848 S   0.0  0.3   0:00.52 postgres
+18265 gitlab-+  20   0 1111836  12452   6428 S   0.0  0.3   0:00.55 postgres
+18268 gitlab-+  20   0 1110936  13004   6728 S   0.0  0.3   0:00.52 postgres
+18336 gitlab-+  20   0 1104456  11004   6688 S   0.0  0.3   0:00.22 postgres
+18338 gitlab-+  20   0 1106840  12292   7300 S   0.0  0.3   0:00.22 postgres
+18349 gitlab-+  20   0 1106236  11920   7432 S   0.0  0.3   0:00.22 postgres
+18368 gitlab-+  20   0 1106496  11844   7120 S   0.0  0.3   0:00.23 postgres
+18371 gitlab-+  20   0 1106424  11668   7088 S   0.0  0.3   0:00.22 postgres
+18376 gitlab-+  20   0 1104004  10192   6328 S   0.0  0.3   0:00.22 postgres
+20773 gitlab-+  20   0 1108956  11840   6696 S   0.0  0.3   0:00.42 postgres
+20776 gitlab-+  20   0 1105544  10100   5540 S   0.0  0.2   0:00.34 postgres
+20787 gitlab-+  20   0 1109004  11176   5548 S   0.0  0.3   0:00.39 postgres
+20794 gitlab-+  20   0 1108848  11792   6572 S   0.0  0.3   0:00.38 postgres
+20799 gitlab-+  20   0 1108712  12480   7092 S   0.0  0.3   0:00.38 postgres
+20811 gitlab-+  20   0 1108732  12292   6968 S   0.0  0.3   0:00.41 postgres
+21197 root      20   0       0      0      0 S   0.0  0.0   0:00.07 kworker/0:2
+21476 root      20   0       0      0      0 S   0.0  0.0   0:00.04 kworker/u4:0
+22651 root      20   0       0      0      0 S   0.0  0.0   0:00.03 kworker/u4:1
+23067 root      20   0    4448    780    696 S   0.0  0.0   0:00.00 gitlab-logrotat
+23789 root      20   0    4348    672    596 S   0.0  0.0   0:00.00 sleep
+24356 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/1:0
+24435 postfix   20   0   27408   2852   2552 S   0.0  0.1   0:00.00 pickup
+24532 root      20   0   18512   4000   2520 T   0.0  0.1   0:00.00 htop
+24533 root      20   0   23100   3860   1564 T   0.0  0.1   0:00.00 bash
+24534 root      20   0       0      0      0 Z   0.0  0.0   0:00.08 command-not-fou
+24954 root      20   0  107852   6484   5404 S   0.0  0.2   0:00.02 sshd
+24976 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/0:0
+25036 root      20   0   12964   1944   1696 S   0.0  0.0   0:00.00 sftp-server
+25591 root      20   0   62728   5300   4608 S   0.0  0.1   0:00.00 sshd
+25592 sshd      20   0   62728   2800   2088 S   0.0  0.1   0:00.00 sshd
+25593 git       20   0    4348    664    588 S   0.0  0.0   0:00.00 sleep
+25594 root      20   0   25196   2884   2420 R   0.0  0.1   0:00.00 top
+26010 root      20   0 1153920  85280   7172 S   0.0  2.1  15:21.06 node /ss_twotap
+26278 mongodb   20   0 56.479g 772484 687316 S   0.0 19.1  11156:29 mongod
+31948 root      20   0  983704  36856   5448 S   0.0  0.9  89:15.38 node /home/cron

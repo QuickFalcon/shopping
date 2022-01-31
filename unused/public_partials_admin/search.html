@@ -1,0 +1,232 @@
+<div ng-controller="TypeaheadCtrl">
+
+     
+	<div class=left style="width:15%;float:left;padding-left:5%;padding-top:5%;">
+	<b>Category</b><br>
+    <select ng-model="select_dept" ng-change="update_suggestion()">
+       <option value="">All</option> 
+   <option value="Electronics">Electronics</option>
+      <option value="Furniture">Furniture</option>
+   
+    </select>
+
+	
+	<div class="sliderExample" style="margin-top:3vh;">
+		<div ui-slider="{range: true}" min="0" max="9999" step="0.1" use-decimals ng-model="cost.range"></div>
+	</div>
+Minimum Price<input type=number size=6 name=minprice ng-model="cost.range[0]" style="width:100px;"><br>
+Maximum Price<input type=number size=6 name=maxprice ng-model="cost.range[1]" style="width:100px;"><br>
+
+<b>Brand</b>	<br>
+<select ng-model="select_brand" >
+   <option value="">All</option> 
+
+   <option value="Avon">Avon</option>
+  <option value="Generic">Generic</option>
+   <option value="Huggies">Huggies</option>
+   <option value="Mainstays">Mainstays</option>
+
+   
+    
+   
+</select><br>
+
+
+<b>COLOR</b>	<br>
+
+<!--
+<a ng-click="toggleFilter(color)" class="color-choice red not-active" ng-repeat="color in colors" ng-if="color.count" active="color.active">
+          
+        </a>-->
+<div class="colorpanel" style="background-color:grey;width:100%;">
+<div id=black style="height:30px;width:30px;background-color:black;float:left;margin:1px;" ng-click="setColor('black')"></div>
+
+<div id=red style="height:30px;width:30px;background-color:red;float:left;margin:1px;" ng-click="setColor('red')"></div>
+<div id=pink style="height:30px;width:30px;background-color:pink;float:left;margin:1px;" ng-click="setColor('pink')"></div>
+
+<div id=orange style="height:30px;width:30px;background-color:orange;float:left;margin:1px;" ng-click="setColor('orange')"></div>
+<div id=yellow style="height:30px;width:30px;background-color:yellow;float:left;margin:1px;" ng-click="setColor('yellow')"></div>
+
+<div id=green style="height:30px;width:30px;background-color:green;float:left;margin:1px;" ng-click="setColor('green')"></div>
+<div id=SkyBlue style="height:30px;width:30px;background-color:SkyBlue;float:left;margin:1px;" ng-click="setColor('SkyBlue')"></div>
+<div id=blue style="height:30px;width:30px;background-color:blue;float:left;margin:1px;" ng-click="setColor('blue')"></div>
+<div id=Purple style="height:30px;width:30px;background-color:Purple;float:left;margin:1px;" ng-click="setColor('Purple')"></div>
+<div id=white style="height:30px;width:30px;background-color:white;float:left;margin:1px;" ng-click="setColor('white')"></div>
+
+ 
+</div>
+<br>
+<div style="width:100%;float:left;">
+<select ng-model="select_color"  style="float:left;width:100%;">
+   <option value="">All</option> 
+
+   <option value="black">black</option>
+  <option value="red">red</option>
+   <option value="pink">pink</option>
+    <option value="orange">orange</option>
+  <option value="yellow">yellow</option>
+   <option value="green">green</option>
+    <option value="SkyBlue">SkyBlue</option>
+  <option value="blue">blue</option>
+   <option value="Purple">Purple</option>
+   <option value="white">white</option>
+   
+</select><br>
+</div>
+<div style="width:100%;float:left;">
+<b>Retailer</b><br>
+<select ng-model="select_merchant" >
+    <option value="">All</option> 
+
+   <option value="Avon">Avon</option>
+  <option value="BabyEarth">BabyEarth</option>
+   <option value="Overstock.com">Overstock.com </option>
+ <option value="Walmart">Walmart </option>
+   
+</select>
+</div>
+
+
+
+<div style="width:100%;float:left;margin-bottom:3vh;margin-top:3vh;">
+<b>SALES & DEAL</b><br>
+   	<div class="sliderExample">
+		<div ui-slider="{range: true}" min="0" max="100" data-tick step="5" use-decimals ng-model="percent.range"></div>
+	</div>
+   
+
+</div>
+
+
+
+
+
+	 <button id="clear-filter" ng-click="clearFilter()" type="button">Clear Filter</button>
+	
+	</div>
+    
+	<div class=middle style="width:60%;float:left;margin-top:14vh;">
+	
+	
+
+<div class='container-fluid' >
+
+
+
+  <form method="POST" ng-submit='searching()'>
+	   
+    <pre>Model: {{selected.keyword | json}}</pre>
+    
+<select ng-model="select_dept" ng-change="update_suggestion()">
+ <option value="">All</option> 
+ <option value="Electronics">Electronics</option>
+  <option value="Furniture">Furniture</option>
+   
+</select>
+
+
+    <input type="text" ng-model="selected.keyword" typeahead="state.keyword for state in countries | filter:$viewValue | limitTo:9" class="form-control" name="search" autocomplete="off" >
+   
+
+
+
+     <!--<input type=text ng-model="search">-->
+
+
+    
+	  <input type=submit value="Search">
+	
+        
+
+
+  </form>
+
+<select ng-model="save_option" ng-change="select_for_save()" >
+ <option value="" > </option>
+ <option value="manually" >Select Products Manually</option>
+
+ <option value="all">Select All Products</option>
+ <option value="current">Select Current page's Products</option>
+  <option value="clear">Clear all selection</option>
+</select>
+ <input type=submit value="click to select {{save_option}}">
+	
+	<div ng-repeat="pro in countries" class=lft style="width:30%;padding:5%;float:left;">
+
+	<h3><a href="/product/{{pro.catalogId }}"> {{ pro.keyword }} </a> </h3>
+	      <img src="{{pro.image_url}}" alt="{{pro.name }}" title="{{pro.name }}" class="search-result-item-image" style="width:100%;"></a>  
+
+ Brand {{ pro.brand }} <br>
+     category {{ pro.category }} <br>
+  	<div ng-hide="pro.price_sale ==''">Price {{ pro.currency }} {{ pro.price_sale }} <strike>{{ pro.currency }} {{ pro.price }}</strike> 
+    </div>
+	<div ng-show="pro.price_sale ==''">{{ pro.currency }} {{ pro.price }}
+	</div> 
+	
+ Merchant {{ pro.merchant }} <br>
+     CatalogId {{ pro.catalogId }} <br>
+
+     <a href="{{ pro.affiliate_url }}"> Visit Product web Site </a>
+   
+	<input type=text>
+	<input type=color>
+    Category    
+	<select>
+	  <option value=women>Women</option>
+	  	  <option value=men>Men</option>
+	  <option value=kids>Kids</option>
+	  <option value=home>Home</option>
+
+	 </select>
+	 Sub Category
+	 <select>
+	  <option value=clothing>Clothing</option>
+	  	  <option value=bags>Bags</option>
+	  <option value=shoes>Shoes</option>
+	  <option value=beauty>Beauty</option>
+	  <option value=grooming>Grooming</option>
+
+	 </select>
+	  <input ng-model={{pro.checked}} type=checkbox {{pro.checked}}> <input type=submit value=save>
+	 
+   </div>
+	
+ </div>	
+	
+<!--<input type=text ng-model="nametest" name="nametest"> -->
+      
+
+	<div style="width:100%;">
+<!--   
+   <h4>Default</h4>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+    <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
+    <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></pagination>
+    <pre>The selected page no: {{currentPage}}</pre>
+    <button class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>
+-->
+   
+   <!-- <pager total-items="bigTotalItems" ng-model="bigCurrentPage" style="display: inline;"></pager>-->
+
+	
+    <pagination total-items="totalRecordsAvailable" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"  items-per-page=120 ng-change="pageChanged()"></pagination>
+    <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+
+    </div>
+
+ 
+
+   
+  
+  
+   
+   </div>
+	
+ 
+
+   <div class=right style="width:5%;float:left;">
+
+
+    </div>
+	   <script src="assets/controller/searchcontroller.js"></script>

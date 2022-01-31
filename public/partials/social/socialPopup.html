@@ -1,0 +1,489 @@
+<div class="modal-dialog clearfix" role="document" ng-click="$parent.activePopup = -1">
+    <div class="popup-title">Share</div>
+    <!-- <div class="popup-title">SUBSCRIPTION NOTIFICATION</div> -->
+    <!-- <div class="popup-title">PROMO CODE ALERT</div> -->
+    <!-- <div class="popup-title">Price Drop alert</div> -->
+    <!-- <div class="popup-title">UPCOMING SALE ALERT</div> -->
+    <!-- <div class="popup-title">SALE ALERT! / NOTIFICATION</div> -->
+    <div class="popup-icons">
+        <a ng-href="{{vm.productLink}}" class="popup-plus">+</a>
+        <span title="Close" class="close-popup" ng-click="vm.close()">X</span>
+    </div>
+    <div class="social_popup_mid">
+
+        <form name="socialForm" ng-submit="vm.submit(socialForm)" autocomplete="off">
+            <div class="social_popup_lft">
+                <div class="ss_p_icn_ttl_lnk">
+                    <div class="ss_p_cbx_icn">
+                        <input type="checkbox" id="share_ss1" name="share" ng-model="vm.social.ssShare">
+                        <label for="share_ss1" ng-class="{checked: vm.social.ssShare}"></label>
+                        <div class="ss_icon_bdr"><i class="icon ss_icon"></i></div>
+                    </div>
+                    <div class="ss_p_tp_ttl_lnk">
+                        <div class="ss_title">Socially Shoppable</div>
+                        <div class="share_ss_gray_link copyWrap">
+                            <div><input class="copyText" id="prductLink1" ng-model="vm.productLink"></div>
+                            <div class="popUp"><a href class="btn grey_btn" data-copytarget="#prductLink1">Click to
+                                Copy</a></div>
+                        </div>
+                        <!-- <span>Paste this link to share it</span> -->
+                    </div>
+                </div>
+                <div class="socail_tab_wrap">
+                    <ul class="shared_icons tab_head socialTabHead">
+                        <li ng-click="vm.changeTab('like')" ng-class="{active: vm.activeTab==='like'}">
+                            <i class="icon grey_heart" ng-class="{activated: vm.social.shareTypes.like}"></i>
+                            <span ng-bind="vm.product.social.likes"></span>
+                        </li>
+                        <li ng-click="vm.changeTab('mail')" ng-class="{active: vm.activeTab==='mail'}">
+                            <i class="icon grey_arrow" ng-class="{activated: vm.social.shareTypes.mail}"></i>
+                            <span ng-bind="vm.product.social.mails"></span>
+                        </li>
+                        <li ng-click="vm.changeTab('collective')" ng-class="{active: vm.activeTab==='collective'}">
+                            <i class="icon grey_bag" ng-class="{activated: vm.social.shareTypes.collective}"></i>
+                            <span ng-bind="vm.product.social.collectives"></span>
+                        </li>
+                    </ul>
+                    <div class="social_content_wrap socialTabContentWrp" ng-class="!(savedone)?'ss_loading':''">
+                        <div class="social_content" ng-class="{active: vm.activeTab==='like'}"
+                             ng-show="vm.activeTab==='like'">
+                            <div class="s_content_head">
+                                <div class="total_notify">All (<span ng-bind="vm.product.likeCount"></span>)</div>
+                            </div>
+                            <div class="s_content_details like-list defaultScroll"
+                                 mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+
+
+                                <div ng-repeat="like in vm.socials.likes" class="preview-image">
+                                    <img ng-src="{{like.user.img_location}}" alt="{{like.user.displayName}}"
+                                         title="{{like.user.displayName}}" ng-if="!$root.userinfo">
+									<a href="#!/user/{{like.user._id}}" ng-if="$root.userinfo">	<img ng-src="{{like.user.img_location}}" alt="{{like.user.displayName}}"
+                                         title="{{like.user.displayName}}"> </a>
+										 
+										 
+                                </div>
+                                <a class="red_link" ng-click="vm.getAllLikes()" ng-if="!vm.hasAllLikes">More</a>
+                            </div>
+                        </div>
+                        <div class="social_content" ng-class="{active: vm.activeTab==='mail'}"
+                             ng-show="vm.activeTab==='mail'">
+                            <div class="suggns mb_hide">Share directly to a friend by typing their email and message
+                                below
+                            </div>
+                            <div class="s_content_details">
+                                <div class="s_content_left">
+                                    <input type="checkbox" id="p_email_id10" ng-model="vm.social.shareTypes.mail">
+                                    <label for="p_email_id10" ng-class="{checked: vm.social.shareTypes.mail}"><i
+                                            class="icon email_icon"></i></label>
+                                </div>
+                                <div class="s_content_right">
+
+                                    <div class="field_row">
+                                        <label for="mailTo">To</label>
+
+                                        <input id="mailTo" type="text" name="to"
+                                               placeholder="Enter email(s) separated by comma(s)" class="s_enter_mails"
+                                               ng-model="vm.social.mail.to" multiple-emails>
+                                        <div class="red pull-right" ng-if="socialForm.to.$invalid">Please enter valid
+                                            e-mails separated by comma
+                                        </div>
+
+                                    </div>
+                                    <div class="field_row">
+                                        <label for="mailFrom">From</label>
+
+                                        <input id="mailFrom" type="email" placeholder="Enter your email"
+                                               ng-model="vm.social.mail.from">
+                                    </div>
+                                    <div class="field_row">
+                                        <label for="mailSubject">Subject</label>
+
+                                        <input id="mailSubject" type="text" class="s_enter_subjt" placeholder="Subject"
+                                               ng-model="vm.social.mail.subject">
+                                    </div>
+                                    <div class="field_row">
+                                        <label>Message</label>
+                                        <textarea ng-model="vm.social.mail.message" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social_content" ng-class="{active: vm.activeTab==='collective'}"
+                             ng-show="vm.activeTab==='collective'">
+
+                            <div class="s_content_head">
+                                <div class="total_notify">All (<span ng-bind="vm.product.ratedByUser"></span>)</div>
+                                <!-- <div class="rateis" ng-class="'r' + (vm.socials.rate.average-1)"></div> -->
+                                <div class="rateis" ng-class="'r' + (vm.social.rateAvg| makePositive)"></div>
+
+                                <span>Ratings & Reviews (<span
+                                        ng-bind="((vm.product.rateAvg/2)| number : 1)"></span>)</span>
+                            </div>
+                            <ul class="social_notify_list defaultScroll" ng-if="vm.socials.comments.length">
+                                <li ng-repeat="comment in vm.socials.comments">
+                                    <div class="box-preview">
+                                        <div class="preview-image">
+                                           <img ng-src="{{comment.user.img_location}}"
+                                                 alt="{{comment.user.displayName}}"> 
+                                        </div>
+                                       <a href="#!/user/{{comment.user._id}}" ng-if="$root.userinfo">  <div ng-bind="comment.user.displayName"></div> </a>
+                                       <div ng-bind="comment.user.displayName" ng-if="!$root.userinfo"></div> 
+									  <div am-time-ago="comment.updatedAt"></div>
+                                    </div>
+                                    <div class="notify_desc">
+                                        <div class="rateis" ng-class="'r' + (comment.rateVal)"></div>
+
+                                        <div class="ss_rtg_dtls">
+                                            <p ng-bind="comment.comment"></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="rateIt_now">
+                                <div class="box-preview">
+                                    <div class="preview-image">
+                                        <img ng-src="{{$root.userinfo.img_location}}" alt="">
+                                    </div>
+                                    <div ng-if="$root.userinfo" ng-bind="$root.userinfo.displayName"></div>
+                                    <div ng-if="!$root.userinfo">(please <a href onclick="$('.login-link').click();">sign
+                                        in</a> to rate/review)
+                                    </div>
+                                </div>
+                                <div class="notify_desc">
+                                    <div class="rateis_wrp">
+                                        <div class="rateis showRate dsktp_hide" ng-class="'r' + (vm.social.rate)">
+                                            <div ng-click="vm.changeRate(1)" class="r1st"></div>
+                                            <div ng-click="vm.changeRate(2)" class="r2nd"></div>
+                                            <div ng-click="vm.changeRate(3)" class="r3rd"></div>
+                                            <div ng-click="vm.changeRate(4)" class="r4th"></div>
+                                            <div ng-click="vm.changeRate(5)" class="r5th"></div>
+                                            <div ng-click="vm.changeRate(6)" class="r6th"></div>
+                                            <div ng-click="vm.changeRate(7)" class="r7th"></div>
+                                            <div ng-click="vm.changeRate(8)" class="r8th"></div>
+                                            <div ng-click="vm.changeRate(9)" class="r9th"></div>
+                                            <div ng-click="vm.changeRate(10)" class="r10th"></div>
+                                        </div>
+                                        <div class="rateis mainRateBox" ng-class="'r' + (vm.social.rate)">
+                                            <div ng-click="vm.changeRate(1)" class="r1st"></div>
+                                            <div ng-click="vm.changeRate(2)" class="r2nd"></div>
+                                            <div ng-click="vm.changeRate(3)" class="r3rd"></div>
+                                            <div ng-click="vm.changeRate(4)" class="r4th"></div>
+                                            <div ng-click="vm.changeRate(5)" class="r5th"></div>
+                                            <div ng-click="vm.changeRate(6)" class="r6th"></div>
+                                            <div ng-click="vm.changeRate(7)" class="r7th"></div>
+                                            <div ng-click="vm.changeRate(8)" class="r8th"></div>
+                                            <div ng-click="vm.changeRate(9)" class="r9th"></div>
+                                            <div ng-click="vm.changeRate(10)" class="r10th"></div>
+                                        </div>
+                                    </div>
+                                    <span class="rate_info">
+                    Rate is:
+                    <span ng-if="vm.social.rate"><span ng-bind="vm.social.rate/2"></span> heart<span
+                            ng-if="vm.social.rate !== 2">s</span></span>
+                    <span ng-if="!vm.social.rate">(1 - 5 hearts)</span>
+                  </span>
+                                    <div class="ss_rtg_dtls">
+                                        <textarea maxlength="500" ng-model="vm.social.comment"
+                                                  placeholder="Leave a review here...                               #HAPPYSHOPPING!"></textarea>
+                                        <div class="txt-limit txtRight"><span ng-bind="vm.social.comment.length"></span>/500
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social_uploader_wrap">
+                                <div>
+                                    <h3 class="collective_logo">collective</h3>
+
+                                    <div class="upload-thumb-wrap" ng-class="{not_uplaoded: !vm.socials.photos.length,'hide':!$scope.loggedin }">
+                                        <!-- After upload a photo remove class 'not_uplaoded' -->
+                                        <div class="upload-btn-wrp" ng-class="{popUpshow : $parent.activePopup === '1'}"
+                                             ng-click="$parent.showPopupFn($event,'1')">
+                                            <div class="upload_photo_btn"></div>
+                                            <photo-upload changed="vm.savePhoto(photo)" type="product"
+                                                          catalog-id="vm.social.catalogId"
+                                                          allow="['upload']"></photo-upload>
+                                        </div>
+
+
+                                        <div class="upload-thumb-list" id="uploadedCollectives"></div>
+                                        <div class="hide" id="uploadedCollectivesData">
+                                            <ul class="slides">
+                                                <li ng-repeat="photo in vm.socials.photos track by $index">
+                                                    <div class="upload_img_wrp">
+                                                        <i class="icon ss_icon"></i>
+                                                        <div class="upload_img">
+                                                            <img ng-src="{{photo.photo}}" alt="">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="upload-thumb-wrap not_uplaoded"  ng-click="vm.checkLogin()" ng-class="!$scope.loggedin ? 'ss_LogIn show' : 'hide'">
+                                        <!-- After upload a photo remove class 'not_uplaoded' -->
+                                        <div class="upload-btn-wrp" ng-class="{popUpshow : $parent.activePopup === '1'}">
+                                            <div class="upload_photo_btn"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social_popup_rht">
+                <div class="uplaoded_product_thumb" ng-class="{popUpshow : $parent.activePopup === '2'}">
+                    <div class="thumb_viewer_wrap" id="withUploadPhoto"
+                         ng-class="{invisible:!vm.socials.photos.length}"></div>
+                    <div class="hide" id="withCollectiveSliderData">
+                        <ul class="upload-thumb-list slides">
+                            <li ng-repeat="photo in vm.socials.photos track by $index">
+                                <div class="leaf_inner">
+                                    <i class="icon ss_icon"></i>
+                                    <div class="upload-photo"
+                                         ng-style="{'background-image':'url(' + photo.photo + ')'}"></div>
+                                </div>
+                            </li>
+                            <li ng-repeat="proImage in socialProductImgUrl">
+                                <div ng-style="{'background-image':'url(' + proImage + ')'}"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="thumb_viewer_wrap" id="withoutUploadPhoto"
+                         ng-class="{invisible : vm.socials.photos.length}">
+                        <ul class="upload-thumb-list slides">
+                            <li>
+                                <div class="leaf_inner">
+                                    <i class="icon ss_icon"></i>
+                                    <div><img
+                                            ng-src="images/upload_img_{{$root.userinfo.gender === 1 ? 'men' : 'women'}}.jpg"
+                                            alt=""></div>
+                                    <div class="upload_photo_btn_wrp">
+                                        <div class="upload_photo_btn" ng-click="$parent.showPopupFn($event,'2')"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li ng-repeat="proImage in socialProductImgUrl">
+                                <div ng-style="{'background-image':'url(' + proImage + ')'}"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <photo-upload changed="vm.savePhoto(photo)" type="product" catalog-id="vm.social.catalogId"
+                                  allow="['upload']"></photo-upload>
+
+                    <div class="thumb_pagination">
+                        <span class="current-slide">1</span> of <span
+                            ng-bind="socialProductImgUrl.length + (vm.socials.photos.length ? vm.socials.photos.length : 1)"></span>
+                        <span class="choose_one">Choose a thumbnail</span>
+                    </div>
+                </div>
+
+                <div class="inline-field">
+                    <input type="checkbox" id="onfly-popup_no_thumb1" ng-model="vm.social.noThumbnail">
+                    <label for="onfly-popup_no_thumb1" ng-class="{checked: vm.social.noThumbnail}">No Thumbnail</label>
+                </div>
+                <div class="prdt_details">
+
+                    <div class="product_pp_pname subs_hide">
+                        <div><a ng-href="{{vm.productLink}}" ng-bind="vm.product.keyword"></a></div>
+                        <div><a ng-bind="vm.product.brand"></a></div>
+                        <div><a ng-href="#!/storechosen/{{vm.product.merchant}}" ng-bind="vm.product.merchant"></a>
+                        </div>
+                    </div>
+
+                    <div class="wrap subs_show"
+                         ng-if="vm.product.price_sale>-1 && vm.product.price_sale!=null &&  vm.product.price_sale!=''">
+                        <!-- for promotion in mail page -->
+                        <!-- <div class="text-uppercase italic"><strong>SUBSCRIPTION NOTIFICATION</strong></div> -->
+                        <!-- <div class="text-uppercase italic"><strong>Promo code alert!</strong></div> -->
+                        <!-- <div class="text-uppercase italic"><strong>Price Drop alert!</strong></div> -->
+                        <!-- <div class="text-uppercase italic"><strong>Upcoming Sale alert!</strong></div> -->
+                        <div class="text-uppercase italic">SALE ALERT! / NOTIFICATION</div>
+
+                        <div class="lightgrey italic"><a ng-href="#!/storechosen/{{vm.product.merchant}}"
+                                                         ng-bind="vm.product.merchant"></a></div>
+                        <!-- <div class="lightgrey italic">2 hrs</div> -->
+
+                    </div>
+
+
+                    <div class="share_ss_gray_link copyWrap">
+                        <div><input class="copyText" id="website2" ng-model="vm.productLink"></div>
+                        <div class="popUp"><a href class="btn grey_btn" data-copytarget="#website2">Click to Copy</a>
+                        </div>
+                    </div>
+                    <div class="product_pp_p_desc subs_hide">
+                        <p dotdotdot style="height:55px" ng-bind-html="vm.product.description"></p>
+                    </div>
+
+                    <div class="sale_price_wrp subs_show"
+                         ng-if="vm.product.price_sale>-1 && vm.product.price_sale!=null &&  vm.product.price_sale!=''">
+                        <!-- for promotion in mail page -->
+                        <i class="icon-notify"></i>
+                        <div class="sale_price">
+                            <!-- <div>Valentine's Day Sale 2/10/14</div> -->
+                            <div class="lightgrey">#HappyShopping #SocShop</div>
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="shared_icons atAglance">
+                    <li>
+
+                        <input type="checkbox" id="hearta" ng-model="vm.social.shareTypes.like"
+                               ng-click="vm.willthatremoveLike(vm.social.shareTypes.like,vm.social.initial.like)">
+                        <label for="hearta" ng-class="{checked: vm.social.shareTypes.like}"><i class="icon grey_heart"
+                                                                                               ng-class="{activated: vm.social.shareTypes.like}"></i></label>
+
+                    </li>
+                    <li>
+                        <input type="checkbox" id="arrowa" ng-model="vm.social.shareTypes.mail">
+                        <label for="arrowa" ng-class="{checked: vm.social.shareTypes.mail}"><i class="icon grey_arrow"
+                                                                                               ng-class="{activated: vm.social.shareTypes.mail}"></i></label>
+
+                    </li>
+                    <li>
+                        <input type="checkbox" id="baga" ng-model="vm.social.shareTypes.collective"
+                               ng-click="vm.willthatremoveReview(vm.social.shareTypes.collective,vm.social.initial.rate)">
+                        <label for="baga" ng-class="{checked: vm.social.shareTypes.collective}"><i class="icon grey_bag"
+                                                                                                   ng-class="{activated: vm.social.shareTypes.collective}"></i></label>
+                    </li>
+                </ul>
+
+
+                <div class="ss_p_btn">
+                    <!-- <button type="submit" class="btn black_btn" ng-disabled="!$root.userinfo">Share</button> -->
+                    <button type="submit" class="btn black_btn" ng-disabled="socialForm.$invalid || (vm.social.shareTypes.collective && !vm.social.rate) || (!$root.userinfo && ((vm.social.shareTypes.collective) || (vm.social.shareTypes.like) ||( vm.socials.photos.length)))|| (!$root.userinfo)||(vm.social.shareTypes.mail &&  ((vm.social.mail.to==''|| vm.social.mail.to==undefined ) &&  ((vm.social.fbShare== undefined || !(vm.social.fbShare))
+&& (vm.social.twShare== undefined || !(vm.social.twShare)) &&	(vm.social.insShare== undefined || !(vm.social.insShare))) ))">
+                        Share
+                    </button>
+
+
+                    <a ng-click="vm.close()" class="btn cancel_btn">Cancel</a>
+                    <div class="instruction p_t_10 center">
+                        <span ng-if="!$root.userinfo" class="red">Please <a href onclick="$('.login-link').click();">sign in</a> to comment & favourite</span>
+                        <span ng-if="$root.userinfo && vm.social.shareTypes.collective && !vm.social.rate" class="red">Please leave a rating with your comment</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="other_sicn_wrp">
+        <div class="other_sicn">
+            <input type="checkbox" id="fb_spopup1" name="fb_spopup1" ng-click="vm.checkLogin('facebook')">
+            <label for="fb_spopup1" ng-class="{checked: vm.social.fbShare}" ng-show="$root.userinfo"><i
+                    class="icon s_fb"></i>Facebook</label>
+
+            <label ng-show="!$root.userinfo"><i class="icon s_fb"></i><a href="" onclick="$('.login-link').click();">Facebook</a></label>
+
+
+            <div class="share-box" ng-class="{show: vm.social.fbShare}">
+
+                <textarea ng-model="vm.social.facebook.message"></textarea>
+                <div class="thumb_viewer_wrap" fb-slider id="fbSlider"></div>
+                <div id="fbSlData" class="hide">
+                    <ul class="upload-thumb-list slides">
+                        <li ng-repeat="proImage in socialProductImgUrl">
+                            <span class="table">
+                                <span class="table-cell">
+                                    <img ng-src="{{proImage}}">
+                                </span>
+                            </span>
+                        </li>
+                        <li ng-repeat="img_item in vm.socials.photos track by $index">
+                            <img ng-src="{{img_item.photo}}" class="panzoom" alt="{{ vm.product.keyword}}">
+                        </li>
+                        <!--<li ng-repeat="twImg in twttrImgUrl">
+                          <img ng-src="{{twImg}}">
+                        </li>-->
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="other_sicn">
+            <input type="checkbox" id="fb_spopup2" name="fb_spopup2" ng-click="vm.checkLogin('twitter')">
+            <label for="fb_spopup2" ng-class="{checked: vm.social.twShare}" ng-show="$root.userinfo"><i
+                    class="icon s_twitter"></i>Twitter</label>
+            <label ng-show="!$root.userinfo"><i class="icon s_twitter"></i><a href=""
+                                                                              onclick="$('.login-link').click();">Twitter</a></label>
+
+            <div class="share-box" ng-class="{show: vm.social.twShare}">
+
+                <textarea ng-model="vm.social.twitter.message" maxlength="110"></textarea>
+                <div class="txt-limit txtRight"><span ng-bind="vm.social.twitter.message.length"></span>/110</div>
+                <div class="thumb_viewer_wrap" twttr-slider id="twSlider"> </div>
+                <div id="twitterSlData" class="hide">
+                    <ul class="upload-thumb-list slides">
+                        <li ng-repeat="proImage in socialProductImgUrl">
+                            <span class="table">
+                                <span class="table-cell">
+                                    <img ng-src="{{proImage}}">
+                                </span>
+                            </span>
+                        </li>
+                        <li ng-repeat="img_item in vm.socials.photos track by $index">
+                            <img ng-src="{{img_item.photo}}" class="panzoom" alt="{{ vm.product.keyword}}">
+                        </li>
+                        <!--<li ng-repeat="twImg in twttrImgUrl">
+                          <img ng-src="{{twImg}}">
+                        </li>-->
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="other_sicn">
+            <input type="checkbox" id="fb_spopup3" name="fb_spopup3" ng-click="vm.checkLogin('instagram')">
+            <label for="fb_spopup3" ng-class="{checked: vm.social.insShare}" ng-show="$root.userinfo"><i
+                    class="icon s_pinterst"></i>Instagram</label>
+            <label ng-show="!$root.userinfo"><i class="icon s_pinterst"></i><a href=""
+                                                                               onclick="$('.login-link').click();">Instagram</a></label>
+
+
+            <div class="share-box" ng-class="{show: vm.social.insShare}">
+
+                <!-- <div ng-if="vm.social.instaLogin" class="insta-credential showTooltip"> -->
+                <div class="insta-credential showTooltip">
+
+                    <!-- only show login when does not have that cookie info -->
+                    <input type="email" ng-model="vm.social.instagram.email" placeholder="Enter Your Email">
+                    <input type="password" ng-model="vm.social.instagram.password" placeholder="Enter Password">
+                    <div class="e-tooltip" elm-center>Why do we ask for your password? Instagram does not easily allow
+                        to publish content from outside the application. To avoid storing your password, we will ask for
+                        it every time.
+                    </div>
+                </div>
+                <textarea ng-model="vm.social.instagram.message"></textarea>
+
+                <div class="thumb_viewer_wrap" insta-slider id="inSlider"> </div>
+
+
+                <div id="instaSlData" class="hide">
+                    <ul class="upload-thumb-list slides">
+                        <li ng-repeat="proImage in socialProductImgUrl">
+                            <span class="table">
+                                <span class="table-cell">
+                                    <img ng-src="{{proImage}}">
+                                </span>
+                            </span>
+                        </li>
+                        <li ng-repeat="img_item in vm.socials.photos track by $index">
+                            <img ng-src="{{img_item.photo}}" class="panzoom" alt="{{ vm.product.keyword}}">
+                        </li>
+                        <!--<li ng-repeat="twImg in twttrImgUrl">
+                          <img ng-src="{{twImg}}">
+                        </li>-->
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

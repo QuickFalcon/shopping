@@ -1,0 +1,34 @@
+
+	<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+		<div class='container-fluid' >
+         <h3>Synchronize Brands</h3>
+		 <p>Description</p>
+		<p>  <input ng-model="fileName"> file will import all  Brands inside our database. You can any other file inside resourece folder and specify the file over there </p>
+		
+		<input type=button ng-click="sync_brands()" value="Import Brands">	
+		&nbsp;	
+		<input type=button ng-click="delete_brands()" value="Delete All Brands">		  
+		<!-- <input type=button ng-click="count_brand_item()" value="Count Products">		   -->
+        
+		<ul style="list-style:none;margin-top:4em;">
+			<li ng-repeat="brd in brandList track by $index" >
+
+			 <input ng-model="brd['brand']"> 
+			<button ng-click="updateBrand(brd,$index)">  Update</button> 
+			<button ng-click="deleteSpecificBrand(brd,$index)"> Delete </button> 
+			({{brd.numProducts}})
+			</li>
+		
+		    <li><a ng-click="generateAllBrands()">See More ... </a></li>
+
+		</ul>
+
+		
+		</div>
+	</div>
+		<!-- end: REGISTRATION -->
+
+		
+		
+
+

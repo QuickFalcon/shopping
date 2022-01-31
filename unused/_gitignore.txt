@@ -1,0 +1,37 @@
+# Logs and databases #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+misc/
+node_modules/
+node_modulesS/
+public/lib_js/
+public/lib/
+public/custom_scripts/
+public/assets/controller/customizeshopcontroller.js
+public/assets/controller/backup/
+public/images_capture/
+public/images_fromUrl/
+public/images_store/
+public/images_store1/
+public/images_upload/
+public/images_url_screen/
+public/images_urltoimage/
+public/images_webkit/
+public/images_webshot2/
+public/images_webshot/*
+!public/images_webshot/readme.txt
+public/uploads/
+hello.js
+stoe.csv

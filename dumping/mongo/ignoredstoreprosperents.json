@@ -1,0 +1,54 @@
+{ 
+    "_id" : ObjectId("58124d6de63b7e2150674400"), 
+    "merchant" : "Barneys New York", 
+    "domain" : "barneys.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58215df2155f707b4394f0c6"), 
+    "merchant" : "Bluefly", 
+    "domain" : "bluefly.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58215f1e155f707b4394f0c7"), 
+    "merchant" : "Headlineshirts.net", 
+    "domain" : "headlineshirts.net", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58215fa0155f707b4394f0c8"), 
+    "merchant" : "Claetyn Wood", 
+    "domain" : "claetynwood.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58215fca155f707b4394f0c9"), 
+    "merchant" : "Converse", 
+    "domain" : "converse.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58216013155f707b4394f0ca"), 
+    "merchant" : "Hurley", 
+    "domain" : "hurley.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58216107155f707b4394f0cb"), 
+    "merchant" : "Kohl's", 
+    "domain" : "kohls.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5821614d155f707b4394f0cc"), 
+    "merchant" : "PlanetShoes", 
+    "domain" : "planetshoes.com", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("582161ad155f707b4394f0cd"), 
+    "merchant" : "Bodycandy Body Jewelry", 
+    "domain" : "bodycandy.com", 
+    "__v" : NumberInt(0)
+}

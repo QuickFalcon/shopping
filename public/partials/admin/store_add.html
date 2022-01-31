@@ -1,0 +1,112 @@
+
+	<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+    <div class='container-fluid' >
+
+			
+			
+			
+		<div class="box-register">
+				<fieldset>
+			
+										<form name="form">
+  Single Image with validations
+  <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+    accept="image/*" ngf-max-size="20MB" ngf-min-height="100" 
+    ngf-resize="{width: 100, height: 100}">Select</div>
+  Multiple files
+  <div class="button" ngf-select ng-model="files" ngf-multiple="true">Select</div>
+  Drop files: <div ngf-drop ng-model="files" class="drop-box">Drop</div>
+  <button type="submit" ng-click="submit()">submit</button>
+</form>
+			Image thumbnail: <img ngf-thumbnail="file || '/thumb.jpg'">
+Audio preview: <audio controls ngf-src="file"></audio>
+Video preview: <video controls ngf-src="file"></video>
+
+			<form class="form-register" ng-submit="add_store()">
+
+					
+					<div class="form-group">
+						<input type="text" class="form-control" name="store_name" placeholder="Store Name" ng-model="store.store_name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="address" placeholder="Address" ng-model="store.address">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="city" placeholder="City" ng-model="store.city">
+					</div>
+						<div class="form-group">
+						<input type="text" class="form-control" name="country" placeholder="country" ng-model="store.country">
+					</div>
+						<div class="form-group">
+						<input type="text" class="form-control" name="priority" placeholder="priority to show" ng-model="store.priority">
+					</div>
+					
+					<div class="form-group">
+					
+						<input type="text" class="form-control" name="store_url" placeholder="web address" ng-model="store.store_url">
+					</div>
+					
+
+					
+					<div class="form-group">
+					<!--	<input type="text" class="form-control" name="image_url" placeholder="image url" ng-model="store.image_url"> -->
+						
+						<input type="file" class="form-control" name="image_url" placeholder="web address" ng-model="store.image_url">
+
+					</div>
+					<img src="store.image_url">
+					<div class="form-group">
+						<input type="text" class="form-control" name="thumbnail_url" placeholder="thumbnail image url" ng-model="store.thumbnail_url">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="title_img" placeholder="Image of the Shop title" ng-model="store.title_img">
+					</div>
+					
+				    <div class="form-group">
+						<input type="text" class="form-control" name="icon_url" placeholder="icon url" ng-model="store.icon_url">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" name="contact_person" placeholder="contact person" ng-model="store.contact_person">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="contact_designation" placeholder="contact person designation" ng-model="store.contact_designation">
+					</div>
+					
+					<div class="form-group">
+						<span class="input-icon">
+							<input type="email" class="form-control" name="store_email" placeholder="Email" ng-model="store.store_email">
+							<i class="fa fa-envelope"></i> </span>
+					</div>
+					<div class="form-group">
+						<span class="input-icon">
+							<input type="text" class="form-control" name="store_phone" placeholder="Phone" ng-model="store.store_phone">
+							<i class="fa fa-phone"></i> </span>
+					</div>
+					<div class="form-group">
+		               Featured Shop    <input type=checkbox ng-model="store.featured" ng-true-value="true">
+		                   	
+				     </div>
+					<!--
+					<div class="form-group">
+		                   <input type=checkbox ng-model="store.store_cat" ng-true-value="men" ng-false-value="0" value="men" ng-click="makeCat()">
+		                   	<input type=checkbox ng-model="store.store_cat" ng-true-value="women"  value="women" ng-change="makeCat()" ng-false-value="1">  
+  
+				     </div> -->
+                     {{store}} 
+
+				<input type=submit value="submit">
+				</form>
+				</fieldset>
+	
+		</div>
+			  
+			
+			</div>
+		</div>
+		<!-- end: REGISTRATION -->
+
+		
+		
+
+

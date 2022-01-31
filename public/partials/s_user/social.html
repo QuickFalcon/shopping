@@ -1,0 +1,1282 @@
+
+
+    <style>
+
+  .thumb.user {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+  }
+
+  form .progress {
+    line-height: 15px;
+  }
+
+  .cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:700px;
+    height:700px;
+    float:left;
+
+  }
+  .selectedArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:500px;
+    height:500px;
+    float:left;
+    border: 3px solid #CCC;
+
+  }
+  .progress {
+    display: inline-block;
+    width: 300px;
+    border: 3px groove #CCC;
+    margin-top: 4vh;
+    float:left
+  }
+
+  .progress div {
+    font-size: smaller;
+    background: red;
+    width: 0
+  }
+</style>
+
+
+
+    <div class="mid_content social-page">
+        <div class="container_inner clearfix">
+
+
+            <ul class="breadcrumbs no_border">
+                <li><a href="#!/mail_coupon">Mail</a></li> 
+                <!-- <li>Social</li>  -->
+            </ul>
+
+            <div class="profile-container">
+                <!-- Begin Profile Left Menu -->
+                <profile-sidebar class="profile-left"></profile-sidebar>
+
+                <!-- End Profile Left Menu -->
+                <!-- Begin Profile Content -->
+                <div class="profile-content">
+                    <div class="social_top">
+                        <div class="box-preview">
+                            <!-- <div class="preview-image"> -->
+                                <!-- <img class="preview-img"src="{{userinfo.img_location}}" alt="{{userinfo.username}}"> -->
+                            <!-- </div> -->
+                            <!-- <div class="preview-content"> -->
+                                <!-- <div class="form-group edit_username"> -->
+                                    <!-- <input type="text" value="" name="username" placeholder="{{userinfo.username}}"> -->
+                                <!-- </div> -->
+                                <!-- <div class="preview-edit"> -->
+                                    <!-- <div class="red-link edit">edit -->
+                                        <!-- <div class="upload_picture_popup popUp"> -->
+                                            <!-- <div class="upload_pto_ttl">Upload Picture</div> -->
+                                            <!-- <ul> -->
+                                                <!-- <li><a href="#"><i class="icon instagrm"></i> Import from Instagram</a></li> -->
+                                                <!-- <li><a href="#"><i class="icon pinterst"></i> Import from Pinterest</a></li> -->
+                                                <!-- <li><a href="#"><i class="icon fb"></i> Import from Facebook</a></li> -->
+                                                <!-- <li><a href="#"><i class="icon twitter"></i> Import from Twitter</a></li> -->
+                                                <!-- <li><a href="#"><i class="icon library"></i> Import from Library</a></li> -->
+                                                <!-- <li><a href="#"><i class="icon take_photo"></i> Take Photo</a></li> -->
+                                            <!-- </ul> -->
+                                            <!-- <div class="upload_cancel"><a href="">Cancel</a></div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> | -->
+                                    <!-- <div class="red-link">delete</div> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+							 <div class="preview-image uploadPhoto border-none" ng-class="{popUpshow : activePopup == '1'}" ng-click="showPopupFn($event,'1')">
+							  <div class="uploadPhoto_inner">
+								<img class="preview-img" src="{{userinfo.img_location}}" />
+							  </div>
+							  <photo-upload changed="changePhoto(photo)" type="profile"></photo-upload>
+							</div>
+							<div class="preview-content">
+							  <div class="form-group edit_username showCircle">
+								<input type="text" value="" name="username" placeholder="Username" ng-model="userinfo.username">
+								<div class="popUp">
+								  <div class="btn black_btn" ng-click="update_user()">Update</div>
+								  <a class="btn cancel_btn">Cancel</a>
+								</div>
+								<!-- search by word 'backend' in js to close the popup -->
+							  </div>
+							</div>
+							
+						
+						</div>
+                        
+			<!-- <div class="preview-image uploadPhoto border-none" ng-class="{popUpshow : activePopup == '1'}" ng-click="showPopupFn($event,'1')"> -->
+              <!-- <div class="uploadPhoto_inner"> -->
+                <!-- <img class="preview-img" src="{{userprofile.img_location}}" /> -->
+              <!-- </div> -->
+              <!-- <photo-upload changed="changePhoto(photo)" type="profile"></photo-upload> -->
+            <!-- </div> -->
+            <!-- <div class="preview-content"> -->
+              <!-- <div class="form-group edit_username showCircle"> -->
+                <!-- <input type="text" value="" name="username" placeholder="Username" ng-model="userprofile.username"> -->
+                <!-- <div class="popUp"> -->
+                  <!-- <div class="btn black_btn" ng-click="update_user()">Update</div> -->
+                  <!-- <a class="btn cancel_btn">Cancel</a> -->
+                <!-- </div> -->
+                <!-- search by word 'backend' in js to close the popup -->
+              <!-- </div> -->
+            <!-- </div> -->
+						
+						<!-- <div class="box-user-info"> -->
+                            <!-- <ul class="social_notify"> -->
+                                <!-- <li> -->
+                                    <!-- <div>92</div> -->
+                                    <!-- <span> Posts</span> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="social_tab" ss-tab="sstab">
+                        <ul class="tab_head" id="tabHead">
+                            <li ng-click="ss.changeTab(1)" ng-class="{active : ss.activeTab === 1}">SS MAIL &amp; NOTIFICATIONS <span class="icon notify_no">{{undread_mails + undread_coupons }}</span> </li>
+                            <li ng-click="ss.changeTab(2)" ng-class="{active : ss.activeTab === 2}">MY WALL</li>
+                        </ul>
+                        <div class="tab_content_wrap" id="tabContentWrap">
+                            <div class="tab_content" ng-show="ss.activeTab === 1" ng-class="{active : ss.activeTab === 1}">
+							  
+                                <div class="ss_mail_box" id="notificationBox">
+                                    <!-- <h2>MAIL &amp; NOTIFICATIONS <span class="icon notify_no">12</span></h2> -->
+                                    
+									
+									
+									<ul class="mail_menu">
+                                        <li ng-class="{active : receive == 1}"><a ng-click="setreceive(1)">MY MAIL</a> </li>
+                                        <li ng-class="{active : receive == 2}"><a ng-click="setreceive(2)">SENT</a> </li>
+                                    </ul>
+                                    <!-- <div class="search_box"> -->
+                                        <!-- <form> -->
+                                            <!-- <input type="text" placeholder="SEARCH"> -->
+                                            <!-- <input type="submit" value=""> -->
+                                        <!-- </form> -->
+                                    <!-- </div> -->
+                                    <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}" ng-if="receive == 1">
+
+
+	                                  <li class="box_shadow" ng-repeat="pro in myreceivedemail">
+                                            
+                                           
+                                            <div class="close_btn" ng-if="pro.mail_type=='purchase' || pro.mail_type=='order'">
+                                                <span title="Delete">x</span>
+                                                <div class="popUp">
+                                                    <div class="btn grey_btn" ng-click="deletereceiveMail(pro._id)">Delete Message</div>
+                                                    <div class="btn black_btn">Cancel</div>
+                                                </div>
+                                            </div>
+
+                                          <div class="close_btn" ng-if="pro.mail_type!='purchase' && pro.mail_type!='order'">
+                                              <span title="Delete">x</span>
+                                              <div class="popUp">
+                                                  <div class="btn grey_btn" ng-click="deleteUpreceiveMail(pro._id)">Delete Message</div>
+                                                  <div class="btn black_btn">Cancel</div>
+                                              </div>
+                                          </div>
+										   <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <div class="preview-image-inner">
+													     
+
+                                                         <a href="#!/account"><img class="preview-img mCS_img_loaded" ng-src="{{userinfo.img_location}}" alt="{{userinfo.firstname}}" alt=""></a>
+                                                    </div>
+                                                </div>
+                                                <div class="username"><a title="{{userinfo.username}}" ng-bind="userinfo.username" href="#!/account"></a></div>
+                                                <div class="date">{{pro.createdAt| date:'MM/dd/yyyy'}}</div>
+                                            </div>
+                                            
+                                            <div class="product_details" ng-if="pro.mail_type=='purchase' || pro.mail_type=='order'">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img src="images/ss_logo.png" alt="">
+                                                        </div>
+                                                    </div>
+                                           
+                                                </div>
+                                                <div class="description">
+
+                                                    <div class="notify_heading">
+
+                                                        <div ng-class="pro.mail_type =='order'? '' : 'falseClass'" >
+                                                           SS ORDER PROCESSING ID {{pro.mail_object.purchaseId}}</div>
+                                                        <div ng-class="pro.mail_type =='purchase'? '' : 'falseClass'" >
+                                                            SS ORDER CONFIRM ID {{pro.mail_object.purchaseId}}</div>
+
+
+                                                        <div><a href="http://gitlab.sociallyshoppable.com">sociallyshoppable.com</a></div>
+                                                    </div>
+                                                    <div class="order_itm_grp">
+                                                        <div class="accordion_wrp">
+
+
+                                                            <ul class="logo_list">
+                                                                <li ng-repeat="(wsitekey,item) in pro.mail_object.sites track by $index" ng-if="pro.mail_type =='purchase'">
+
+                                                                        <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                            <a ng-href="{{makeusableMerchant[wsitekey].url}}"><img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                             <li ng-repeat="(wsitekey,item) in pro.mail_object.userCart.sites track by $index" ng-if="unique_mail.mail_type =='order'">
+
+                                                                <div class="image_outer">
+                                                                        <div class="image_inner">
+                                                                            <a ng-href="{{makeusableMerchant[wsitekey].url}}"><img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt="" class="mCS_img_loaded"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                    
+
+
+                                                            </ul>
+                                                            <!-- <div class="grand_total">Total : $2000.00</div> -->
+                                                            <div class="m_accordion_title see_more red" ng-click="update_flag(pro._id)">See details</div>
+                                                            <!-- <div class="accordion_title dot_more"> ... </div> -->
+                                                            <div class="order_itm_info_grp">
+
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in pro.mail_object.sites track by $index" ng-class="pro.mail_type =='purchase'? '' : 'falseClass'">
+                                                                    <div class="order_itm_grp_head">
+                                                                        <div class="image_outer">
+                                                                            <div class="image_inner">
+                                                                            
+                                                                                                                                            
+
+                                                                                <img ng-src="{{makeusableMerchant[wsitekey].logo}}" alt="">
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="order_st_info">We got your order information &amp;you will  get a confirmation message with summary &amp; soon.
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4><!-- {{item.info.url}} --> Order</h4>
+                                                                        <!-- <div>Item Name : 1 Cap</div> -->
+                                                                        <div>SS Order ID : {{item.order_id}}</div>
+                                                                        <div class="est_total"><span>Subtotal</span> {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.prices.subtotal }}</div>
+                                                                        <div class="est_total"><span>Shipping</span> {{item.prices.shipping_price}}</div>
+
+
+                                                                        <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'est_total' : 'falseClass'">  <span>Taxes</span> {{item.prices.sales_tax}}      </div>
+                                                                        <div ng-class="item.prices.hasOwnProperty('sales_tax')? 'falseClass' : 'est_total'">  <span>Taxes</span> {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.prices.sales_tax }}     </div>
+                                                                        <div ng-class="item.prices.hasOwnProperty('coupon_value')? 'est_total' : 'falseClass'">  <span>Coupon</span> - {{item.prices.coupon_value}}      </div>
+
+
+                                                                         <div class="est_total"><span>Total :</span> {{item.prices.final_price}}</div>
+                                                                        <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.products track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="">
+                                                                                                <div class="rateit">
+                                                                       <div class="rateis r{{proMd5.rateAvg| makePositive}}">
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                <!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}"><a ng-click="quick_view_parent_orders(orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId)" title="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}" alt="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}">{{proMd5.input_fields.quantity}}
+                                                                                                {{proMd5.title}}</a></div>
+                                                                                            <div>{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].brand }}</div>
+                                                                                            <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}/{{proMd5.title | slugify}}" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId }}</a></div>
+                                                                                            <div class="product-price">${{(proMd5.price.substring(1) *1.0) * proMd5.input_fields.quantity }}</div>
+                                                                                            <div ng-class="proMd5.status =='done'? 'falseClass' : 'red'" >
+                                                                                                Out Of Stock
+                                                                                            </div>
+                                                                                            <div ng-class="proMd5.status =='done'? '' : 'falseClass'" >
+                                                                                                In Stock
+                                                                                            </div>
+
+                                                                                        </div>
+                                                                                        <!--    <div class="ur_promotion"><span>Promotion ( 40% off ! )</span> <span class="red">- $50</span> </div>
+
+
+                                                                                           <div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                           <div class="ur_promotion" ng-class="((proMd5.original_price.substring(1) *1.0 - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+    -->
+
+
+
+                                                                                    </li>
+
+
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By :{{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].card.type }} card end with {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].card.card_number| limitTo : -4 : 0 }}</div>
+                                                                        <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div ng-class="item.details.hasOwnProperty('shipping_estimate')? '' : 'falseClass'">Est. Delivery : {{item.details.shipping_estimate}}</div>
+                                                                        <div ng-class="item.details.hasOwnProperty('shipping_estimate')? 'falseClass' : ''">Est. Delivery : {{orderObj[pro.mail_object.purchaseId].userCart.sites[wsitekey].estimates.delivery_days.min}} - {{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].estimates.delivery_days.max}} business days</div>
+
+
+                                                                        <div> Shipping To: <br>
+                                                                            {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_first_name}} {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_last_name}} <br>
+                                                                            {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_address}} <br>
+
+                                                                            {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_city}} , {{orderObj[pro.mail_object.purchaseId].fields_input[wsitekey].noauthCheckout.shipping_state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="order_ifo_grp_inner" ng-repeat="(wsitekey,item) in pro.userCart.sites track by $index" ng-class="pro.mail_type =='order'? '' : 'falseClass'">
+                                                                    <div class="order_itm_grp_head">
+                                                                        <div class="image_outer">  <div class="image_inner">  <img ng-src="{{item.info.logo}}" alt=""></div></div>
+                                                                        <div class="order_st_info">We got your order information &amp;  you will get a confirmation message &amp; soon.
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>{{item.info.url}} Order</h4>
+                                                                        <!--  <div>Item Name : 1 Cap</div> -->
+                                                                        <div>Order ID : Pending</div>
+                                                                        <div class="est_total"><span>Subtotal</span> {{item.estimates.prices.subtotal}}</div>
+                                                                        <div class="est_total"><span>Shipping</span>{{item.estimates.prices.shipping_price}}</div>
+                                                                        <div class="est_total"><span>Taxes</span> {{item.estimates.prices.sales_tax}}</div>
+                                                                        <!--                                                                         <div class="est_total"><span>Savings</span> -$9</div>
+                                                                         -->                                                                        <div class="est_total"><span>Total :</span> {{item.estimates.prices.final_price}}</div>
+                                                                        <!--    <div>
+                                                                                      <span data-toggle="modal" data-target="#returnPolicy"><u><a ng-click="return_policy(item.returns,item.info.name,item.info.logo)">Return Policy</a></u></span>
+                                                                          </div> -->
+
+                                                                        <div class="drpDown_wrp">
+                                                                            <div class="detls_cal" style="display:none">
+                                                                                <ul class="product_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                                                                    <li ng-repeat="(prokey,proMd5) in item.add_to_cart track by $index">
+                                                                                        <div class="product-image micro">
+                                                                                            <div class="p_image_innner">
+                                                                                                <img ng-src="{{proMd5.image}}" alt="">
+                                                                                                <div class="rateit">
+                                                                                                    <div class="rateis r{{proMd5.rateAvg| makePositive}}">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup">+</a> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!-- <a ng-click="quick_view_parent_orders(orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId)" title="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}" alt="{{orderObj[unique_mail.purchaseId].userCart.sites[wsitekey].add_to_cart[prokey].catalogId}}">{{proMd5.input_fields.quantity}} -->
+                                                                                                <!-- {{proMd5.title}}</a> -->
+                                                                                        <div class="product_info">
+                                                                                            <div title="{{proMd5.title}}" >{{proMd5.quantity}} <a ng-click="quick_view_parent_orders(proMd5.catalogId)">  {{proMd5.title}}</a></div>
+                                                                                            <div>{{proMd5.brand}}</div>
+                                                                                            <div title="{{prokey}}">Web ID: <a ng-href="#!/SOC/{{proMd5.catalogId}}/{{proMd5.title | slugify}}" title="{{proMd5.catalogId}}" alt="{{proMd5.catalogId}}">{{proMd5.catalogId}}</a></div>
+                                                                                            <div class="product-price">${{(proMd5.price.substring(1)*1.0)*proMd5.quantity}}</div>
+                                                                                        </div>
+                                                                                        <!--                                                                                         <div class="ur_promotion"><span>Promotion ( 40% off ! )</span> <span class="red">- $50</span> </div>
+                                                                                         -->                                                                                            <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) > 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">- {{((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity)| currency}}</span> </div>
+                                                                                        <div class="ur_promotion" ng-class="((proMd5.orig_price - proMd5.price.substring(1) *1.0) *  proMd5.quantity) < 0 ?'ur_promotion':'falseClass'" ><span ng-show="proMd5.percentOff !=null && proMd5.percentOff !=''">Promotion ( {{proMd5.percentOff}}% off ! )</span> <span class="red">+ {{((proMd5.price.substring(1) *1.0 - proMd5.orig_price) *  proMd5.quantity)| currency}}</span> </div>
+
+
+
+                                                                                    </li>
+
+
+                                                                                </ul>
+
+                                                                            </div>
+                                                                            <div class="see_detls red">SEE DETAILS</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Payment Info</h4>
+                                                                        <div>Payment By : Visa card</div>
+
+
+                                                                        <div>Payment Date : {{mkey*1000| date:'MM/dd/yyyy'}}</div>
+                                                                    </div>
+                                                                    <div class="order_itm_info">
+                                                                        <h4>Shipping Info</h4>
+                                                                        <div>Est. Delivery : {{item.estimates.delivery_days.min}} - {{item.estimates.delivery_days.max}} Business Days</div>
+                                                                        <div> Shipping To: <br>
+                                                                            {{item.shipping.firstname}} &nbsp;  {{item.shipping.lastname}} <br>
+                                                                            {{item.shipping.address1}} <br>
+                                                                            {{item.shipping.address2}}  <br>
+                                                                            {{item.shipping.city}}, {{item.shipping.state}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div ng-class="pro.mail_type =='purchase'? '' : 'falseClass'"><a href="#!/confirmation_placed_view/{{unique_mail.purchaseId}}/{{userinfo._id}}" target="_blank">Open in another Page</a> </div>
+                                                                <div ng-class="pro.mail_type =='order'? '' : 'falseClass'"><a href="#!/order_placed_view/{{unique_mail.purchaseId}}" target="_blank">Open in another Page</a> </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="product_details" ng-if="pro.mail_type!='purchase' && pro.mail_type!='order'">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img ng-src="{{pro.product.image_url}}" alt="">
+                                                              <div class="rateit">
+																	<div class="rateis r{{pro.product.rateAvg| makePositive}}">
+																	</div>
+																</div>
+															<a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro.product)">+</a>
+                                                        </div>
+                                                    </div>
+                                            
+													
+													
+													<div class="zoomed_s_icons_wrap dsktp_hide">
+														<ul class="zoomed_s_icons">
+															<li>
+																<i class="icon grey_heart"></i>
+																 <span ng-bind="pro.product.likeCount || '0'"></span>
+
+															</li>
+															<li>
+																<i class="icon grey_arrow"></i>
+																<span ng-bind="pro.product.shareCount || '0'"></span>
+															</li>
+															<li>
+																<i class="icon grey_bag"></i>
+																<span ng-bind="pro.product.ratedByUser || '0'"></span>
+
+															</li>
+														</ul>
+													</div>
+
+													<ul class="shared_icons small" >
+													   
+														
+														 <li ng-click="openSocialPopup(pro.product, 'like', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='like'}">
+															<i class="icon grey_heart" ng-class="{activated: pro.product.likeUser}"></i>
+															<span ng-bind="pro.product.likeCount || '0'"></span>
+														</li>
+														<li ng-click="openSocialPopup(pro.product, 'mail', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='mail'}">
+															<i class="icon grey_arrow" ng-class="{activated: pro.product.mailUser}"></i>
+															<span ng-bind="pro.product.shareCount || '0'"></span>
+														</li>
+														<li ng-click="openSocialPopup(pro.product, 'collective', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='collective'}">
+															<i class="icon grey_bag" ng-class="{activated: pro.product.reviewUser}"></i>
+															<span ng-bind="pro.product.ratedByUser || '0'"></span>
+														</li>
+														
+													</ul>
+												   
+													
+                                                </div>
+                                                <div class="description">
+                                                    <div class="notify_heading">
+                                                        <div class="text-uppercase">{{pro.subject}}</div>
+                                                        <!-- <div>This item has dropped in price.<br> -->
+                                                            <!-- From <del class="red">$ {{pro.price}}</del> Now <span class="red">${{pro.price_sale}}</span> -->
+                                                        <!-- </div> -->
+                                                    </div>
+
+                                                    <div class="shared_to"><strong>FROM: </strong>{{ pro.from }}
+                                                       
+                                                    </div>
+													<p ng-bind-html="pro.text"> </p>
+                                                    <!-- <p>Check it out before it's gone! </p> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #SocShop</div> -->
+
+                                                </div>
+                                            </div>
+                                        </li>
+						
+                                      
+                                        <!-- Subscription Notification box -->
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username"><a href="#" title="User Name">User Name</a></div> -->
+                                                <!-- <div class="date">Just Now</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info subscrpNoti"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/saksfifthave.png" alt=""> -->
+                                                            <!-- <button class="btn btn-subscribe-now">Subscribed</button> -->
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="#promotionPopup1">+</a> -->
+
+
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Subscription Notification</div> -->
+                                                        <!-- <div><a href="#" title="sakesfifthavenue.com">sakesfifthavenue.com</a></div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} </div> -->
+                                                    <!-- <div>I thought you may be interested in a subscription to sakesfifthavenue.com notification(s) </div> -->
+
+                                                    <!-- <ul class="list-group no_border_li"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <input type="checkbox" id="listdemoid2"> -->
+                                                            <!-- <label for="listdemoid2" class="checked">Get notifications of sales &amp; promotional events</label> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <input type="checkbox" id="listdemoid3"> -->
+                                                            <!-- <label for="listdemoid3" class="checked">Coupon codes and coupons</label> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+                                        <!-- Coupon code alert box -->
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username"><a href="#" title="User Name">User Name</a></div> -->
+                                                <!-- <div class="date">Just Now</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/asos_offer.jpg" alt=""> -->
+
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="#promotionPopup2">+</a> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Coupon code alert!</div> -->
+                                                        <!-- <div>20% off of full price items<br> Use code <b class="red">20Ffa456</b> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} </div> -->
+                                                    <!-- <p class="light_grey italic">Now untill 7/30/16</p> -->
+                                                    <!-- <div class="light_grey">#HappyShopping #SocShop</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+                                        <!-- Price drop alert box -->
+										
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username"><a href="#" title="sakesfifthavenue.com">User Name</a></div> -->
+                                                <!-- <div class="date">12/02/13</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt=""> -->
+                                                              <!-- <div class="rateit"> -->
+																	<!-- <div class="rateis r{{pro.rateAvg| makePositive}}"> -->
+																	<!-- </div> -->
+																<!-- </div> -->
+															<!-- <a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Price Drop alert!</div> -->
+                                                        <!-- <div>This item has dropped in price.<br> -->
+                                                            <!-- From <del class="red">$150.00</del> Now <span class="red">$99.99</span> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} -->
+                                                    <!-- </div> -->
+
+                                                    <!-- <p>Check it out before it's gone! </p> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #SocShop</div> -->
+
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+                                        <!--
+										
+                                        <li class="box_shadow" ng-repeat="pro in saleproducts">
+                             
+                                                  
+                                            <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <div class="preview-image-inner">
+                                                        <img class="preview-img mCS_img_loaded" src="images/ss_logo.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="username"><a href="#" title="sakesfifthavenue.com">User Name</a></div> 
+                                               <div class="date">12/02/13</div> 
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img ng-src="{{pro.image_url}}" alt="">
+                                                              <div class="rateit">
+																	<div class="rateis r{{pro.rateAvg| makePositive}}">
+																	</div>
+																</div>
+															<a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro)">+</a>
+                                                        </div>
+                                                    </div>
+                                            
+													
+													
+                                <div class="zoomed_s_icons_wrap dsktp_hide">
+                                    <ul class="zoomed_s_icons">
+                                        <li>
+                                            <i class="icon grey_heart"></i>
+                                             <span ng-bind="pro.likeCount || '0'"></span>
+
+										</li>
+                                        <li>
+                                            <i class="icon grey_arrow"></i>
+											<span ng-bind="pro.shareCount || '0'"></span>
+                                        </li>
+                                        <li>
+                                            <i class="icon grey_bag"></i>
+											<span ng-bind="pro.ratedByUser || '0'"></span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="shared_icons small" >
+                                   
+									
+									 <li ng-click="openSocialPopup(pro, 'like', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='like'}">
+                                        <i class="icon grey_heart" ng-class="{activated: pro.likeUser}"></i>
+                                        <span ng-bind="pro.likeCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'mail', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='mail'}">
+                                        <i class="icon grey_arrow" ng-class="{activated: pro.mailUser}"></i>
+                                        <span ng-bind="pro.shareCount || '0'"></span>
+                                    </li>
+                                    <li ng-click="openSocialPopup(pro, 'collective', $event)" ng-class="{active: pro==socialPopupProduct && socialPopupTab==='collective'}">
+                                        <i class="icon grey_bag" ng-class="{activated: pro.rateUser}"></i>
+                                        <span ng-bind="pro.ratedByUser || '0'"></span>
+                                    </li>
+									
+                                </ul>
+                               
+													
+                                                </div>
+                                                <div class="description">
+                                                    <div class="notify_heading">
+                                                        <div class="text-uppercase">Price Drop alert!</div>
+                                                        <div>This item has dropped in price.<br>
+                                                            From <del class="red">$ {{pro.price}}</del> Now <span class="red">${{pro.price_sale}}</span>
+                                                        </div>
+                                                    </div>
+
+                                              
+
+                                                    <p>Check it out before it's gone! </p>
+                                                    <div class="lightgrey">#HappyShopping #SocShop</div>
+
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                        <!-- Upcoming sale alert box -->
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username" title="User Name"><a href="#">User Name</a></div> -->
+                                                <!-- <div class="date">2 Day(s) ago</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/giltl.jpg" alt=""> -->
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="#promotionPopup4">+</a> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Upcoming Sale Alert!</div> -->
+                                                        <!-- <div>Women's summer sale begins soon<br> -->
+                                                            <!-- Starts 2/12/14 -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} </div> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #SocShop</div> -->
+
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+                                        <!-- Sale alert box -->
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username" title="User Name"><a href="#">User Name</a> </div> -->
+                                                <!-- <div class="date">1 Day(s) ago</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/bedbathl.jpg" alt=""> -->
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="#promotionPopup5">+</a> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Sale Alert! / Notification</div> -->
+                                                        <!-- <div>Valentine's Day Sale 2/10/14 </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} </div> -->
+                                                    <!-- <p>This event is currently taking place now! </p> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #SocShop_deals</div> -->
+
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+                                        <!-- Share review box -->
+                                        <!-- <li class="box_shadow"> -->
+                                            <!-- <div class="close_btn"> -->
+                                                <!-- <span title="Delete">x</span> -->
+                                                <!-- <div class="popUp"> -->
+                                                    <!-- <div class="btn grey_btn">Delete Message</div> -->
+                                                    <!-- <div class="btn black_btn">Cancel</div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="box-preview"> -->
+                                                <!-- <div class="preview-image"> -->
+                                                    <!-- <div class="preview-image-inner"> -->
+                                                        <!-- <img class="preview-img" src="images/dummy_img.png" alt=""> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="username" title="User Name"><a href="#">User Name</a> </div> -->
+                                                <!-- <div class="date">1 Day(s) ago</div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="product_details"> -->
+                                                <!-- <div class="product-info"> -->
+                                                    <!-- <div class="product-image mini"> -->
+                                                        <!-- <div class="p_image_innner"> -->
+                                                            <!-- <img src="images/upload_img_women.jpg" alt=""> -->
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis r6"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="#promotionPopup6">+</a> -->
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                <!-- </div> -->
+                                                <!-- <div class="description"> -->
+                                                    <!-- <div class="notify_heading"> -->
+                                                        <!-- <div class="text-uppercase">SHARED: Your Collective Review  was Shared</div> -->
+                                                        <!-- <div>Thanks for sharing through Soc. Shop. Collective!</div> -->
+                                                    <!-- </div> -->
+                                                    <!-- <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }} </div> -->
+                                                    <!-- <p>Thanks for sharing your rating, review and/or collective photo(s). Here is a link to your review: http://.. </p> -->
+                                                    <!-- <p class="mb_hide">To edit your review click the shopping bag share icon and make your edit(s)</p> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #Collectivelove #SocShopCollective</div> -->
+
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </li> -->
+
+
+
+                                        <!-- Coupon code alert box -->
+                                        <li ng-repeat="couponObj in twotap_coupon track by $index" ng-show="sitesTwotap.hasOwnProperty(couponObj.site_id)" class="box_shadow">
+                                            <div class="close_btn">
+                                                <span title="Delete">x</span>
+                                                <div class="popUp">
+                                                    <div class="btn grey_btn" ng-click="remove_coupon_from_mylist(couponObj.site_id,couponObj.code)">Delete Message</div>
+                                                    <div class="btn black_btn">Cancel</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="box-preview">
+												<div class="preview-image">
+                                                    <div class="preview-image-inner">
+													    <img class="preview-img" ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+													</div>
+												</div>
+                                                <!-- <div class="username" title="User Name">User Name</div> -->
+                                                <!-- <div class="date">12/02/16</div> -->
+                                            </div>
+																
+											
+                                            <div class="product_details">
+
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img ng-src="{{sitesTwotap[couponObj.site_id].logo}}" alt="">
+
+                                                            <!-- <div class="rateit"> -->
+                                                                <!-- <div class="rateis"> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <a class="quick-product" data-toggle="modal" data-target="" ng-click="set_alert_type($index)">+</a> -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="zoomed_s_icons_wrap dsktp_hide"> -->
+                                                        <!-- <ul class="zoomed_s_icons"> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_arrow activated"></i> -->
+
+                                                            <!-- </li> -->
+                                                            <!-- <li> -->
+                                                                <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- </li> -->
+                                                        <!-- </ul> -->
+                                                    <!-- </div> -->
+                                                    <!-- <ul class="shared_icons small"> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_heart"></i> -->
+                                                            <!-- <span>123</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_arrow"></i> -->
+                                                            <!-- <span>456</span> -->
+                                                        <!-- </li> -->
+                                                        <!-- <li> -->
+                                                            <!-- <i class="icon grey_bag"></i> -->
+                                                            <!-- <span>789</span> -->
+                                                        <!-- </li> -->
+                                                    <!-- </ul> -->
+                                                </div>
+
+
+                                                <div class="description">
+                                                    <div class="notify_heading">
+                                                        <div class="text-uppercase">Coupon code alert!</div>
+                                                        <div>{{couponObj.label}}<br> Use code <b class="red">{{couponObj.code}}</b>
+														
+                                                        <!-- <div ng-repeat="crule2 in couponObj.rules"> crule2 </div> -->
+														</div>
+                                                    </div>
+                                                    <p class="light_grey italic">{{couponObj.starts_at| date:'MM/dd/yyyy'}} untill {{couponObj.ends_at| date:'MM/dd/yyyy'}}</p>
+                                                    <div class="light_grey">#HappyShopping #SocShop</div>
+                                                </div>
+
+
+
+                                            </div>
+										</li>
+
+
+
+                                    </ul>
+
+							 <ul class="ss_mail_list defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}" ng-if="receive == 2">
+
+								<li class="box_shadow" ng-repeat="pro in mysentemail">
+                                           <div class="close_btn">
+                                                <span title="Delete">x</span>
+                                                <div class="popUp">
+                                                    <div class="btn grey_btn" ng-click="deletesentMail(pro._id)">Delete Message</div>
+                                                    <div class="btn black_btn">Cancel</div>
+                                                </div>
+                                            </div>       
+                                           
+
+										   <div class="box-preview">
+                                                <div class="preview-image">
+                                                    <div class="preview-image-inner">
+													     
+
+                                                         <a href="#!/account"><img class="preview-img mCS_img_loaded" ng-src="{{userinfo.img_location}}" alt="{{userinfo.firstname}}" alt=""></a>
+                                                    </div>
+                                                </div>
+                                                <div class="username"><a title="{{userinfo.username}}" ng-bind="userinfo.username" href="#!/account"></a></div>
+                                                <div class="date">{{pro.createdAt| date:'MM/dd/yyyy'}}</div>
+                                            </div>
+                                            <div class="product_details">
+                                                <div class="product-info">
+                                                    <div class="product-image mini">
+                                                        <div class="p_image_innner">
+                                                            <img ng-src="{{pro.product.image_url}}" alt="">
+                                                              <div class="rateit">
+																	<div class="rateis r{{pro.product.rateAvg| makePositive}}">
+																	</div>
+																</div>
+															<a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim(proMd5,item,prokey,wsitekey,pro.product)">+</a>
+                                                        </div>
+                                                    </div>
+                                            
+													
+													
+													<div class="zoomed_s_icons_wrap dsktp_hide">
+														<ul class="zoomed_s_icons">
+															<li>
+																<i class="icon grey_heart"></i>
+																 <span ng-bind="pro.product.likeCount || '0'"></span>
+
+															</li>
+															<li>
+																<i class="icon grey_arrow"></i>
+																<span ng-bind="pro.product.shareCount || '0'"></span>
+															</li>
+															<li>
+																<i class="icon grey_bag"></i>
+																<span ng-bind="pro.product.ratedByUser || '0'"></span>
+
+															</li>
+														</ul>
+													</div>
+
+													<ul class="shared_icons small" >
+													   
+														
+														 <li ng-click="openSocialPopup(pro.product, 'like', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='like'}">
+															<i class="icon grey_heart" ng-class="{activated: pro.product.likeUser}"></i>
+															<span ng-bind="pro.product.likeCount || '0'"></span>
+														</li>
+														<li ng-click="openSocialPopup(pro.product, 'mail', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='mail'}">
+															<i class="icon grey_arrow" ng-class="{activated: pro.product.mailUser}"></i>
+															<span ng-bind="pro.product.shareCount || '0'"></span>
+														</li>
+														<li ng-click="openSocialPopup(pro.product, 'collective', $event)" ng-class="{active: pro.product==socialPopupProduct && socialPopupTab==='collective'}">
+															<i class="icon grey_bag" ng-class="{activated: pro.product.reviewUser}"></i>
+															<span ng-bind="pro.product.ratedByUser || '0'"></span>
+														</li>
+														
+													</ul>
+												   
+													
+                                                </div>
+                                                <div class="description">
+                                                    <div class="notify_heading">
+                                                        <div class="text-uppercase">{{pro.subject}}</div>
+                                                        <!-- <div>This item has dropped in price.<br> -->
+                                                            <!-- From <del class="red">$ {{pro.price}}</del> Now <span class="red">${{pro.price_sale}}</span> -->
+                                                        <!-- </div> -->
+                                                    </div>
+
+                                                    <div class="shared_to"><strong>SHARED: </strong>{{ pro.to }}
+                                                       
+                                                    </div>
+													<p ng-bind-html="pro.text"> </p>
+                                                    <!-- <p>Check it out before it's gone! </p> -->
+                                                    <!-- <div class="lightgrey">#HappyShopping #SocShop</div> -->
+
+                                                </div>
+                                            </div>
+                                        </li>
+						
+								
+								</ul>
+								
+								
+								
+								
+								</div>
+                            </div>
+                            <div class="tab_content" ng-show="ss.activeTab === 2" ng-class="{active : ss.activeTab === 2}">
+                                <div class="fr p_t_10 seeFull_page"><a href="#">See full page view</a> </div>
+                                <div class="my_item product_group clearfix defaultScroll defaultScroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide}">
+                                    <div class="col_3 product" ng-repeat="activityItem in userHistory"> 
+                                        <div class="product-info">
+                                            <div class="product-image">
+                                                <div class="p_image_innner">
+													<img ng-src="{{activityItem.image_url}}" alt="{{activityItem.keyword}}">                                                   
+                                                    <div class="rateit">
+                                                        <div class="rateis r{{activityItem.rateAvg}}">
+                                                        </div>
+                                                    </div>
+													<a class="quick-product" data-toggle="modal" data-target="#quick-popup" ng-click="set_current_product_common_sim('','','','',activityItem)" >+</a>
+                                                </div>
+                                            </div>
+                                             <ul class="shared_icons">
+												<li ng-click="openSocialPopup(activityItem, 'like', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='like'}">
+												<i class="icon grey_heart" ng-class="{activated: (activityItem.likeUser|| favCataloglist.indexOf(activityItem.catalogId) > -1)}"></i>
+												<span ng-bind="activityItem.likeCount || '0'"></span>
+												</li>
+												  <li ng-click="openSocialPopup(activityItem, 'mail', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='mail'}">
+													<i class="icon grey_arrow" ng-class="{activated: (activityItem.mailUser || mailCatalogList.indexOf(activityItem.catalogId) > -1)}"></i>
+													<span ng-bind="activityItem.shareCount || '0'"></span>
+												  </li>
+													<li ng-click="openSocialPopup(activityItem, 'collective', $event)" ng-class="{active: activityItem==socialPopupProduct && socialPopupTab==='collective'}">
+													<i class="icon grey_bag" ng-class="{activated: (activityItem.rateUser || reviewCataloglist.indexOf(activityItem.catalogId) > -1 )}"></i>
+													<span ng-bind="activityItem.ratedByUser || '0'"></span>
+													 </li>
+												</ul>
+                                        </div>
+                                    </div>
+
+
+
+
+							   </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

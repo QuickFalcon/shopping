@@ -1,0 +1,69 @@
+<div class="menu_wrap" ng-if="$ctrl.isLoggedIn">
+  <ul class="profile-menu">
+    <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/account')}"><a href="/refactor/account">My Profile</a></li>
+    <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customizeshop') || $ctrl.isCurrentPath('/refactor/store')}">
+      <a>Shops</a>
+      <ul class="sub-item">
+        <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customizeshop')}"><a href="/refactor/customizeshop">Top 10</a></li>
+        <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/store')}"><a href="/refactor/store">All</a></li>
+      </ul>
+    </li>
+    <li>
+      <a>Social</a>
+      <ul class="sub-item">
+        <li><a href="/refactor/social">Settings</a></li>
+        <li><a href="">Support</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="profile-menu">
+    <li class="profile-item bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/order_history')}"><a href="/refactor/order_history">Order History</a></li>
+    <li class="profile-item bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/shoppingbag')}"><a href="/refactor/shoppingbag">Shopping Bag</a></li>
+    <li class="profile-item bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/shoppingbag')}"><a href="/refactor/shoppingbag#saved">Wish List</a></li>
+    <li class="profile-item profile-btm  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/company')}"><a href="/refactor/company">Company</a></li>
+    <li class="profile-item  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customer_service')}"><a href="/refactor/customer_service">Customer Services</a></li>
+    <li class="profile-item  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/policy')}"><a href="/refactor/policy">Policies</a></li>
+  </ul>
+  <div class="signOut" data-toggle="modal" data-target="#signout-modal"><a ng-click="signout()">Sign Out</a></div>
+</div>
+<div class="menu_wrap" ng-if="!$ctrl.isLoggedIn">
+  <ul class="profile-menu">
+    <!-- <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/account')}"><a href="/refactor/account">My Profile</a></li> -->
+    <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customizeshop') || $ctrl.isCurrentPath('/refactor/store')}">
+      <a>Shops</a>
+      <ul class="sub-item">
+        <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customizeshop')}"><a href="/refactor/customizeshop">Top 10</a></li>
+        <li ng-class="{'active red': $ctrl.isCurrentPath('/refactor/store')}"><a href="/refactor/store">All</a></li>
+      </ul>
+    </li>
+    <!-- <li>
+      <a>Social</a>
+      <ul class="sub-item">
+        <li><a href="">Settings</a></li>
+        <li><a href="">Support</a></li>
+      </ul>
+    </li> -->
+  </ul>
+  <ul class="profile-menu">
+    <li class="profile-item bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/shoppingbag')}"><a href="/refactor/shoppingbag">Shopping Bag</a></li>
+    <li class="profile-item profile-btm  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/company')}"><a href="/refactor/company">Company</a></li>
+    <li class="profile-item  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/customer_service')}"><a href="/refactor/customer_service">Customer Services</a></li>
+    <li class="profile-item  bold" ng-class="{'active red': $ctrl.isCurrentPath('/refactor/policy')}"><a href="/refactor/policy">Policies</a></li>
+  </ul>
+  <div class="signOut"><a class="login-link ss_LogIn">LOGIN</a></div>
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+    "use strict";
+    $('ul.profile-menu > li > a').on('click', function () {
+      this.parentElement.classList.toggle('active');
+    });
+    $('div.menu_wrap a.login-link').on('click', (function () {
+      var $main_login_link = $('.signIn_signUp .ss_LogIn');
+      return function (event) {
+        event.preventDefault();
+        $main_login_link.trigger('click');
+      };
+    }()));
+  });
+</script>

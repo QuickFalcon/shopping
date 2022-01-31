@@ -1,0 +1,19 @@
+.dashboard-2.full-width .featured .jcarousel ul li {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    padding: 10px 19px;
+    margin-left: 14px;
+    margin-right: 0;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li .dashboard-img img{
+	opacity: 1;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li.active{
+	border: 1px solid #000000 !important;
+}
+
+.dashboard-2.full-width .featured .jcarousel ul li:hover{
+	border: 1px solid #ffffff;
+}

@@ -1,0 +1,7 @@
+10,20,30,40,50 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/twopros.php
+3 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/mixpanel.php
+0,15,30,45 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/check.php
+7,22,37,52 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/check2.php
+15 1,7,13,19 * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/ss_sites.php
+4 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/pros_two.php
+5,20,35,50 * * * * wget -O /dev/null 2>&1 http://104.236.166.98:8090/dumping/merchant_big.php

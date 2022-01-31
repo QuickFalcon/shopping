@@ -1,0 +1,392 @@
+<nav class="main_nav_wrap">
+        <div class="container_inner clearfix">
+            <ul class="main_nav">
+            <li class="mb_signUp dsktp_hide">
+                <div ng-class="loggedin ==1?'falseClass':''">
+                <a class="signup-link ss_SignUp">SIGN UP</a> / <a class="login-link ss_LogIn">LOGIN</a>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Women" ng-click="menuCategorySearchApi('women')">Women</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenWomen.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenWomen.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Women Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenWomen track by $index">
+                        <a ng-click="menuShopApi('women',fshop)">{{fshop}}</a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenWomen.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('women')">Manage Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistWomen track by $index">
+                        <a ng-click="menuShopApi('women',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenWomen.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('women')">Customize Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Men" ng-click="menuCategorySearchApi('men')">Men</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenMen.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenMen.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Men Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenMen track by $index">
+                        <a ng-click="menuShopApi('men',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenMen.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('men')">Manage Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistMen track by $index">
+                        <a ng-click="menuShopApi('men',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenMen.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('men')">Customize Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Shoes" ng-click="menuCategorySearchApi('shoe')">Shoes</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenShoes.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenShoes.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Shoes Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenShoes track by $index">
+                        <a ng-click="menuShopApi('shoe',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenShoes.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('shoe')">Manage Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistShoes track by $index">
+                        <a ng-click="menuShopApi('shoe',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenShoes.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('shoe')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}">
+                <a data-hover="Accessories" ng-click="menuCategorySearchApi('accessories')">Accessories</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenAccessories.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenAccessories.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Accessories Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenAccessories track by $index">
+                        <a ng-click="menuShopApi('accessories',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenAccessories.length) track by $index"></li>
+                        <li class="grey_btn btn">
+                        <a ng-click="customize_shop('accessories')">Manage Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistAccessories track by $index">
+                        <a ng-click="menuShopApi('accessories',fshop)" href="" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenAccessories.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('accessories')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Beauty" ng-click="menuCategorySearchApi('beauty')">Beauty</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenBeauty.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenBeauty.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Beauty Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenBeauty track by $index">
+                        <a ng-click="menuShopApi('beauty',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenBeauty.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('beauty')">Manage Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistBeauty track by $index">
+                        <a ng-click="menuShopApi('beauty',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenBeauty.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('beauty')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Kids" ng-click="menuCategorySearchApi('kid')">Kids</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenKids.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenKids.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Kids Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenKids track by $index">
+                        <a ng-click="menuShopApi('kid',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenKids.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('kid')">Manage Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistKids track by $index">
+                        <a ng-click="menuShopApi('kid',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenKids.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('kid')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Home" ng-click="menuCategorySearchApi('home')">Home</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenHome.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenHome.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Home Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenHome track by $index">
+                        <a ng-click="menuShopApi('home',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenHome.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('home')">Manage Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistHome track by $index">
+                        <a ng-click="menuShopApi('home',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenHome.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('home')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="{{gendercls}}"><a data-hover="Gifts" ng-click="menuCategorySearchApi('gift')">Gifts</a>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenGifts.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenGifts.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Gifts Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenGifts track by $index">
+                        <a ng-click="menuShopApi('gift',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenGifts.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('gift')">Manage Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistGifts track by $index">
+                        <a ng-click="menuShopApi('gift',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenGifts.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('gift')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+            </li>
+            <li class="choose_cat hideSubmenu {{gendercls}}">
+                <a data-hover="Other" class="encircle-red" data-nga-click="menuCategorySearchApi('others')">
+                    Other
+                </a>
+                <!-- <div class="redCircle" data-nga-click="menuCategorySearchApi('others')"></div> -->
+                <div class="choose_cat_form">
+                    <form autocomplete="off">
+                        <input autocomplete="off" maxlength="12" type="text" placeholder="OTHER" value="Other" id="otherCt" data-nga-model="otherMenu" data-nga-blur="menuCategorySearchApi('others')" />
+                    </form>
+                </div>
+                <div class="subnav_wrap" ng-class="loggedin ==1 && userstoptenLocal.length > 0? 'with_chosen' : ''">
+                <div class="subnav_inner">
+                    <ul ng-class="loggedin ==1 && userstoptenLocal.length > 0? 'top_ten' : 'ng-hide'">
+                    <li>Top 10 Other Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in userstoptenLocal track by $index">
+                        <a ng-click="menuShopApi('others',fshop)" ng-bind="fshop"></a></li>
+                        <li ng-repeat="n in [].constructor(10-userstoptenLocal.length) track by $index"></li>
+                        <li class="grey_btn btn"><a ng-click="customize_shop('others')">Manage Top 10</a>
+                        </li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                    </ul>
+                    </ul>
+                    <ul class="shop_feature">
+                    <li>Featured Shops</li>
+                    <ul>
+                        <li ng-repeat="fshop in featuredShoplistOthers track by $index">
+                        <a ng-click="menuShopApi('others',fshop)" ng-bind="fshop"></a></li>
+                        <li class="grey_btn btn" ng-class="loggedin ==1 && userstoptenLocal.length > 0? 'ng-hide' : ''">
+                        <a ng-click="customize_shop('others')">Customize Top 10</a></li>
+                        <li class="grey_btn btn btn-last"><a href="#!/store">View all shops</a></li>
+                        <li class="searchIn_nav">
+                        <div class="search_box">
+                            <form>
+                            <input type="text" placeholder="SEARCH">
+                            <input type="submit" value="">
+                            </form>
+                        </div>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+                <div class="popUp">
+                    <!-- <div class="mb_hide tab_hide instruct">Double click here to create your categories.<br />(maximum of 12 characters)</div> -->
+                    <div class="mb_hide tab_hide instruct">Double click here to name your custom category.<br />(maximum of 12 characters)</div>
+                    <div class="dsktp_hide tab_show instruct">Hold your finger to create your categories.</div>
+                    <div class="update_name btn grey_btn">Update</div>
+                </div>
+            </li>
+            <li class="style-blog"><a data-hover="Style Shop" href="#!/blog">Style Shop</a></li>
+            <li class="side_menu"><a href="">My Profile</a></li>
+            <li class="side_menu">
+                <a href="#">Shops</a>
+                <ul class="sub-item">
+                <li><a href="top_ten.html">Top 10</a></li>
+                <li><a href="#!/store">All</a></li>
+                </ul>
+            </li>
+            <li class="side_menu">
+                <a href="#">Social</a>
+                <ul class="sub-item">
+                <li><a href="">Settings</a></li>
+                <li><a href="">Support</a></li>
+                </ul>
+            </li>
+            <li class="side_menu"><a href="">Order History</a></li>
+            <li class="side_menu"><a href="">Shopping Bag</a></li>
+            <li class="side_menu"><a href="">Wish List</a></li>
+            <li class="footer_nav"><a href="">COMPANY</a>
+                <ul>
+                <li><a href="#!/company#about">About</a></li>
+                <li><a href="#!/company#faq">Faq</a></li>
+                </ul>
+            </li>
+            <li class="footer_nav"><a href="">Customer service</a>
+                <ul>
+                <li><a>Contact us</a></li>
+                <li><a>Privacy</a></li>
+                <li><a>Security</a></li>
+                <li><a>Website terms of use</a></li>
+                </ul>
+            </li>
+            <li class="footer_nav"><a href="">POLICIES</a>
+                <ul>
+                <li><a href="#!/policy#policy">Terms of service</a></li>
+                </ul>
+            </li>
+            <li class="footer_nav connect_social active"><a href="#">CONNECT WITH</a>
+                <ul class="footer_social">
+                <li>
+                    <a href="https://www.facebook.com/socially.shoppable" target="_blank" class="icon fb"></a>
+                    <a href="https://twitter.com/socshop" target="_blank" class="icon twitter"></a>
+                    <a target="_blank" class="icon google"></a>
+                    <a target="_blank" class="icon yelp"></a>
+                    <a href="mailto:ss@sociallyshoppable.com" target="_blank" class="icon email"></a>
+                    <a target="_blank" class="icon mobile"></a>
+                    <a href="http://www.youtube.com/channel/UCiuIF1mdvs4hWTxqT3RY-0A" target="_blank" class="icon youtube"></a>
+                    <a href="http://instagram.com/sociallyshoppable" target="_blank" class="icon instagram"></a>
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        </nav>

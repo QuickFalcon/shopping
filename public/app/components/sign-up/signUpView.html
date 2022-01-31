@@ -1,0 +1,334 @@
+<div class="modal-dialog modal-lg">
+    <button type="button" class="close" data-dismiss="modal">
+        <div aria-hidden="true" class="close_btn">X</div>
+    </button>
+    <div class="popup-container" ng-class="{overflwHid : $ctrl.overflowHide}">
+        <div class="popup-list">
+          <!-- Sign up step 1 -->
+          <div class="modal-content" id="signup1">
+              <div class="modal-header">
+                  <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+              </div>
+              <div class="modal-body">
+                  <form novalidate name="signUpForm1" ng-submit="$ctrl.checkEmailIfExistOnSignUp(signUpForm1)">
+                      <div class="email">
+                          <input type="email" name="mail" value="" placeholder="ENTER YOUR EMAIL"
+                                 ng-model="$ctrl.initialEmail" required
+                                 ng-class="{iFieldError: signUpForm1.mail.$invalid && signUpForm1.$submitted || $ctrl.emailExist}"
+                                 > <!-- force-validator="signUpForm2.mail" -->
+                          <div class="e-tooltip" center-element>
+                              <div ng-hide="$ctrl.emailExist">Invalid Email address.</div>
+                              <div ng-show="$ctrl.emailExist">E-mail already exists on our database.</div>
+                          </div>
+                      </div>
+                      <button class="btn red_btn_lg" type="submit">Shop like a Pro!</button>
+                  </form>
+
+                  <div class="pro-text">
+                      By pressing the &ldquo;Shop like a Pro!&rdquo; button you agree<br>
+                      to the <a> terms of membership</a> for all Socially<br>
+                      Shoppable sites.
+                  </div>
+                  <div class="signin_now">Already a member?
+                      <a class="red" ng-click="$ctrl.goToStep('#login', '#signup1', 'backward')"><strong>SIGN-IN</strong></a>
+                  </div>
+                  <div></div>
+              </div>
+          </div>
+          <!-- End Sign up step 1 -->
+          <!-- Start Sign up step 2 -->
+          <div class="modal-content" id="signup2">
+              <div class="modal-header">
+                  <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+              </div>
+              <div class="modal-body">
+                  <div class="signup_form">
+                      <form name="signUpForm2" ng-submit="$ctrl.signUp(signUpForm2)" novalidate>
+                          <div class="email">
+                              <input type="email" ng-model="$ctrl.signUpDetails.email" name="mail" id="conf_email" value=""
+                                     placeholder="CONFIRM YOUR EMAIL" required
+                                     ng-class="{iFieldError: signUpForm2.mail.$invalid && signUpForm2.$submitted}"
+                                     equality-validator="$ctrl.initialEmail" case-insensitive
+                                     ng-change="clearPostValidationError(signUpForm2.mail)">
+                              <div ng-messages="signUpForm2.mail.$error" class="e-tooltip" center-element>
+                                  <div ng-message="required">E-mail address required.</div>
+                                  <div ng-message="email">Invalid e-mail address.</div>
+                                  <div ng-message="equal">E-mail does not match the one entered on previous page.
+                                  </div>
+                                  <div ng-message="mailRegistered">E-mail already exists on our database.</div> <!--im not sure if this is needed. already checked on the first phase -->
+                              </div>
+
+                          </div>
+                          <div class="information">
+                              <div class="sup_input_wrp">
+                                  <input type="text" ng-model="$ctrl.signUpDetails.firstname" name="fname" id="fname" value=""
+                                         placeholder="FIRST NAME" required class
+                                         ng-class="{iFieldError: signUpForm2.fname.$invalid && signUpForm2.$submitted}">
+                                  <input type="text" ng-model="$ctrl.signUpDetails.lastname" class="rgt_in" name="lname"
+                                         id="lname" value="" placeholder="LAST NAME" required
+                                         name-validator="$ctrl.signUpDetails.firstname"
+                                         ng-class="{iFieldError: signUpForm2.lname.$invalid && signUpForm2.$submitted}">
+                                  <div class="e-tooltip" center-element
+                                       ng-if="signUpForm2.fname.$error.required || signUpForm2.lname.$error.required">
+                                      First and last name can not be empty.
+                                  </div>
+                              </div>
+                              <div class="sup_input_wrp passwordStrengthWrap">
+                                  <input type="password" ng-model="$ctrl.signUpDetails.password" name="pass" id="pass" value=""
+                                         placeholder="Enter Password" required ng-change="$ctrl.determinePasswordStrength($ctrl.signUpDetails.password)"
+                                         ng-class="{iFieldError: (signUpForm2.pass.$invalid || passwordStrength.name !== 'strong') && signUpForm2.$submitted}"> <!-- force-validator="signUpForm2.cpass" -->
+                                         <!-- force-validate might not be necessary -->
+                                  <input type="password" ng-model="$ctrl.signUpDetails.confirmPassword" class="rgt_in" name="cpass" equality-validator="$ctrl.signUpDetails.password"
+                                         id="cpass" value="" placeholder="Confirm Password" required
+                                         ng-class="{iFieldError: signUpForm2.cpass.$invalid && signUpForm2.$submitted}">
+                                  <div ng-messages="signUpForm2.cpass.$error" class="e-tooltip" center-element>
+                                      <div ng-if="signUpForm2.$submitted" ng-message="required">Password must not be empty.</div>
+                                      <div ng-if="signUpForm2.$submitted" ng-message="equal">Passwords do not match.</div>
+                                      <div class="password-status">
+                                          <div class="pass_strength_lebel">Strength: <span>{{$ctrl.passwordStrength.name}}</span></div>
+                                          <div class="pass_strength">
+                                              <div class="marker" ng-class="$ctrl.passwordStrength.name" ng-style="{width: $ctrl.passwordStrength.value}"></div>
+                                          </div>
+                                          <div ng-if="$ctrl.passwordStrength.name !== 'strong'">Password must contain at least 5 characters with at least one letter and number.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="sup_input_wrp">
+                                  <input type="text" ng-model="$ctrl.signUpDetails.zip" name="zip" id="zip"
+                                         placeholder="ZIP CODE" required ng-class="{iFieldError: signUpForm2.zip.$invalid && signUpForm2.$submitted}" zip-validator>
+                                   <div ng-messages="signUpForm2.zip.$error" class="e-tooltip" center-element>
+                                       <div ng-message="required">Zip code must not be empty.</div>
+                                       <div ng-message="zip">Invalid Zip code.</div>
+                                   </div>
+
+                                  <div class="signup_selectbox"
+                                       ng-class="{iFieldError: signUpForm2.gender.$invalid && signUpForm2.$submitted}">
+                                      <div class="defaultSt">
+                                          <select name="gender" ng-model="$ctrl.signUpDetails.gender" required>
+                                              <option value="">Choose Gender</option>
+                                                <option value="1">Male</option>
+                                              <option value="2">Female</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div ng-messages="signUpForm2.gender.$error" class="e-tooltip" center-element>
+                                      <div ng-message="required">Gender must not be empty.</div>
+                                  </div>
+                              </div>
+                              <div class="subscribe_txt">
+                                  <input type="checkbox" name="subscribe" id="subscribe"
+                                         checked="checked" ng-model="$ctrl.signUpDetails.ssSubscribe" ng-true-value="true"
+                                         ng-false-value="false" />
+                                  <label for="subscribe" class="checked">Yes,</label> I want to subscribe to <span><a
+                                      class="blog_text" target="_blank" href="http://sociallyshoppable.com/">Soc. Shop. STYLE</a></span>
+                                  <br> for fun shopping ideas and info.
+                              </div>
+                              <button type="submit" class="btn red_btn_lg">Continue</button>
+                          </div>
+
+                      </form>
+
+                  </div>
+              </div>
+              <div class="icon-back-btn" ng-click="$ctrl.goToStep('#signup1', '#signup2', 'forward')"></div>
+          </div>
+          <!-- End signup step 2 -->
+          <!-- Start signup step 3 -->
+          <div class="modal-content" id="signup3">
+              <div class="modal-header">
+                  <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+              </div>
+              <div class="modal-body">
+                  <div class="signup_form">
+                      <a class="fbIcon icon-facebook-btn" ng-class="{connected: connected.facebook}" ng-click="$ctrl.facebookConnect()"></a>
+                      <!-- <a class="fbIcon icon-instagram_btn" ng-class="{connected: vm.connected.instagram}" ng-click="vm.instagramConnect()"></a> -->
+                      <a class="fbIcon icon-twitter_btn" ng-class="{connected: connected.twitter}" ng-click="twitterConnect()"></a>
+
+                      <div class="terms_txt"></div>
+                      <button class="btn red_btn_lg" ng-click="$ctrl.goToStep('#signup4', '#signup3', 'backward')">
+                          Continue
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <!-- End signup step 3 -->
+          <!-- Start signup step 4 -->
+          <div class="modal-content" id="signup4">
+              <div class="modal-header">
+                  <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+              </div>
+              <div class="modal-body">
+                  <h3>YOU DID IT<span class="excmtry_sign">!</span></h3>
+                  <p>You are now the part of <br> <a href="sociallyshoppable.com" target="_blank">sociallyshoppable.com </a>
+                      community </p>
+                  <!--div class="success_msg"> THERE IS NO CONFIRMATION EMAIL
+                      Please check your email to confirm <br> your account to begin Shopping Socially !
+                  </div-->
+                  <div class="hashtag">#happyshopping</div>
+              </div>
+          </div>
+          <!-- End signup step 4 -->
+
+            <!-- Start login -->
+          <div class="modal-content login-windw" id="login">
+              <div class="modal-header">
+                  <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+              </div>
+              <div class="modal-body">
+                  <form name="signInForm" ng-submit="$ctrl.signIn(signInForm)" novalidate>
+                      <div class="email">
+                          <div class="input-field">
+                              <input type="email" name="email" placeholder="ENTER YOUR EMAIL"
+                                     ng-model="$ctrl.signInDetails.email" required ng-class="{iFieldError: signInForm.email.$invalid && signInForm.$submitted}">
+                              <div ng-messages="signInForm.email.$error" class="e-tooltip" center-element>
+                                <div ng-message="required">E-mail is required.</div>
+                                <div ng-message="email">Invalid e-mail address.</div>
+                              </div>
+                          </div>
+                          <div class="input-field">
+                              <input type="password" name="password" placeholder="ENTER YOUR PASSWORD" ng-model="$ctrl.signInDetails.password" required
+                                     ng-class="{iFieldError: signInForm.password.$invalid && signInForm.$submitted}">
+
+                              <div ng-messages="signInForm.password.$error" class="e-tooltip" center-element>
+                                  <div ng-message="required">Password is required.</div>
+                                  <div ng-message="wrongPassword">Wrong e-mail/password combination.</div>
+                              </div>
+                          </div>
+                        </div>
+                      <div class="subscribe_txt signin_subscribetext">
+                          <input type="checkbox" id="rememberme" ng-model="$ctrl.signInDetails.remember">
+                          <label for="rememberme" ng-class="{checked: $ctrl.signInDetails.remember}">Check Box to Remember Me.</label>
+                      </div>
+                      <button class="btn red_btn_lg" type="submit">Shop like a Pro!</button>
+                      <div class="pro-text">
+                          By pressing the &ldquo;Shop like a Pro!&rdquo; button you agree <br>
+                          to the <a> terms of membership</a> for all Socially <br>
+                          Shoppable sites.
+                      </div>
+                      <div class="clear">
+                        Forgot your password?
+                        <a class="red" ng-click="$ctrl.goToStep('#forgotpassEntrMail', '#login', 'backward')"><strong>HELP</strong></a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+            <!-- End login -->
+            <!-- Start forgot password step 1 -->
+            <div class="modal-content forgotpss fgwindow1" id="forgotpassEntrMail">
+                <div class="modal-header">
+                    <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Forgot your Password</h4>
+                    <form name="$parent.vm.forgotForm" ng-submit="vm.forgotPassword($parent.vm.forgotForm)">
+                        <div class="email">
+                            <div class="input-field">
+                                <input type="email" name="email" id="email_id" placeholder="ENTER YOUR EMAIL"
+                                       ng-model="vm.forgot.email" required
+                                       ng-class="{iFieldError: $parent.vm.forgotForm.email.$invalid && $parent.vm.forgotForm.$submitted}">
+                                <div ng-messages="$parent.vm.forgotForm.email.$error" class="e-tooltip" elm-center>
+                                    <div ng-message="required">E-mail address required.</div>
+                                    <div ng-message="email">Invalid e-mail address.</div>
+                                    <div ng-message="noEmail">E-mail entered was not found on our database.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn red_btn_lg" type="submit">Send Email</button>
+                    </form>
+
+                    <div class="pro-text">
+                        To request a new password, <br> Please enter your most current registered email <br> in
+                        sociallyshoppable.com
+                    </div>
+                </div>
+                <div class="icon-back-btn" ng-click="vm.goToStep('#login', '#forgotpassEntrMail', 'forward')"></div>
+            </div>
+            <!-- End forgot password step 1 -->
+
+            <!-- End forgot password step 2 -->
+            <div class="modal-content forgotpss fgwindow2" id="forgotpassSentmail">
+                <div class="modal-header">
+                    <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+                </div>
+                <div class="modal-body">
+                    <h4>E-mail has been sent.</h4>
+                    <div class="pro-text">
+                        <div> When you receive your sign in information,<br> follow the directions
+                            in the email<br> to reset your password.
+                        </div>
+                    </div>
+                    <button class="btn black_btn_lg" type="button" class="close" data-dismiss="modal">Continue
+                        Shopping
+                    </button>
+                </div>
+            </div>
+            <!-- End forgot password step 2 -->
+
+            <!-- Start forgot password step 3 -->
+            <div class="modal-content forgotpss fgwindow4" id="forgotpassReset">
+                <div class="modal-header">
+                    <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Reset your Password</h4>
+                    <form name="$parent.vm.resetPassForm" ng-submit="vm.resetPassword($parent.vm.resetPassForm)" novalidate>
+                        <div class="email">
+                            <div class="input-field">
+                                <input type="password" name="pass1" placeholder="ENTER A NEW PASSWORD"
+                                       ng-model="vm.confirm_password" required
+                                       ng-class="{iFieldError: ($parent.vm.resetPassForm.pass1.$invalid || vm.passwordStrength.text !== 'strong') && $parent.vm.resetPassForm.$submitted}" force-validate="$parent.vm.resetPassForm.pass2">
+                                <div  ng-messages="$parent.vm.resetPassForm.pass1.$error" class="e-tooltip" elm-center>
+                                    <div ng-message="required">Password must not be empty.</div>
+                                    <div ng-show="!$parent.vm.resetPassForm.pass1.$invalid">Password not strong enough</div>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" name="pass2" placeholder="CONFIRM YOUR PASSWORD"
+                                      equal-validator="vm.confirm_password"
+                                       ng-model="vm.resetPass.newPassword" required ng-class="{iFieldError: $parent.vm.resetPassForm.pass2.$invalid && $parent.vm.resetPassForm.$submitted}">
+                                       <div  ng-messages="$parent.vm.resetPassForm.pass2.$error" class="e-tooltip" elm-center>
+                                           <div ng-message="required">Password must not be empty.</div>
+                                           <div ng-message="equal">Passwords do not match.</div>
+                                       </div>
+                            </div>
+                        </div>
+                        <!-- you either put this on registration too, or you dont put it anywhere -->
+                        <div class="subscribe_txt signin_subscribetext pass_strngth_wrp">
+                            <div class="pass_strength_lebel">Strength: <span ng-bind="vm.passwordStrength.text"></span></div>
+                            <div class="pass_strength">
+                                <div class="marker" ng-class="vm.passwordStrength.text" ng-style="{width: vm.passwordStrength.value}"></div>
+                            </div>
+                            <div ng-if="vm.passwordStrength.text !== 'strong'">Password must contain at least 5 characters with at least one letter and number.</div>
+                        </div>
+                        <div class="continue_cancel">
+                            <button class="btn black_btn_lg" type="submit">Reset Password</button>
+                            <button class="btn cancel_btn_lg" type="button" class="close" data-dismiss="modal">Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End forgot password step 3 -->
+
+            <!-- Start forgot password step 4 -->
+            <div class="modal-content forgotpss fgwindow2" id="forgotpassResetDone">
+                <div class="modal-header">
+                    <h3 class="modal-title"><img src="images/signup_logo.png"></h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Forgot your Password</h4>
+                    <div class="pro-text">
+                        <h5>Your password has been changed.</h5>
+                        <div> Please sign in with your new password.</div>
+                    </div>
+                    <button class="btn black_btn_lg" type="button" class="close" data-dismiss="modal">Continue
+                        Shopping
+                    </button>
+                </div>
+            </div>
+            <!-- End forgot password step 4 -->
+
+        </div>
+    </div>
+</div>

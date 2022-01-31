@@ -1,0 +1,399 @@
+db.createUser({
+  user: "sample",
+  pwd: "sample",
+  roles: ["readWrite", "dbAdmin"]
+});
+
+
+FOR %f in (*.json) DO "C:\Program Files\MongoDB\Server\4.0\bin\mongoimport.exe" --db ss --collection %~nf --file %f
+mongoimport --db test --collection example --type json --file example.json --jsonArray
+
+
+https://www.dropbox.com/sh/wnv060k58s7iiy3/AABDyMGE222CbD9byBhxZ5aua?dl=0
+
+//replace db credentials
+email: abirymail@gmail.com
+old password: 07yovIdcJdSkX761kXGefDBP8cOhcAWNX118FhV5BUNLi7iQxCVyp3MmRK5cj4Y7T24DVut+Lkx7wvaBalTK6w==
+new password: CR+EPqBL2W7XCEgeV71d+Tm8Z9BKX4Xw8Fpi6d6WUr1nVGACJE6UwrWOU8JOBUDC4/fwR4RxyK0Is6QIz14MsA==
+
+old salt: oPvGOQ+Ki0BpJ13r4PTdWA==
+new salt: i3MF06tuPgMAYVZsKkZrVg==
+
+
+two_tap_full_catalogs
+-_id
+-url
+-title
+-brand
+-description
+-image
+-price
+-categories
+-site_categories
+-required_field_names
+-required_field_values
+-updated_at
+-site_id
+-all_categories
+-site_name
+-md5
+-crossed_at
+
+ss_tap_products
+-_id
+-url
+-title
+-brand
+-description
+-image
+-price
+-categories
+-site_categories
+-required_field_names
+-required_field_values
+-update_at
+-site_id
+-all_categories
+-site_name
+-md5
+-price_sale
+-current_price
+-keyword
+-image_url
+-sales
+-percentOff
+-catalogId
+-merchant
+-category
+-categories_arr
+-fine_category
+-twoTapProductUrl
+-twoTapAffiliateLink
+-affiliated_network
+-available
+-http_code
+-categoryId
+-color
+-color_images
+-alt_images
+
+
+-- list of unused files/missing in gulpfile.js --
+
+- public/assets/controller - MOVED
+
+app_search.js
+login.js
+oldFunctionNode.js
+oldFunctions.js
+productcontroller_x.js
+register.js
+storecontroller.js
+
+- public/assets/js - MOVED
+charts.js
+chartOrd.js
+form-elements.js
+form-image-cropping.js
+form-text-editor.js
+form-validation.js
+form-wizard.js
+index.js
+login.js
+main.js
+maps.js
+pages-calendar.js
+pages-messages.js
+table-data.js
+ui-buttons.js
+ui-elements.js
+ui-nestable.js
+ui-notification.js
+ui-treeview.js
+
+- public/assets/services -MOVED
+mappedcategorybackup.factory.js
+prosperentUrl.factory.js
+prosperentUrlred.factory.js
+searchBrandCount.factory.js
+searchCountVac.factory.js
+uniqueProduct.factory.js
+uniqueProductBrand.factory.js
+Xearch.service.js
+
+- public/assets/userjs -MOVED
+common.js
+custom_script_app.js
+jquery.formReplacer.min.js
+jquery.mCustomScrollbar.concat.min.js
+mainApp.js_
+require.config.js_
+scripts.js
+
+- public/assets/userjs/libs -MOVED
+3deye.min.js
+bootstrap.js
+bootstrap.min.js
+jquery-1.11.1.min.js
+jquery-ui.js
+jquery.bxslider.js
+jquery.dd.js
+jquery.easing.1.3.js
+jquery.fancybox.js
+jquery.fancybox.pack.js
+jquery.galleryview-3.0-dev.js
+jquery.jcarousel.js
+jquery.jcarousel.min.js
+jquery.leanModal.min.js
+jquery.mCustomScrollbar.concat.min.js
+jquery.min.js
+jquery.prettyPhoto.js
+jquery.screwdefaultbuttonsV2.min.js
+jquery.timers-1.2.js
+jquery.validate.min.js
+jquery.waitforimages.js
+npm.js
+require.js
+
+- public/assets/userjs/us - MOVED
+plugin.checkbox.js
+global.js
+
+- public/dist - MOVED
+main.js
+main.min.js
+
+- public/s_js - MOVED
+jsapi_rajib62416.js
+jsapi20oct.js
+jsapi22sep.js
+wp-config.php
+
+- public/s_js/libs - MOVED
+angular.min.js
+jquery-1.11.2.min.js
+jquery-3.2.1.slim.min.js
+masonry.pkgd.min.js
+xml2json.js
+
+public/s_js/admin/ - MOVED
+jquery-ui.js
+
+public/s_js/collective_js - MOVED
+imagesloaded.pkgd.min.js
+main.js
+masonry.pkgd.min.js
+photo-controller.js
+
+public/scripts - MOVED
+global.js
+script.js
+
+public/scripts/admin - MOVED
+chartsOrd.js
+form-elements.js
+form-image-cropping.js
+form-text-editor.js
+form-validation.js
+form-wizard.js
+login.js
+maps.js
+pages-calendar.js
+pages-messages.js
+table-data.js
+ui-buttons.js
+ui-elements.js
+ui-nestable.js
+ui-notifications.js
+ui-treeview.js
+
+public/scripts/lib - MOVED
+angular-animate.js
+angular-animate.min.js
+angular-cookies.js
+angular-flexslider.js
+angular-resource.js
+angular-resource.min.js
+angular-route.js
+angular-route.min.js
+angular-sanitize.min.js
+angular-sanitize.min.js.map
+angular.js
+angular.min.js
+lazy-scroll.min.js
+ng-infinite-scroll.min.js
+ui-bootstrap-tpls-0.13.0.js
+
+public/scripts/libs - MOVED
+3deye.min.js
+bootstrap.js
+bootstrap.min.js
+jquery-1.11.1.min.js
+jquery-ui.js
+jquery.bxslider.js
+jquery.dd.js
+jquery.easing.1.3.js
+jquery.fancybox.js
+jquery.fancybox.pack.js
+jquery.formReplacer.min.js
+jquery.galleryview-3.0-dev.js
+jquery.jcarousel.js
+jquery.jcarousel.min.js
+jquery.leanModal.min.js
+jquery.mCustomScrollbar.concat.min_old version.js
+jquery.mCustomScrollbar.concat.min.js
+jquery.min.js
+jquery.prettyPhoto.js
+jquery.timers-1.2.js
+jquery.validate.min.js
+jquery.waitforimages.js
+jquery.wookmark.js
+npm.js
+plugin.checkbox.js
+require.js
+jquery.screwdefaultbuttonsV2.min.js
+
+
+public/vendor/jQuery-Facebook-Photo-Selector/csphotoselector.js
+vendor/bootstrap/css/bootstrap.min.css
+vendor/fontawesome/css/font-awesome.min.css
+vendor/themify-icons/themify-icons.min.css
+vendor/animate.css/animate.min.css
+vendor/perfect-scrollbar/perfect-scrollbar.min.css
+vendor/switchery/switchery.min.css
+vendor/jquery/jquery.min.js
+vendor/Chart.js/Chart.min.js
+vendor/jquery.sparkline/jquery.sparkline.min.js
+vendor/bootstrap/js/bootstrap.min.js
+vendor/modernizr/modernizr.js
+vendor/jquery-cookie/jquery.cookie.js
+vendor/perfect-scrollbar/perfect-scrollbar.min.js
+vendor/switchery/switchery.min.js
+
+-- partial html files that have scripts or script files --
+
+- public/partials/s_user
+account.html
+accountSS.html
+collective.html
+single_product.html
+single_product2.html
+single_productApi.html
+
+
+-- duplicate files --
+public/s_js/libs/jquery.min.js  public/vendor/jquery/jquery.min.js
+public/s_js/libs/imagesloaded.pkgd.min.js public/s_js/collective_js/imagesloaded.pkgd.min.js
+
+-- marked unnecessary files , move to unused or another folder --
+
+_gitignore.txt
+var
+SS.docx -> resourcefiles
+storelist.csv -> resourcefiles
+store.csv -> resourcefiles
+searchoutputlog.csv -> resourcefiles
+log.txt
+categorySchema.csv -> resourceFiles
+gitcommand.txt
+auth.routes.js
+i.js
+main/
+STANDARD/
+
+
+NOTES
+
+incomplete components, see comments
+
+-app
+  > set locationProvider html5Mode true
+  > scope.loggedin is needed for the login details to show, see body tag
+  > body tag has css classes that needs to refactored (maybe ... its confusing)
+  > bodyClick not implemented
+  > addClass on body tag not implemented
+  > openFilter on body tag not implemented
+  > added routeChange listeners
+  > incomplete implmentation of initializeUser and uninitializeUser
+  > userInfo properties have not been renamed
+
+- mainSearchComponent
+  > filter module not found, comment it out at line 40, 62, 65
+
+- headerLeftComponent
+
+- headerRightComponent
+  > implement logout
+  > mcustom-scroll directive
+
+- signUpComponent
+  > firstname, middlename, lastname, zip - change the casing
+  > force-validate directive not implemented
+  > resetForms() not implemented
+  > remove force-validator directive
+  > check clearCustomValidationError
+  > facebook, twitter, instagram doesnt work
+
+- userSidebarComponent
+ > $ctrl.userInfo.userHistory not implemented yet
+
+- mainNavigationComponent
+  >  not yet fixed and implemented
+
+- shopService
+  > calculateTotalItems = calculateItems
+
+- userService
+  > data from shippingAdress and billingAddress came from userInfo
+
+- stageSliderComponent
+
+- sliderDirectiveModule
+ > scope.alt_images in stageSlider i dont know what this is
+
+- dashboardProductsComponent
+ > convert-to-number directive not implmented yet
+ > slugify and makePositive not implemented
+
+change on the server server side
+
+- server/user/models/user.models
+  > firstname, middlename, lastname, zip - change the casing
+  > change ss_susbscribe to ssSusbscribe
+  > getMyFavorites,
+
+others
+ > define_slider on app_home.js also defines the products at the bottom of the dashboard
+
+Components
+-Header
+ -Left Header
+  -Blogspot slider
+ -Middle header
+  -Main search
+ -Right header
+  -Sign up/login
+-Navigation
+ -Links
+-Dashboard
+ -Stage slider
+  -User sidebar
+ -Thumbnail slider
+-Footer
+
+
+
+users
+
+abirymail@gmail.com
+restricteduser09
+
+aan-sadi@aan-nahl.com sadi
+restricteduser09
+
+
+mainuljs@gmail.com mainuljs
+restricteduser09
+
+rajan.impinge@gmail.com Rajan
+restricteduser09

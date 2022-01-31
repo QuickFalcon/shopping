@@ -1,0 +1,154 @@
+<!-- Admin List of Products from database -->
+<div>
+
+
+<div class=left style="width:15%;float:left;padding-left:5%;padding-top:5%;">
+
+
+
+<input type=text ng-model="selected">
+
+
+Price<br>
+	<div class="sliderExample" style="margin-top:3vh;">
+		<div ui-slider="{range: true}" min="0.00" max="9999.00" step="0.1" use-decimals ng-model="cost.range"></div>
+	</div>
+<a href="" ng-click="setPrice(0.00,25.00)"> Within $25 </a><br>
+<a href="" ng-click="setPrice(25.00,50.00)"> $25 to $50</a><br>
+
+<a href="" ng-click="setPrice(50.00,100.00)"> $50 to $100</a><br>
+<a href="" ng-click="setPrice(100.00,200.00)"> $100 to $200</a><br>
+<a href="" ng-click="setPrice(200.00,9999.00)">$200 & Above</a><br>
+
+Minimum Price<input type=number size=6 ng-model="cost.range[0]" style="width:100px;" step="any"><br>
+Maximum Price<input type=number size=6 ng-model="cost.range[1]" style="width:100px;" step="any"><br>
+
+
+<div style="width:100%;float:left;">
+<b>Store</b><br>
+<select ng-model="select_merchant" ng-change="merchant_change()" >
+    <option value="">All</option> 
+
+   <option value="Avon">Avon</option>
+  <option value="BabyEarth">BabyEarth</option>
+    <option value="Gap">Gap </option>
+
+  <option value="Overstock.com">Overstock.com </option>
+ <option value="Walmart">Walmart </option>
+   
+</select>
+</div>
+
+
+
+
+
+SHOW ONLY<br>
+
+<input type=checkbox ng-model="select_top_rated"  ng-true-value="5" ng-false-value="0" ng-change="top_rated()"> Customer's Top Rated  <br>
+
+
+
+
+
+	</div>
+    
+<div class=middle style="width:60%;float:left;margin-top:14vh;">
+
+	
+
+<div class='container-fluid' >
+
+  <form ng-submit="searching()">
+	   
+  <!--  <pre>Search key : {{selected.keyword | json}} & {{totalRecordsAvailable}}</pre>-->
+        <pre> {{totalRecordsAvailable}} items in {{selected | json}}</pre>
+		
+
+<select ng-model="select_dept" ng-change="update_suggestion()" style="float:left;">
+     <option value="">ALL</option> 
+  <option value="women">WOMEN</option> 
+  <option value="men">MEN</option> 
+    <option value="shoes">SHOES</option> 
+    <option value="accessories">ACCESSORIES</option> 
+    <option value="beauty">BEAUTY</option> 
+       <option value="kids">KIDS</option> 
+	   <option value="home">HOME</option> 
+	    <option value="gifts">GIFTS</option> 
+		 <option value="others">OTHERS</option> 
+
+	
+	
+	
+</select>
+
+
+
+   <!-- <input type="text" ng-model="selected.keyword" typeahead="state.keyword for state in countries | filter:$viewValue | limitTo:9" class="form-control" name="search" autocomplete="off" >-->
+
+    <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:100" class="form-control" name="search" autocomplete="off" style="width:70%;float:left;" >
+   
+
+      <input type=submit value="Search" style="float:left;">
+
+  </form>
+  
+   <select ng-model="sortorder" ng-change="update_sort_order()" >
+    <option value="1">Ascending</option>
+    <option value="-1">Descending</option>
+
+  </select>
+   
+   <a href ng-click="showall()"> View All</a>
+ 
+{{adminstorelist}} 
+
+	
+	<!--<div ng-repeat="pro in countries |filter:{category: select_dept, brand:select_brand,merchant:select_merchant} | filter:priceFilter | filter:percentFilter" class=lft style="width:30%;padding:5%;float:left;">-->
+	<div ng-repeat="pro in adminstorelist track by $index" class=lft style="width:30%;padding:5%;float:left;">
+
+   <h3><a ng-href="admin#/productdb/{{pro.catalogId }}"> {{ pro.store_name }} </a> </h3>
+	  <a ng-href="admin#/storeupdate/{{pro._id }}">    <img src="{{pro.image_url}}" alt="{{pro.store_name }}" title="{{pro.store_name }}" class="search-result-item-image" style="width:100%;"></a>  
+    <!-- category {{ pro.category }} <br>-->
+
+
+     
+
+    <br>
+       <!-- Product Url {{ pro.url }} -->
+     <a ng-href="{{ pro.store_url }}" target="_blank" alt=" {{ pro.keyword }}"> Visit Store web Site </a>
+ <!--<a ng-href='#/productlistdb' ng-click="del({{ pro.color }})" > Delete</a>  -->
+    <a ng-href="admin#/storeupdate/{{pro._id }}"> Update</a>|
+     <a ng-click="deleteStore(pro._id)"> Delete</a>
+   </div>
+		<input type=button value="load more" ng-click="load_more()">
+
+ </div>	
+	
+      
+
+	<div style="width:100%;">
+
+   
+
+	
+	 <pagination total-items="totalRecordsAvailable" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="limit" ng-change="pageChanged()"></pagination>
+  <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+	
+    </div>
+
+ 
+
+   
+  
+  
+   
+   </div>
+	
+ </div>
+
+   <div class=right style="width:5%;float:left;">
+
+
+    </div>
+</div>

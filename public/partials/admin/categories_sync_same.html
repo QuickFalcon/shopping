@@ -1,0 +1,41 @@
+	
+	<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+
+
+
+	<div class='container-fluid' >
+     <h3>Synchronize Exactly Prosperent Categories</h3>
+	 <p>Description</p>
+		<p> This will import all prosperent Categories, Sub categories inside SS database(categoryprosperentsyncs). It will also relate category with subcategory inside database </p>
+	 
+		<input type=button ng-click="sync_categories_prosper()" value="Synchronize With Prosperent Categories">	
+		
+		<input type=button ng-click="delete_categories_prosper()" value="Delete">	
+		
+		<br> <br><br>
+		<input type=button ng-click="get_categories_prosper()" value="Show Categories">	
+		<br>Show category from categoryprosperentsyncs collection without any filtering <br><br>
+        Search Categories 
+         &nbsp; &nbsp; &nbsp;  	<br>	 
+		 <input ng-model="search.category" type="text" ng-model-options="{debounce: 1000}"><br><br>
+         Number of Records <br>    
+		 <input type=text ng-model="lmt" ng-change="change_limit()" ng-model-options="{debounce: 1000}">
+
+		
+<!-- <input ng-model="search" type="text">
+ --> <br><br><br>   
+		       
+		  <ul>     
+          <!--  <li ng-repeat="cat in prosperent_catList track by $index" ng-show="([cat] | filter:search).length > 0"> -->
+		  <li ng-repeat="cat in prosperent_catList| filter:search track by $index" style="list-style:none;">
+                {{cat.category}} ({{cat.numProducts}})
+          </li> 		  
+		  </ul>
+		</div>
+	</div>
+		<!-- end: REGISTRATION -->
+
+		
+		
+
+

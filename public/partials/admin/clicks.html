@@ -1,0 +1,303 @@
+   {{search}}
+	<div class="main-content" >
+   <div class="wrap-content container" id="container">  	
+	<!-- start: PAGE TITLE -->
+						<section id="page-title">
+							<div class="row">
+								<div class="col-sm-8">
+									<h1 class="mainTitle">Clicks</h1>
+									<span class="mainDescription">Simple, clean and engaging charts for data analysis.</span>
+								</div>
+								<ol class="breadcrumb">
+									<li class="active">
+										<span>Clicks</span>
+									</li>
+								</ol>
+							</div>
+						</section>
+						<!-- end: PAGE TITLE -->
+	
+	
+	<!-- start: BAR CHART -->
+						<div class="container-fluid container-fullw">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Bar <span class="text-bold">Chart</span> For last 7 days clicks</h5>
+									
+									<div class="row">
+										
+										<!--<div ng-controller="ChartCtrl2"> -->
+											
+											
+											<div class="col-sm-10">
+											
+												<!--<canvas class="tc-chart" tc-chartjs-bar chart-options="options" chart-data="data" chart-legend="lineChart2"></canvas>-->
+											<canvas id="barChart" class="full-width"></canvas>
+											</div>
+											<div class="col-sm-2">
+										    <p class="margin-top-20">
+												<div id="barLegend" class="chart-legend"></div>
+											</p>
+
+										     </div>
+											
+										<!--</div> -->
+								    </div>
+			                       <div class="row">
+										<div class="col-sm-6">
+											<p class="margin-bottom-20">
+											&nbsp;
+											</p>
+										    
+											
+											
+										</div>
+										<div class="col-sm-2">
+										    <p class="margin-top-20">
+												<div id="barLegend" class="chart-legend"></div>
+											</p>
+
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+			
+
+
+
+						</div>
+						
+						<div class="container-fluid container-fullw">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15"> <span class="text-bold">Yesterday's</span> Top search term</h5>
+									
+									<div class="row">
+										
+											
+											
+											<div class="col-sm-5">
+											
+											<canvas id="barChartSearch" class="full-width"></canvas>
+											</div>
+											
+											<div class="col-sm-7">
+										    <p class="margin-top-20">
+												<div id="barLegendSearch" class="chart-legend"></div>
+										
+											
+											</p>
+
+										    </div>
+											
+									
+								    </div>
+			                       <div class="row">
+										<div class="col-sm-6">
+											<p class="margin-bottom-20">
+											&nbsp;
+											</p>
+										    
+											
+											
+										</div>
+										<div class="col-sm-6">
+										    <p class="margin-top-20">
+												<div id="barLegendSearch" class="chart-legend"></div>
+											</p>
+
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+			
+
+
+
+						</div>
+						<!-- end: BAR CHART -->   
+<!-- start: LINE CHART -->
+						<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Line <span class="text-bold">Chart</span></h5>
+									<div class="row">
+										<div class="col-sm-6">
+											<canvas id="lineChart" class="full-width"></canvas>
+										</div>
+										<div class="col-sm-6">
+											<p class="margin-bottom-20">
+												A line chart is a way of plotting data points on a line.
+												Often, it is used to show trend data, and the comparison of two data sets.
+											</p>
+											<p>
+												The line chart requires an array of labels for each of the data points. This is shown on the X axis. The data for line charts is broken up into an array of datasets. Each dataset has a colour for the fill, a colour for the line and colours for the points and strokes of the points. These colours are strings just like CSS. You can use RGBA, RGB, HEX or HSL notation.
+											</p>
+											<p>
+												The label key on each dataset is optional, and can be used when generating a scale for the chart.
+											</p>
+											<p class="margin-top-20">
+												<div id="lineLegend" class="chart-legend"></div>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: LINE CHART -->
+<!-- start: DOUGHNUT CHART -->
+						<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Doughnut <span class="text-bold">Chart</span></h5>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="text-center margin-bottom-15">
+												<canvas id="doughnutChart" class="full-width"></canvas>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<p>
+												Pie and doughnut charts are probably the most commonly used chart there are. They are divided into segments, the arc of each segment shows the proportional value of each piece of data.
+											</p>
+											<p>
+												They are excellent at showing the relational proportions between data.
+											</p>
+											<p>
+												Pie and doughnut charts are effectively the same class in Chart.js, but have one different default value - their <code>percentageInnerCutout</code>. This equates what percentage of the inner should be cut out. This defaults to <code>0</code> for pie charts, and <code>50</code> for doughnuts.
+											</p>
+											<p class="margin-top-20">
+												<div id="doughnutLegend" class="chart-legend"></div>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: DOUGHNUT CHART -->
+						<!-- start: PIE CHART -->
+						<div class="container-fluid container-fullw">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Pie <span class="text-bold">Chart</span></h5>
+									<div class="row">
+										<div class="col-sm-6">
+											<p>
+												Pie and doughnut charts are probably the most commonly used chart there are. They are divided into segments, the arc of each segment shows the proportional value of each piece of data.
+											</p>
+											<p>
+												They are excellent at showing the relational proportions between data.
+											</p>
+											<p>
+												Pie and doughnut charts are effectively the same class in Chart.js, but have one different default value - their <code>percentageInnerCutout</code>. This equates what percentage of the inner should be cut out. This defaults to <code>0</code> for pie charts, and <code>50</code> for doughnuts.
+											</p>
+											<p class="margin-top-20">
+												<div id="pieLegend" class="chart-legend"></div>
+											</p>
+										</div>
+										<div class="col-sm-6">
+											<div class="text-center margin-bottom-15">
+												<canvas id="pieChart" class="full-width"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: PIE CHART -->
+						<!-- start: POLAR AREA CHART -->
+						<div class="container-fluid container-fullw bg-white">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Polar Area <span class="text-bold">Chart</span></h5>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="text-center margin-bottom-15">
+												<canvas id="polarChart" class="full-width"></canvas>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<p>
+												Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment differs depending on the value.
+											</p>
+											<p>
+												This type of chart is often useful when we want to show a comparison data similar to a pie chart, but also show a scale of values for context.
+											</p>
+											<p>
+												As you can see, for the chart data you pass in an array of objects, with a value and a colour. The value attribute should be a number, while the color attribute should be a string. Similar to CSS, for this string you can use HEX notation, RGB, RGBA or HSL.
+											</p>
+											<p class="margin-top-20">
+												<div id="polarLegend" class="chart-legend"></div>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: POLAR AREA CHART -->
+						<!-- start: RADAR CHART -->
+						<div class="container-fluid container-fullw">
+							<div class="row">
+								<div class="col-sm-12">
+									<h5 class="over-title margin-bottom-15">Radar <span class="text-bold">Chart</span></h5>
+									<div class="row">
+										<div class="col-sm-6">
+											<p>
+												A radar chart is a way of showing multiple data points and the variation between them.
+											</p>
+											<p>
+												They are often useful for comparing the points of two or more different data sets.
+											</p>
+											<p>
+												For a radar chart, to provide context of what each point means, we include an array of strings that show around each point in the chart.
+												For the radar chart data, we have an array of datasets. Each of these is an object, with a fill colour, a stroke colour, a colour for the fill of each point, and a colour for the stroke of each point. We also have an array of data values.
+											</p>
+											<p class="margin-top-20">
+												<div id="radarLegend" class="chart-legend"></div>
+											</p>
+										</div>
+										<div class="col-sm-6">
+											<canvas id="radarChart" class="full-width"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: RADAR CHART -->
+					<div class="container-fluid container-fullw">
+							<div class="row">
+								<div class="col-sm-12">
+	 <p><h4>Page Views</h4> {{pageView}}  </p>
+      <p>  <h4>Product Click </h4>            {{productClick}} </p>
+      <p><h4> Total Checkout</h4> {{checkout}}</p>
+        <p>	<h4>	Number of time searched</h4>	 {{search}}   </p>
+		
+		<p>	<h4>Today's Top 5 search keys</h4>	 {{searchkey}}   </p>
+		
+		
+		<p class="margin-bottom-20">	<h4> Top search key value </h4>	 {{val}}   </p>
+				
+				
+				
+			</div>
+			</div>
+			</div>
+					
+					
+					
+					
+					</div>	
+     
+	 </div>
+			
+			
+			
+			
+	
+
+	
+	

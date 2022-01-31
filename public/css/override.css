@@ -1,0 +1,223 @@
+.login-popup .popup-list {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 15px 45px -15px #000000;
+    height: 534px;
+}
+.login-popup .modal-content {
+    background-color: transparent;
+    /* bottom: 0; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    height: 534px;
+    /* height: auto; */
+    /* justify-content: center; */
+}
+.login-popup .modal-content.hide {
+    display: none;
+}
+.login-popup .modal-content .modal-body {
+    padding-bottom: 10px;
+}
+.login-popup #signup2 .email,
+.login-popup .information .sup_input_wrp {
+    margin-bottom: 36px;
+    /* margin-bottom: 12px; */
+}
+.user_info .icon.notify_no.total {
+    pointer-events: none;
+}
+/* .login-popup.modal {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+#search_filter{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute; /* to align it to right and positon it over the input */
+    /* top: 5px; */
+    top: 0;
+    right: 20px;
+    /* right: 40px; */
+}
+body .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+    box-shadow: inset 0 0 100px #000000;
+}
+body .modal-backdrop.in {
+    opacity: 0.75;
+}
+body .ss_loading {
+    pointer-events: none;
+}
+/* .ss_loading:after {
+    background-color: #ffffff;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 998;
+} */
+ul.shop_feature .grey_btn.btn-last,
+ul.shop_feature .grey_btn + .grey_btn {
+    bottom: 10px;
+}
+.s_category_list li.active::before {
+    display: none;
+}
+.s_category_wrap .s_category_list li:first-child::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    border-top: 6px solid #000;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+.main_nav>li.choose_cat.hideSubmenu .redCircle:before {
+    display: none;
+}
+.main_nav>li.choose_cat.hideSubmenu .encircle-red {
+    position: relative;
+}
+.main_nav > li.choose_cat.hideSubmenu .encircle-red:after {
+    background: url(../images/circle_highlight.png) no-repeat center center;
+    background-size: contain;
+    bottom: 19px;
+    content: '';
+    /* height: 49px; */
+    left: -25%;
+    /* margin-left: -60px; */
+    pointer-events: none;
+    position: absolute;
+    right: -25%;
+    top: 3px;
+    /* width: 120px; */
+    z-index: 2;
+}
+.main_nav > li.choose_cat .choose_cat_form input {
+    margin: 5px 0 0;
+    width: 100%;
+}
+.main_nav > li.choose_cat .choose_cat_form input::placeholder {
+    color: #808080;
+}
+.main_nav > li.choose_cat.editThis .encircle-red,
+.main_nav > li.choose_cat.editThis .encircle-red:before {
+    visibility: hidden;
+}
+div.goto_all label {
+    cursor: pointer;
+    margin-bottom: 0;
+}
+div.hit-spot-close-search-dropdown {
+    background-color: #000000;
+    cursor: pointer;
+    height: 28px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: -4px;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    width: 29px;
+}
+div.hit-spot-close-search-dropdown:hover {
+    opacity: 0.05;
+}
+div.hit-spot-close-search-dropdown:active {
+    opacity: 0.1;
+}
+div.s_bag_row div.decide_link {
+    padding-top: 20px;
+}
+div.s_bag_row.stock_out div.decide_link div.remove {
+    z-index: 1;
+}
+div.s_bag_row.stock_out:before {
+    content: 'Please remove this. Item is out of stock.';
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    left: 0;
+    font-weight: bold;
+    width: auto;
+    padding-left: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
+    color: #c71617;
+    opacity: 1;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.s_bag_row.stock_out:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff0000;
+    opacity: 0.1;
+    /* pointer-events: none; */
+}
+.left_sidebar .recent_view h3 {
+    margin-bottom: 20px;
+}
+.recentview_list {
+    padding: 0;
+}
+.login-popup .close {
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    right: 0;
+    z-index: 999;
+    width: 24px;
+}
+.login-popup .close .close_btn {
+    font-size: 24px;
+    font-weight: bold;
+}
+#scrollToTop {
+    border-radius: 100%;
+}
+#flyingPopup .product-image.micro .p_image_innner {
+    height: auto;
+}
+/* #flyingPopup.showfpopUp { */
+    /* -moz-transform: scale(3); */
+    /* -ms-transform: scale(3); */
+    /* -o-transform: scale(3); */
+    /* -webkit-transform: scale(3); */
+    /* transform: scale(3); */
+/* } */
+.quickView .popup-plus, .modal .modal-header .popup-plus {
+    right: 21px;
+}
+.quickView .close span, #size-guide-popup .close span, .modal .close span {
+    font-size: 23px;
+    line-height: 23px;
+}
+.quickView .modal-header .close, #size-guide-popup .modal-header .close, .modal .modal-header .close {
+    margin-top: 0;
+    margin-right: -2px;
+    position: absolute;
+    right: 7px;
+    top: 3px;
+    padding: 0 3px;
+}

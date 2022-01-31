@@ -1,0 +1,2 @@
+hello!
+this is the cron part which scrap image from different web site. u can put the folder outside of project directory. run npm install then run cron.js to run this part. it will daily schedule wise scrap images from differnt merchants

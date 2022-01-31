@@ -1,0 +1,9 @@
+{ 
+    "_id" : ObjectId("58b7c2d0844c83799b959ef2"), 
+    "catalogId" : "203d506b89325e8b3c305d7d83c53f8d", 
+    "user" : ObjectId("58942ac95f0748671a925ba0"), 
+    "updatedAt" : ISODate("2017-03-02T06:59:28.176+0000"), 
+    "rate" : NumberInt(6), 
+    "__v" : NumberInt(0), 
+    "createdAt" : ISODate("2017-03-02T06:59:28.176+0000")
+}

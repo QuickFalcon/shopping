@@ -1,0 +1,11 @@
+<section ng-class="$ctrl.isLoggedIn? 'top_section has_sidebar':'top_section'">
+    <user-sidebar-component ng-if="$ctrl.isLoggedIn" is-logged-in="$ctrl.isLoggedIn" user-info="$ctrl.userInfo"></user-sidebar-component> <!-- this template must be moved out here -->
+
+    <!-- dashboard -->
+    <div class="dashboard_container">
+      <stage-slider-component user-info="$ctrl.userInfo" slider-data="$ctrl.sliderData"></stage-slider-component>
+      <thumbnail-slider-component slider-data="$ctrl.sliderData"></thumbnail-slider-component>
+
+        <!-- End stage carousel -->
+    </div>
+</section>

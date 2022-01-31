@@ -1,0 +1,1911 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="UserApp" ng-controller="mainCtrl">
+<!-- render -> /server\core\controllers\core.controllers.js -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <title ng-bind="title"></title>
+        <meta name="keywords" content="{{metax}}">
+        <meta name="description" content="{{metaxdescription}}">
+
+
+        <!-- <link href="http://gitlab.sociallyshoppable.com/#!/SOC/315c9b1f485a289eb1d5d7f9852e0bb7/Red-Patent-Faux-Leather-Pump-High-Heels" rel="canonical" /> -->
+        <meta property="og:title" content="{{title}}" />
+        <meta property="og:image" content="{{og_image}}" />
+        <meta property="og:image:url" content="{{og_image}}" />
+        <meta property="og:description" content="{{metaxdescription}}" />
+
+
+        <meta http-equiv="Cache-control" content="private">
+        <meta name="abstract" content="Customizable E-commerce website! Personalized experience.">
+        <meta name="copyright" content="Socially Shoppable" />
+        <meta name="distribution" content="global">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic|PT+Sans:400,400italic,700,700italic"
+            rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="dist/front.min.css" />
+        <!-- Override styles from front.min.css -->
+        <link rel="stylesheet" type="text/css" href="css/override.css" />
+        <!--  <script src="s_js/libs/jquery-1.11.2.min.js"></script> -->
+        <!-- <script src="s_js/libs/	jquery-3.2.1.slim.min.js"></script> -->
+
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+        <script src="s_js/libs/jquery.min.js"></script>
+
+
+        <script defer type="text/javascript" src="s_js/mixpanel.js"></script>
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body ng-class="{'signIn' : loggedin, 'nav_open' : addClass && withThis == 'navOpen', 'search_open' : addClass && withThis == 'searchOpen', 'showFilter':openFilter}"
+    ng-click="bodyClick()">
+        <div id="mainWrap">
+            <header class="header_wrap">
+                <div class="container_inner clearfix">
+                    <div class="hamburger_btn"><span></span></div>
+                    <header-left-component></header-left-component>
+                    <div class="header_middle">
+                    <div id="logo">
+                        <a ng-click="menuCategorySearchApi('dashboard')" href="#!/">
+                        <img src="images/logo.jpg" alt="Socially Shoppable" />
+                        </a>
+                    </div>
+                    <main-search class="search_box"></main-search>
+                    </div>
+                    <header-right-component></header-right-component>
+                </div>
+            </header>
+            <!--// End Header -->
+            <navigation-component></navigation-component>
+            <div class="main_nav_border"></div>
+            <!-- <br> less than 1000 <br>
+        {{urlBrandWiseProductCountArr}}-->
+            <!--{{mapped_cat}} -->
+            <!--
+            Product url <br> -->
+            <!-- {{prosperentSearchUrl}}  -->
+            <!--<br>
+            Sale Count Url <br>
+            {{sale_count_url}}
+        <br> Merchant count group
+        {{urlMerchantWiseProductCount}}
+        <br> brand url selected and less than 1000 <br>
+        {{urlBrandWiseProductCount}}
+        <br>
+        Casual <br>
+        {{occ_casual}}
+        -->
+            <!--
+            {{urlBrandWiseProductCount}} -->
+            <!--{{similiar_url}} -->
+            <!--
+            <br><br>-->
+            <!--{{brandList}} -->
+            <!--{{occ_vacation}} -->
+            <!--
+            {{sale_count_url}}
+            <br><br>
+            {{urlBrandWiseProductCount}}<br> <br>
+            {{urlMerchantWiseProductCount}} --><br>
+            <!--{{occ_vacation}} -->
+
+
+            <div class="main-content ss_loading showInCenter" ng-class="!loadfull|| !routechange?'ss_loading showInCenter':''">
+            <div ng-view></div>
+            </div>
+            <footer-component></footer-component> 
+            <!-- end footer -->
+        </div>
+        <!-- Quick View Modal -->
+
+
+        <!-- Quick View Modal -->
+        <div class="modal fade sliderInModal quickView" id="quick-popup" ng-class="{disNone : hideafterLoad}" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Quick View</h3>
+                <a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}" class="popup-plus">+</a>
+                <button type="button" class="close" data-dismiss="modal" >
+                    <span aria-hidden="true">X</span></button>
+                </div>
+                <div class="modal-body clearfix">
+                <div class="quick-popup-left">
+                    <div class="quick-carousel-wrap">
+                    <div class="quick-carousel" id="quickThumb" quickview-slider>
+                        <ul class="q_slide">
+
+
+                      <li>
+                            <div class="img-wrap" style="background-image: url({{current_product.image}})">
+                            <!--<img ng-src="{{current_product.image}}" alt=""> -->
+                            </div>
+                        </li> 
+                        <li ng-repeat="img_item in current_product.alt_images track by $index">
+                            <div class="img-wrap" style="background-image: url({{img_item}})"><img ng-src="{{img_item}}" alt="">
+                            </div>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!-- <a class="quick-nav quick-prev"><span></span></a>
+                                            <a class="quick-nav quick-next"><span></span></a> -->
+                    </div>
+                    <div class="quick-thumb-carousel-wrap">
+                    <div class="quick-thumb-carousel" id="quickThumbNav" quickview-slidernav>
+                        <ul class="quick_nav">
+                         <li>
+                            <div class="img-wrap" style="background-image: url({{current_product.image}})"></div>
+                        </li>
+
+                        <li ng-repeat="img_item in current_product.alt_images track by $index">
+                            <div class="img-wrap" style="background-image: url({{img_item}})"><img ng-src="{{img_item}}" alt=""></div>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!-- <a class="quick-thumb-nav quick-thumb-prev"><span></span></a>
+                                            <a class="quick-thumb-nav quick-thumb-next"><span></span></a> -->
+                    </div>
+                </div>
+                <div class="quick-popup-right">
+                    <div class="s_product_right_d clearfix">
+                    <div class="product_title">
+                        <h2><a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}" ng-bind-html="current_product.keyword"></a></h2>
+                    </div>
+
+
+                    <div class="product_sb_ttl">{{current_product.brand}}</div>
+                    <div class="product_sku">Item# <a ng-href="#!/SOC/{{current_product.catalogId }}/{{ current_product.keyword | slugify}}">{{current_product.catalogId}}</a>
+                    </div>
+                    <div class="product_sku" ng-show="current_product.upc!='' && current_product.upc!=null">Universal Product Code#
+                        {{current_product.upc}}
+                    </div>
+                    <div class="product_sku" ng-show="current_product.isbn!='' && current_product.isbn!=null">ISBN# {{current_product.isbn}}</div>
+
+                    <div ng-class="quickview_update==1?'s_product_price':'falseClass'">
+                        ${{current_product.price}}
+                    </div>
+
+                    <div ng-class="setcurrentitemfrom == 'localstorage' && quickview_update!=1?'s_product_price':'falseClass'">
+                        <span>{{current_product.price}}</span>
+                    </div>
+                    <div ng-class="setcurrentitemfrom == 'prosperent' && current_product.price_sale !=-1 && quickview_update!=1? 's_product_price':'falseClass'">
+                        <span>WAS ${{current_product.price}}</span>
+                        <span class="t_red">NOW ${{current_product.current_price}}</span><i class="icn_all sale_alert"></i>
+                    </div>
+
+                    <div ng-class="setcurrentitemfrom =='prosperent' &&(current_product.price_sale ==-1) && quickview_update!=1? 's_product_price':'falseClass'">
+                        ${{current_product.price}}
+                    </div>
+
+
+                    <div class="s_product_review_rating">
+                        <div class="rateis r{{current_product.rateAvg| makePositive}}" ng-class=""></div>
+                        <div class="s_product_review">
+                        <span><a href="#">SS Ratings &amp; Reviews</a> </span>
+                        </div>
+                    </div>
+                    <div class="product_icns shareInModal">
+
+                        <div class="zoomed_s_icons_wrap dsktp_hide">
+                        <ul class="zoomed_s_icons">
+                            <li ng-click="openSocialPopup(current_product, 'like', $event)">
+                            <i class="icon grey_heart" ng-class="{activated: (current_product.likeUser|| favCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                            <span ng-bind="current_product.likeCount || '0'"></span>
+
+                            </li>
+                            <li ng-click="openSocialPopup(current_product, 'mail', $event)">
+                            <i class="icon grey_arrow" ng-class="{activated: (current_product.mailUser|| mailCatalogList.indexOf(current_product.catalogId) > -1)}"></i>
+                            <span ng-bind="current_product.shareCount || '0'"></span>
+                            </li>
+                            <li ng-click="openSocialPopup(current_product, 'collective', $event)">
+                            <i class="icon grey_bag" ng-class="{activated: (current_product.reviewUser|| reviewCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                            <span ng-bind="current_product.ratedByUser || '0'"></span>
+
+                            </li>
+                        </ul>
+                        </div>
+
+                        <ul class="shared_icons">
+
+
+                        <li ng-click="openSocialPopup(current_product, 'like', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='like'}">
+                            <i class="icon grey_heart" ng-class="{activated: (current_product.likeUser|| favCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                            <span ng-bind="current_product.likeCount || '0'"></span>
+                        </li>
+                        <li ng-click="openSocialPopup(current_product, 'mail', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='mail'}">
+                            <i class="icon grey_arrow" ng-class="{activated: (current_product.mailUser|| mailCatalogList.indexOf(current_product.catalogId) > -1)}"></i>
+                            <span ng-bind="current_product.shareCount || '0'"></span>
+                        </li>
+                        <li ng-click="openSocialPopup(current_product, 'collective', $event)" ng-class="{active: current_product==socialPopupProduct && socialPopupTab==='collective'}">
+                            <i class="icon grey_bag" ng-class="{activated: (current_product.reviewUser|| reviewCataloglist.indexOf(current_product.catalogId) > -1 )}"></i>
+                            <span ng-bind="current_product.ratedByUser || '0'"></span>
+                        </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <!--{{current_product}} -->
+
+                    <div class="s_product_clr_sz_bx" ng-class="{'ss_loading' : !qvLoading}">
+                        <div class="s_product_color_size clearfix">
+                        <div class="s_product_color" ng-class="current_product.required_field_names.indexOf('color')> -1 ? '' : 'border_bottom_none'">
+
+                            <div ng-class="current_product.required_field_names.indexOf('color')> -1 ? '' : 'falseClass'">
+
+                            <div class="s_product_color_t">
+                                COLOR:<span ng-class="required_field_values.color!='' &&  required_field_values.color!=undefined?'':'falseClass'">{{qvcolorText}}</span>
+                                <span ng-class="required_field_values.color==''|| required_field_values.color==undefined|| required_field_values.color==null?'red':'falseClass'">
+                                Select Color</span>
+
+                            </div>
+
+                            <ul class="s_product_color_bx">
+                                <li class="s_p_clr" ng-repeat="itemByColor in qvcolorjson track by $index">
+
+                                <input type="radio" name="qqselectColorm1" id="qquickcolor_{{$index}}" value="{{itemByColor.value}}" ng-model="required_field_values.color"
+                                    ng-click="set_color_mother(qvcolorjson,itemByColor)">
+                                <label for="qquickcolor_{{$index}}">
+                                    <span style='background-color:{{itemByColor.value}};background-image:url({{itemByColor.value.indexOf("http")>-1 ? itemByColor.value : itemByColor.image }})'></span>
+
+                                </label>
+
+
+                                </li>
+
+                            </ul>
+                            </div>
+
+                        </div>
+
+                        <div class='s_product_size'>
+                            <div ng-class="current_product.required_field_names.indexOf('size')> -1 ? '' : 'falseClass'">
+
+                            <div class="s_product_size_t">
+                                <!-- <span class="red"> -->SIZE: <span ng-class="required_field_values.size!=''&& required_field_values.size!=undefined && required_field_values.size!=null?'':'falseClass'">{{required_field_values.size}}</span>
+
+                                <span ng-class="required_field_values.size==''|| required_field_values.size==undefined|| required_field_values.size==null?'red':'falseClass'">
+                                Select Size</span>
+                            </div>
+                            <ul class="s_product_size_bx">
+                                <li class="s_p_size" ng-repeat="itemBySize in qvsizejson track by $index">
+                                <input type="radio" name="ssax" id="qquicksizex_{{$index}}" value="{{itemBySize.value}}" ng-model="required_field_values.size"
+                                    ng-click="set_size_mother(qvsizejson,itemBySize)">
+                                <label for="qquicksizex_{{$index}}"><span>{{itemBySize.text}}</span></label>
+                                </li>
+                            </ul>
+
+                            <!--
+                                                <div class="s_product_sz_guide"><a data-target="#size-guide-popup" role="button"
+                                                                                data-toggle="modal">Size Guide</a></div> -->
+                            </div>
+
+
+                        </div>
+                        <div ng-repeat="rname in current_product.required_field_names track by $index" ng-if="rname!='color' &&  rname!='size' && rname!='quantity' ">
+                            <div ng-class="current_product.required_field_values.hasOwnProperty(rname)? '' : 'falseClass'">
+                            <div class="s_product_color_t">{{rname}}:</div>
+
+                            <ul class="s_product_common_bx" ng-if="quickview_update==1">
+                                <li class="s_p_clr" ng-repeat="jsonOption in current_product.requiredjsons[rname] track by $index">
+                                <input type="radio" name="selectOptx{{rname}}" id="x{{rname}}{{$index}}" value="{{jsonOption.value}}" ng-model="required_field_values[rname]"
+                                    ng-click="set_json_field_mother(current_product.requiredjsons[rname],jsonOption)">
+                                <label for="x{{rname}}{{$index}}">
+                                    <span ng-bind="jsonOption.text"></span></label>
+                                </li>
+
+                            </ul>
+                            <ul class="s_product_common_bx" ng-if="current_product.required_field_values[rname].data[0].input_type!='text' && quickview_update==0 ">
+                                <li class="s_p_clr" ng-repeat="jsonOption in current_product.requiredjsons[rname] track by $index">
+                                <input type="radio" name="selectOpt{{rname}}" id="{{rname}}{{$index}}" value="{{jsonOption.value}}" ng-model="required_field_values[rname]"
+                                    ng-click="set_json_field_mother(current_product.requiredjsons[rname],jsonOption)">
+                                <label for="{{rname}}{{$index}}">
+                                    <span ng-bind="jsonOption.text"></span></label>
+                                </li>
+
+                            </ul>
+                            <input type="text" ng-model="required_field_values[rname]" ng-if="current_product.required_field_values[rname].data[0].input_type=='text' && quickview_update==0">
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="s_product_qty_bag clearfix">
+                        <div class="s_product_qty">
+                            <span class="qty_lebel">QUANTITY:</span>
+                            <div class="quantity-dropdown">
+                            <form>
+                                <div class="defaultSt">
+                                <select ng-model="required_field_values['quantity']" convert-to-number>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                </select>
+                                </div>
+
+                                <!-- <div class="" ng-class="quickvew ==0 ?'defaultSt':'falseClass'">
+                                                        <select ng-model="current_product['quantity']" convert-to-number>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                    </div> -->
+
+
+                            </form>
+                            </div>
+                        </div>
+
+                        <!--
+                                        <div ng-class="quickview_update==1 ?'falseClass':'s_product_a_t_b'">
+                                        <div class="black_btn btn" data-toggle="modal" data-target="#addToBag"> ADD TO BAG
+                                        </div>
+                                        </div> {{proAvailable}} -->
+
+
+                        <div ng-class="quickvew ==1 ?'s_product_a_t_b':'falseClass'">
+                            <div class="black_btn btn" ng-click="addToCart(current_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)
+        "> ADD TO BAG
+                            </div>
+                            <!--from Quick View -->
+                            <!-- <div ng-class="{true:'ng-hide',false:'black_btn btn',undefined:'ng-hide'}[proAvailable]"> Unavailable -->
+                            <!-- </div> -->
+                        </div>
+                        <div ng-class="quickview_update!=1 && quickvew ==0?'s_product_a_t_b' :'falseClass'">
+                            <div class="black_btn btn" ng-click="addToCart(current_product,current_product.quantity, proDetails, current_product.required_field_values, current_product.price, current_sitekey, current_prokey, proDetails.cart_id)
+        "> ADD TO BAG
+                            </div>
+                            <!-- <div ng-class="{true:'ng-hide',false:'black_btn btn',undefined:'ng-hide'}[proAvailable]"> Unavailable -->
+                            <!-- </div> -->
+                        </div>
+
+                        <div ng-class="quickview_update==0 && quickvew==1?'s_product_wishlist':'falseClass'">
+
+                            <span><a ng-click="addtoWishlistGlobal(current_product,required_field_values)">+ ADD TO SAVED LIST</a></span>
+                        </div>
+
+
+                        <!--  <div ng-class="quickview_update==0 || qvtwotapapidataready==0 ?'falseClass':'s_product_wishlist'">
+
+                                            <span><a ng-click="addToWishCartQV(prosper_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)">+ ADD TO SAVED LIST</a></span>
+                                        </div> -->
+
+                        <div ng-class="quickview_update==1 || qvtwotapapidataready==0 ?'falseClass':'s_product_wishlist'">
+
+                            <span><a ng-click="addToWishCartQV(prosper_product,required_field_values.quantity, proDetails, required_field_values, qvcurrent_price, current_sitekey, current_prokey, proDetails.cart_id)">+
+                                ADD TO SAVED LIST</a></span>
+                        </div>
+
+                        <div ng-class="quickview_update==1 ?'s_product_a_t_b':'falseClass'">
+
+                            <div class="black_btn btn" ng-click="update_promd5()"> UPDATE</div>
+                        </div>
+
+
+                        <div ng-class="quickview_update==1 && twotap_wishlist_cart.sites[current_sitekey].add_to_cart[current_prokey].movetobagPossible == 1?'s_product_wishlist':'falseClass'">
+
+                            <span><a ng-click="moveToCart(current_product.catalogId,current_prokey,current_sitekey,1,current_product)">+
+                                MOVE TO BAG</a></span>
+                        </div>
+
+
+                        </div>
+
+                    </div>
+                    </div>
+                    <div class="box_bottom">
+                    <a ng-href="#!/SOC/{{current_product.catalogId}}/{{current_product.keyword}}" class="more-link">View Full Details</a>
+                    <a href="#!/shoppingbag" class="black_btn btn q_action">GO TO SHOPPING BAG</a>
+                    <!-- <a href="#!/procuct_details" class="black_btn btn q_action">GO TO PRODUCT DETAILS</a> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- End Quick View Modal -->
+
+
+        <!-- End Quick View Modal -->
+        <!-- Start Add ot bag Modal -->
+        <div class="modal fade  sliderInModal add_toBag" id="addToBag" ng-class="{disNone : hideafterLoad}">
+            <!--autoHide-->
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title"><span>{{num_moved}} item</span> Added to Your {{move_text}}</h3>
+                <a ng-href="{{move_item.lnk}}" class="popup-plus">+</a>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                </div>
+                <div class="modal-body clearfix">
+                <div class="modal_contnt_top">
+                    <div class="m_c_left">
+                    <div class="product-image mini">
+                        <div class="p_image_innner">
+
+
+                        <img ng-src="{{move_item.image}}">
+                        <div class="rateit">
+                            <div class="rateis r{{move_item.rateAvg| makePositive}}">
+                            </div>
+                        </div>
+                        <a class="quick-product">+</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title"><a ng-href="{{move_item.lnk}}">{{move_item.title}}</a></div>
+                        <div class="title"><a>{{move_item.brand}}</a></div>
+                        <div class="web_id">Web ID: <a ng-href="{{move_item.lnk}}">{{move_item.catalogId}}</a></div>
+                        <!-- {{move_item}} -->
+                        <!-- <div ng-class="move_item.required_field_names.indexOf('color')> -1? 'color' : 'falseClass'" -->
+                        <!-- class="color">Color: <img ng-src="{{move_item.color}}" width="20" height="20"></div>  -->
+                        <!-- <div ng-class="move_item.required_field_names.indexOf('size')> -1? 'size' : 'falseClass'"> -->
+                        <!-- Size: {{move_item.size}} -->
+                        <!-- </div> -->
+                        <div ng-repeat="rname in move_item.required_field_names track by $index" ng-if="rname!='quantity' && rname!='color'">
+                        {{rname}} : {{move_item.input[rname]}}
+                        </div>
+
+                        <div ng-if="move_item.required_field_names.indexOf('color')>-1">
+                        Color : <span class="bg-contain inline-block w22" ng-class="move_item.input.color.indexOf('http')>-1?'':'falseClass'"
+                            data-style="background-image:url({{move_item.input.color}});"></span>
+                        <span ng-class="move_item.input.color.indexOf('http')>-1?'falseClass':''">{{move_item.input.color}}</span>
+
+
+                        </div>
+
+
+                    </div>
+
+                    </div>
+
+                    <style>
+                    </style>
+
+
+                    <div class="m_c_right">
+                    <div class="checkOut_box">
+                        <div class="checkOut_box_inner">
+                        <form>
+                            <div class="subtotal-header">
+                            <div class="fl" ng-class="!priceloadedfull?'falseClass':''">TOTAL:</div>
+                            <div class="fr">{{estimated_move_price_totals.final_price}}</div>
+                            <!-- <div class="fr">....</div> -->
+
+                            </div>
+
+
+                            <div class="charge-info" ng-class="!priceloadedfull?'ss_loading':''">
+                            <ul class="charge-list">
+                                <!-- <li> -->
+                                <!-- DB MD5   {{dbmd5}} </li> -->
+                                <!-- <li>2TAP MD5 {{twotapmd5}} -->
+                                <!-- </li> -->
+
+                                <li>
+                                <span>Merchandise total</span>
+                                <span>{{estimated_move_price_totals.subtotal}}</span>
+
+                                </li>
+                                <li>
+                                <span>Shipping charges</span>
+                                <span>{{estimated_move_price_totals.shipping_price}}</span>
+                                <!-- <span>....</span> -->
+                                </li>
+                                <li class="estm_txt">
+                                <span>Estimated taxes</span>
+                                <span>{{estimated_move_price_totals.sales_tax}}</span>
+                                <!-- <span>....</span> -->
+                                </li>
+                                <li class="total">
+                                <span>Total</span>
+                                <span>{{estimated_move_price_totals.final_price}}</span>
+                                <!-- <span>....</span> -->
+
+                                </li>
+                            </ul>
+                            </div>
+                            <div class="form-row">
+                            <div class="btn black_btn fl" ng-click="continue_shopping()">Continue shopping
+                            </div>
+                            <div class="btn red_btn fr" ng-click="popupcheckout()">Checkout</div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="modal_content_bottom" ng-if="cartpopupsimiliaritems.length>0">
+                    <h4>Others also Purchased</h4>
+                    <div class="othersReltdProduct carousel clearfix" relatedpr-slider>
+                        <ul class="product_group slides">
+                        <li class="col_3" ng-repeat="similiaritem in cartpopupsimiliaritems track by $index">
+                            <div class="productInfo">
+                            <div class="product-image">
+                                <div class="p_image_innner">
+                                <img ng-src="{{similiaritem.image_url}}">
+                                <div class="rateit">
+                                    <div class="rateis r{{similiaritem.rateAvg| makePositive}}">
+                                    </div>
+                                </div>
+                                <a class="quick-product" ng-href="#!/SOC/{{similiaritem.catalogId }}/{{ similiaritem.keyword | slugify}}">+</a>
+                                </div>
+                            </div>
+
+                            <div class="zoomed_s_icons_wrap dsktp_hide">
+                                <ul class="zoomed_s_icons">
+                                <li>
+                                    <i class="icon grey_heart"></i>
+                                    <span ng-bind="similiaritem.likeCount || '0'"></span>
+
+                                </li>
+                                <li>
+                                    <i class="icon grey_arrow"></i>
+                                    <span ng-bind="similiaritem.shareCount || '0'"></span>
+                                </li>
+                                <li>
+                                    <i class="icon grey_bag"></i>
+                                    <span ng-bind="similiaritem.ratedByUser || '0'"></span>
+
+                                </li>
+                                </ul>
+                            </div>
+
+
+                            <ul class="shared_icons small">
+
+
+                                <li ng-click="openSocialPopup(similiaritem, 'like', $event)" ng-class="{active: similiaritem==socialPopupProduct && socialPopupTab==='like'}">
+                                <i class="icon grey_heart" ng-class="{activated: similiaritem.likeUser}"></i>
+                                <span ng-bind="similiaritem.likeCount || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(similiaritem, 'mail', $event)" ng-class="{active: similiaritem==socialPopupProduct && socialPopupTab==='mail'}">
+                                <i class="icon grey_arrow" ng-class="{activated: similiaritem.mailUser}"></i>
+                                <span ng-bind="similiaritem.shareCount || '0'"></span>
+                                </li>
+                                <li ng-click="openSocialPopup(similiaritem, 'collective', $event)" ng-class="{active: similiaritem==socialPopupProduct && socialPopupTab==='collective'}">
+                                <i class="icon grey_bag" ng-class="{activated: similiaritem.reviewUser}"></i>
+                                <span ng-bind="similiaritem.ratedByUser || '0'"></span>
+                                </li>
+
+
+                            </ul>
+
+
+                            <ul class="product-details">
+                                <li>
+                                <a ng-href="#!/SOC/{{similiaritem.catalogId }}/{{ similiaritem.keyword | slugify}}" ng-bind="similiaritem.keyword"></a>
+                                </li>
+                                <li><a ng-bind="similiaritem.brand"></a></li>
+                                <li>
+                                <a ng-href="#!/storechosen/{{similiaritem.merchant}}" ng-bind="similiaritem.merchant"></a>
+                                </li>
+                                <li class="price">
+                                <span ng-class="{lineThrough: similiaritem.price_sale>-1 && similiaritem.price_sale!=null}" ng-bind="'$' + similiaritem.price"></span>
+                                <span ng-show="similiaritem.price_sale>-1 && similiaritem.price_sale!=null" ng-bind="'$'+ similiaritem.price_sale" class="sale-price"></span>
+
+
+                                </li>
+
+
+                            </ul>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start subscription Modal -->
+        <div class="modal fade notification_popup" id="storeSubscribed">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Subscribe to get free coupons </h3>
+                <!--   <a href="#!/store-chosen" class="popup-plus">+</a> -->
+                <a ng-click="menuShopApi('',subscribe_store.shop)" class="popup-plus">+</a>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <!-- {{subscribe_stores_coupon}}
+                                                    {{subscribe_stores_event}} -->
+                <!-- 	  BOTH {{both_subscribe}}
+                                    EVEENT {{events_subscribe}}
+                                    PROMO {{promocode_subscribe}} -->
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+
+                        <div class="img-wrap">
+                        <img ng-src="{{subscribe_store.info.logo}}" alt="{{subscribe_store.shop}}'s" draggable="false">
+                        </div>
+                        <button class="btn btn-subscribe-now" ng-click="subscribe_all(subscribe_store.shop)">
+                        Subscribe Now
+                        </button>
+                    </div>
+                    <div class="popup-action">
+                        <a class="btn grey_btn" ng-click="gotomailbox()">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img ng-src="{{subscribe_store.info.logo}}" alt="{{subscribe_store.shop}}'s" draggable="false">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <span class="popup-header-top">Subscription Notification</span>
+                        <span class="popup-header-website">{{subscribe_store.info.url}}</span>
+                        <div class="share_ss_gray_link copyWrap">
+                            <div><input class="copyText" id="website5" value="http://gitlab.sociallyshoppable.com/#!/storechosen/{{subscribe_store.shop}}"></div>
+                            <div class="popUp">
+                            <button class="btn grey_btn" data-copytarget="#website5">Click to Copy</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <span class="popup-notify-text">Maybe we suggest... a {{subscribe_store.shop}}'s notification subscription</span>
+                    </div>
+                    <div class="popup-list-check">
+                        <!--   <div class="popup-list-check"> -->
+                        <div class="list-check-head">
+                        <input type="checkbox" id="bthSub" ng-true-value="true" ng-false-value="false" ng-model="both_subscribe" ng-click="ucheckbothsub(both_subscribe)">
+                        <label for="bthSub" class="chekcedAllBtn{{both_subscribe_text}}">Sign me up for {{subscribe_store.shop}}'s
+                            Full Subscription</label>
+                        <!-- class="chekcedAllBtn"     -->
+                        </div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <input type="checkbox" id="eveSub" ng-true-value="true" ng-false-value="false" ng-model="events_subscribe" ng-click="checkbothsub(events_subscribe,promocode_subscribe)">
+                            <label for="eveSub" class="{{events_subscribe_text}}">Get notifications of sales &amp; promotional events</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="promoSub" ng-true-value="true" ng-false-value="false" ng-model="promocode_subscribe" ng-click="checkbothsub(events_subscribe,promocode_subscribe)">
+                            <label for="promoSub" class="{{promocode_subscribe_text}}">Promo codes and coupons
+                            </label>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <div class="btn grey_btn">View Mail &amp; Notifications</div>
+                    </div>
+                    <div class="box-popup-submit">
+                        <input type="submit" class="btn black_btn" value="Submit" ng-click="update_subscribe(subscribe_store.name)">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start Promotion Modal in mail  page -->
+        <!-- Modal for subscription -->
+        <div class="modal fade notification_popup" id="promotionPopup1">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Shared: Subscription Notification</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+                        <div class="img-wrap">
+                        <img src="images/popup-preview-image.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="popup-action">
+                        <a class="btn black_btn s_event">Shop Now</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="Small Bloomingdale's">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">SHARED: Subscription Notification</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">Just Now</div>
+                        <!--<div class="share_ss_gray_link copyWrap">
+                                                            <div><input class="copyText" id="website5" value="http://socialyshoppable.com/bloomingdale"></div>
+                                                            <div class="popUp"><button class="btn grey_btn"  data-copytarget="#website5">Click to Copy</button></div>
+                                                        </div>-->
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <div class="popup-notify-text">I thought you may be interested in a subscription to bloomingdales.com notification(s)</div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check">
+                        <div class="list-check-head">
+                        <input type="checkbox" id="listdemoid1un">
+                        <label for="listdemoid1un" class="checked">Sign me up for Bloomingdale's subscription</label>
+                        </div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <input type="checkbox" id="listdemoid2un">
+                            <label for="listdemoid2un" class="checked">Get notifications of sales &amp; promotional events</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="listdemoid3un">
+                            <label for="listdemoid3un" class="checked">Coupon codes and coupons</label>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <div><a class="btn black_btn s_event">Shop Now</a></div>
+                        <div><a href="" class="btn grey_btn">View Mail &amp; Notifications</a></div>
+                    </div>
+                    <div class="box-popup-submit">
+                        <input type="submit" class="btn black_btn" value="Submit">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for Coupon code -->
+        <div class="modal fade notification_popup" id="promotionPopup2">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Shared: Coupon code ALERT</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+                        <div class="img-wrap">
+                        <img src="images/asos_offer_sale.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="popup-action">
+                        <a href="" class="btn black_btn s_event">Shop Now</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="Small Bloomingdale's">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">Shared: Coupon code Alert</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">Just Now</div>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <div class="popup-notify-text">Coupon code alert</div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check">
+                        <div class="list-check-head"></div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <div>20% off of full price items<br> Use code <b class="red">20Ffa456</b></div>
+                            <div class="light_grey italic">Now untill 7/30/16</div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <!-- for mobile -->
+                        <div><a href="" class="btn black_btn s_event">Shop Now</a></div>
+                        <div><a href="" class="btn grey_btn">View Mail &amp; Notifications</a></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start Promotion Modal in mail  page -->
+        <!--<div class="modal fade notification_popup" id="promotionPopup">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        &lt;!&ndash; <h3 class="popup-title">Subscription Notification</h3> &ndash;&gt;
+                        <h3 class="popup-title">Sale alert / Notification</h3>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                    </div>
+                    <div class="modal-body  stage-carousel-popup clearfix">
+                        <div class="popup-content">
+                            <div class="box-popup-left">
+                                <div class="popup-preview">
+                                    <div class="img-wrap">
+                                        <img ng-src="{{sitesTwotap[sale_alert_details.site_id].logo}}" alt="{{sitesTwotap[sale_alert_details.site_id].name}}" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="popup-action">
+                                    <a class="btn grey_btn">View Mail &amp; Notifications</a>
+                                </div>
+                            </div>
+                            <div class="box-popup-right">
+                                <div class="popup-preview-small">
+                                    <div class="preview-small">
+                                        <div class="small-wrap">
+                                            <img ng-src="{{sitesTwotap[sale_alert_details.site_id].logo}}" alt="{{sitesTwotap[sale_alert_details.site_id].name}}" draggable="false">
+                                        </div>
+                                    </div>
+                                    <div class="popup-header">
+                                        <div class="popup-header-top">Sale alert / Notification</div>
+                                        <div class="popup-header-website">{{sitesTwotap[sale_alert_details.site_id].url}}</div>
+                                        <div class="share_ss_gray_link copyWrap">
+                                            <div><input class="copyText" id="website5" value="http://socialyshoppable.com/{{sitesTwotap[sale_alert_details.site_id].name}}></div>
+                                            <div class="popUp"><button class="btn grey_btn"  data-copytarget="#website5">Click to Copy</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup-notify">
+                                    <i class="icon-notify">&nbsp;</i>
+                                    <span class="popup-notify-text">Promo code alert</span>
+                                    &lt;!&ndash; <div class="popup-notify-text">Women's summer sale begins soon <br> Starts 2/12/14</div> &ndash;&gt;
+                                    &lt;!&ndash; <div class="popup-notify-text">This item has dropped in price.<br> Was <del>$150.00</del> <span class="red">Now $99.99</span> </div> &ndash;&gt;
+                                </div>
+                                <div class="popup-list-check">
+                                    <div class="list-check-head"></div>
+                                    <ul class="popup-list-ul">
+                                        <li>
+                                            <div>{{sale_alert_details.label}}<br> Use code <b class="red">{{sale_alert_details.code}}</b> </div>
+                                            <div ng-class="sale_alert_details.rules[0].hasOwnProperty('percentage_off') ? '' : 'falseClass'">{{sale_alert_details.rules[0].percentage_off}}% </div>
+                                            <div ng-class="sale_alert_details.rules[0].hasOwnProperty('value_off') ? '' : 'falseClass'">Fixed ${{sale_alert_details.rules[0].value_off}} off</div>
+                                            <div ng-class="sale_alert_details.rules[0].hasOwnProperty('threshold') ? '' : 'falseClass'"> The store subtotal has to be above ${{sale_alert_details.rules[0].threshold}} </div>
+                                            <div ng-class="sale_alert_details.rules[0].one_item ? '' : 'falseClass'"> Discount applies to only one item from the cart </div>
+                                            <div ng-class="sale_alert_details.rules[0].sale ? '' : 'falseClass'"> Discount applies to only applies to only products on sale. </div>
+                                            <div class="light_grey">{{sale_alert_details.starts_at| date:'MM/dd/yyyy'}} until  {{sale_alert_details.ends_at| date:'MM/dd/yyyy'}}</div>
+                                        </li>
+                                        &lt;!&ndash; <li>
+                                            <input type="checkbox" id="listdemoid2un">
+                                            <label for="listdemoid2un">Notify me 24hrs before event begins through SS NOTIFICATIONS</label>
+                                        </li> &ndash;&gt;
+                                        &lt;!&ndash; <li>
+                                            <input type="checkbox" id="listdemoid2un">
+                                            <label for="listdemoid2un">Notify me  through SS NOTIFICATIONS</label>
+                                        </li> &ndash;&gt;
+                                    </ul>
+                                </div>
+                                <div class="popup-action dsktp_hide">
+                                    <div class="btn grey_btn">View Mail &amp; Notifications</div>
+                                </div>
+                                <div class="box-popup-submit">
+                                    <input type="submit" class="btn black_btn" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Modal for Sale alert ( price dropped )-->
+        <div class="modal fade notification_popup" id="promotionPopup3">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Shared: Price Drop Alert</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+                        <div class="img-wrap">
+                        <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="shareInModal">
+                        <ul class="shared_icons">
+                        <li>
+                            <i class="icon grey_heart"></i>
+                            <span>123</span>
+                        </li>
+                        <li>
+                            <i class="icon grey_arrow"></i>
+                            <span>456</span>
+                        </li>
+                        <li>
+                            <i class="icon grey_bag"></i>
+                            <span>789</span>
+                        </li>
+                        </ul>
+                    </div>
+                    <ul class="product-details">
+                        <li><a href="#!single-product">Item Name</a></li>
+                        <li><a href="#">Designer Name</a></li>
+                        <li><a href="#!/storechosen">Shop Name</a></li>
+                    </ul>
+                    <div class="popup-action">
+                        <a href="" class="btn black_btn s_event">Shop This Item</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">Shared: Price Drop Alert!</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">12/02/13</div>
+                        </div>
+                    </div>
+                    <div class="product-image-wrap dsktp_hide">
+                        <div class="product-image mini">
+                        <div class="p_image_innner">
+                            <img src="images/371-201-59-0F01-TR08_FLA.jpg" alt="">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <div class="popup-notify-text">This item has dropped in price.<br> From
+                        <del class="red">$150.00</del>
+                        Now <span class="red">$99.99</span></div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check quickView">
+                        <div class="list-check-head"></div>
+                        <div class="s_product_right_d clearfix">
+                        <div class="product_sku">Item# 0419335281204</div>
+                        <div class="s_product_price">
+                            <span>WAS $150.00</span>
+                            <span class="t_red">NOW $99.99</span><i class="icn_all sale_alert"></i>
+                        </div>
+                        <div class="hideInexpand">
+                            <div class="s_product_review_rating">
+                            <div class="rateis r2o5"></div>
+                            <div class="s_product_review">
+                                <span><a href="#">SS Ratings &amp; Reviews</a> </span>
+                            </div>
+                            </div>
+                            <div class="s_product_clr_sz_bx">
+                            <div class="s_product_color_size clearfix">
+                                <div class="s_product_color">
+                                <div class="s_product_color_t">COLOR: Red</div>
+                                <ul class="s_product_color_bx">
+                                    <li class="s_p_clr">
+                                    <input type="radio" name="selectColor1" id="blacki1">
+                                    <label for="blacki1"><span style="background-color:black"></span></label>
+                                    </li>
+                                    <li class="s_p_clr">
+                                    <input type="radio" name="selectColor1" id="redi1">
+                                    <label for="redi1"><span style="background-color:red"></span></label>
+                                    </li>
+                                    <li class="s_p_clr">
+                                    <input type="radio" name="selectColor1" id="grayi1">
+                                    <label for="grayi1"><span style="background-color:gray"></span></label>
+                                    </li>
+                                </ul>
+                                </div>
+                                <div class="s_product_size">
+                                <div class="s_product_size_t">SIZE: Select Size</div>
+                                <ul class="s_product_size_bx">
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size01">
+                                    <label for="size01"><span>0</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size11">
+                                    <label for="size11"><span>1</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size21">
+                                    <label for="size21"><span>22</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size31">
+                                    <label for="size31"><span>13</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size41">
+                                    <label for="size41"><span>14</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size311">
+                                    <label for="size311"><span>13</span></label>
+                                    </li>
+                                    <li class="s_p_size">
+                                    <input type="radio" name="selectSize" id="size411">
+                                    <label for="size411"><span>14</span></label>
+                                    </li>
+                                </ul>
+                                <div class="s_product_sz_guide">
+                                    <a data-target="#size-guide-popup" role="button" data-toggle="modal">Size Guide</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="s_product_qty_bag clearfix">
+                                <div class="s_product_qty">
+                                <span class="qty_lebel">QUANTITY:</span>
+                                <div class="quantity-dropdown">
+                                    <form>
+                                    <div class="defaultSt">
+                                        <select ng-model="mp" convert-to-number>
+                                        <!-- sample ng-model -->
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        </select>
+                                    </div>
+                                    </form>
+                                </div>
+                                </div>
+                                <div class="s_product_a_t_b">
+                                <div class="black_btn btn" data-toggle="modal" data-target="#addToBag"> ADD TO BAG</div>
+                                </div>
+                                <div class="s_product_wishlist">
+                                <span><a href="#!/shoppingbag">+ ADD TO SAVED LIST</a></span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <!-- for mobile -->
+                        <div><a href="" class="btn black_btn s_event">Shop This Item</a></div>
+                        <div><a href="" class="btn grey_btn">View Mail &amp; Notifications</a></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for Occasional sale-->
+        <div class="modal fade notification_popup" id="promotionPopup4">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Shared: UPCOMING SALE ALERT</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+                        <div class="img-wrap">
+                        <img src="images/giltl.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="popup-action">
+                        <a href="" class="btn black_btn s_event">Shop this Event Now</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="Small Bloomingdale's">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">Shared: Upcoming Sale Alert!</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">2 Day(s) ago</div>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <div class="popup-notify-text">Women's summer sale begins soon <br> Starts 2/12/14</div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check">
+                        <div class="list-check-head"></div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <input type="checkbox" id="listdem11">
+                            <label for="listdem11" class="checked">Notify me 24hrs before event begins through SS NOTIFICATIONS</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="listdemo21">
+                            <label for="listdemo21" class="checked">Add to my calender</label>
+                        </li>
+                        </ul>
+                        <div>To save this event in your personal calender click "Submit" and then click "Open" on the following screen.</div>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <!-- for mobile -->
+                        <div><a href="" class="btn black_btn s_event">Shop this Event Now</a></div>
+                        <div><a href="" class="btn grey_btn">View Mail &amp; Notifications</a></div>
+                    </div>
+                    <div class="box-popup-submit">
+                        <input type="submit" class="btn black_btn" value="Submit">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for Special event -->
+        <div class="modal fade notification_popup" id="promotionPopup5">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Shared: Sale alert / Notification</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview">
+                        <div class="img-wrap">
+                        <img src="" alt="bed bath">
+                        </div>
+                    </div>
+                    <div class="popup-action">
+                        <a href="" class="btn black_btn s_event">Shop this Event Now</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="Small Bloomingdale's">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">Shared: Sale alert / Notification</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">2/10/14</div>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify calender">&nbsp;</i>
+                        <div class="popup-notify-text">BED BATH &amp; BEYOND having a speecial event</div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check">
+                        <div class="list-check-head"></div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <input type="checkbox" id="listdemoid2un">
+                            <label for="listdemoid2un" class="checked">Add to my calender</label>
+                        </li>
+                        </ul>
+                        <div>To save this event in your personal calender click "Submit" and then click "Open" on the following screen.</div>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <!-- for mobile -->
+                        <div><a href="" class="btn black_btn s_event">Shop this Event Now</a></div>
+                        <div><a href="" class="btn grey_btn">View Mail &amp; Notifications</a></div>
+                    </div>
+                    <div class="box-popup-submit">
+                        <input type="submit" class="btn black_btn" value="Submit">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for Review shared -->
+        <div class="modal fade notification_popup sliderInModal collective_review_m" id="promotionPopup6" ng-class="{disNone : hideafterLoad}">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title"><span class="mb_hide">Shared: Your</span> Collective Review was Shared</h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" title="close">X</span>
+                </button>
+                </div>
+                <div class="modal-body  stage-carousel-popup clearfix">
+                <div class="popup-content">
+                    <div class="box-popup-left">
+                    <div class="popup-preview thumb_viewer_wrap">
+                        <ul class="img-wrap slides">
+                        <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                            <div class="rateis r1">
+                            </div>
+                            </div>
+                        </li>
+                        <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                            <div class="rateis r5">
+                            </div>
+                            </div>
+                        </li>
+                        <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                            <div class="rateis r7">
+                            </div>
+                            </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="shareInModal">
+                        <ul class="shared_icons">
+                        <li>
+                            <i class="icon grey_heart"></i>
+                            <span>123</span>
+                        </li>
+                        <li>
+                            <i class="icon grey_arrow"></i>
+                            <span>456</span>
+                        </li>
+                        <li>
+                            <i class="icon grey_bag"></i>
+                            <span>789</span>
+                        </li>
+                        </ul>
+                    </div>
+                    <ul class="product-details">
+                        <li><a href="#!single-product">Item Name</a></li>
+                        <li><a href="#">Designer Name</a></li>
+                        <li><a href="#!/storechosen">Shop Name</a></li>
+                        <li><a href="#!/storechosen">Item# 0994839493</a></li>
+                    </ul>
+                    <div class="popup-action">
+                        <a href="" class="btn black_btn s_event">Shop This Item</a>
+                        <a href="" class="btn grey_btn">View Mail &amp; Notifications</a>
+                    </div>
+                    </div>
+                    <div class="box-popup-right">
+                    <div class="popup-preview-small">
+                        <div class="preview-small">
+                        <div class="small-wrap">
+                            <img src="images/dummy_img.png" alt="Small Bloomingdale's">
+                        </div>
+                        </div>
+                        <div class="popup-header">
+                        <div class="popup-header-top">Shared: Your Collective Review was Shared</div>
+                        <div class="popup-header-website">User Name</div>
+                        <div class="lightgrey italic">2 hrs</div>
+                        </div>
+                    </div>
+                    <div class="show-collPhoto dsktp_hide">
+                        <div class="popup-preview thumb_viewer_wrap">
+                        <ul class="img-wrap slides">
+                            <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                                <div class="rateis r1">
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                                <div class="rateis r5">
+                                </div>
+                            </div>
+                            </li>
+                            <li class="product-image">
+                            <img src="images/upload_img_women.jpg" alt="">
+                            <div class="rateit">
+                                <div class="rateis r7">
+                                </div>
+                            </div>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="popup-notify">
+                        <i class="icon-notify">&nbsp;</i>
+                        <div class="popup-notify-text">Thanks for sharing through <br> Soc. Shop. Collective!</div>
+                    </div>
+                    <div class="shared_to"><strong>SHARED: </strong>{{ sharedMail }}</div>
+                    <div class="popup-list-check">
+                        <div class="list-check-head"></div>
+                        <ul class="popup-list-ul">
+                        <li>
+                            <div>Thanks for sharing your rating, review and/or collective photo(s). Here is a link to your review:
+                            http://..
+                            </div>
+                            <div class="p_t_10">To edit your review click the shopping bag share icon and make your edit(s)</div>
+                            <div class="lightgrey">#HappyShopping #Collectivelove #SocShopCollective</div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="popup-action dsktp_hide">
+                        <!-- for mobile -->
+                        <div><a href="" class="btn black_btn s_event">View your review &amp; product details</a>
+                        </div>
+                        <div class="m_t_10">
+                        <a href="" class="btn grey_btn">View your review &amp; collective stream</a></div>
+                    </div>
+                    <div class="box-popup-submit mb_hide">
+                        <div><a href="" class="btn black_btn s_event">View your review &amp; product details</a>
+                        </div>
+                        <div class="m_t_10">
+                        <a href="" class="btn grey_btn">View your review &amp; collective stream</a></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start Return policy Modal -->
+        <div class="modal fade" id="returnPolicy">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Return Policy For {{return_store_name}}</h3>
+                <a ng-click="menuShopApi('',return_store_name)" class="popup-plus">+</a>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                </div>
+                <p style="margin-left:1vw;margin-top:1vh;">
+                To cancel or amend an order you will need to contact the retailer directly. Please review individual store's return policy.
+                Socially Shoppable is not responsible for any problem.
+                </p>
+                <div style="margin-left:1vw;margin-top:1vh;"><img ng-src="{{return_store_logo}}"></div>
+                <div class="modal-body" ng-bind-html="return_info">
+                <!--      <p>Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit.</p>
+                                    <p> Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. Lorem ipsum dollar set amit. </p> -->
+                <!--    {{return_info}}  -->
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start Creditcard safeguard Modal -->
+        <div class="modal fade" id="cardSafegrd">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title">Credit Card Safeguard</h3>
+                <!-- <a href="#!/store-chosen" class="popup-plus">+</a> -->
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                </div>
+                <div class="modal-body">
+                <p>We are not saving any of your credit card details</p>
+                <p> We passed your details to retailer who owned the product </p>
+                <p> We are using ssl connection for security purpose </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start Sign up / login Modal for Mobile -->
+        <div class="signIn_popup_wrap">
+            <div class="signIn_popup">
+            <div class="signIn_popup_inner">
+                <div class="close_btn">X</div>
+                <h5>Already A member of Socillyshoppable? <br> Please </h5>
+                <div class="signIn_signUp">
+                <!--                 <a class="signup-link" data-target="#loginPopup" data-toggle="modal">SIGN UP</a> / <a class="login-link" data-target="#loginPopup" data-toggle="modal">LOGIN</a>
+                                -->
+                <a class="signup-link ss_SignUp">SIGN UP</a> / <a class="login-link ss_LogIn">LOGIN</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Start share popup For Products -->
+        <div class="social_popup modal fade" data-backdrop="true" id="prSocialPopup" social-product="socialPopupProduct" social-tab="socialPopupTab"></div>
+        <!-- login popup -->
+        <div class="modal fade login-popup" id="loginPopup" style="display: none;" sign-user></div>
+        <!-- Start share popup For Stores -->
+        <div class="social_popup" id="stSocialPopup">
+            <div class="popup-title">Share</div>
+            <div class="popup-icons">
+            <a href="#!/single-product" class="popup-plus">+</a>
+            <span title="Close" class="close-popup">X</span>
+            </div>
+            <div class="social_popup_mid">
+            <div class="social_popup_lft">
+                <div class="ss_p_icn_ttl_lnk">
+                <div class="ss_p_cbx_icn">
+                    <input type="checkbox" id="share_ss1" name="share" checked="checked">
+                    <label for="share_ss1" class="checked"></label>
+                    <div class="ss_icon_bdr"><i class="icon ss_icon"></i></div>
+                </div>
+                <div class="ss_p_tp_ttl_lnk">
+                    <div class="ss_title">Socially Shoppable</div>
+                    <div class="share_ss_gray_link copyWrap">
+                    <div><input class="copyText" id="website3" value="http://socialyshoppable.com/shirts"></div>
+                    <div class="popUp">
+                        <button class="btn grey_btn" data-copytarget="#website3">Click to Copy</button>
+                    </div>
+                    </div>
+                    <span>Copy and paste this link to share it</span>
+                </div>
+                </div>
+                <div class="socail_tab_wrap">
+                <ul class="shared_icons tab_head socialTabHead">
+                    <li>
+                    <i class="icon grey_heart"></i>
+                    <span>123</span>
+                    </li>
+                    <li>
+                    <i class="icon grey_arrow"></i>
+                    <span>456</span>
+                    </li>
+                    <li>
+                    <i class="icon grey_bag"></i>
+                    <span>789</span>
+                    </li>
+                </ul>
+                <div class="social_content_wrap socialTabContentWrp">
+                    <div class="social_content">
+                    <div class="s_content_head">
+                        <div class="total_notify">All (123)</div>
+                    </div>
+                    <div class="s_content_details scroll" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                        John Doe, Lorem Ipsum, Valentin Muller, Adipiscing Elit, Sed Diam, Nonummy Nibh, Euismod Tincidu, It Laoreet, Dolore Magna,
+                        Aliqua Erat, John Doe,Lorem Ipsum,Valentin Muller, Adipiscing Elit, Sed Diam,Nonummy Nibh, Euismod Tincidu,
+                        Lorem Ipsum,Valentin Muller, Adipiscing Elit, Sed Diam,Nonummy Nibh, Euismod Tincidu, It Laoreet,Dolore Magna,Aliqua
+                        Erat,John Doe,Lorem Ipsum,Valentin Muller,Adipiscing Elit,Sed Diam,Nonummy Nibh,Euismod Tincidu, Aliqua,
+                        It Laoreet,Dolore Magna,Aliqua Erat,John Doe,Lorem Ipsum,Valentin Muller,Adipiscing Elit,Sed Diam,Nonummy
+                        Nibh,Euismod Tincidu, Erat,John Doe,Lorem Ipsum,Valentin Muller,Sed Diam,Nonummy Nibh,Euismod Tincidu, Adipiscing
+                        Elit
+                        <span class="red_link">More</span>
+                    </div>
+                    </div>
+                    <div class="social_content">
+                    <div class="s_content_head">
+                        <div class="total_notify">All (456)</div>
+                    </div>
+                    <div class="suggns mb_hide">Share directly to a friend by typing their email and message below</div>
+                    <div class="s_content_details">
+                        <div class="s_content_left">
+                        <input type="checkbox" id="p_email_id2" checked="checked">
+                        <label for="p_email_id2" class="checked"><i class="icon email_icon"></i></label>
+                        </div>
+                        <div class="s_content_right">
+                        <div class="field_row">
+                            <label for="">To</label>
+                            <input type="text" placeholder='Email(s), separated by " , "'>
+                        </div>
+                        <div class="field_row">
+                            <label for="">From</label>
+                            <input type="text" placeholder="Enter your email">
+                        </div>
+                        <div class="field_row">
+                            <label for="">Subject</label>
+                            <input type="text" value="Look what I found on SS">
+                        </div>
+                        <div class="field_row">
+                            <label for="">Message</label>
+                            <textarea>#HappyShopping #SocShop #productName</textarea>
+                        </div>
+                        <div class="field_row">
+                            <input type="submit" value="Send" class="btn red_btn">
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="social_content">
+                    <div class="s_content_head">
+                        <div class="total_notify">All (123)</div>
+                        <div class="rateis r4o5"></div>
+                        <span><a href="#">Ratings & Reviews (50)</a></span>
+                    </div>
+                    <ul class="social_notify_list" mcustom-scroll="{ 'theme': theme, 'autoHide': autoHide }">
+                        <li>
+                        <div class="box-preview">
+                            <div class="preview-image">
+                            <img src="" alt="">
+                            </div>
+                            <div> User name</div>
+                            <div>8 hours ago</div>
+                        </div>
+                        <div class="notify_desc">
+                            <div class="rateis r4o0"></div>
+                            <div class="ss_rtg_dtls">
+                            <p>I love this purse. It matches everything I wear. I think its my favourite...</p>
+                            </div>
+                            <div class="ss_p_hshtg">#HappyShopping</div>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="box-preview">
+                            <div class="preview-image">
+                            <img src="" alt="">
+                            </div>
+                            <div> User name</div>
+                            <div>8 hours ago</div>
+                        </div>
+                        <div class="notify_desc">
+                            <div class="rateis r4o0"></div>
+                            <div class="ss_rtg_dtls">
+                            <p>I love this purse. It matches everything I wear. I think its my favourite...</p>
+                            </div>
+                            <div class="ss_p_hshtg">#HappyShopping</div>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="box-preview">
+                            <div class="preview-image">
+                            <img src="" alt="">
+                            </div>
+                            <div> User name</div>
+                            <div>8 hours ago</div>
+                        </div>
+                        <div class="notify_desc">
+                            <div class="rateis r4o0"></div>
+                            <div class="ss_rtg_dtls">
+                            <p>I love this purse. It matches everything I wear. I think its my favourite...</p>
+                            </div>
+                            <div class="ss_p_hshtg">#HappyShopping</div>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="box-preview">
+                            <div class="preview-image">
+                            <img src="" alt="">
+                            </div>
+                            <div> User name</div>
+                            <div>8 hours ago</div>
+                        </div>
+                        <div class="notify_desc">
+                            <div class="rateis r4o0"></div>
+                            <div class="ss_rtg_dtls">
+                            <p>I love this purse. It matches everything I wear. I think its my favourite...</p>
+                            </div>
+                            <div class="ss_p_hshtg">#HappyShopping</div>
+                        </div>
+                        </li>
+                    </ul>
+                    <div class="rateIt_now">
+                        <div class="box-preview">
+                        <div class="preview-image">
+                            <img src="" alt="">
+                        </div>
+                        <div> User name</div>
+                        </div>
+                        <div class="notify_desc">
+                        <div class="rateis_wrp">
+                            <div class="rateis showRate dsktp_hide">
+                            <div class="r1st"></div>
+                            <div class="r2nd"></div>
+                            <div class="r3rd"></div>
+                            <div class="r4th"></div>
+                            <div class="r5th"></div>
+                            <div class="r6th"></div>
+                            <div class="r7th"></div>
+                            <div class="r8th"></div>
+                            <div class="r9th"></div>
+                            <div class="r10th"></div>
+                            </div>
+                            <div class="rateis mainRateBox">
+                            <div class="r1st"></div>
+                            <div class="r2nd"></div>
+                            <div class="r3rd"></div>
+                            <div class="r4th"></div>
+                            <div class="r5th"></div>
+                            <div class="r6th"></div>
+                            <div class="r7th"></div>
+                            <div class="r8th"></div>
+                            <div class="r9th"></div>
+                            <div class="r10th"></div>
+                            </div>
+                            <input type="hidden" value="" class="ratingValue">
+                        </div>
+                        <span class="rate_info">Rate Is (1-5 Hearts)</span>
+                        <div class="ss_rtg_dtls">
+                            <textarea maxlength="400"></textarea>
+                            <div class="txt-limit txtRight"><span>0</span>/400</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="social_popup_rht">
+                <div class="social_product_thumb">
+                <div class="thumb_viewer_wrap">
+                    <ul class="slides">
+                    <li>
+                        <div style="background-image:url(images/pro-bag1.gif);"></div>
+                    </li>
+                    <li>
+                        <div style="background-image:url(images/pro-bag1.gif);"></div>
+                    </li>
+                    <li>
+                        <div style="background-image:url(images/pro-bag1.gif);"></div>
+                    </li>
+                    </ul>
+                </div>
+                <div class="thumb_pagination">
+                    <span class="current-slide">1</span> of <span class="total-slides"></span>
+                    <span class="choose_one">Choose a thumbnail</span>
+                </div>
+                </div>
+                <div class="inline-field">
+                <input id="onfly-popup_no_thumb1" type="checkbox" name="thumbnail" value="0">
+                <label for="onfly-popup_no_thumb1">No thumbnail </label>
+                </div>
+                <div class="prdt_details">
+                <div class="product_pp_pname">
+                    <div><a href="">Item Name</a></div>
+                    <div><a href="">Designer Name</a></div>
+                    <div><a href="">Shop Name</a></div>
+                </div>
+                <div class="share_ss_gray_link copyWrap">
+                    <div><input class="copyText" id="website4" value="http://socialyshoppable.com/shirts"></div>
+                    <div class="popUp">
+                    <button class="btn grey_btn" data-copytarget="#website4">Click to Copy</button>
+                    </div>
+                </div>
+                <div class="product_pp_p_desc">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed.</p>
+                </div>
+                </div>
+                <ul class="shared_icons atAglance">
+                <li>
+                    <input type="checkbox" id="hearta">
+                    <label for="hearta"><i class="icon grey_heart"></i></label>
+                </li>
+                <li>
+                    <input type="checkbox" id="arrowa">
+                    <label for="arrowa"><i class="icon grey_arrow"></i></label>
+                </li>
+                <li>
+                    <input type="checkbox" id="baga">
+                    <label for="baga"><i class="icon grey_bag"></i></label>
+                </li>
+                </ul>
+                <div class="ss_p_btn">
+                <div class="btn black_btn">Share</div>
+                <div class="btn cancel_btn">Cancel</div>
+                </div>
+            </div>
+            </div>
+            <div class="other_sicn_wrp">
+            <div class="other_sicn">
+                <input type="checkbox" id="fb_spopup1" value="0">
+                <label for="fb_spopup1"><i class="icon s_fb"></i>Facebook</label>
+                <div class="share-box">
+                <img width="100%" src="images/demo-share-fb.jpg" alt="">
+                </div>
+            </div>
+            <div class="other_sicn">
+                <input type="checkbox" id="fb_spopup2" value="0">
+                <label for="fb_spopup2"><i class="icon s_twitter"></i>Twitter</label>
+                <div class="share-box">
+                <img width="100%" src="images/demo-share-twitter.jpg" alt="">
+                </div>
+            </div>
+            <div class="other_sicn">
+                <input type="checkbox" id="fb_spopup3" value="0">
+                <label for="fb_spopup3"><i class="icon s_pinterst"></i>Instagram</label>
+                <div class="share-box">
+                <img width="100%" src="images/demo-share-pin.jpg" alt="">
+                </div>
+            </div>
+            <div class="ss_p_btn">
+                <div class="btn cancel_btn">Cancel</div>
+                <div class="btn black_btn">Share</div>
+            </div>
+            </div>
+        </div>
+        <!-- End share function popup -->
+        <!-- Start Common popup -->
+        <div class="modal fade common_popup" id="commonPopup">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="popup-title" ng-bind="common_popup_header"></h3>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span></button>
+                </div>
+                <div class="modal-body">
+                <p class="{{common_popup_color_class}}" ng-bind="common_popup_message"></p>
+                <div ng-class="common_popup_header =='Confirm Your Purchase'? '' : 'falseClass'">
+                    <div class="btn btn_gray" ng-click="finalPurchase()">COMPLETE PURCHASE</div>
+                    <div class="btn cancel_btn" ng-click="closeCommonPopup()">CANCEL</div>
+                    <div style="margin-top:1em;">
+                    * To cancel or amend an order you will need to contact the retailer directly. Please review individual store's return policy.
+                    Socially Shoppable is not responsible for any problem. If there is a payment problem, or the order cannot be
+                    placed due to a technical issue, please email customercare@ss.com and we will look into it with immediate action.
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- End Common popup -->
+        <div id="flyingPopup"></div>
+        <div id="fakeOverlay"></div>
+        <div id="scrollToTop" title="Scroll to top"></div>
+
+        <script type="text/javascript">
+            var user = <%-user %>;
+        </script>
+
+        <!--<script defer src="dist/front.min.js"></script>-->
+        <script defer src="s_js/libs/imagesloaded.pkgd.min.js"></script>
+        <script defer src="s_js/libs/bootstrap.min.js"></script>
+        <script defer src="s_js/libs/jquery.flexslider-min.js"></script>
+        <script defer src="s_js/panzoom.js"></script>
+        <script defer src="s_js/libs/moment.min.js"></script>
+        <script defer src="s_js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+        <script defer src="s_js/libs/angular.js"></script>
+        <script defer src="s_js/libs/angular-messages.js"></script>
+        <script defer src="s_js/libs/angular-sanitize.min.js"></script>
+        <script defer src="s_js/libs/angular-route.min.js"></script>
+        <script defer src="s_js/libs/angular-cookies.min.js"></script>
+        <script defer src="s_js/libs/angular-animate.min.js"></script>
+        <script defer src="s_js/libs/angular-resource.min.js"></script>
+
+
+        <!-- <script defer src="app/assets/angularjs/angular.js"></script>
+        <script defer src="app/assets/angularjs/angular-messages.js"></script>
+        <script defer src="app/assets/angularjs/angular-sanitize.js"></script>
+        <script defer src="app/assets/angularjs/angular-route.js"></script>
+        <script defer src="app/assets/angularjs/angular-cookies.js"></script>
+        <script defer src="app/assets/angularjs/angular-animate.js"></script>
+        <script defer src="app/assets/angularjs/angular-resource.js"></script> -->
+
+        <script defer src="scripts/lib/angular-slugify.js"></script>
+        <script defer src="s_js/libs/angular-moment.min.js"></script>
+        <script defer src="s_js/libs/angular-toastr.tpls.js"></script>
+
+        <script defer src="scripts/lib/ui-bootstrap-tpls-2.5.0.js"></script>
+
+
+
+        <script defer src="assets/controller/startpoint.js"></script>
+        <script defer src="assets/services/search.factory.js"></script>
+        <script defer src="assets/services/searchCount.factory.js"></script>
+        <script defer src="assets/services/authentication.service.js"></script>
+        <script defer src="assets/services/mappedcategory.factory.js"></script>
+        <script defer src="assets/services/twotap.factory.js"></script>
+        <script defer src="assets/services/user.service.js"></script>
+        <script defer src="assets/services/socialProduct.service.js"></script>
+        <script defer src="assets/services/setRequiredFieldUserCart.js"></script>
+        <script defer src="assets/services/brandprosperents.factory.js"></script>
+        <script defer src="assets/services/categoryStringSelect.factory.js"></script>
+
+        <script defer src="assets/controller/app_home.js"></script>
+        <script defer src="assets/controller/homecontroller.js"></script>
+        <!-- <script defer src="assets/controller/dashcontroller.js"></script> -->
+        <script defer src="assets/controller/apicatalogctrl.js"></script>
+        <script defer src="assets/controller/searchingcontroller.js"></script>
+        <script defer src="assets/controller/customizetopshopcontroller.js"></script>
+        <script defer src="assets/controller/account.controller.js"></script>
+        <script defer src="assets/controller/catalog_cart_controller.js"></script>
+        <script defer src="assets/controller/catalog_cart_controller_checkout.js"></script>
+        <script defer src="assets/controller/confirmcontroller.js"></script>
+        <script defer src="assets/controller/mailcontroller.js"></script>
+        <script defer src="assets/controller/orderhistorycontroller.js"></script>
+        <script defer src="assets/controller/blogcontroller.js"></script>
+        <script defer src="assets/controller/collective.controller.js"></script>
+        <script defer src="assets/controller/blogSigninController.js"></script>
+
+        <script defer src="assets/directive/slider.directive.js"></script>
+        <script defer src="assets/directive/socialProduct.directive.js"></script>
+        <script defer src="assets/directive/signUser.directive.js"></script>
+        <script defer src="assets/directive/profileSidebar.directive.js"></script>
+
+        <script defer src="assets/directive/validators.directive.js"></script>
+        <script defer src="assets/directive/photoUpload.directive.js"></script>
+        <script defer src="assets/directive/convertNumber.directive.js"></script>
+        <script defer src="assets/directive/zoom.directive.js"></script>
+        <script defer src="assets/filter/cardvalidate.js"></script>
+        <script defer src="assets/filter/alphabetfilter.js"></script>
+        <script defer src="assets/controller/user.controller.js"></script>
+
+        <script defer src="assets/directive/components/header/headerLeftComponent.js"></script>
+        <script defer src="assets/directive/components/header/headerRightComponent.js"></script>
+        <script defer src="assets/directive/components/account/accountComponent.js"></script>
+        <script defer src="assets/directive/components/dashboard/dashboardComponent.js"></script>
+        <script defer src="assets/directive/components/account/orderHistoryComponent.js"></script>
+        <script defer src="assets/directive/components/account/likesComponent.js"></script>
+        <script defer src="assets/directive/components/account/myWallComponent.js"></script>
+        <script defer src="assets/directive/components/account/companyComponent.js"></script>
+        <script defer src="assets/directive/components/account/blogComponent.js"></script>
+        <script defer src="assets/directive/components/account/blogSignInComponent.js"></script>
+        <script defer src="assets/directive/components/account/socialComponent.js"></script>
+        <script defer src="assets/directive/components/search/searchResultComponent.js"></script>
+
+        <script defer src="assets/directive/components/shop/shopComponent.js"></script>
+        <script defer src="assets/directive/components/shopping-bag/cartComponent.js"></script>
+        <script defer src="assets/directive/components/scheckout/cartCheckoutComponent.js"></script>
+        <script defer src="assets/directive/components/collective/collectiveComponent.js"></script>
+        <script defer src="assets/directive/components/order_placed/orderPlacedComponent.js"></script>
+        <script defer src="assets/directive/components/order_placed/orderPlacedConfirmationComponent.js"></script>
+        <script defer src="assets/directive/components/customizeshop/customizeShopComponent.js"></script>
+        <script defer src="assets/directive/components/customer_service/customerServiceComponent.js"></script>
+        <script defer src="assets/directive/components/confirmation_placed/confirmationPlacedComponent.js"></script>
+        <script defer src="assets/directive/components/all_store/allStoreComponent.js"></script>
+        <script defer src="assets/directive/components/user/userComponent.js"></script>
+
+        <script defer src="assets/directive/components/mail/mailComponent.js"></script>
+        <script defer src="assets/directive/components/store-chosen/storeChosenComponent.js"></script>
+        <script defer src="assets/directive/components/search/mainSearchComponent.js"></script>
+        <script defer src="assets/directive/components/user/userSidebarComponent.js"></script>
+        <script defer src="assets/directive/components/footer/footerComponent.js"></script>
+        <script defer src="assets/directive/components/navigation/navigationComponent.js"></script>
+        <script defer src="assets/directive/components/shop/singleProductComponent.js"></script>
+
+        <script defer src="scripts/lib/ng-file-upload-shim.min.js"></script>
+        <script defer src="scripts/lib/ng-file-upload.min.js"></script>
+        <script defer src="vendor/jQuery-Facebook-Photo-Selector/csphotoselector.js"></script>
+        <script defer src="scripts/lib/ng-img-crop.js"></script>
+        <script defer src="s_js/jsapi.js"></script>
+        <script defer src="s_js/socialPopup.js"></script>
+    </body>
+</html>

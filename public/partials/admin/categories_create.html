@@ -1,0 +1,187 @@
+
+	<div class=x style="width:40%;float:left;margin-left:15%;margin-top:14vh;">
+		<div class='container-fluid' >
+     <h3>Create Custom Categories</h3>
+	 <p>Description</p>
+		<p> This will create custom Categories, Sub categories for end user. It will support up to 5 level  </p>
+	    <p> For Create >>
+			<ul>
+				<li>Step 1. click new for refresh </li>
+				<li>Step 2. write down title of your category(should be unique name)</li>
+			    <li>Step 3. select categorylist from bottom by clicking checkboxes</li>
+
+			<li>Step 4. if you want to present it as subcategory, click checkbox of already defined category </li>
+			<li>Step 5. if you want to present it as main category, unselect custom category list check boxes if any exist/
+			or checked DEFAULT PARENT
+			</li>
+			<li>Step 6. Click Create</li>
+			of a new category select checkbox to define it's parent. and select prosperent categories for mapping </p>
+		<p> For Edit >>
+		    click specific item's edit option .
+			reorganize everything.
+			
+			If you want to redefine parent you can select new parent from tree
+			<ul>
+				<li>Step 1. click edit button beside the your category</li>
+				<li>Step 2. select check box of your desired parent</li>
+			<li>Step 3. Click Update</li>
+
+		</ul>
+			if you want to make a category from child to main parent
+			<ul>
+			<li>Step 1. click edit button beside the category</li>
+			<li>Step 2. choose Default Parent and click</li>
+			</ul>
+
+		</p>
+
+			<p> For Delete >>
+				click specific item's delete option .
+
+
+
+			</p>
+
+
+	
+
+
+  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br><br>
+			
+			
+	    <br><br>    
+		<h3>Select Parent Category From Bottom </h3>
+
+          <ul>
+			  <li><input ng-model="customcat.category" type="text"> </li>
+
+			  <li>
+            <input id="default_root" type="checkbox" value="true" ng-true-value="true" ng-false-value="false" ng-model="default_parent" ng-click="setParentRoot()">
+        <label for="default_root">DEFAULT PARENT
+
+            </label></li> </ul>
+
+            <ul style="list-style:none;">
+                <li ng-repeat="cate in customCategoryList|filter:customcat track by $index">
+						     <input id="catPartial{{cate.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="cate.IsTrue" ng-click="setParent(cate)" >
+                             <label for="catPartial{{cate.cid}}">{{cate.category}}
+							 </label> <a ng-click="edit_category(cate)">&nbsp; Edit  </a> |
+							 
+							 
+							 <a ng-click="dCatg(cate)">Delete</a> |  {{cate.position}}
+								<ul>
+ 									<li ng-repeat="cate_level2 in cate.categoryList track by $index">
+									 <input id="catLevel2{{cate_level2.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="cate_level2.IsTrue" ng-click="setParent(cate_level2)">
+									<label for="catLevel2{{cate_level2.cid}}">{{cate_level2.category}}
+								    </label><a ng-click="edit_category(cate_level2)">&nbsp; Edit  </a> | 
+							 
+							 
+							            <a ng-click="dCatg(cate_level2)">Delete</a> | {{cate_level2.position}}
+                                        <ul>
+										<li ng-repeat="cate_level3 in cate_level2.categoryList track by $index">
+										 <input id="catLevel3{{cate_level3.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="cate_level3.IsTrue" ng-click="setParent(cate_level3)">
+										<label for="catLevel3{{cate_level3.cid}}">{{cate_level3.category}}
+										</label><a ng-click="edit_category(cate_level3)">&nbsp; Edit  </a> |
+							 
+							 
+							            <a ng-click="dCatg(cate_level3)">Delete</a> | {{cate_level3.position}}
+										<ul>
+										<li ng-repeat="cate_level4 in cate_level3.categoryList track by $index">
+										 <input id="catLevel4{{cate_level4.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="cate_level4.IsTrue" ng-click="setParent(cate_level4)">
+										<label for="catLevel4{{cate_level4.cid}}">{{cate_level4.category}}
+										</label><a ng-click="edit_category(cate_level4)">&nbsp; Edit  </a> | 
+							 
+							 
+							            <a ng-click="dCatg(cate_level4)">Delete</a> | {{cate_level4.position}}
+										<ul>
+										<li ng-repeat="cate_level5 in cate_level4.categoryList track by $index">
+										 <input id="catLevel5{{cate_level5.cid}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="cate_level5.IsTrue" ng-click="setParent(cate_level4)">
+										<label for="catLevel5{{cate_level5.cid}}">{{cate_level5.category}}
+										</label><a ng-click="edit_category(cate_level5)">&nbsp; Edit  </a> | 
+							 
+							 
+							            <a ng-click="dCatg(cate_level5)">Delete</a> | {{cate_level5.position}}
+										</li>
+									     </ul>
+										
+										
+										</li>
+									     </ul>
+										
+										
+										
+										</li>
+									</ul>
+									
+									
+									
+									</li>
+								</ul>
+			</li>
+            </ul>
+
+        <h3>Category Title</h3>
+
+        <input type=text ng-model="category_name">
+		<br>		<br>	
+		<input type=button ng-click="refresh_category()" value="New">	
+ 		<input type=button ng-click="create_custom_category(category_name,selectedCategoryListObj)" value="Create">
+         <input type=button ng-click="edit_custom_category()" value="update">	
+
+ 
+	<br>
+	<br>
+<div ng-class="{'ss_loading' : !loaddoneEdit}">
+
+
+	<ul style="list-style:none;">
+		<li ng-repeat="selected_cat in selectedCategoryListObj track by $index" >
+
+			<input id="s_cat{{selected_cat.categoryId}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="catForEdit[selected_cat.categoryId]" ng-click="changeCategoryListSelected(selected_cat,catForEdit[selected_cat.categoryId])">
+			<label for="s_cat{{selected_cat.categoryId}}"> {{selected_cat.category}}
+			</label>  ({{selected_cat.numProducts}})
+
+		</li>
+	</ul>
+
+</div>
+	
+	<br> <br>
+	<a ng-click="clearSelected()">Clear Selected</a> <br><br>
+	<input ng-model="search.category" type="text" ng-model-options="{debounce: 1000}">
+        
+          <br><br><br>   
+		 <!-- <h4> LIMIT </h4>     -->
+		 <input type=hidden ng-model="lmt" ng-change="change_limit()" ng-model-options="{debounce:1000}" ng-blur="have_intvalue()">
+		 
+		 
+<!-- 		 <input id="selectAll" type="checkbox" ng-true-value="true" ng-false-value="false" ng-click="selectFiltered(search)" ng-model="selFilter">
+ -->
+
+		<div id="catall" ng-class="{'ss_loading' : !loaddone}">
+							
+		  <ul style="list-style:none;" >
+
+	  
+			<li ng-repeat="catP in prosperent_catList|filter:search track by $index" ng-if="catP.numProducts>0">
+						 <input id="catPros{{catP.categoryId}}" type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="allcategory[catP.categoryId]" ng-click="changeCategoryList(catP,allcategory[catP.categoryId])">
+							<label for="catPros{{catP.categoryId}}"> {{catP.category}} ({{catP.numProducts}})
+							</label>
+				
+			</li> 		  
+		  </ul>
+		</div>
+		
+ <ul uib-pagination total-items="totalRecordsAvailable" ng-model="CurrentPage" max-size="20" ng-change="pageChangedCategory()" class="pagination-sm" boundary-link-numbers="true" rotate="false" items-per-page="lmt"></ul>
+<pre>Page: {{CurrentPage}} / {{numPages}}</pre>
+	
+		</div>
+	</div>
+		
+		<!-- end: REGISTRATION -->
+
+		
+	
+
+
